@@ -23,12 +23,26 @@ import {
   Smartphone,
   Cloud,
   CheckCircle2,
+  Brain,
+  TrendingUp,
+  LayoutDashboard,
+  Activity
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { useMemo } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend
+} from "recharts"
 
 export default function DairySolutionsPage() {
   const { t } = useLanguage()
@@ -272,6 +286,145 @@ export default function DairySolutionsPage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Demos Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
+                <Activity className="w-3.5 h-3.5" />
+                Live Interactive Product Demos
+              </span>
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
+                Try Our Live Application Mockups
+              </h2>
+              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
+                Explore the actual user experience and core modules of both the Farmer Mobile App and the Cooperative Admin System.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              
+              {/* Passbook Card */}
+              <div className="bg-slate-50 dark:bg-zinc-900 border dark:border-zinc-800 p-8 rounded-[2.5rem] flex flex-col justify-between hover:shadow-2xl transition-all group hover:-translate-y-1">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-[#1E94A4]/10 flex items-center justify-center text-[#1E94A4] mb-6 group-hover:scale-110 transition-transform">
+                    <Smartphone className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">Farmer Milk Passbook App</h3>
+                  <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
+                    A dedicated mobile application mockup for dairy farmers. Track real-time milk collection slips, overall passbooks, 10-day payment receipts, direct store sales, and ledger sheets.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {["Milk Slip Receipts (Daily Entries)", "10-Day Billing Cycle Overview", "Account Ledger & Advances Balance", "Multilingual (EN, मराठी, हिंदी, ಕನ್ನಡ)"].map((f, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-400 font-sans">
+                        <CheckCircle2 className="h-4.5 w-4.5 text-green-500" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link href="/dairy-solutions/passbook">
+                  <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-6 rounded-2xl shadow-lg shadow-[#1E94A4]/15">
+                    Launch Mobile Demo
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Admin Card */}
+              <div className="bg-slate-50 dark:bg-zinc-900 border dark:border-zinc-800 p-8 rounded-[2.5rem] flex flex-col justify-between hover:shadow-2xl transition-all group hover:-translate-y-1">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                    <LayoutDashboard className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">Dairy Admin Dashboard</h3>
+                  <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
+                    A comprehensive administration panel for cooperative societies and milk unions. Monitor live collection metrics, view detailed stats, process bills, and access AI-driven insights.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {["AI-Driven Dairy level Dashboard", "Dynamic Recharts Statistics & Graphs", "Daily Summary & Collection Reports", "Individual Milk Bill & Ledger Copy"].map((f, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-400 font-sans">
+                        <CheckCircle2 className="h-4.5 w-4.5 text-green-500" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link href="/dairy-solutions/admin">
+                  <Button className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-6 rounded-2xl shadow-lg">
+                    Launch Admin Demo
+                  </Button>
+                </Link>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* AI Statistics Reports & Graphs Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-800">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] text-sm font-sans font-bold">
+                  <Brain className="w-4 h-4 animate-bounce" />
+                  AI Quality & Statistics Reports
+                </div>
+                <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100">
+                  Optimize Cooperative Performance via Graphs
+                </h2>
+                <p className="text-gray-600 dark:text-zinc-400 font-serif text-lg leading-relaxed">
+                  WinSoft Dairy Software features advanced AI algorithms that monitor daily collection metrics, generate quality distribution graphs, and detect anomalies.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { title: "FAT & SNF Consistency Tracking", desc: "Instantly graphs quality trends to pinpoint optimal feeding cycles." },
+                    { title: "Adulteration Prevention Controls", desc: "AI filters flag density anomalies to keep milk collection 100% pure." },
+                    { title: "Automated Payout Forecasts", desc: "Projects cash flows and schedules bank transfers dynamically." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-950/30 text-green-600 flex items-center justify-center shrink-0 mt-1 font-bold text-xs">✓</div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 dark:text-zinc-100 text-base">{item.title}</h4>
+                        <p className="text-gray-500 dark:text-zinc-400 text-sm font-serif mt-0.5">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Chart container */}
+              <div className="bg-white dark:bg-zinc-950 p-8 rounded-3xl border dark:border-zinc-800 shadow-xl">
+                <h3 className="text-base font-bold font-sans mb-6 text-gray-900 dark:text-zinc-100 flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-[#1E94A4]" />
+                  Cooperative KPI Improvements (Before vs After WinSoft)
+                </h3>
+                <div className="h-[300px] w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={[
+                        { metric: "Adulteration", Before: 45, After: 2 },
+                        { metric: "Wait Time (Min)", Before: 8, After: 2 },
+                        { metric: "Bill Cycle (Days)", Before: 12, After: 0.5 }
+                      ]}
+                      margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" className="stroke-slate-100 dark:stroke-zinc-800" />
+                      <XAxis dataKey="metric" stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
+                      <YAxis stroke="#888888" fontSize={11} tickLine={false} axisLine={false} />
+                      <Tooltip />
+                      <Legend />
+                      <Bar dataKey="Before" fill="#cbd5e1" radius={[6, 6, 0, 0]} />
+                      <Bar dataKey="After" fill="#1E94A4" radius={[6, 6, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

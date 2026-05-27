@@ -39,6 +39,16 @@ const navItems = (t: (key: string) => string) => [
         description: t("dairy.dairySubtitle"),
       },
       {
+        href: "/dairy-solutions/passbook",
+        title: "Farmer Passbook Demo",
+        description: "Interactive mockup of the farmer-level passbook and slips",
+      },
+      {
+        href: "/dairy-solutions/admin",
+        title: "Dairy Admin Dashboard Demo",
+        description: "Interactive mockup of the cooperative level administration dashboard",
+      },
+      {
         href: "/gold-industry-solutions",
         title: t("nav.gold"),
         description: t("home.product2Desc"),

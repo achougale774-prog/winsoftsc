@@ -64,5 +64,27 @@
     "inquiry_type": "support",
     "message": "2232",
     "status": "new"
+  },
+  {
+    "id": 1780036939039,
+    "created_at": "2026-05-29T06:42:19.039Z",
+    "name": "Rajendra Khot",
+    "email": "9011064474@winsoft.in",
+    "phone": "9011064474",
+    "company": "Dairy Solution Lead",
+    "inquiry_type": "Dairy Solutions Popup - AMCS",
+    "message": "Automated Enquiry Popup Lead:\n- Interested Product: Automatic Milk Collection System (AMCS)\n- Customer Name: Rajendra Khot\n- Contact Phone: 9011064474\n- Preferred Language: en",
+    "status": "new"
+  },
+  {
+    "id": 1780119818131,
+    "created_at": "2026-05-30T05:43:38.131Z",
+    "name": "abhishek",
+    "email": "1234567890@popup.winsoft.in",
+    "phone": "1234567890",
+    "company": "Popup Lead",
+    "inquiry_type": "Popup - Sankalan App",
+    "message": "Product: Farmer Milk Passbook App (Sankalan) | Language: EN",
+    "status": "new"
   }
 ]

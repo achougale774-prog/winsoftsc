@@ -23,6 +23,9 @@ const mockSupabase = {
         });
       }
     }),
+    insert: (data: any[]) => {
+      return Promise.resolve({ data: null, error: null }) as any;
+    }
   }),
   channel: () => ({ on: () => ({ subscribe: () => ({}) }) }), // Mock real-time
   removeChannel: () => {},

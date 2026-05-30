@@ -1,38 +1,157 @@
 "use client"
 
+import { useMemo } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { HeroSlider } from "@/components/hero-slider"
 import { useLanguage } from "@/components/language-provider"
 import { VillagePortal } from "@/components/village-portal"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { ClientLogosSection } from "@/components/client-logos-section"
+import { VideoDemoSection } from "@/components/video-demo-section"
 
 export default function HomePage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
-  const products = [
-    {
-      id: 1,
-      title: t("home.product1Title"),
-      description: t("home.product1Desc"),
-      image: "/dairy33.png",
-    },
-    {
-      id: 2,
-      title: t("home.product2Title"),
-      description: t("home.product2Desc"),
-      image: "/goldwin.png",
-    },
-    {
-      id: 3,
-      title: t("home.product3Title"),
-      description: t("home.product3Desc"),
-      image: "/sugerfac.png",
+  const products = useMemo(() => {
+    if (language === 'mr') {
+      return [
+        {
+          id: 1,
+          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
+          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
+          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध संस्था प्रशासकीय ERP",
+          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण",
+          description: "डिजिटल वजन काटे, थर्मल प्रिंटर, फॅट मशीन आणि आवाजाद्वारे घोषणा (Voice Announcement) यांचे परिपूर्ण एकत्रीकरण.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "पशूखाद्य आणि उचल (Advance) व्यवस्थापन",
+          description: "पशूखाद्य खरेदी-विक्री आणि बिलांमधून अॅडव्हान्सची स्वयंचलित कपात व व्याजाची सुलभ गणना.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else if (language === 'kn') {
+      return [
+        {
+          id: 1,
+          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
+          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
+          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
+          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ",
+          description: "ಡಿಜಿಟಲ್ ತೂಕದ ಪ್ರಮಾಣಗಳು, ಥರ್ಮಲ್ ಪ್ರಿಂಟರ್ಗಳು, ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಮತ್ತು ಧ್ವನಿ ಘೋಷಣೆಯ ಸಂಪೂರ್ಣ ಏಕೀಕರಣ.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ (Advance) ನಿರ್ವಹಣೆ",
+          description: "ಪಶು ಆಹಾರ ಖರೀದಿ-ಮಾರಾಟ ಮತ್ತು ಬಿಲ್ಲುಗಳಿಂದ ಮುಂಗಡಗಳ ಸ್ವಯಂಚಾಲಿತ ಕಡಿತ ಮತ್ತು ಬಡ್ಡಿಯ ಸುಲಭ ಲೆಕ್ಕಾಚಾರ.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else if (language === 'hi') {
+      return [
+        {
+          id: 1,
+          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
+          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)",
+          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध समिति प्रशासनिक ERP",
+          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "दूध विश्लेषक और वजन कांटा एकीकरण",
+          description: "डिजिटल वजन कांटे, थर्मल प्रिंटर, फैट मशीन और आवाज घोषणा (Voice Announcement) का सटीक एकीकरण.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "पशु आहार और अग्रिम (Advance) प्रबंधन",
+          description: "पशु आहार खरीद-बिक्री और बिलों से अग्रिम की स्वचालित कटौती और ब्याज की आसान गणना.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else {
+      return [
+        {
+          id: 1,
+          title: "Automatic Milk Collection System (AMCS)",
+          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "Farmer Milk Passbook App (Sankalan)",
+          description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "Cooperative Society Admin ERP",
+          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "Milk Analyzer & Hardware Integrations",
+          description: "High-precision integration with digital weigh scales, FAT testing machines, thermal printers, and multilingual voice announcements.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "Cattle Feed & Advance Management",
+          description: "Streamlined module for tracking cattle feed distribution, inventory, automatic advance/loan recovery from milk bills, and interest calculation.",
+          image: "/goldwin.png",
+        }
+      ]
     }
-  ]
+  }, [language])
 
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-zinc-950 font-sans relative overflow-hidden">
@@ -47,7 +166,7 @@ export default function HomePage() {
       <HeroSlider />
 
       <main className="max-w-7xl mx-auto px-4 py-24 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="glass-card hover-lift p-8 flex flex-col justify-between min-h-[480px] group border-t border-white/40 dark:border-zinc-800/50">
               <div className="flex flex-col h-full">
@@ -90,6 +209,12 @@ export default function HomePage() {
       </main>
 
       <VillagePortal />
+
+      <ClientLogosSection />
+
+      <VideoDemoSection />
+
+      <TestimonialsSection />
 
       <Footer />
     </div>

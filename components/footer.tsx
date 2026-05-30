@@ -76,6 +76,16 @@ export function Footer() {
                   {t("footer.features")}
                 </Link>
               </li>
+              <li>
+                <Link href="/pricing" className="text-white/80 hover:text-white text-sm transition-colors">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-white/80 hover:text-white text-sm transition-colors">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -108,6 +118,11 @@ export function Footer() {
               <li>
                 <Link href="/case-studies" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.caseStudies")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/support" className="text-white/80 hover:text-white text-sm transition-colors">
+                  Support
                 </Link>
               </li>
             </ul>
@@ -151,10 +166,10 @@ export function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 dark:text-zinc-400 text-sm">© {new Date().getFullYear()} Winsoft. {t("footer.allRightsReserved")}</p>
           <div className="flex space-x-6">
-            <Link href="#" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
+            <Link href="/privacy-policy" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
               {t("footer.privacyPolicy")}
             </Link>
-            <Link href="#" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
+            <Link href="/terms-of-service" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
               {t("footer.termsOfService")}
             </Link>
           </div>

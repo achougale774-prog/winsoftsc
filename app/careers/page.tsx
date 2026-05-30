@@ -164,10 +164,15 @@ export default function CareersPage() {
                     </div>
                     <p className="text-gray-600 dark:text-zinc-400 mb-4">{job.description}</p>
                   </div>
-                  <Button variant="outline" className="ml-4 bg-transparent">
-                    {t("careers.applyNow")}
-                    <ChevronRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <a
+                    href={`mailto:careers@winsoft.in?subject=Application for ${job.title}&body=Hello Winsoft Team,%0A%0AI am interested in applying for the ${job.title} position.%0A%0APlease find my details below:%0A%0AName:%0APhone:%0AExperience:%0A%0AThank you.`}
+                    className="ml-4 flex-shrink-0"
+                  >
+                    <Button variant="outline" className="bg-transparent border-[#1E94A4] text-[#1E94A4] hover:bg-[#1E94A4] hover:text-white transition-colors">
+                      {t("careers.applyNow")}
+                      <ChevronRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -181,10 +186,12 @@ export default function CareersPage() {
             <p className="text-gray-600 dark:text-zinc-400 mb-6 max-w-2xl mx-auto">
               {t("careers.noFitDesc")}
             </p>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              {t("careers.sendResume")}
-            </Button>
-            <p className="text-sm text-gray-500 dark:text-zinc-400 mt-2">careers@winsoft.com</p>
+            <a href="mailto:careers@winsoft.in?subject=Resume Submission&body=Hello Winsoft Team,%0A%0AI would like to submit my resume for consideration.%0A%0AName:%0APhone:%0ASkills:%0A%0AThank you.">
+              <Button className="bg-[#1E94A4] hover:bg-[#0B7989] text-white">
+                {t("careers.sendResume")}
+              </Button>
+            </a>
+            <p className="text-sm text-gray-500 dark:text-zinc-400 mt-2">careers@winsoft.in</p>
           </div>
         </div>
       </section>

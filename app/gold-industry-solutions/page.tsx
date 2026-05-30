@@ -27,7 +27,7 @@ import { useMemo } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function GoldIndustrySolutionsPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const goldProducts = useMemo(() => [
     {
@@ -112,6 +112,151 @@ export default function GoldIndustrySolutionsPage() {
     { title: t("gold.complianceReady"), icon: Shield, text: t("gold.complianceReadyDesc") },
     { title: t("gold.instantSupport"), icon: Clock, text: t("gold.instantSupportDesc") },
   ], [t])
+
+  const recommendedSolutions = useMemo(() => {
+    if (language === 'mr') {
+      return [
+        {
+          id: 1,
+          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
+          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
+          image: "/dairy33.png",
+          link: "/product/1",
+          tag: "डेअरी सोल्यूशन"
+        },
+        {
+          id: 2,
+          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
+          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
+          image: "/modern-dairy-farm.png",
+          link: "/product/2",
+          tag: "मोबाईल अॅप"
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध संस्था प्रशासकीय ERP",
+          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
+          image: "/modern-office-dashboard.png",
+          link: "/product/3",
+          tag: "ERP सिस्टीम"
+        },
+        {
+          id: "sugar",
+          title: "साखर कारखाना व्यवस्थापन प्रणाली",
+          description: "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन.",
+          image: "/sugerfac.png",
+          link: "/sugar-factory-solutions",
+          tag: "कारखाना सोल्यूशन"
+        }
+      ]
+    } else if (language === 'kn') {
+      return [
+        {
+          id: 1,
+          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
+          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
+          image: "/dairy33.png",
+          link: "/product/1",
+          tag: "ಡೈರಿ ಪರಿಹಾರ"
+        },
+        {
+          id: 2,
+          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
+          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
+          image: "/modern-dairy-farm.png",
+          link: "/product/2",
+          tag: "ಮೊಬೈಲ್ ಆಪ್"
+        },
+        {
+          id: 3,
+          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
+          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
+          image: "/modern-office-dashboard.png",
+          link: "/product/3",
+          tag: "ERP ಸಿಸ್ಟಮ್"
+        },
+        {
+          id: "sugar",
+          title: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ",
+          description: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ.",
+          image: "/sugerfac.png",
+          link: "/sugar-factory-solutions",
+          tag: "ಕಾರ್ಖಾನೆ ಪರಿಹಾರ"
+        }
+      ]
+    } else if (language === 'hi') {
+      return [
+        {
+          id: 1,
+          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
+          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
+          image: "/dairy33.png",
+          link: "/product/1",
+          tag: "डेयरी समाधान"
+        },
+        {
+          id: 2,
+          title: "किसान दूध पासबुक mobile app (Sankalan)",
+          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
+          image: "/modern-dairy-farm.png",
+          link: "/product/2",
+          tag: "मोबाइल ऐप"
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध समिति प्रशासनिक ERP",
+          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
+          image: "/modern-office-dashboard.png",
+          link: "/product/3",
+          tag: "ERP सिस्टम"
+        },
+        {
+          id: "sugar",
+          title: "चीनी मिल प्रबंधन प्रणाली",
+          description: "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान.",
+          image: "/sugerfac.png",
+          link: "/sugar-factory-solutions",
+          tag: "फैक्ट्री समाधान"
+        }
+      ]
+    } else {
+      return [
+        {
+          id: 1,
+          title: "Automatic Milk Collection System (AMCS)",
+          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
+          image: "/dairy33.png",
+          link: "/product/1",
+          tag: "Dairy Solution"
+        },
+        {
+          id: 2,
+          title: "Farmer Milk Passbook App (Sankalan)",
+          description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+          image: "/modern-dairy-farm.png",
+          link: "/product/2",
+          tag: "Mobile App"
+        },
+        {
+          id: 3,
+          title: "Cooperative Society Admin ERP",
+          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
+          image: "/modern-office-dashboard.png",
+          link: "/product/3",
+          tag: "ERP System"
+        },
+        {
+          id: "sugar",
+          title: "Sugar Factory Enterprise Solutions",
+          description: "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
+          image: "/sugerfac.png",
+          link: "/sugar-factory-solutions",
+          tag: "Enterprise Solution"
+        }
+      ]
+    }
+  }, [language])
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-black">
       <Header />
@@ -300,6 +445,74 @@ export default function GoldIndustrySolutionsPage() {
                   allowFullScreen
                 ></iframe>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recommended Solutions Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-900 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
+                📦 {language === 'mr' ? "इतर शिफारस केलेली उत्पादने" : language === 'kn' ? "ಇತರ ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನಗಳು" : language === 'hi' ? "अन्य अनुशंसित उत्पाद" : "Other Recommended Solutions"}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
+                {language === 'mr' ? "आमची इतर प्रीमियम सोल्यूशन्स" :
+                 language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
+                 language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
+              </h2>
+              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
+                {language === 'mr' ? "तुमच्या व्यवसायाला अत्याधुनिक डिजिटल युगात नेण्यासाठी आणि दैनंदिन कामकाज सुलभ करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
+                 language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                 language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {recommendedSolutions.map((product) => (
+                <div 
+                  key={product.id} 
+                  className="bg-white dark:bg-zinc-950 hover-lift p-6 rounded-[2rem] flex flex-col justify-between min-h-[440px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
+                >
+                  <div className="flex flex-col h-full">
+                    <Link href={product.link} className="block relative">
+                      <div className="absolute inset-0 bg-[#1E94A4]/10 dark:bg-[#1E94A4]/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                      <div className="relative w-full h-36 mb-6 rounded-2xl overflow-hidden border border-slate-100 dark:border-zinc-800 shadow-xs">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3 bg-[#1E94A4] text-white text-[10px] font-sans font-bold px-2 py-0.5 rounded-full shadow-xs">
+                          {product.tag}
+                        </div>
+                      </div>
+                    </Link>
+
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-zinc-100 leading-snug mb-3 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors line-clamp-2">
+                      {product.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 dark:text-zinc-400 text-xs mb-6 flex-grow leading-relaxed font-serif line-clamp-3">
+                      {product.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-4 border-t border-slate-100 dark:border-zinc-900">
+                    <Link href={product.link} className="block">
+                      <Button variant="outline" className="w-full border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 font-semibold py-4 rounded-xl text-xs hover:bg-slate-50 dark:hover:bg-zinc-800 transition-all font-sans">
+                        {t("home.viewDetails")}
+                      </Button>
+                    </Link>
+                    <Link href="/schedule-demo" className="block">
+                      <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-4 rounded-xl text-xs transition-all shadow-sm hover:shadow-[#1E94A4]/25 font-sans">
+                        {t("home.requestDemo")}
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

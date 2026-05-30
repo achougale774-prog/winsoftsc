@@ -1,5 +1,6 @@
 "use client"
 
+import React, { useState, useMemo } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -7,11 +8,23 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight, BookOpen, TrendingUp } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
-import { useMemo } from "react"
+import { toast } from "sonner"
+
+const slugMap: Record<number, string> = {
+  1: "digital-transformation-dairy-industry",
+  2: "sugar-factory-automation",
+  3: "gold-inventory-management",
+  4: "future-of-erp-systems",
+  5: "quality-control-food-processing",
+  6: "crm-for-small-businesses",
+}
 
 export default function BlogPage() {
   const { t, language } = useLanguage()
+  const [activeCategory, setActiveCategory] = useState("all")
+  const [email, setEmail] = useState("")
 
   const blogPosts = useMemo(() => [
     {
@@ -84,6 +97,18 @@ export default function BlogPage() {
 
   const categories = [t("blog.all"), t("blog.dairy"), t("blog.sugar"), t("blog.gold"), t("blog.tech"), t("blog.strategy")]
 
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === "all" || activeCategory === t("blog.all")) return blogPosts
+    return blogPosts.filter(p => p.category === activeCategory)
+  }, [blogPosts, activeCategory, t])
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    toast.success(language === "mr" ? "Subscribe केले! लवकरच updates मिळतील." : "Subscribed! You'll receive updates soon.")
+    setEmail("")
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50">
       <Header />
@@ -120,7 +145,8 @@ export default function BlogPage() {
               {blogPosts
                 .filter((post) => post.featured)
                 .map((post) => (
-                  <Card key={post.id} className="group hover:shadow-xl dark:shadow-none transition-all duration-300">
+                  <Link key={post.id} href={`/blog/${slugMap[post.id]}`}>
+                  <Card className="group hover:shadow-xl dark:shadow-none transition-all duration-300 cursor-pointer h-full">
                     <div className="relative">
                       <Image
                         src={post.image || "/placeholder.svg"}
@@ -137,7 +163,7 @@ export default function BlogPage() {
                       </Badge>
                     </div>
                     <CardHeader>
-                      <CardTitle className="text-xl font-sans font-bold group-hover:text-blue-600 transition-colors">
+                      <CardTitle className="text-xl font-sans font-bold group-hover:text-[#1E94A4] transition-colors">
                         {post.title}
                       </CardTitle>
                     </CardHeader>
@@ -156,15 +182,12 @@ export default function BlogPage() {
                         </div>
                         <span className="font-serif">{post.readTime}</span>
                       </div>
-                      <Button
-                        variant="ghost"
-                        className="p-0 h-auto font-sans font-semibold text-sm group-hover:text-blue-600 transition-colors"
-                        style={{ color: "var(--primary)" }}
-                      >
+                      <span className="inline-flex items-center gap-1 font-sans font-semibold text-sm text-[#1E94A4]">
                         {t("blog.readMore")} <ArrowRight className="ml-1 h-3 w-3" />
-                      </Button>
+                      </span>
                     </CardContent>
                   </Card>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -190,8 +213,10 @@ export default function BlogPage() {
               {categories.map((category) => (
                 <Badge
                   key={category}
-                  variant="secondary"
-                  className="px-3 py-1 font-sans text-xs cursor-pointer hover:bg-blue-100 transition-colors"
+                  variant={activeCategory === category || (activeCategory === "all" && category === t("blog.all")) ? "default" : "secondary"}
+                  className="px-3 py-1 font-sans text-xs cursor-pointer hover:bg-[#1E94A4] hover:text-white transition-colors"
+                  style={activeCategory === category ? { backgroundColor: "var(--accent)", color: "white" } : {}}
+                  onClick={() => setActiveCategory(category === t("blog.all") ? "all" : category)}
                 >
                   {category}
                 </Badge>
@@ -199,10 +224,11 @@ export default function BlogPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts
+              {filteredPosts
                 .filter((post) => !post.featured)
                 .map((post) => (
-                  <Card key={post.id} className="group hover:shadow-lg dark:shadow-none transition-all duration-300">
+                  <Link key={post.id} href={`/blog/${slugMap[post.id]}`}>
+                  <Card className="group hover:shadow-lg dark:shadow-none transition-all duration-300 cursor-pointer h-full">
                     <div className="relative">
                       <Image
                         src={post.image || "/placeholder.svg"}
@@ -219,7 +245,7 @@ export default function BlogPage() {
                       </Badge>
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-lg font-sans font-bold group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <CardTitle className="text-lg font-sans font-bold group-hover:text-[#1E94A4] transition-colors line-clamp-2">
                         {post.title}
                       </CardTitle>
                     </CardHeader>
@@ -234,15 +260,12 @@ export default function BlogPage() {
                         </div>
                         <span className="font-serif">{post.readTime}</span>
                       </div>
-                      <Button
-                        variant="ghost"
-                        className="p-0 h-auto font-sans font-semibold text-sm group-hover:text-blue-600 transition-colors"
-                        style={{ color: "var(--primary)" }}
-                      >
+                      <span className="inline-flex items-center gap-1 font-sans font-semibold text-sm text-[#1E94A4]">
                         {t("blog.readMore")} <ArrowRight className="ml-1 h-3 w-3" />
-                      </Button>
+                      </span>
                     </CardContent>
                   </Card>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -257,9 +280,11 @@ export default function BlogPage() {
             <p className="text-xl text-gray-600 dark:text-zinc-400 font-serif mb-8 leading-relaxed">
               {t("blog.newsletterDesc")}
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder={language === 'mr' ? "तुमचा ईमेल प्रविष्ट करा" : language === 'hi' ? "अपना ईमेल दर्ज करें" : language === 'kn' ? "ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ" : "Enter your email"}
                 required
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg font-serif text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"

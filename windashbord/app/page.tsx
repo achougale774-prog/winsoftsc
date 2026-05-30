@@ -24,8 +24,8 @@ import {
   Briefcase
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { supabase } from "@/lib/supabase"
-import { cn } from "@/lib/utils"
+import { supabase } from "../lib/supabase"
+import { cn } from "../lib/utils"
 
 // Mock Data for demonstration
 const MOCK_MESSAGES = [

@@ -54,9 +54,14 @@ const navItems = (t: (key: string) => string) => [
         description: t("home.product2Desc"),
       },
       {
-        href: "/products",
+        href: "/features",
         title: t("services.inventoryTitle"),
         description: t("services.inventoryMgmt"),
+      },
+      {
+        href: "/roi-calculator",
+        title: "ROI Calculator",
+        description: "Calculate how much your society saves with Winsoft software",
       },
       {
         href: "/sugar-factory-solutions",
@@ -68,6 +73,10 @@ const navItems = (t: (key: string) => string) => [
   {
     label: t("nav.features"),
     href: "/features",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
   },
   {
     label: t("nav.industries"),
@@ -108,10 +117,7 @@ const navItems = (t: (key: string) => string) => [
     label: t("nav.contact"),
     href: "/contact",
   },
-  {
-    label: t("nav.socialMedia") !== "nav.socialMedia" ? t("nav.socialMedia") : "Social Media",
-    href: "/social-media",
-  },
+
 ]
 
 type NavItem = {

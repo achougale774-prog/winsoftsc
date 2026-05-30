@@ -45,7 +45,7 @@ import {
 } from "recharts"
 
 export default function DairySolutionsPage() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const industries = useMemo(() => [
     {
@@ -118,6 +118,238 @@ export default function DairySolutionsPage() {
       icon: Cloud,
     },
   ], [t])
+
+  const suggestions = useMemo(() => {
+    if (language === 'mr') {
+      return [
+        {
+          title: "पशु आहार आणि फॅट/एसएनएफ नियोजन",
+          description: "जनावरांना दररोज संतुलित आहार, हिरवा आणि सुका चारा द्यावा. बायपास फॅट (Bypass Fat) आणि खनिज मिश्रण (Mineral Mixture) दिल्यामुळे दुधाचे फॅट (FAT) आणि एसएनएफ (SNF) वाढण्यास मदत होते.",
+          tips: ["नियमित संतुलित पशूखाद्य द्यावे", "हिरवा व सुका चारा यांचे योग्य प्रमाण ठेवावे", "पाण्याची चोवीस तास उपलब्धता ठेवावी"]
+        },
+        {
+          title: "स्वच्छ आणि शुद्ध दूध उत्पादन",
+          description: "दूध काढण्यापूर्वी जनावरांचे सड आणि भांडी स्वच्छ धुवावीत. स्वच्छ दुधामुळे जिवाणूंची वाढ रोखली जाते आणि दुधाला बाजारात उच्च प्रतिचा दर मिळतो.",
+          tips: ["दूध काढण्यापूर्वी भांडी निर्जंतुक करा", "सड स्वच्छ धुवून कोरडे करा", "आजारी जनावरांचे दूध वेगळे ठेवा"]
+        },
+        {
+          title: "नियमित आरोग्य आणि लसीकरण",
+          description: "जनावरांचे लाळ्या-खुरकुत (FMD) आणि इतर साथीच्या आजारांपासून संरक्षण करण्यासाठी वेळेवर लसीकरण करावे. नियमित जंतनिर्मूलन (Deworming) केल्यामुळे दूध उत्पादनात घट येत नाही.",
+          tips: ["दर ६ महिन्यांनी लसीकरण करा", "नियमित जंतनिर्मूलन करावे", "पशुवैद्यांच्या सल्ल्याने उपचार करा"]
+        },
+        {
+          title: "डेअरी ऑटोमेशन आणि पारदर्शकता",
+          description: "दूध संकलनात अचूकता आणि पारदर्शकतेसाठी नेहमी संगणकीकृत AMCS सॉफ्टवेअरचा वापर करा. यामुळे शेतकऱ्यांच्या नोंदी सुरक्षित राहतात आणि योग्य मोबदला वेळेवर मिळतो.",
+          tips: ["मानवी चुका टाळण्यासाठी डिजिटल काटे वापरा", "दूध घालताच पावती तपासा", "मोबाईल अॅपद्वारे नोंदींवर लक्ष ठेवा"]
+        }
+      ]
+    } else if (language === 'kn') {
+      return [
+        {
+          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಫ್ಯಾಟ್/ಎಸ್‌ಎನ್‌ಎಫ್ ನಿರ್ವಹಣೆ",
+          description: "ಜಾನುವಾರುಗಳಿಗೆ ದಿನನಿತ್ಯ ಸಮತೋಲಿತ ಆಹಾರ, ಹಸಿರು ಮತ್ತು ಒಣ ಮೇವನ್ನು ನೀಡಬೇಕು. ಬೈಪಾಸ್ ಫ್ಯಾಟ್ ಮತ್ತು ಖನಿಜ ಮಿಶ್ರಣವನ್ನು ನೀಡುವುದರಿಂದ ಹಾಲಿನ ಫ್ಯಾಟ್ ಮತ್ತು ಎಸ್‌ಎನ್‌ಎಫ್ ಹೆಚ್ಚಿಸಲು ಸಹಾಯವಾಗುತ್ತದೆ.",
+          tips: ["ನಿಯಮಿತ ಸಮತೋಲಿತ ಪಶು ಆಹಾರ ನೀಡಿ", "ಹಸಿರು ಮತ್ತು ಒಣ ಮೇವಿನ ಸೂಕ್ತ ಪ್ರಮಾಣ ಕಾಯ್ದುಕೊಳ್ಳಿ", "ಕುಡಿಯುವ ನೀರಿನ ನಿರಂತರ ಲಭ್ಯತೆ ಇರಲಿ"]
+        },
+        {
+          title: "ಸ್ವಚ್ಛ ಮತ್ತು ಶುದ್ಧ ಹಾಲು ಉತ್ಪಾದನೆ",
+          description: "ಹಾಲು ಕರೆಯುವ ಮುನ್ನ ಜಾನುವಾರುಗಳ ಕೆಚ್ಚಲು ಮತ್ತು ಪಾತ್ರೆಗಳನ್ನು ಸ್ವಚ್ಛವಾಗಿ ತೊಳೆಯಬೇಕು. ಸ್ವಚ್ಛ ಹಾಲಿನಿಂದ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಬೆಳವಣಿಗೆ ತಡೆಯಬಹುದು ಮತ್ತು ಹಾಲಿಗೆ ಹೆಚ್ಚಿನ ದರ ಸಿಗುತ್ತದೆ.",
+          tips: ["ಹಾಲು ಕರೆಯುವ ಪಾತ್ರೆಗಳನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ", "ಕೆಚ್ಚಲನ್ನು ತೊಳೆದು ಒಣ ಬಟ್ಟೆಯಿಂದ ಒರೆಸಿ", "ಅನಾರೋಗ್ಯ ಪೀಡಿತ ಜಾನುವಾರುಗಳ ಹಾಲು ಪ್ರತ್ಯೇಕಿಸಿ"]
+        },
+        {
+          title: "ನಿಯಮಿತ ಆರೋಗ್ಯ ಮತ್ತು ಲಸಿಕೆ",
+          description: "ಜಾನುವಾರುಗಳನ್ನು ಬಾಯಿ ಜ್ವರ (FMD) ಮತ್ತು ಇತರ ಸಾಂಕ್ರಾಮಿಕ ರೋಗಗಳಿಂದ ರಕ್ಷಿಸಲು ಸಕಾಲದಲ್ಲಿ ಲಸಿಕೆ ಹಾಕಿಸಬೇಕು. ನಿಯಮಿತ ಜಂತುನಾಶಕ ನೀಡುವುದರಿಂದ ಹಾಲು ಉತ್ಪಾದನೆ ಕುಂಠಿತವಾಗುವುದಿಲ್ಲ.",
+          tips: ["ಪ್ರತಿ ೬ ತಿಂಗಳಿಗೊಮ್ಮೆ ಲಸಿಕೆ ಹಾಕಿ", "ನಿಯಮಿತವಾಗಿ ಜಂತುನಾಶಕ ಔಷಧ ನೀಡಿ", "ಪಶುವೈದ್ಯರ ಸಲಹೆಯಂತೆ ಚಿಕಿತ್ಸೆ ಕೊಡಿಸಿ"]
+        },
+        {
+          title: "ಡೈರಿ ಆಟೊಮೇಷನ್ ಮತ್ತು ಪಾರದರ್ಶಕತೆ",
+          description: "ಹಾಲು ಸಂಗ್ರಹಣೆಯಲ್ಲಿ ನಿಖರತೆ ಮತ್ತು ಪಾರದರ್ಶಕತೆಗಾಗಿ ಯಾವಾಗಲೂ ಕಂಪ್ಯೂಟರೀಕೃತ AMCS ಸಾಫ್ಟ್‌ವೇರ್ ಬಳಸಿ. ಇದರಿಂದ ರೈತರ ದಾಖಲೆಗಳು ಸುರಕ್ಷಿತವಾಗಿರುತ್ತವೆ ಮತ್ತು ಸೂಕ್ತ ಪಾವತಿ ಲಭಿಸುತ್ತದೆ.",
+          tips: ["ಮಾನವ ತಪ್ಪುಗಳನ್ನು ತಡೆಯಲು ಡಿಜಿಟಲ್ ತೂಕ ಬಳಸಿ", "ಹಾಲು ಸಂಗ್ರಹಣೆಯಾದ ತಕ್ಷಣ ರಸೀದಿ ಪರಿಶೀಲಿಸಿ", "ಮೊಬೈಲ್ ಆಪ್ ಮೂಲಕ ದಾಖಲೆಗಳ ಮೇಲೆ ನಿಗಾ ಇರಿಸಿ"]
+        }
+      ]
+    } else if (language === 'hi') {
+      return [
+        {
+          title: "पशु आहार और फैट/एसएनएफ प्रबंधन",
+          description: "पशुओं को दैनिक संतुलित आहार, हरा और सूखा चारा देना चाहिए. बाईपास फैट (Bypass Fat) और खनिज मिश्रण देने से दूध का फैट और एसएनएफ बढ़ाने में मदद मिलती है.",
+          tips: ["नियमित संतुलित पशु आहार दें", "हरे व सूखे चारे का सही अनुपात रखें", "पीने के पानी की २४ घंटे उपलब्धता सुनिश्चित करें"]
+        },
+        {
+          title: "स्वच्छ और शुद्ध दूध उत्पादन",
+          description: "दूध निकालने से पहले पशु के थन और बर्तनों को अच्छी तरह धोएं. स्वच्छ दूध से जीवाणुओं की वृद्धि रुकती है और दूध का अधिकतम मूल्य प्राप्त होता है.",
+          tips: ["दूध निकालने के बर्तनों को कीटाणुरहित करें", "थनों को साफ करके सुखाएं", "बीमार पशुओं का दूध अलग रखें"]
+        },
+        {
+          title: "नियमित स्वास्थ्य और टीकाकरण",
+          description: "पशुओं को खुरपका-मुंहपका (FMD) और अन्य संक्रामक रोगों से बचाने के लिए समय पर टीकाकरण कराएं. नियमित कृमिनाशक (Deworming) दवा देने से दूध उत्पादन बना रहता है.",
+          tips: ["हर ६ महीने में टीकाकरण कराएं", "नियमित कृमिनाशक दवा दें", "पशु चिकित्सक की सलाह से ही उपचार करें"]
+        },
+        {
+          title: "डेयरी ऑटोमेशन और पारदर्शिता",
+          description: "दूध संग्रह में सटीकता और पारदर्शिता के लिए हमेशा स्वचालित AMCS सॉफ्टवेयर का उपयोग करें. इससे किसानों के रिकॉर्ड सुरक्षित रहते हैं और समय पर भुगतान मिलता है.",
+          tips: ["मानवीय गलतियों से बचने के लिए डिजिटल कांटे अपनाएं", "दूध जमा करते ही रसीद की जांच करें", "मोबाइल ऐप के माध्यम से रिकॉर्ड पर नजर रखें"]
+        }
+      ]
+    } else {
+      return [
+        {
+          title: "Cattle Nutrition & FAT/SNF Optimization",
+          description: "Provide cattle with a balanced daily diet of green and dry fodder. Supplementing with bypass fat and mineral mixtures significantly boosts overall milk FAT and SNF yields.",
+          tips: ["Feed high-quality balanced cattle feed daily", "Maintain proper ratios of green & dry fodder", "Provide 24/7 access to clean drinking water"]
+        },
+        {
+          title: "Clean & Hygienic Milk Production",
+          description: "Thoroughly wash cow udders and sanitize all collection cans before milking. Clean milking prevents bacterial contamination, extending milk shelf-life and ensuring top-tier payouts.",
+          tips: ["Sterilize all milking equipment before use", "Wash udders with warm water and dry cleanly", "Keep milk from sick cattle completely separate"]
+        },
+        {
+          title: "Routine Vaccination & Veterinary Care",
+          description: "Vaccinate your livestock timely against Foot-and-Mouth Disease (FMD) and other epidemics. Regular deworming preserves cow energy levels and prevents drops in milk yield.",
+          tips: ["Administer vaccinations every 6 months", "Perform regular deworming schedules", "Consult professional vets for health diagnostics"]
+        },
+        {
+          title: "Cooperative Automation & Transparency",
+          description: "Always implement automated AMCS software for high-precision weighing and FAT testing. Digitalization guarantees transparent rates, secure records, and faster direct payouts.",
+          tips: ["Utilize digital weighing scales to stop manual errors", "Always check your instant collection slips", "Monitor your ledger logs using the Mobile App"]
+        }
+      ]
+    }
+  }, [language])
+
+  const dairyProducts = useMemo(() => {
+    if (language === 'mr') {
+      return [
+        {
+          id: 1,
+          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
+          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
+          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध संस्था प्रशासकीय ERP",
+          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण",
+          description: "डिजिटल वजन काटे, थर्मल प्रिंटर, फॅट मशीन आणि आवाजाद्वारे घोषणा (Voice Announcement) यांचे परिपूर्ण एकत्रीकरण.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "पशूखाद्य आणि उचल (Advance) व्यवस्थापन",
+          description: "पशूखाद्य खरेदी-विक्री आणि बिलांमधून अॅडव्हान्सची स्वयंचलित कपात व व्याजाची सुलभ गणना.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else if (language === 'kn') {
+      return [
+        {
+          id: 1,
+          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
+          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
+          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
+          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ",
+          description: "ಡಿಜಿಟಲ್ ತೂಕದ ಪ್ರಮಾಣಗಳು, ಥರ್ಮಲ್ ಪ್ರಿಂಟರ್ಗಳು, ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಮತ್ತು ಧ್ವನಿ ಘೋಷಣೆಯ ಸಂಪೂರ್ಣ ಏಕೀಕರಣ.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ (Advance) ನಿರ್ವಹಣೆ",
+          description: "ಪಶು ಆಹಾರ ಖರೀದಿ-ಮಾರಾಟ ಮತ್ತು ಬಿಲ್ಲುಗಳಿಂದ ಮುಂಗಡಗಳ ಸ್ವಯಂಚಾಲಿತ ಕಡಿತ ಮತ್ತು ಬಡ್ಡಿಯ ಸುಲಭ ಲೆಕ್ಕಾಚಾರ.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else if (language === 'hi') {
+      return [
+        {
+          id: 1,
+          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
+          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)",
+          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "सहकारी दूध समिति प्रशासनिक ERP",
+          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "दूध विश्लेषक और वजन कांटा एकीकरण",
+          description: "डिजिटल वजन कांटे, थर्मल प्रिंटर, फैट मशीन और आवाज घोषणा (Voice Announcement) का सटीक एकीकरण.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "पशु आहार और अग्रिम (Advance) प्रबंधन",
+          description: "पशु आहार खरीद-बिक्री और बिलों से अग्रिम की स्वचालित कटौती और ब्याज की आसान गणना.",
+          image: "/goldwin.png",
+        }
+      ]
+    } else {
+      return [
+        {
+          id: 1,
+          title: "Automatic Milk Collection System (AMCS)",
+          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
+          image: "/dairy33.png",
+        },
+        {
+          id: 2,
+          title: "Farmer Milk Passbook App (Sankalan)",
+          description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+          image: "/modern-dairy-farm.png",
+        },
+        {
+          id: 3,
+          title: "Cooperative Society Admin ERP",
+          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
+          image: "/modern-office-dashboard.png",
+        },
+        {
+          id: 4,
+          title: "Milk Analyzer & Hardware Integrations",
+          description: "High-precision integration with digital weigh scales, FAT testing machines, thermal printers, and multilingual voice announcements.",
+          image: "/indian-software-office-collaboration.png",
+        },
+        {
+          id: 5,
+          title: "Cattle Feed & Advance Management",
+          description: "Streamlined module for tracking cattle feed distribution, inventory, automatic advance/loan recovery from milk bills, and interest calculation.",
+          image: "/goldwin.png",
+        }
+      ]
+    }
+  }, [language])
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-black">
@@ -220,6 +452,126 @@ export default function DairySolutionsPage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Suggestions & Guidance Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-800 relative overflow-hidden">
+          {/* Subtle glowing elements */}
+          <div className="absolute top-1/2 left-0 w-[30%] h-[30%] bg-[#1E94A4]/5 rounded-full filter blur-3xl pointer-events-none -translate-y-1/2"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
+                💡 {language === 'mr' ? "उपयुक्त मार्गदर्शन व सल्ले" : language === 'kn' ? "ಉಪಯುಕ್ತ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸಲಹೆಗಳು" : language === 'hi' ? "उपयोगी मार्गदर्शन और सुझाव" : "Business Advice & Guidelines"}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
+                {language === 'mr' ? "दूध व्यवसायासाठी उपयुक्त सल्ले व मार्गदर्शन" :
+                 language === 'kn' ? "ಹಾಲು ವ್ಯವಹಾರಕ್ಕಾಗಿ ಉಪಯುಕ್ತ ಸಲಹೆಗಳು ಮತ್ತು ಮಾರ್ಗದರ್ಶನ" :
+                 language === 'hi' ? "दुग्ध व्यवसाय के लिए उपयोगी सुझाव और मार्गदर्शन" : "Suggestions & Guidelines for Dairy Success"}
+              </h2>
+              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
+                {language === 'mr' ? "तुमच्या दूध डेअरीचे संकलन वाढवण्यासाठी, जनावरांचे आरोग्य जपण्यासाठी आणि व्यवसायात नफा मिळवण्यासाठी काही खास सल्ले." :
+                 language === 'kn' ? "ನಿಮ್ಮ ಡೈರಿ ಸಂಗ್ರಹಣೆ ಹೆಚ್ಚಿಸಲು, ಜಾನುವಾರುಗಳ ಆರೋಗ್ಯ ಕಾಪಾಡಲು ಮತ್ತು ಲಾಭ ಗಳಿಸಲು ಕೆಲವು ವಿಶೇಷ ಸಲಹೆಗಳು." :
+                 language === 'hi' ? "आपके डेयरी संग्रह को बढ़ाने, पशुओं के स्वास्थ्य की रक्षा करने और व्यवसाय में लाभ कमाने के लिए कुछ विशेष सुझाव." : "Expert advice and practical suggestions to help optimize your daily milk collection, maintain livestock health, and maximize profitability."}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {suggestions.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-zinc-900 p-8 rounded-[2rem] border border-slate-100 dark:border-zinc-800 hover:border-[#1E94A4]/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                      <span className="text-[#1E94A4]">0{idx + 1}.</span> {item.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="border-t border-slate-200/60 dark:border-zinc-800 pt-4">
+                    <h4 className="text-xs font-sans font-bold text-gray-400 uppercase tracking-wider mb-3">
+                      {language === 'mr' ? "महत्त्वाचे सल्ले:" : language === 'kn' ? "ಪ್ರಮುಖ ಸಲಹೆಗಳು:" : language === 'hi' ? "महत्वपूर्ण सुझाव:" : "Key Guidelines:"}
+                    </h4>
+                    <ul className="space-y-2">
+                      {item.tips.map((tip, tIdx) => (
+                        <li key={tIdx} className="flex items-center gap-2 text-xs text-gray-500 dark:text-zinc-400 font-sans">
+                          <CheckCircle2 className="h-4 w-4 text-[#1E94A4]" />
+                          {tip}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Suggested Dairy Products & Solutions Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-900 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
+                📦 {language === 'mr' ? "शिफारस केलेली उत्पादने व सोल्यूशन्स" : language === 'kn' ? "ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಪರಿಹಾರಗಳು" : language === 'hi' ? "अनुशंसित उत्पाद और समाधान" : "Recommended Products & Solutions"}
+              </span>
+              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
+                {language === 'mr' ? "आमची शिफारस केलेली डेअरी उत्पादने" :
+                 language === 'kn' ? "ನಮ್ಮ ಶಿಫಾರಸು ಮಾಡಿದ ಡೈರಿ ಉತ್ಪನ್ನಗಳು" :
+                 language === 'hi' ? "हमारे अनुशंसित डेयरी उत्पाद" : "Our Recommended Dairy Products"}
+              </h2>
+              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
+                {language === 'mr' ? "तुमच्या डेअरी व्यवसायाला गती देण्यासाठी आणि कामकाज सोपे करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
+                 language === 'kn' ? "ನಿಮ್ಮ ಡೈರಿ ವ್ಯವಹಾರವನ್ನು ವೇಗಗೊಳಿಸಲು ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಸುಗಮಗೊಳಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                 language === 'hi' ? "आपके डेयरी व्यवसाय को गति देने और संचालन को आसान बनाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software tools designed specifically to streamline your dairy operations, payments, and member relationships."}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {dairyProducts.map((product) => (
+                <div 
+                  key={product.id} 
+                  className="bg-white dark:bg-zinc-950 hover-lift p-8 rounded-[2rem] flex flex-col justify-between min-h-[480px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
+                >
+                  <div className="flex flex-col h-full">
+                    <Link href={`/product/${product.id}`} className="block relative">
+                      <div className="absolute inset-0 bg-[#1E94A4]/10 dark:bg-[#1E94A4]/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                      <div className="relative w-full h-48 mb-8 rounded-2xl overflow-hidden border border-slate-100 dark:border-zinc-800 shadow-xs">
+                        <Image
+                          src={product.image}
+                          alt={product.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    </Link>
+
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 leading-tight mb-4 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors">
+                      {product.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 dark:text-zinc-400 text-sm mb-8 flex-grow leading-relaxed font-serif">
+                      {product.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <Link href={`/product/${product.id}`} className="block">
+                      <Button variant="outline" className="w-full border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 font-semibold py-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-zinc-800 transition-all">
+                        {t("home.viewDetails")}
+                      </Button>
+                    </Link>
+                    <Link href="/schedule-demo" className="block">
+                      <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
+                        {t("home.requestDemo")}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

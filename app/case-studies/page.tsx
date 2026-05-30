@@ -212,12 +212,14 @@ export default function CaseStudiesPage() {
                           </div>
                         </div>
 
-                        <Button
-                          className="font-sans font-semibold"
-                          style={{ backgroundColor: "var(--primary)", color: "white" }}
-                        >
-                          {t("caseStudies.readFull")} <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        <Link href={`/case-studies/${study.id}`}>
+                          <Button
+                            className="font-sans font-semibold"
+                            style={{ backgroundColor: "var(--primary)", color: "white" }}
+                          >
+                            {t("caseStudies.readFull")} <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </Card>
@@ -281,13 +283,15 @@ export default function CaseStudiesPage() {
                           <Clock className="h-3 w-3" />
                           <span className="font-serif">{study.timeline}</span>
                         </div>
-                        <Button
-                          variant="ghost"
-                          className="p-0 h-auto font-sans font-semibold text-sm group-hover:text-blue-600 transition-colors"
-                          style={{ color: "var(--primary)" }}
-                        >
-                          {t("caseStudies.readMore")} <ArrowRight className="ml-1 h-3 w-3" />
-                        </Button>
+                        <Link href={`/case-studies/${study.id}`}>
+                          <Button
+                            variant="ghost"
+                            className="p-0 h-auto font-sans font-semibold text-sm group-hover:text-blue-600 transition-colors"
+                            style={{ color: "var(--primary)" }}
+                          >
+                            {t("caseStudies.readMore")} <ArrowRight className="ml-1 h-3 w-3" />
+                          </Button>
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>

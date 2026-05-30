@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -48,18 +48,16 @@ export default function ProductsPage() {
     const [scrollProgress, setScrollProgress] = useState(0)
 
     // Scroll Progress Effect
-    import("react").then(({ useEffect }) => {
-        useEffect(() => {
-            const handleScroll = () => {
-                const totalScroll = document.documentElement.scrollTop
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-                const scroll = `${totalScroll / windowHeight}`
-                setScrollProgress(Number(scroll) * 100)
-            }
-            window.addEventListener('scroll', handleScroll)
-            return () => window.removeEventListener('scroll', handleScroll)
-        }, [])
-    })
+    useEffect(() => {
+        const handleScroll = () => {
+            const totalScroll = document.documentElement.scrollTop
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            const scroll = totalScroll / windowHeight
+            setScrollProgress(scroll * 100)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     const filterProducts = (products: any[]) => {
         if (!searchQuery) return products;

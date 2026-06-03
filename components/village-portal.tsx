@@ -39,8 +39,8 @@ export function VillagePortal() {
     },
     {
       icon: MessageCircle,
-      iconBg: "bg-green-100 dark:bg-green-900/40",
-      iconColor: "text-green-600 dark:text-green-400",
+      iconBg: "bg-[#25D366]/10 dark:bg-[#25D366]/10",
+      iconColor: "text-[#25D366]",
       title: t("home.whatsappSupportTitle"),
       desc: t("home.whatsappSupportDesc"),
       onClick: null,
@@ -48,8 +48,8 @@ export function VillagePortal() {
     },
     {
       icon: PhoneCall,
-      iconBg: "bg-blue-100 dark:bg-blue-900/40",
-      iconColor: "text-blue-600 dark:text-blue-400",
+      iconBg: "bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20",
+      iconColor: "text-[#1E94A4] dark:text-[#22d3ee]",
       title: language === 'mr' ? "थेट Call करा" : language === 'hi' ? "सीधे Call करें" : "Call Us Directly",
       desc: language === 'mr' ? "+91 94230 39902 — सोमवार ते शनिवार, सकाळी ९:३० ते ६:३०" : "+91 94230 39902 — Mon–Sat, 9:30 AM – 6:30 PM",
       onClick: null,
@@ -57,8 +57,8 @@ export function VillagePortal() {
     },
     {
       icon: Info,
-      iconBg: "bg-purple-100 dark:bg-purple-900/40",
-      iconColor: "text-purple-600 dark:text-purple-400",
+      iconBg: "bg-[#0B7989]/10 dark:bg-[#0B7989]/20",
+      iconColor: "text-[#0B7989] dark:text-[#22d3ee]",
       title: language === 'mr' ? "सॉफ्टवेअर माहिती" : language === 'hi' ? "सॉफ्टवेयर जानकारी" : "Software Information",
       desc: language === 'mr' ? "आमच्या सर्व सुविधांची यादी पहा." : language === 'hi' ? "हमारी सभी सुविधाओं की सूची देखें।" : "View the full list of all our features.",
       onClick: null,

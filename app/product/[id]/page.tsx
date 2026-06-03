@@ -11,6 +11,7 @@ import { ChevronRight, ArrowLeft, Headphones, Mail, Calendar, Play } from "lucid
 import { useLanguage } from "@/components/language-provider"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { AudioButton } from "@/components/audio-button"
+import { StarRatingSchema } from "@/components/star-rating-schema"
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -353,6 +354,13 @@ export default function ProductDetailPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-gray-900 dark:text-zinc-100">
+      <StarRatingSchema
+        name={product.title}
+        description={product.description}
+        rating={4.9}
+        reviewCount={product.id === 1 ? 180 : product.id === 2 ? 120 : product.id === 3 ? 95 : 75}
+        category={product.category}
+      />
       <Header />
 
       {/* BREADCRUMB */}

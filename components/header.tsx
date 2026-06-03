@@ -3,12 +3,13 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, Moon, Sun, Globe, Volume2 } from "lucide-react"
+import { Menu, X, ChevronDown, Moon, Sun, Globe, Volume2, Search as SearchIcon } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import { useTheme } from "next-themes"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { speakText } from "@/lib/utils"
 import { toast } from "sonner"
+import { SiteSearch } from "@/components/site-search"
 
 
 const navItems = (t: (key: string) => string) => [
@@ -264,7 +265,9 @@ export function Header() {
           </nav>
 
           {/* CTA and Settings */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Search */}
+            <SiteSearch />
             {/* Audio Button */}
             <Button
               variant="outline"
@@ -327,6 +330,8 @@ export function Header() {
 
           {/* Mobile menu and settings */}
           <div className="lg:hidden flex items-center gap-2">
+            {/* Mobile Search */}
+            <SiteSearch />
             {/* Mobile Audio Button */}
             <Button
               variant="ghost"

@@ -4,13 +4,19 @@ import { DM_Sans, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/components/language-provider"
-import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 import { FloatingAudio } from "@/components/floating-audio"
 import { EnquiryPopup } from "@/components/enquiry-popup"
 import { GoogleAnalytics } from "@/components/google-analytics"
 import { CookieConsent } from "@/components/cookie-consent"
 import { BackToTop } from "@/components/back-to-top"
 import { PageProgressBar } from "@/components/page-progress-bar"
+import { WhatsAppQuickReply } from "@/components/whatsapp-quick-reply"
+import { ExitIntentPopup } from "@/components/exit-intent-popup"
+import { MobileCallBar } from "@/components/mobile-call-bar"
+import { TawkToChat } from "@/components/tawkto-chat"
+import { HotjarAnalytics } from "@/components/hotjar-analytics"
+import { PushNotificationPrompt, OneSignalLoader } from "@/components/push-notifications"
+import { OrganizationSchema } from "@/components/star-rating-schema"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -93,15 +99,22 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${dmSans.variable} ${sourceSans.variable}`}>
       <body className="font-sans">
         <GoogleAnalytics />
+        <HotjarAnalytics />
+        <OneSignalLoader />
+        <OrganizationSchema />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             <PageProgressBar />
             {children}
-            <FloatingWhatsApp />
             <FloatingAudio />
+            <WhatsAppQuickReply />
+            <MobileCallBar />
             <EnquiryPopup />
+            <ExitIntentPopup />
+            <PushNotificationPrompt />
             <CookieConsent />
             <BackToTop />
+            <TawkToChat />
           </LanguageProvider>
         </ThemeProvider>
       </body>

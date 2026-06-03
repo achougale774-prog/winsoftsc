@@ -86,5 +86,49 @@
     "inquiry_type": "Popup - Sankalan App",
     "message": "Product: Farmer Milk Passbook App (Sankalan) | Language: EN",
     "status": "new"
+  },
+  {
+    "id": 1780136920999,
+    "created_at": "2026-05-30T10:28:40.999Z",
+    "name": "akshay kamble",
+    "email": "1234567890@popup.winsoft.in",
+    "phone": "1234567890",
+    "company": "Popup Lead",
+    "inquiry_type": "Popup - Sankalan App",
+    "message": "Product: Farmer Milk Passbook App (Sankalan) | Language: EN",
+    "status": "new"
+  },
+  {
+    "id": 1780138229191,
+    "created_at": "2026-05-30T10:50:29.191Z",
+    "name": "sammed morche",
+    "email": "1234567890@popup.winsoft.in",
+    "phone": "1234567890",
+    "company": "Popup Lead",
+    "inquiry_type": "Popup - Sugar ERP",
+    "message": "Product: Sugar Factory ERP | Language: EN",
+    "status": "new"
+  },
+  {
+    "id": 1780377191229,
+    "created_at": "2026-06-02T05:13:11.229Z",
+    "name": "31411341414141",
+    "email": "1232131231@exit.winsoft.in",
+    "phone": "1232131231",
+    "company": "Exit Intent Lead",
+    "inquiry_type": "Exit Intent Popup",
+    "message": "Exit intent lead | Language: EN",
+    "status": "new"
+  },
+  {
+    "id": 1780465472858,
+    "created_at": "2026-06-03T05:44:32.858Z",
+    "name": "assaa",
+    "email": "1234567890@exit.winsoft.in",
+    "phone": "1234567890",
+    "company": "Exit Intent Lead",
+    "inquiry_type": "Exit Intent Popup",
+    "message": "Exit intent lead | Language: EN",
+    "status": "new"
   }
 ]

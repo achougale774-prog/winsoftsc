@@ -28,3 +28,7 @@ next-env.d.ts
 
 # vscode
 .vscode/
+
+# APK files (large binary files — hosted on Google Drive)
+*.apk
+/apps/

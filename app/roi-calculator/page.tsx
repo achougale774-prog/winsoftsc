@@ -49,7 +49,7 @@ export default function ROICalculatorPage() {
     new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 dark:bg-zinc-950">
+    <div className="min-h-screen bg-gradient-to-br from-[#E8F4F5] to-white dark:bg-zinc-950">
       <Header />
 
       <main className="max-w-5xl mx-auto px-4 py-16">

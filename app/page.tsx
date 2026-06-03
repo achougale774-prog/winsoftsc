@@ -13,6 +13,9 @@ import { VillagePortal } from "@/components/village-portal"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ClientLogosSection } from "@/components/client-logos-section"
 import { VideoDemoSection } from "@/components/video-demo-section"
+import { AnimatedStats } from "@/components/animated-stats"
+import { TrustBadges } from "@/components/trust-badges"
+import { GoogleReviews } from "@/components/google-reviews"
 
 export default function HomePage() {
   const { t, language } = useLanguage()
@@ -165,6 +168,8 @@ export default function HomePage() {
       <Header />
       <HeroSlider />
 
+      <TrustBadges />
+
       <main className="max-w-7xl mx-auto px-4 py-24 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
@@ -212,7 +217,11 @@ export default function HomePage() {
 
       <ClientLogosSection />
 
+      <AnimatedStats />
+
       <VideoDemoSection />
+
+      <GoogleReviews />
 
       <TestimonialsSection />
 

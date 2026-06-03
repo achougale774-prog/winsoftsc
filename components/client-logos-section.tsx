@@ -18,9 +18,9 @@ const clients = [
 ]
 
 const industryColors: Record<string, string> = {
-  dairy: "bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300",
-  gold: "bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-300",
-  sugar: "bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300",
+  dairy: "bg-[#E8F4F5] dark:bg-[#1E94A4]/10 border-[#1E94A4]/20 dark:border-[#1E94A4]/20 text-[#0B7989] dark:text-[#22d3ee]",
+  gold:  "bg-[#E8F4F5] dark:bg-[#0B7989]/10 border-[#0B7989]/20 dark:border-[#0B7989]/20 text-[#1E94A4] dark:text-[#22d3ee]",
+  sugar: "bg-[#E8F4F5] dark:bg-[#22d3ee]/10 border-[#22d3ee]/20 dark:border-[#22d3ee]/20 text-[#0B7989] dark:text-[#1E94A4]",
 }
 
 const industryEmoji: Record<string, string> = {

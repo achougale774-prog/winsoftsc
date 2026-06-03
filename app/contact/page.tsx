@@ -374,22 +374,90 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Map Section — Enhanced */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-zinc-900/50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-sans font-bold text-center mb-8" style={{ color: "var(--primary)" }}>
-              {t("contactPage.findUs")}
-            </h2>
-            <div className="bg-white dark:bg-zinc-950 rounded-lg shadow-lg dark:shadow-none overflow-hidden h-[450px]">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.868349822982!2d74.19894721150493!3d16.68347008437996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc100109f06798b%3A0x5e56e4313f9872be!2sWinsoft%20Software%20Consultancy!5e0!3m2!1sen!2sin!4v1714476000000!5m2!1sen!2sin"
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] text-xs font-bold mb-3 border border-[#1E94A4]/20">
+                📍 {t("contactPage.findUs")}
+              </span>
+              <h2 className="text-3xl font-sans font-bold" style={{ color: "var(--primary)" }}>
+                {t("contactPage.findUs")}
+              </h2>
+              <p className="text-gray-500 dark:text-zinc-400 mt-2 font-serif">
+                Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, Maharashtra 416010
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* Map */}
+              <div className="lg:col-span-2 bg-white dark:bg-zinc-950 rounded-2xl shadow-lg dark:shadow-none overflow-hidden border border-gray-100 dark:border-zinc-800" style={{ height: 420 }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.868349822982!2d74.19894721150493!3d16.68347008437996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc100109f06798b%3A0x5e56e4313f9872be!2sWinsoft%20Software%20Consultancy!5e0!3m2!1sen!2sin!4v1714476000000!5m2!1sen!2sin"
+                  width="100%" height="100%"
+                  style={{ border: 0 }} allowFullScreen loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Winsoft Software Consultancy — Plot 448, Lane 14B, Hari Om Nagar, Kolhapur 416010"
+                />
+              </div>
+
+              {/* Info cards */}
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    emoji: "🏢",
+                    title: "Office Address",
+                    lines: ["Plot 448, Lane 14B,", "Hari Om Nagar,", "Kolhapur, MH 416010"],
+                  },
+                  {
+                    emoji: "⏰",
+                    title: "Business Hours",
+                    lines: ["Mon – Sat: 9:30 AM – 6:30 PM", "Sunday: Closed"],
+                  },
+                  {
+                    emoji: "📞",
+                    title: "Phone",
+                    lines: ["+91 94230 39902"],
+                    href: "tel:+919423039902",
+                  },
+                  {
+                    emoji: "✉️",
+                    title: "Email",
+                    lines: ["info@winsoft.in"],
+                    href: "mailto:info@winsoft.in",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white dark:bg-zinc-950 rounded-2xl border border-gray-100 dark:border-zinc-800 p-4 flex items-start gap-3 shadow-sm hover:shadow-md transition-shadow">
+                    <span className="text-2xl flex-shrink-0">{item.emoji}</span>
+                    <div>
+                      <p className="text-xs font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-1">{item.title}</p>
+                      {item.lines.map((line, j) =>
+                        item.href ? (
+                          <a key={j} href={item.href} className="block text-sm font-semibold text-[#1E94A4] hover:underline">{line}</a>
+                        ) : (
+                          <p key={j} className="text-sm text-gray-700 dark:text-zinc-300 font-serif">{line}</p>
+                        )
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {/* Directions button */}
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Winsoft+Software+Consultancy&destination_place_id=0x3bc100109f06798b:0x5e56e4313f9872be"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] text-white font-bold text-sm rounded-xl hover:from-[#0B7989] hover:to-[#1E94A4] transition-all shadow-lg shadow-[#1E94A4]/25">
+                  🗺️ Get Directions
+                </a>
+
+                {/* Write Review Button */}
+                <a
+                  href="https://www.google.com/maps/place/Winsoft+Software+Consultancy/@16.6834701,74.1989472,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc100109f06798b:0x5e56e4313f9872be!8m2!3d16.6834701!4d74.2015221!16s%2Fg%2F11c6_7g7q_#"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-3 bg-white dark:bg-zinc-900 border-2 border-yellow-400 text-yellow-600 dark:text-yellow-400 font-bold text-sm rounded-xl hover:bg-yellow-50 dark:hover:bg-yellow-900/20 transition-all">
+                  ⭐ Google Review द्या
+                </a>
+              </div>
             </div>
           </div>
         </section>

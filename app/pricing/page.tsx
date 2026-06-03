@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, X, Phone, MessageSquare, Zap, Shield, Cloud, Monitor, Smartphone } from "lucide-react"
+import { CheckCircle2, X, Phone, MessageSquare, Zap, Shield, Cloud, Monitor, Smartphone, Download, FileText } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 
@@ -15,9 +15,9 @@ const dairyPlans = [
     icon: Monitor,
     price: "45,000",
     duration: "Lifetime License",
-    color: "border-blue-200 dark:border-blue-900",
-    headerColor: "bg-blue-50 dark:bg-blue-950",
-    iconColor: "text-blue-600",
+    color: "border-[#1E94A4]/30 dark:border-[#1E94A4]/20",
+    headerColor: "bg-[#E8F4F5] dark:bg-[#1E94A4]/10",
+    iconColor: "text-[#1E94A4]",
     highlight: false,
     description: "Single center milk collection with basic billing",
     features: [
@@ -62,9 +62,9 @@ const dairyPlans = [
     icon: Cloud,
     price: "Contact Us",
     duration: "Annual Subscription",
-    color: "border-purple-200 dark:border-purple-900",
-    headerColor: "bg-purple-50 dark:bg-purple-950",
-    iconColor: "text-purple-600",
+    color: "border-[#0B7989]/30 dark:border-[#0B7989]/20",
+    headerColor: "bg-[#0B7989]/5 dark:bg-[#0B7989]/10",
+    iconColor: "text-[#0B7989] dark:text-[#22d3ee]",
     highlight: false,
     description: "Cloud-based access from anywhere, any device",
     features: [
@@ -155,7 +155,7 @@ export default function PricingPage() {
             </p>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-zinc-400">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-zinc-400 mb-6">
               {[
                 { icon: "✅", text: language === "mr" ? "Training समाविष्ट" : "Training Included" },
                 { icon: "🔧", text: language === "mr" ? "Installation Support" : "Installation Support" },
@@ -168,6 +168,59 @@ export default function PricingPage() {
                 </div>
               ))}
             </div>
+
+            {/* PDF Download Button */}
+            <button
+              onClick={() => {
+                const content = `WINSOFT SOFTWARE CONSULTANCY
+Pricing & Plans — ${new Date().toLocaleDateString("en-IN")}
+=====================================
+
+DAIRY SOFTWARE
+--------------
+Dairy 4.1 (Desktop Basic)     ₹45,000/- Lifetime
+Dairy 5.0 (Advanced)          ₹75,000/- Lifetime
+Web Dairy (Cloud)              Contact Us / Annual
+
+MOBILE APP (SANKALAN)
+---------------------
+Silver Plan                   ₹2,000/- (1 Year)
+Gold Plan                     ₹3,000/- (2 Years)
+Platinum Plan                 ₹5,000/- (5 Years)
+
+GOLD & JEWELLERY (GOLDWIN)
+--------------------------
+Goldwin ERP                   ₹30,000/- Lifetime
+
+SUGAR FACTORY ERP
+-----------------
+Sugar Factory ERP             ₹1,20,000/- Lifetime
+
+ALL PLANS INCLUDE:
+✅ On-site Installation
+✅ Free Training
+✅ 1 Year Free Support
+✅ Regular Updates
+
+Contact: +91 94230 39902
+Email: info@winsoft.in
+Website: www.winsoft.in
+Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
+`
+                const blob = new Blob([content], { type: "text/plain" })
+                const url = URL.createObjectURL(blob)
+                const a = document.createElement("a")
+                a.href = url
+                a.download = "Winsoft-Pricing.txt"
+                a.click()
+                URL.revokeObjectURL(url)
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-[#1E94A4] text-[#1E94A4] font-bold text-sm rounded-xl hover:bg-[#1E94A4] hover:text-white transition-all shadow-sm hover:shadow-lg hover:shadow-[#1E94A4]/20"
+            >
+              <Download className="w-4 h-4" />
+              {language === "mr" ? "Pricing Download करा" : language === "hi" ? "Pricing Download करें" : "Download Pricing PDF"}
+              <FileText className="w-4 h-4" />
+            </button>
           </div>
         </section>
 

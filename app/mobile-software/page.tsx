@@ -342,11 +342,11 @@ export default function MobileSoftwarePage() {
                   Get Free Demo
                 </Button>
               </Link>
-              <Link href="/contact">
+              <a href="#download-apps">
                 <Button size="lg" variant="outline" className="border-[#1E94A4] text-[#1E94A4] font-bold">
                   <Download className="w-4 h-4 mr-2" /> Download App
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -517,6 +517,186 @@ export default function MobileSoftwarePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── APK Download Section ── */}
+        <section id="download-apps" className="py-24 px-4 bg-gradient-to-b from-[#E8F4F5] to-white dark:from-[#0B7989]/10 dark:to-zinc-950 border-t border-[#1E94A4]/10">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] text-xs font-bold mb-4 border border-[#1E94A4]/20">
+                📱 Direct Download
+              </span>
+              <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-3">
+                {language === 'mr' ? "Apps थेट Download करा" :
+                 language === 'hi' ? "Apps सीधे Download करें" : "Download Winsoft Apps Directly"}
+              </h2>
+              <p className="text-gray-500 dark:text-zinc-400 font-serif max-w-xl mx-auto">
+                {language === 'mr'
+                  ? "खालील buttons वर click करा — APK file download होईल. Android phone वर install करा."
+                  : language === 'hi'
+                  ? "नीचे दिए buttons पर click करें — APK file download होगी। Android phone पर install करें।"
+                  : "Click the button below to download the APK file directly. Install on your Android phone."}
+              </p>
+
+              {/* Android only note */}
+              <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl text-xs text-amber-700 dark:text-amber-400 font-semibold">
+                ⚠️ {language === 'mr' ? "फक्त Android साठी — Install करण्यापूर्वी Settings मध्ये 'Unknown Sources' चालू करा"
+                  : language === 'hi' ? "केवल Android के लिए — Install से पहले Settings में 'Unknown Sources' चालू करें"
+                  : "Android only — Enable 'Unknown Sources' in Settings before installing"}
+              </div>
+            </div>
+
+            {/* 3 App Cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Sankalan Passbook App",
+                  nameMr: "Sankalan पासबुक अॅप",
+                  nameHi: "Sankalan पासबुक ऐप",
+                  desc: "Farmer milk passbook — daily slips, 10-day billing, ledger",
+                  descMr: "शेतकरी दूध पासबुक — रोजचे slips, १० दिवसांचे बिल, खाते",
+                  descHi: "किसान दूध पासबुक — रोज के slips, 10 दिन का बिल, खाता",
+                  file: "https://drive.google.com/uc?export=download&id=1zxekpxhNOWOrQW9UMGQb0DlpMo7OeU4z",
+                  size: "51.34 MB",
+                  icon: "📖",
+                  color: "from-[#1E94A4] to-[#22d3ee]",
+                  border: "border-[#1E94A4]/30",
+                  bg: "bg-[#1E94A4]/5 dark:bg-[#1E94A4]/10",
+                  features: [
+                    language === 'mr' ? "रोजचे दूध slip" : "Daily milk slips",
+                    language === 'mr' ? "१० दिवसांचे बिल" : "10-day billing",
+                    language === 'mr' ? "खाते ledger" : "Account ledger",
+                  ],
+                },
+                {
+                  name: "Collection Center App",
+                  nameMr: "दूध संकलन केंद्र अॅप",
+                  nameHi: "दूध संग्रह केंद्र ऐप",
+                  desc: "Milk collection entry with FAT/SNF and weighing scale",
+                  descMr: "FAT/SNF आणि वजन काटा सह दूध संकलन entry",
+                  descHi: "FAT/SNF और वजन कांटे के साथ दूध संग्रह entry",
+                  file: "https://drive.google.com/uc?export=download&id=1GQg5QaQEyefuWWLAxUNSyuL75E0iX0GS",
+                  size: "22.89 MB",
+                  icon: "🥛",
+                  color: "from-[#0B7989] to-[#1E94A4]",
+                  border: "border-[#0B7989]/30",
+                  bg: "bg-[#0B7989]/5 dark:bg-[#0B7989]/10",
+                  features: [
+                    language === 'mr' ? "FAT/SNF testing" : "FAT/SNF testing",
+                    language === 'mr' ? "वजन काटा जोडणी" : "Weighing scale link",
+                    language === 'mr' ? "Thermal print" : "Thermal print",
+                  ],
+                },
+                {
+                  name: "Admin Dashboard App",
+                  nameMr: "Admin Dashboard अॅप",
+                  nameHi: "Admin Dashboard ऐप",
+                  desc: "Society admin — reports, billing, member management",
+                  descMr: "संस्था admin — reports, billing, सभासद व्यवस्थापन",
+                  descHi: "संस्था admin — reports, billing, सदस्य प्रबंधन",
+                  file: "https://drive.google.com/uc?export=download&id=1dhRIithUP9rygo9cpw5Z_hk3o3W8zSBJ",
+                  size: "21.35 MB",
+                  icon: "⚙️",
+                  color: "from-[#22d3ee] to-[#1E94A4]",
+                  border: "border-[#22d3ee]/30",
+                  bg: "bg-[#22d3ee]/5 dark:bg-[#22d3ee]/10",
+                  features: [
+                    language === 'mr' ? "Live reports" : "Live reports",
+                    language === 'mr' ? "Member management" : "Member management",
+                    language === 'mr' ? "Payment tracking" : "Payment tracking",
+                  ],
+                },
+              ].map((app, i) => (
+                <div key={i} className={`${app.bg} border-2 ${app.border} rounded-3xl p-6 flex flex-col hover:shadow-xl transition-all hover:-translate-y-1`}>
+                  {/* App icon + name */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center text-2xl shadow-lg flex-shrink-0`}>
+                      {app.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-black text-gray-900 dark:text-zinc-100 text-base leading-tight">
+                        {language === 'mr' ? app.nameMr : language === 'hi' ? app.nameHi : app.name}
+                      </h3>
+                      <p className="text-xs text-gray-400 dark:text-zinc-500 mt-0.5">{app.size} · Android APK</p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 dark:text-zinc-400 font-serif mb-4 leading-relaxed">
+                    {language === 'mr' ? app.descMr : language === 'hi' ? app.descHi : app.desc}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-1.5 mb-6 flex-1">
+                    {app.features.map((f, j) => (
+                      <li key={j} className="flex items-center gap-2 text-xs text-gray-600 dark:text-zinc-400">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1E94A4] flex-shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Download Button */}
+                  <a
+                    href={app.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r ${app.color} text-white font-bold text-sm rounded-2xl hover:opacity-90 active:scale-95 transition-all shadow-md`}
+                  >
+                    <Download className="w-4 h-4" />
+                    {language === 'mr' ? "Google Drive वरून Download करा" : language === 'hi' ? "Google Drive से Download करें" : "Download from Google Drive"}
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            {/* Install Instructions */}
+            <div className="mt-10 bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 rounded-2xl p-6">
+              <h3 className="font-bold text-gray-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
+                📋 {language === 'mr' ? "Install कसे करावे?" : language === 'hi' ? "Install कैसे करें?" : "How to Install?"}
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    step: "1",
+                    mr: "वरील button वर click करून APK file download करा",
+                    en: "Click the Download button above to get the APK file",
+                  },
+                  {
+                    step: "2",
+                    mr: "Phone मध्ये Settings → Security → Unknown Sources चालू करा",
+                    en: "Go to Settings → Security → Enable Unknown Sources",
+                  },
+                  {
+                    step: "3",
+                    mr: "Downloads folder मध्ये जाऊन APK file वर click करा",
+                    en: "Open Downloads folder and tap the APK file",
+                  },
+                  {
+                    step: "4",
+                    mr: "Install button वर click करा — App तयार!",
+                    en: "Tap Install — App is ready to use!",
+                  },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] flex items-center justify-center text-sm font-black flex-shrink-0">
+                      {s.step}
+                    </div>
+                    <p className="text-xs text-gray-600 dark:text-zinc-400 font-serif leading-relaxed">
+                      {language === 'mr' ? s.mr : s.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Support note */}
+            <p className="text-center text-sm text-gray-400 dark:text-zinc-600 mt-6 font-serif">
+              {language === 'mr'
+                ? "App install करताना problem आल्यास: +91 94230 39902 वर call करा किंवा WhatsApp करा"
+                : "Having trouble installing? Call or WhatsApp: +91 94230 39902"}
+            </p>
           </div>
         </section>
 

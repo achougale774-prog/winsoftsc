@@ -144,11 +144,16 @@ export function Footer() {
               </li>
               <li className="flex items-start text-sm">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5 text-white/60 flex-shrink-0" />
-                <span>
+                <a
+                  href="https://www.google.com/maps/place/Winsoft+Software+Consultancy/@16.6834701,74.1989472,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc100109f06798b:0x5e56e4313f9872be!8m2!3d16.6834701!4d74.2015221!16s%2Fg%2F11c6_7g7q_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   Plot 448, Lane 14B, Hari Om Nagar,
                   <br />
                   Kolhapur, Maharashtra 416010
-                </span>
+                </a>
               </li>
             </ul>
             <div className="mt-6">

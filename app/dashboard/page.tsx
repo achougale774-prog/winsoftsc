@@ -4,12 +4,12 @@ import { useState, useEffect, useCallback } from "react"
 import {
   Phone, MessageSquare, RefreshCw, LogOut, Search,
   CheckCircle2, XCircle, PhoneCall, TrendingUp,
-  Inbox, Eye, Trash2, ChevronDown, Lock, User,
+  Inbox, Eye, Trash2, ChevronDown, Lock,
   AlertCircle, Loader2, Download, LayoutDashboard,
-  Users, Settings, Activity, Zap, Bell
+  Users, Settings, Activity, Zap, User
 } from "lucide-react"
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// ── Types ─────────────────────────────────────────────────────────────────────
 type Lead = {
   id: number
   created_at: string
@@ -24,18 +24,20 @@ type Tab = "all" | "new" | "called" | "interested" | "converted" | "not_interest
 
 const PASS = "winsoft2024"
 
-const S = {
-  new:            { label: "New Lead",       pill: "bg-blue-500/20 text-blue-300 border border-blue-500/30",     dot: "bg-blue-400"    },
-  called:         { label: "Called",         pill: "bg-amber-500/20 text-amber-300 border border-amber-500/30",  dot: "bg-amber-400"   },
-  interested:     { label: "Interested",     pill: "bg-purple-500/20 text-purple-300 border border-purple-500/30", dot: "bg-purple-400" },
-  converted:      { label: "Converted ✅",   pill: "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30", dot: "bg-emerald-400" },
-  not_interested: { label: "Not Interested", pill: "bg-red-500/20 text-red-300 border border-red-500/30",        dot: "bg-red-400"     },
+const STATUS = {
+  new:            { label: "New Lead",       bg: "#EFF6FF", color: "#1D4ED8", dot: "#3B82F6" },
+  called:         { label: "Called",         bg: "#FFFBEB", color: "#92400E", dot: "#F59E0B" },
+  interested:     { label: "Interested",     bg: "#F5F3FF", color: "#5B21B6", dot: "#8B5CF6" },
+  converted:      { label: "Converted ✅",   bg: "#ECFDF5", color: "#065F46", dot: "#10B981" },
+  not_interested: { label: "Not Interested", bg: "#FEF2F2", color: "#991B1B", dot: "#EF4444" },
 }
 
+const BRAND = "#1E94A4"
+const BRAND2 = "#0B7989"
+
 function fmtDate(iso: string) {
-  const d = new Date(iso)
-  return d.toLocaleDateString("en-IN", { day: "2-digit", month: "short" }) +
-    " · " + d.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })
+  return new Date(iso).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) +
+    "  " + new Date(iso).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })
 }
 
 function getProduct(lead: Lead) {
@@ -51,7 +53,138 @@ function getProduct(lead: Lead) {
   return (lead.inquiry_type || "General").replace("Popup - ", "").replace("Dairy Solutions Popup - ", "")
 }
 
-// ─── Login ────────────────────────────────────────────────────────────────────
+// ── CSS ───────────────────────────────────────────────────────────────────────
+const css = `
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .ws-dash { display: flex; min-height: 100vh; background: #F8FAFC; color: #0F172A; }
+
+  /* Sidebar */
+  .ws-sidebar {
+    width: 240px; background: #fff; border-right: 1px solid #E2E8F0;
+    display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; flex-shrink: 0;
+  }
+  .ws-logo { padding: 20px; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; gap: 10px; }
+  .ws-logo-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #1E94A4, #22d3ee); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(30,148,164,0.3); flex-shrink: 0; }
+  .ws-logo-title { font-size: 15px; font-weight: 800; color: #0F172A; letter-spacing: -0.02em; }
+  .ws-logo-sub { font-size: 10px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 1px; }
+  .ws-nav { flex: 1; padding: 12px; }
+  .ws-nav-item { width: 100%; display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 13px; font-weight: 600; text-align: left; transition: all 0.15s; background: transparent; color: #64748B; }
+  .ws-nav-item:hover { background: #F1F5F9; color: #0F172A; }
+  .ws-nav-item.active { background: #EFF9FA; color: #1E94A4; }
+  .ws-nav-badge { margin-left: auto; background: #3B82F6; color: white; font-size: 10px; font-weight: 800; padding: 1px 7px; border-radius: 999px; }
+  .ws-user { padding: 12px; border-top: 1px solid #E2E8F0; }
+  .ws-user-card { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #F8FAFC; border-radius: 8px; margin-bottom: 6px; }
+  .ws-user-avatar { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #1E94A4, #22d3ee); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: white; flex-shrink: 0; }
+  .ws-user-name { font-size: 12px; font-weight: 700; color: #0F172A; }
+  .ws-user-email { font-size: 10px; color: #94A3B8; }
+  .ws-logout { width: 100%; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer; background: transparent; color: #EF4444; font-size: 12px; font-weight: 700; transition: background 0.15s; }
+  .ws-logout:hover { background: #FEF2F2; }
+
+  /* Main */
+  .ws-main { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: auto; }
+  .ws-topbar { height: 56px; background: #fff; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; position: sticky; top: 0; z-index: 30; }
+  .ws-topbar-title { font-size: 15px; font-weight: 700; color: #0F172A; }
+  .ws-topbar-sub { font-size: 11px; color: #94A3B8; margin-top: 1px; }
+  .ws-topbar-actions { display: flex; align-items: center; gap: 8px; }
+  .ws-live-badge { display: flex; align-items: center; gap: 6px; padding: 4px 10px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 999px; font-size: 11px; font-weight: 700; color: #065F46; }
+  .ws-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; animation: pulse 2s infinite; }
+  .ws-btn-icon { padding: 7px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; cursor: pointer; color: #64748B; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .ws-btn-icon:hover { background: #F1F5F9; border-color: #CBD5E1; }
+  .ws-btn-text { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; cursor: pointer; color: #475569; font-size: 12px; font-weight: 700; transition: all 0.15s; }
+  .ws-btn-text:hover { background: #F1F5F9; }
+
+  /* Content */
+  .ws-content { flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+
+  /* Stats */
+  .ws-stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .ws-stat-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 12px; text-align: center; cursor: pointer; transition: all 0.2s; }
+  .ws-stat-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: #CBD5E1; }
+  .ws-stat-card.active { border-color: #1E94A4; box-shadow: 0 0 0 3px rgba(30,148,164,0.1); }
+  .ws-stat-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+  .ws-stat-num { font-size: 22px; font-weight: 900; color: #0F172A; }
+  .ws-stat-label { font-size: 11px; color: #94A3B8; font-weight: 500; margin-top: 2px; }
+
+  /* Search */
+  .ws-search-wrap { position: relative; }
+  .ws-search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94A3B8; }
+  .ws-search { width: 100%; padding: 10px 16px 10px 38px; background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; font-size: 14px; color: #0F172A; outline: none; transition: border-color 0.15s; }
+  .ws-search:focus { border-color: #1E94A4; box-shadow: 0 0 0 3px rgba(30,148,164,0.1); }
+  .ws-search::placeholder { color: #94A3B8; }
+
+  /* Tabs */
+  .ws-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; }
+  .ws-tab { flex-shrink: 0; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1px solid #E2E8F0; background: #fff; color: #64748B; transition: all 0.15s; }
+  .ws-tab:hover { border-color: #1E94A4; color: #1E94A4; }
+  .ws-tab.active { background: #1E94A4; border-color: #1E94A4; color: #fff; box-shadow: 0 2px 8px rgba(30,148,164,0.3); }
+
+  /* Leads grid */
+  .ws-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .ws-count { font-size: 12px; color: #94A3B8; }
+
+  /* Lead card */
+  .ws-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 14px; padding: 16px; transition: all 0.2s; position: relative; overflow: hidden; }
+  .ws-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: #CBD5E1; transform: translateY(-1px); }
+  .ws-card-top-line { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0; }
+  .ws-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+  .ws-card-avatar { width: 38px; height: 38px; border-radius: 10px; background: #EFF9FA; border: 1px solid #CCEEF2; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ws-card-name { font-size: 14px; font-weight: 700; color: #0F172A; }
+  .ws-card-phone { font-size: 12px; color: #64748B; font-family: monospace; letter-spacing: 0.04em; margin-top: 1px; }
+  .ws-card-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .ws-product-tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; background: #EFF9FA; border: 1px solid #CCEEF2; border-radius: 6px; font-size: 11px; font-weight: 600; color: #1E94A4; }
+  .ws-date { font-size: 11px; color: #94A3B8; }
+  .ws-notes-box { font-size: 12px; color: #64748B; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 7px 10px; margin-bottom: 10px; font-style: italic; }
+  .ws-notes-textarea { width: 100%; padding: 8px 10px; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 12px; color: #0F172A; outline: none; resize: none; font-family: inherit; }
+  .ws-notes-textarea:focus { border-color: #1E94A4; }
+  .ws-notes-actions { display: flex; gap: 6px; margin-top: 6px; }
+  .ws-btn-save { flex: 1; padding: 6px; background: #1E94A4; color: white; border: none; border-radius: 7px; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .ws-btn-cancel { flex: 1; padding: 6px; background: #F8FAFC; color: #64748B; border: 1px solid #E2E8F0; border-radius: 7px; font-size: 12px; font-weight: 700; cursor: pointer; }
+  .ws-actions { display: flex; gap: 6px; }
+  .ws-btn-call { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 8px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 9px; color: #065F46; font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.15s; cursor: pointer; }
+  .ws-btn-call:hover { background: #D1FAE5; }
+  .ws-btn-wa { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 8px; background: #F0FDF4; border: 1px solid #86EFAC; border-radius: 9px; color: #166534; font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.15s; }
+  .ws-btn-wa:hover { background: #DCFCE7; }
+  .ws-btn-note { padding: 8px 10px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 9px; color: #64748B; font-size: 12px; cursor: pointer; transition: all 0.15s; }
+  .ws-btn-note:hover { background: #F1F5F9; }
+  .ws-btn-del { padding: 8px 10px; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 9px; color: #DC2626; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .ws-btn-del:hover { background: #FEE2E2; }
+
+  /* Status pill */
+  .ws-status-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; cursor: pointer; border: 1px solid transparent; }
+  .ws-status-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .ws-dropdown { position: absolute; right: 0; top: calc(100% + 4px); z-index: 50; background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; width: 168px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .ws-dropdown-item { width: 100%; display: flex; align-items: center; gap: 8px; padding: 9px 12px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: transparent; text-align: left; color: #374151; transition: background 0.1s; }
+  .ws-dropdown-item:hover { background: #F8FAFC; }
+  .ws-dropdown-item.selected { background: #EFF9FA; color: #1E94A4; }
+
+  /* Empty / Loading */
+  .ws-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 0; gap: 12px; text-align: center; }
+  .ws-empty-icon { font-size: 40px; }
+  .ws-empty-title { font-size: 15px; font-weight: 700; color: #374151; }
+  .ws-empty-sub { font-size: 13px; color: #94A3B8; }
+
+  /* Login */
+  .ws-login { min-height: 100vh; background: linear-gradient(135deg, #F0FDFF 0%, #E0F7FA 50%, #F8FAFC 100%); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .ws-login-card { width: 100%; max-width: 380px; background: #fff; border: 1px solid #E2E8F0; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+  .ws-login-logo { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #1E94A4, #22d3ee); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 24px rgba(30,148,164,0.3); }
+  .ws-login-title { font-size: 22px; font-weight: 900; color: #0F172A; text-align: center; letter-spacing: -0.02em; }
+  .ws-login-sub { font-size: 13px; color: #94A3B8; text-align: center; margin-top: 4px; margin-bottom: 28px; }
+  .ws-input-label { display: block; font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .ws-input { width: 100%; padding: 11px 14px; border-radius: 10px; border: 1px solid #E2E8F0; font-size: 14px; color: #0F172A; outline: none; transition: all 0.15s; }
+  .ws-input:focus { border-color: #1E94A4; box-shadow: 0 0 0 3px rgba(30,148,164,0.1); }
+  .ws-input.error { border-color: #EF4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
+  .ws-input-error { font-size: 12px; color: #EF4444; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .ws-login-btn { width: 100%; padding: 12px; border-radius: 10px; border: none; background: linear-gradient(135deg, #1E94A4, #22d3ee); color: white; font-size: 14px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; box-shadow: 0 4px 16px rgba(30,148,164,0.3); transition: opacity 0.15s; }
+  .ws-login-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ws-login-footer { text-align: center; font-size: 11px; color: #CBD5E1; margin-top: 20px; }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  .spin { animation: spin 1s linear infinite; }
+`
+
+// ── Login ─────────────────────────────────────────────────────────────────────
 function Login({ onLogin }: { onLogin: () => void }) {
   const [pw, setPw] = useState("")
   const [err, setErr] = useState(false)
@@ -67,78 +200,62 @@ function Login({ onLogin }: { onLogin: () => void }) {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#080810", display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", position: "relative", overflow: "hidden" }}>
-      {/* Glow */}
-      <div style={{ position: "absolute", top: "20%", left: "20%", width: 400, height: 400, background: "rgba(30,148,164,0.08)", borderRadius: "50%", filter: "blur(100px)", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "20%", right: "20%", width: 300, height: 300, background: "rgba(139,92,246,0.06)", borderRadius: "50%", filter: "blur(100px)", pointerEvents: "none" }} />
-
-      <div style={{ width: "100%", maxWidth: 380, background: "#10101a", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 24, padding: "2.5rem", position: "relative" }}>
-        {/* Top accent line */}
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg, transparent, #1E94A4, #22d3ee, transparent)", borderRadius: "24px 24px 0 0" }} />
-
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-          <div style={{ width: 64, height: 64, background: "linear-gradient(135deg, #1E94A4, #22d3ee)", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem", boxShadow: "0 8px 32px rgba(30,148,164,0.35)" }}>
-            <Lock style={{ width: 28, height: 28, color: "white" }} />
+    <>
+      <style>{css}</style>
+      <div className="ws-login">
+        <div className="ws-login-card">
+          <div className="ws-login-logo">
+            <Lock style={{ width: 26, height: 26, color: "white" }} />
           </div>
-          <h1 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#ffffff", margin: 0, letterSpacing: "-0.02em" }}>WinDash</h1>
-          <p style={{ fontSize: "0.8rem", color: "#6b7280", marginTop: 4 }}>Winsoft Admin Control Panel</p>
-        </div>
+          <h1 className="ws-login-title">WinDash</h1>
+          <p className="ws-login-sub">Winsoft Leads Management Panel</p>
 
-        <form onSubmit={submit}>
-          <div style={{ marginBottom: "1rem" }}>
-            <label style={{ display: "block", fontSize: "0.7rem", fontWeight: 700, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>Password</label>
-            <input
-              type="password" value={pw} autoFocus
+          <form onSubmit={submit}>
+            <label className="ws-input-label">Password</label>
+            <input type="password" value={pw} autoFocus
               onChange={e => { setPw(e.target.value); setErr(false) }}
-              placeholder="••••••••••••"
-              style={{
-                width: "100%", padding: "0.75rem 1rem", borderRadius: 12, border: err ? "1px solid rgba(239,68,68,0.5)" : "1px solid rgba(255,255,255,0.1)",
-                background: "rgba(255,255,255,0.05)", color: "#ffffff", fontSize: "0.9rem", outline: "none", boxSizing: "border-box",
-              }}
-            />
-            {err && <p style={{ color: "#f87171", fontSize: "0.75rem", marginTop: 6, display: "flex", alignItems: "center", gap: 4 }}>
-              <AlertCircle style={{ width: 14, height: 14 }} /> Incorrect password
-            </p>}
-          </div>
-          <button type="submit" disabled={loading || !pw}
-            style={{
-              width: "100%", padding: "0.85rem", borderRadius: 12, border: "none", cursor: loading || !pw ? "not-allowed" : "pointer",
-              background: "linear-gradient(135deg, #1E94A4, #22d3ee)", color: "white", fontWeight: 700, fontSize: "0.9rem",
-              opacity: loading || !pw ? 0.5 : 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-              boxShadow: "0 4px 20px rgba(30,148,164,0.3)",
-            }}>
-            {loading ? <Loader2 style={{ width: 16, height: 16, animation: "spin 1s linear infinite" }} /> : <Zap style={{ width: 16, height: 16 }} />}
-            {loading ? "Verifying..." : "Enter Dashboard"}
-          </button>
-        </form>
-        <p style={{ textAlign: "center", fontSize: "0.7rem", color: "#4b5563", marginTop: "1.5rem" }}>Winsoft Internal · Confidential</p>
+              placeholder="Enter your password"
+              className={`ws-input${err ? " error" : ""}`} />
+            {err && (
+              <p className="ws-input-error">
+                <AlertCircle style={{ width: 13, height: 13 }} /> Incorrect password. Try again.
+              </p>
+            )}
+            <button type="submit" disabled={loading || !pw} className="ws-login-btn">
+              {loading
+                ? <Loader2 style={{ width: 16, height: 16 }} className="spin" />
+                : <Zap style={{ width: 16, height: 16 }} />}
+              {loading ? "Verifying..." : "Enter Dashboard"}
+            </button>
+          </form>
+          <p className="ws-login-footer">Winsoft Software Consultancy · Internal Use Only</p>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
-// ─── Status Dropdown ──────────────────────────────────────────────────────────
+// ── Status Dropdown ───────────────────────────────────────────────────────────
 function StatusDrop({ lead, onUpdate }: { lead: Lead; onUpdate: (id: number, s: Lead["status"]) => void }) {
   const [open, setOpen] = useState(false)
-  const cfg = S[lead.status] || S.new
+  const cfg = STATUS[lead.status] || STATUS.new
+
   return (
-    <div style={{ position: "relative" }}>
-      <button onClick={() => setOpen(!open)}
-        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold cursor-pointer ${cfg.pill}`}>
-        <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot}`} style={{ animation: "pulse 2s infinite" }} />
+    <div style={{ position: "relative", flexShrink: 0 }}>
+      <button onClick={() => setOpen(!open)} className="ws-status-pill"
+        style={{ background: cfg.bg, color: cfg.color, borderColor: cfg.dot + "40" }}>
+        <span className="ws-status-dot" style={{ background: cfg.dot }} />
         {cfg.label}
-        <ChevronDown style={{ width: 12, height: 12 }} />
+        <ChevronDown style={{ width: 11, height: 11 }} />
       </button>
       {open && (
         <>
-          <div style={{ position: "fixed", inset: 0, zIndex: 10 }} onClick={() => setOpen(false)} />
-          <div style={{ position: "absolute", left: 0, top: "calc(100% + 4px)", zIndex: 20, background: "#1a1a28", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, overflow: "hidden", width: 176, boxShadow: "0 20px 60px rgba(0,0,0,0.5)" }}>
-            {(Object.entries(S) as [Lead["status"], typeof S[keyof typeof S]][]).map(([key, val]) => (
+          <div style={{ position: "fixed", inset: 0, zIndex: 40 }} onClick={() => setOpen(false)} />
+          <div className="ws-dropdown">
+            {(Object.entries(STATUS) as [Lead["status"], typeof STATUS[keyof typeof STATUS]][]).map(([key, val]) => (
               <button key={key} onClick={() => { onUpdate(lead.id, key); setOpen(false) }}
-                style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "0.6rem 0.75rem", fontSize: "0.75rem", fontWeight: 600, cursor: "pointer", border: "none", textAlign: "left", background: lead.status === key ? "rgba(255,255,255,0.08)" : "transparent", color: lead.status === key ? "#ffffff" : "#9ca3af" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.06)")}
-                onMouseLeave={e => (e.currentTarget.style.background = lead.status === key ? "rgba(255,255,255,0.08)" : "transparent")}>
-                <span className={`w-2 h-2 rounded-full ${val.dot}`} />
+                className={`ws-dropdown-item${lead.status === key ? " selected" : ""}`}>
+                <span className="ws-status-dot" style={{ background: val.dot }} />
                 {val.label}
               </button>
             ))}
@@ -149,77 +266,68 @@ function StatusDrop({ lead, onUpdate }: { lead: Lead; onUpdate: (id: number, s: 
   )
 }
 
-// ─── Lead Card ────────────────────────────────────────────────────────────────
-function LeadCard({ lead, onUpdate, onDelete }: { lead: Lead; onUpdate: (id: number, s: Lead["status"], n?: string) => void; onDelete: (id: number) => void }) {
+// ── Lead Card ─────────────────────────────────────────────────────────────────
+function LeadCard({ lead, onUpdate, onDelete }: {
+  lead: Lead
+  onUpdate: (id: number, s: Lead["status"], n?: string) => void
+  onDelete: (id: number) => void
+}) {
   const [showNotes, setShowNotes] = useState(false)
   const [notes, setNotes] = useState(lead.notes || "")
   const product = getProduct(lead)
-
-  const glowColor = lead.status === "converted" ? "rgba(52,211,153,0.5)" : lead.status === "new" ? "rgba(96,165,250,0.5)" : lead.status === "interested" ? "rgba(167,139,250,0.5)" : lead.status === "called" ? "rgba(251,191,36,0.5)" : "rgba(248,113,113,0.3)"
+  const cfg = STATUS[lead.status] || STATUS.new
 
   return (
-    <div style={{ background: "#10101a", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 16, padding: "1rem", position: "relative", overflow: "hidden", transition: "border-color 0.2s" }}
-      onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)")}
-      onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)")}>
-      {/* Status glow line */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: `linear-gradient(90deg, transparent, ${glowColor}, transparent)` }} />
+    <div className="ws-card">
+      <div className="ws-card-top-line" style={{ background: cfg.dot }} />
 
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8, marginBottom: 12 }}>
+      <div className="ws-card-header">
         <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(30,148,164,0.15)", border: "1px solid rgba(30,148,164,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <User style={{ width: 16, height: 16, color: "#22d3ee" }} />
+          <div className="ws-card-avatar">
+            <User style={{ width: 17, height: 17, color: BRAND }} />
           </div>
           <div style={{ minWidth: 0 }}>
-            <p style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.875rem", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{lead.name}</p>
-            <p style={{ fontSize: "0.75rem", color: "#6b7280", fontFamily: "monospace", margin: 0, letterSpacing: "0.05em" }}>{lead.phone}</p>
+            <p className="ws-card-name" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{lead.name}</p>
+            <p className="ws-card-phone">{lead.phone}</p>
           </div>
         </div>
         <StatusDrop lead={lead} onUpdate={onUpdate} />
       </div>
 
-      {/* Product + Date */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "2px 8px", background: "rgba(30,148,164,0.12)", border: "1px solid rgba(30,148,164,0.2)", borderRadius: 8, fontSize: "0.7rem", fontWeight: 600, color: "#22d3ee" }}>
-          📦 {product}
-        </span>
-        <span style={{ fontSize: "0.7rem", color: "#4b5563" }}>{fmtDate(lead.created_at)}</span>
+      {/* Meta */}
+      <div className="ws-card-meta">
+        <span className="ws-product-tag">📦 {product}</span>
+        <span className="ws-date">{fmtDate(lead.created_at)}</span>
       </div>
 
       {/* Notes */}
       {lead.notes && !showNotes && (
-        <p style={{ fontSize: "0.75rem", color: "#9ca3af", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "6px 10px", marginBottom: 10, fontStyle: "italic" }}>
-          📝 {lead.notes}
-        </p>
+        <p className="ws-notes-box">📝 {lead.notes}</p>
       )}
       {showNotes && (
         <div style={{ marginBottom: 10 }}>
-          <textarea value={notes} onChange={e => setNotes(e.target.value)} rows={2} placeholder="Notes लिहा..."
-            style={{ width: "100%", padding: "8px 10px", borderRadius: 8, border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.05)", color: "#ffffff", fontSize: "0.75rem", outline: "none", resize: "none", boxSizing: "border-box" }} />
-          <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
-            <button onClick={() => { onUpdate(lead.id, lead.status, notes); setShowNotes(false) }}
-              style={{ flex: 1, padding: "6px", background: "#1E94A4", color: "white", border: "none", borderRadius: 8, fontSize: "0.75rem", fontWeight: 700, cursor: "pointer" }}>Save</button>
-            <button onClick={() => setShowNotes(false)}
-              style={{ flex: 1, padding: "6px", background: "transparent", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, fontSize: "0.75rem", fontWeight: 700, cursor: "pointer" }}>Cancel</button>
+          <textarea value={notes} onChange={e => setNotes(e.target.value)}
+            rows={2} placeholder="Notes लिहा... (e.g. Called, interested in AMCS)"
+            className="ws-notes-textarea" />
+          <div className="ws-notes-actions">
+            <button onClick={() => { onUpdate(lead.id, lead.status, notes); setShowNotes(false) }} className="ws-btn-save">Save</button>
+            <button onClick={() => setShowNotes(false)} className="ws-btn-cancel">Cancel</button>
           </div>
         </div>
       )}
 
       {/* Actions */}
-      <div style={{ display: "flex", gap: 6 }}>
-        <a href={`tel:${lead.phone}`} onClick={() => onUpdate(lead.id, "called")}
-          style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 4, padding: "7px", background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 10, color: "#34d399", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none" }}>
+      <div className="ws-actions">
+        <a href={`tel:${lead.phone}`} onClick={() => onUpdate(lead.id, "called")} className="ws-btn-call">
           <Phone style={{ width: 13, height: 13 }} /> Call
         </a>
         <a href={`https://wa.me/91${lead.phone}?text=${encodeURIComponent(`नमस्कार ${lead.name}! मी Winsoft Software कडून बोलतोय. तुम्ही ${product} बद्दल enquiry केली होती. Free demo साठी वेळ सांगा.`)}`}
-          target="_blank" rel="noopener noreferrer"
-          style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 4, padding: "7px", background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.2)", borderRadius: 10, color: "#25D366", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none" }}>
+          target="_blank" rel="noopener noreferrer" className="ws-btn-wa">
           <MessageSquare style={{ width: 13, height: 13 }} /> WhatsApp
         </a>
-        <button onClick={() => setShowNotes(!showNotes)}
-          style={{ padding: "7px 10px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, color: "#9ca3af", fontSize: "0.75rem", cursor: "pointer" }}>📝</button>
-        <button onClick={() => { if (confirm("Delete this lead?")) onDelete(lead.id) }}
-          style={{ padding: "7px 10px", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: 10, color: "#f87171", cursor: "pointer" }}>
+        <button onClick={() => setShowNotes(!showNotes)} className="ws-btn-note">📝</button>
+        <button onClick={() => { if (confirm("Delete this lead?")) onDelete(lead.id) }} className="ws-btn-del">
           <Trash2 style={{ width: 13, height: 13 }} />
         </button>
       </div>
@@ -227,7 +335,7 @@ function LeadCard({ lead, onUpdate, onDelete }: { lead: Lead; onUpdate: (id: num
   )
 }
 
-// ─── Main ─────────────────────────────────────────────────────────────────────
+// ── Main Dashboard ────────────────────────────────────────────────────────────
 export default function DashboardPage() {
   const [authed, setAuthed] = useState(false)
   const [checking, setChecking] = useState(true)
@@ -246,7 +354,9 @@ export default function DashboardPage() {
     setLoading(true)
     try {
       const [c, d] = await Promise.all([fetch("/api/contacts"), fetch("/api/demo-requests")])
-      const all = [...await c.json(), ...await d.json()].sort((a: Lead, b: Lead) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+      const all = [...await c.json(), ...await d.json()].sort(
+        (a: Lead, b: Lead) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      )
       setLeads(all); setSynced(new Date())
     } catch (e) { console.error(e) }
     finally { setLoading(false) }
@@ -268,7 +378,24 @@ export default function DashboardPage() {
     await fetch(ep, { method: "DELETE" }).catch(console.error)
   }
 
-  const stats = { total: leads.length, new: leads.filter(l => l.status === "new").length, called: leads.filter(l => l.status === "called").length, interested: leads.filter(l => l.status === "interested").length, converted: leads.filter(l => l.status === "converted").length, not_interested: leads.filter(l => l.status === "not_interested").length }
+  const exportCSV = () => {
+    const csv = [["Name","Phone","Product","Status","Date","Notes"],
+      ...filtered.map(l => [l.name, l.phone, getProduct(l), l.status, fmtDate(l.created_at), l.notes || ""])
+    ].map(r => r.map(c => `"${c}"`).join(",")).join("\n")
+    const a = document.createElement("a")
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }))
+    a.download = `winsoft-leads-${new Date().toISOString().slice(0,10)}.csv`
+    a.click()
+  }
+
+  const stats = {
+    total: leads.length,
+    new: leads.filter(l => l.status === "new").length,
+    called: leads.filter(l => l.status === "called").length,
+    interested: leads.filter(l => l.status === "interested").length,
+    converted: leads.filter(l => l.status === "converted").length,
+    not_interested: leads.filter(l => l.status === "not_interested").length,
+  }
 
   const filtered = leads.filter(l => {
     const matchTab = tab === "all" || l.status === tab
@@ -276,24 +403,26 @@ export default function DashboardPage() {
     return matchTab && (!q || l.name?.toLowerCase().includes(q) || l.phone?.includes(q) || getProduct(l).toLowerCase().includes(q))
   })
 
-  const exportCSV = () => {
-    const csv = [["Name","Phone","Product","Status","Date","Notes"], ...filtered.map(l => [l.name, l.phone, getProduct(l), l.status, fmtDate(l.created_at), l.notes || ""])].map(r => r.map(c => `"${c}"`).join(",")).join("\n")
-    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = `leads-${new Date().toISOString().slice(0,10)}.csv`; a.click()
-  }
-
-  if (checking) return <div style={{ minHeight: "100vh", background: "#080810", display: "flex", alignItems: "center", justifyContent: "center" }}><Loader2 style={{ width: 32, height: 32, color: "#1E94A4", animation: "spin 1s linear infinite" }} /></div>
+  if (checking) return (
+    <>
+      <style>{css}</style>
+      <div style={{ minHeight: "100vh", background: "#F8FAFC", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Loader2 style={{ width: 32, height: 32, color: BRAND }} className="spin" />
+      </div>
+    </>
+  )
   if (!authed) return <Login onLogin={() => setAuthed(true)} />
 
   const STAT_CARDS = [
-    { key: "total",          label: "Total",      icon: Inbox,        grad: "linear-gradient(135deg,#374151,#1f2937)", glow: "rgba(107,114,128,0.3)" },
-    { key: "new",            label: "New",        icon: TrendingUp,   grad: "linear-gradient(135deg,#1d4ed8,#2563eb)", glow: "rgba(59,130,246,0.4)"  },
-    { key: "called",         label: "Called",     icon: PhoneCall,    grad: "linear-gradient(135deg,#b45309,#d97706)", glow: "rgba(245,158,11,0.4)"  },
-    { key: "interested",     label: "Interested", icon: Eye,          grad: "linear-gradient(135deg,#6d28d9,#7c3aed)", glow: "rgba(139,92,246,0.4)"  },
-    { key: "converted",      label: "Converted",  icon: CheckCircle2, grad: "linear-gradient(135deg,#065f46,#059669)", glow: "rgba(16,185,129,0.4)"  },
-    { key: "not_interested", label: "Not Int.",   icon: XCircle,      grad: "linear-gradient(135deg,#991b1b,#dc2626)", glow: "rgba(239,68,68,0.4)"   },
+    { key: "total",          label: "Total Leads", icon: Inbox,        bg: "#F1F5F9", iconColor: "#475569" },
+    { key: "new",            label: "New",         icon: TrendingUp,   bg: "#EFF6FF", iconColor: "#2563EB" },
+    { key: "called",         label: "Called",      icon: PhoneCall,    bg: "#FFFBEB", iconColor: "#D97706" },
+    { key: "interested",     label: "Interested",  icon: Eye,          bg: "#F5F3FF", iconColor: "#7C3AED" },
+    { key: "converted",      label: "Converted",   icon: CheckCircle2, bg: "#ECFDF5", iconColor: "#059669" },
+    { key: "not_interested", label: "Not Int.",    icon: XCircle,      bg: "#FEF2F2", iconColor: "#DC2626" },
   ]
 
-  const NAV = [
+  const NAV_ITEMS = [
     { icon: LayoutDashboard, label: "Overview",  active: true  },
     { icon: Users,           label: "Leads",     active: false },
     { icon: Activity,        label: "Analytics", active: false },
@@ -301,143 +430,137 @@ export default function DashboardPage() {
   ]
 
   return (
-    <div style={{ minHeight: "100vh", background: "#080810", display: "flex", color: "#ffffff", fontFamily: "system-ui, sans-serif" }}>
+    <>
+      <style>{css}</style>
+      <div className="ws-dash">
 
-      {/* ── Sidebar ── */}
-      <aside style={{ width: 220, background: "#0d0d18", borderRight: "1px solid rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", flexShrink: 0, position: "sticky", top: 0, height: "100vh" }}>
-        {/* Logo */}
-        <div style={{ padding: "1.25rem", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 34, height: 34, borderRadius: 10, background: "linear-gradient(135deg,#1E94A4,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 16px rgba(30,148,164,0.4)" }}>
-              <Zap style={{ width: 16, height: 16, color: "white" }} />
+        {/* ── Sidebar ── */}
+        <aside className="ws-sidebar">
+          <div className="ws-logo">
+            <div className="ws-logo-icon">
+              <Zap style={{ width: 17, height: 17, color: "white" }} />
             </div>
             <div>
-              <p style={{ fontSize: "0.875rem", fontWeight: 900, color: "#ffffff", margin: 0, letterSpacing: "-0.02em" }}>WinDash</p>
-              <p style={{ fontSize: "0.6rem", color: "#4b5563", margin: 0, textTransform: "uppercase", letterSpacing: "0.1em" }}>Admin Panel</p>
+              <p className="ws-logo-title">WinDash</p>
+              <p className="ws-logo-sub">Admin Panel</p>
             </div>
           </div>
-        </div>
 
-        {/* Nav */}
-        <nav style={{ flex: 1, padding: "0.75rem" }}>
-          {NAV.map(({ icon: Icon, label, active }) => (
-            <button key={label} style={{ width: "100%", display: "flex", alignItems: "center", gap: 10, padding: "0.6rem 0.75rem", borderRadius: 10, border: "none", cursor: "pointer", marginBottom: 2, background: active ? "rgba(30,148,164,0.15)" : "transparent", color: active ? "#22d3ee" : "#6b7280", fontSize: "0.8rem", fontWeight: 600, textAlign: "left", transition: "all 0.15s" }}
-              onMouseEnter={e => { if (!active) { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.color = "#d1d5db" } }}
-              onMouseLeave={e => { if (!active) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#6b7280" } }}>
-              <Icon style={{ width: 15, height: 15 }} />
-              {label}
-              {label === "Leads" && stats.new > 0 && (
-                <span style={{ marginLeft: "auto", background: "#3b82f6", color: "white", fontSize: "0.6rem", fontWeight: 900, padding: "1px 6px", borderRadius: 999 }}>{stats.new}</span>
-              )}
-            </button>
-          ))}
-        </nav>
+          <nav className="ws-nav">
+            {NAV_ITEMS.map(({ icon: Icon, label, active }) => (
+              <button key={label} className={`ws-nav-item${active ? " active" : ""}`}>
+                <Icon style={{ width: 15, height: 15 }} />
+                {label}
+                {label === "Leads" && stats.new > 0 && (
+                  <span className="ws-nav-badge">{stats.new}</span>
+                )}
+              </button>
+            ))}
+          </nav>
 
-        {/* User + Logout */}
-        <div style={{ padding: "0.75rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "0.5rem 0.75rem", background: "rgba(255,255,255,0.04)", borderRadius: 10, marginBottom: 6 }}>
-            <div style={{ width: 28, height: 28, borderRadius: 8, background: "linear-gradient(135deg,#1E94A4,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontWeight: 900, color: "white", flexShrink: 0 }}>W</div>
-            <div style={{ minWidth: 0 }}>
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "#e5e7eb", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>Winsoft Admin</p>
-              <p style={{ fontSize: "0.65rem", color: "#4b5563", margin: 0 }}>admin@winsoft.in</p>
+          <div className="ws-user">
+            <div className="ws-user-card">
+              <div className="ws-user-avatar">W</div>
+              <div style={{ minWidth: 0 }}>
+                <p className="ws-user-name">Winsoft Admin</p>
+                <p className="ws-user-email">admin@winsoft.in</p>
+              </div>
             </div>
+            <button className="ws-logout" onClick={() => { sessionStorage.removeItem("ws_auth"); setAuthed(false) }}>
+              <LogOut style={{ width: 14, height: 14 }} /> Logout
+            </button>
           </div>
-          <button onClick={() => { sessionStorage.removeItem("ws_auth"); setAuthed(false) }}
-            style={{ width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "0.5rem 0.75rem", borderRadius: 10, border: "none", cursor: "pointer", background: "transparent", color: "#f87171", fontSize: "0.75rem", fontWeight: 700 }}
-            onMouseEnter={e => (e.currentTarget.style.background = "rgba(239,68,68,0.1)")}
-            onMouseLeave={e => (e.currentTarget.style.background = "transparent")}>
-            <LogOut style={{ width: 14, height: 14 }} /> Logout
-          </button>
-        </div>
-      </aside>
+        </aside>
 
-      {/* ── Main ── */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0, overflow: "auto" }}>
+        {/* ── Main Content ── */}
+        <div className="ws-main">
 
-        {/* Topbar */}
-        <header style={{ height: 56, background: "rgba(13,13,24,0.9)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 1.5rem", position: "sticky", top: 0, zIndex: 30 }}>
-          <div>
-            <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>Leads Overview</p>
-            <p style={{ fontSize: "0.65rem", color: "#4b5563", margin: 0 }}>{synced ? `Synced ${synced.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}` : "Loading..."}</p>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "4px 10px", background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.2)", borderRadius: 999, fontSize: "0.7rem", fontWeight: 700, color: "#34d399" }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#34d399", animation: "pulse 2s infinite" }} />
-              LIVE SYNC
+          {/* Topbar */}
+          <header className="ws-topbar">
+            <div>
+              <p className="ws-topbar-title">Leads Overview</p>
+              <p className="ws-topbar-sub">
+                {synced ? `Last synced at ${synced.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}` : "Loading..."}
+              </p>
             </div>
-            <button onClick={fetchLeads} disabled={loading} style={{ padding: 8, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, cursor: "pointer", color: "#9ca3af" }}>
-              <RefreshCw style={{ width: 15, height: 15, animation: loading ? "spin 1s linear infinite" : "none" }} />
-            </button>
-            <button onClick={exportCSV} style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 12px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, cursor: "pointer", color: "#9ca3af", fontSize: "0.75rem", fontWeight: 700 }}>
-              <Download style={{ width: 14, height: 14 }} /> Export CSV
-            </button>
-          </div>
-        </header>
+            <div className="ws-topbar-actions">
+              <div className="ws-live-badge">
+                <span className="ws-live-dot" />
+                LIVE SYNC
+              </div>
+              <button className="ws-btn-icon" onClick={fetchLeads} disabled={loading} title="Refresh">
+                <RefreshCw style={{ width: 15, height: 15 }} className={loading ? "spin" : ""} />
+              </button>
+              <button className="ws-btn-text" onClick={exportCSV}>
+                <Download style={{ width: 14, height: 14 }} /> Export CSV
+              </button>
+            </div>
+          </header>
 
-        <main style={{ flex: 1, padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+          {/* Content */}
+          <div className="ws-content">
 
-          {/* Stats */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "0.75rem" }}>
-            {STAT_CARDS.map(({ key, label, icon: Icon, grad, glow }) => (
-              <button key={key} onClick={() => setTab(key as Tab)}
-                style={{ background: "#10101a", border: tab === key ? "1px solid rgba(30,148,164,0.5)" : "1px solid rgba(255,255,255,0.06)", borderRadius: 14, padding: "0.875rem 0.5rem", textAlign: "center", cursor: "pointer", transition: "all 0.2s", boxShadow: tab === key ? "0 0 20px rgba(30,148,164,0.15)" : "none" }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)" }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.borderColor = tab === key ? "rgba(30,148,164,0.5)" : "rgba(255,255,255,0.06)" }}>
-                <div style={{ width: 32, height: 32, borderRadius: 10, background: grad, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", boxShadow: `0 4px 12px ${glow}` }}>
-                  <Icon style={{ width: 15, height: 15, color: "white" }} />
+            {/* Stats */}
+            <div className="ws-stats">
+              {STAT_CARDS.map(({ key, label, icon: Icon, bg, iconColor }) => (
+                <button key={key} onClick={() => setTab(key as Tab)}
+                  className={`ws-stat-card${tab === key ? " active" : ""}`}>
+                  <div className="ws-stat-icon" style={{ background: bg }}>
+                    <Icon style={{ width: 17, height: 17, color: iconColor }} />
+                  </div>
+                  <div className="ws-stat-num">{stats[key as keyof typeof stats]}</div>
+                  <div className="ws-stat-label">{label}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Search */}
+            <div className="ws-search-wrap">
+              <Search style={{ width: 15, height: 15 }} className="ws-search-icon" />
+              <input type="text" value={search} onChange={e => setSearch(e.target.value)}
+                placeholder="Name, phone किंवा product search करा..."
+                className="ws-search" />
+            </div>
+
+            {/* Tabs */}
+            <div className="ws-tabs">
+              {(["all","new","called","interested","converted","not_interested"] as Tab[]).map(t => (
+                <button key={t} onClick={() => setTab(t)} className={`ws-tab${tab === t ? " active" : ""}`}>
+                  {t === "all" ? `All (${stats.total})` :
+                   t === "new" ? `🔵 New (${stats.new})` :
+                   t === "called" ? `🟡 Called (${stats.called})` :
+                   t === "interested" ? `🟣 Interested (${stats.interested})` :
+                   t === "converted" ? `🟢 Converted (${stats.converted})` :
+                   `🔴 Not Int. (${stats.not_interested})`}
+                </button>
+              ))}
+            </div>
+
+            {/* Leads */}
+            {loading ? (
+              <div className="ws-empty">
+                <Loader2 style={{ width: 28, height: 28, color: BRAND }} className="spin" />
+                <p className="ws-empty-sub">Leads load होत आहेत...</p>
+              </div>
+            ) : filtered.length === 0 ? (
+              <div className="ws-empty">
+                <div className="ws-empty-icon">📭</div>
+                <p className="ws-empty-title">{search ? "कोणताही lead सापडला नाही" : "अजून कोणताही lead नाही"}</p>
+                <p className="ws-empty-sub">{search ? "वेगळा search करा" : "Popup form submit झाल्यावर इथे दिसेल"}</p>
+              </div>
+            ) : (
+              <>
+                <p className="ws-count">{filtered.length} lead{filtered.length !== 1 ? "s" : ""} showing</p>
+                <div className="ws-grid">
+                  {filtered.map(lead => (
+                    <LeadCard key={lead.id} lead={lead} onUpdate={handleUpdate} onDelete={handleDelete} />
+                  ))}
                 </div>
-                <div style={{ fontSize: "1.25rem", fontWeight: 900, color: "#ffffff" }}>{stats[key as keyof typeof stats]}</div>
-                <div style={{ fontSize: "0.65rem", color: "#6b7280", marginTop: 2, fontWeight: 500 }}>{label}</div>
-              </button>
-            ))}
+              </>
+            )}
           </div>
-
-          {/* Search */}
-          <div style={{ position: "relative" }}>
-            <Search style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", width: 15, height: 15, color: "#4b5563" }} />
-            <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Name, phone किंवा product search करा..."
-              style={{ width: "100%", paddingLeft: 36, paddingRight: 16, paddingTop: 10, paddingBottom: 10, background: "#10101a", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, color: "#ffffff", fontSize: "0.875rem", outline: "none", boxSizing: "border-box" }} />
-          </div>
-
-          {/* Tab pills */}
-          <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4 }}>
-            {(["all","new","called","interested","converted","not_interested"] as Tab[]).map(t => (
-              <button key={t} onClick={() => setTab(t)}
-                style={{ flexShrink: 0, padding: "6px 14px", borderRadius: 999, fontSize: "0.75rem", fontWeight: 700, cursor: "pointer", border: "none", transition: "all 0.15s",
-                  background: tab === t ? "linear-gradient(135deg,#1E94A4,#22d3ee)" : "rgba(255,255,255,0.05)",
-                  color: tab === t ? "white" : "#6b7280",
-                  boxShadow: tab === t ? "0 4px 16px rgba(30,148,164,0.3)" : "none" }}>
-                {t === "all" ? `All (${stats.total})` : t === "new" ? `New (${stats.new})` : t === "called" ? `Called (${stats.called})` : t === "interested" ? `Interested (${stats.interested})` : t === "converted" ? `Converted (${stats.converted})` : `Not Int. (${stats.not_interested})`}
-              </button>
-            ))}
-          </div>
-
-          {/* Leads grid */}
-          {loading ? (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "5rem 0", gap: 12 }}>
-              <div style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(30,148,164,0.1)", border: "1px solid rgba(30,148,164,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Loader2 style={{ width: 22, height: 22, color: "#22d3ee", animation: "spin 1s linear infinite" }} />
-              </div>
-              <p style={{ color: "#6b7280", fontSize: "0.875rem" }}>Leads load होत आहेत...</p>
-            </div>
-          ) : filtered.length === 0 ? (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "5rem 0", gap: 12, textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem" }}>📭</div>
-              <p style={{ fontWeight: 700, color: "#d1d5db", margin: 0 }}>{search ? "कोणताही lead सापडला नाही" : "अजून कोणताही lead नाही"}</p>
-              <p style={{ fontSize: "0.875rem", color: "#4b5563", margin: 0 }}>{search ? "वेगळा search करा" : "Popup form submit झाल्यावर इथे दिसेल"}</p>
-            </div>
-          ) : (
-            <>
-              <p style={{ fontSize: "0.75rem", color: "#4b5563", margin: 0 }}>{filtered.length} lead{filtered.length !== 1 ? "s" : ""} · Recent Submissions</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1rem" }}>
-                {filtered.map(lead => <LeadCard key={lead.id} lead={lead} onUpdate={handleUpdate} onDelete={handleDelete} />)}
-              </div>
-            </>
-          )}
-        </main>
+        </div>
       </div>
-
-      <style>{`@keyframes spin { to { transform: rotate(360deg) } } @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }`}</style>
-    </div>
+    </>
   )
 }

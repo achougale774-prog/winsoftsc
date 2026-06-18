@@ -238,7 +238,7 @@ export function Header() {
   return (
     <header className="bg-white dark:bg-zinc-950 shadow-sm dark:shadow-none border-b dark:border-zinc-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-16 gap-1">
+        <div className="flex items-center justify-between lg:justify-start h-16 gap-1">
 
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -291,8 +291,8 @@ export function Header() {
             <SiteSearch />
 
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
-              <SelectTrigger className="w-[72px] h-8 text-xs px-2">
-                <Globe className="w-3 h-3" />
+              <SelectTrigger className="w-[85px] h-8 text-xs px-2 gap-1">
+                <Globe className="w-3 h-3 shrink-0" />
                 <SelectValue placeholder="Lang" />
               </SelectTrigger>
               <SelectContent>

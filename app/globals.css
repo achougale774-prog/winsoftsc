@@ -165,3 +165,15 @@
 .hover-lift {
   @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-900/20;
 }
+
+/* Connected line animation for Milk Supply Chain */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-flow {
+  animation: dash-flow 1.5s linear infinite;
+}
+

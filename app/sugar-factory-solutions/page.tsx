@@ -48,148 +48,60 @@ export default function SugarFactorySolutionsPage() {
   ], [t])
 
   const recommendedSolutions = useMemo(() => {
-    if (language === 'mr') {
-      return [
-        {
-          id: 1,
-          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
-          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "डेअरी सोल्यूशन"
-        },
-        {
-          id: 2,
-          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
-          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
-          image: "/modern-dairy-farm.png",
-          link: "/product/2",
-          tag: "मोबाईल अॅप"
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध संस्था प्रशासकीय ERP",
-          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP सिस्टीम"
-        },
-        {
-          id: "gold",
-          title: "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)",
-          description: "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट (Girvi) व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "सुवर्ण सोल्यूशन"
-        }
-      ]
-    } else if (language === 'kn') {
-      return [
-        {
-          id: 1,
-          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
-          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "ಡೈರಿ ಪರಿಹಾರ"
-        },
-        {
-          id: 2,
-          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
-          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
-          image: "/modern-dairy-farm.png",
-          link: "/product/2",
-          tag: "ಮೊಬೈಲ್ ಆಪ್"
-        },
-        {
-          id: 3,
-          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
-          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP ಸಿಸ್ಟಮ್"
-        },
-        {
-          id: "gold",
-          title: "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)",
-          description: "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿಯ ಲೆಕ್ಕಾಚಾರ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಸಾಫ್ಟ್‌ವೇರ್.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "ಚಿನ್ನದ ಪರಿಹಾರ"
-        }
-      ]
-    } else if (language === 'hi') {
-      return [
-        {
-          id: 1,
-          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
-          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "डेयरी समाधान"
-        },
-        {
-          id: 2,
-          title: "किसान दूध पासबुक mobile app (Sankalan)",
-          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
-          image: "/modern-dairy-farm.png",
-          link: "/product/2",
-          tag: "मोबाइल ऐप"
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध समिति प्रशासनिक ERP",
-          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP सिस्टम"
-        },
-        {
-          id: "gold",
-          title: "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)",
-          description: "ज्वेलरी शोरूम के लिए सोने-चांदी का हिसाब, बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "स्वर्ण समाधान"
-        }
-      ]
-    } else {
-      return [
-        {
-          id: 1,
-          title: "Automatic Milk Collection System (AMCS)",
-          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "Dairy Solution"
-        },
-        {
-          id: 2,
-          title: "Farmer Milk Passbook App (Sankalan)",
-          description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
-          image: "/modern-dairy-farm.png",
-          link: "/product/2",
-          tag: "Mobile App"
-        },
-        {
-          id: 3,
-          title: "Cooperative Society Admin ERP",
-          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP System"
-        },
-        {
-          id: "gold",
-          title: "Gold Jewellery Showroom ERP (Goldwin)",
-          description: "Complete billing, account management, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "Gold Solution"
-        }
-      ]
-    }
-  }, [language])
+    const allSolutions = [
+      {
+        id: 1,
+        title: t("dairy5.title") || "Complete Dairy Software Solutions",
+        description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+        image: "/dairy33.png",
+        link: "/product/1",
+        tag: language === 'mr' ? "डेअरी सोल्यूशन" : language === 'kn' ? "ಡೈರಿ ಪರಿಹಾರ" : language === 'hi' ? "डेयरी समाधान" : "Dairy Solution"
+      },
+      {
+        id: 2,
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+        image: "/modern-dairy-farm.png",
+        link: "/product/2",
+        tag: language === 'mr' ? "मोबाईल ॲप" : language === 'kn' ? "ಮೊಬೈಲ್ ಆಪ್" : language === 'hi' ? "मोबाइल ऐप" : "Mobile App"
+      },
+      {
+        id: 3,
+        title: t("dairy5.products.prod3.title") || "Dairy Administrator App",
+        description: t("dairy5.products.prod3.desc") || "Collection monitoring, dashboard & analytics, and report access for dairy administrators.",
+        image: "/modern-office-dashboard.png",
+        link: "/product/3",
+        tag: language === 'mr' ? "ERP सिस्टीम" : language === 'kn' ? "ERP ಸಿಸ್ಟಮ್" : language === 'hi' ? "ERP सिस्टम" : "ERP System"
+      },
+      {
+        id: "gold",
+        title: language === 'mr' ? "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)" :
+          language === 'kn' ? "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)" :
+            language === 'hi' ? "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)" : "Gold Jewellery Showroom ERP (Goldwin)",
+        description: language === 'mr' ? "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट (Girvi) व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर." :
+          language === 'kn' ? "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿಯ ಲೆಕ್ಕಾಚಾರ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಸಾಫ್ಟ್‌ವೇರ್." :
+            language === 'hi' ? "ज्वेलरी शोरूम के लिए सोने-चांदी का हिसाब, बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर." : "Complete billing, account management, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
+        image: "/gold-image-new/gold_home_page.png",
+        link: "/gold-industry-solutions",
+        tag: language === 'mr' ? "सुवर्ण सोल्यूशन" : language === 'kn' ? "ಚಿನ್ನದ ಪರಿಹಾರ" : language === 'hi' ? "स्वर्ण समाधान" : "Gold Solution"
+      },
+      {
+        id: "sugar",
+        title: language === 'mr' ? "साखर कारखाना व्यवस्थापन प्रणाली" :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ" :
+            language === 'hi' ? "चीनी मिल प्रबंधन प्रणाली" : "Sugar Factory Enterprise Solutions",
+        description: language === 'mr' ? "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन." :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ." :
+            language === 'hi' ? "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान." : "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
+        image: "/sugerfac.png",
+        link: "/sugar-factory-solutions",
+        tag: language === 'mr' ? "कारखाना सोल्यूशन" : language === 'kn' ? "ಕಾರ್ಖಾನೆ ಪರಿಹಾರ" : language === 'hi' ? "फैक्ट्री समाधान" : "Enterprise Solution"
+      }
+    ];
+
+    const filterIds = [1, 2, 3, "gold"];
+    return allSolutions.filter(sol => filterIds.includes(sol.id));
+  }, [language, t]);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-black">
@@ -216,7 +128,7 @@ export default function SugarFactorySolutionsPage() {
                   {t("sugar.sugarHeroSubtitle")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Link href="/schedule-demo">
+                  <Link href="/contact">
                     <Button
                       size="lg"
                       className="font-sans font-semibold px-8 py-3 bg-[#1E94A4] hover:bg-[#0B7989] text-white"
@@ -296,7 +208,7 @@ export default function SugarFactorySolutionsPage() {
                 </div>
 
                 <div className="mt-10">
-                  <Link href="/schedule-demo">
+                  <Link href="/contact">
                     <Button size="lg" className="bg-[#1E94A4] hover:bg-[#0B7989] text-white font-sans font-bold px-10">
                       {t("sugar.requestModules")}
                     </Button>
@@ -395,7 +307,7 @@ export default function SugarFactorySolutionsPage() {
                 {t("product.videoDesc")}
               </p>
             </div>
-            
+
             <div className="max-w-5xl mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
@@ -420,20 +332,20 @@ export default function SugarFactorySolutionsPage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 {language === 'mr' ? "आमची इतर प्रीमियम सोल्यूशन्स" :
-                 language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
-                 language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
+                  language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
+                    language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
               </h2>
               <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
                 {language === 'mr' ? "तुमच्या व्यवसायाला अत्याधुनिक डिजिटल युगात नेण्यासाठी आणि दैनंदिन कामकाज सुलभ करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
-                 language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
-                 language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
+                  language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                    language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {recommendedSolutions.map((product) => (
-                <div 
-                  key={product.id} 
+                <div
+                  key={product.id}
                   className="bg-white dark:bg-zinc-950 hover-lift p-6 rounded-[2rem] flex flex-col justify-between min-h-[440px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
                 >
                   <div className="flex flex-col h-full">
@@ -455,7 +367,7 @@ export default function SugarFactorySolutionsPage() {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-zinc-100 leading-snug mb-3 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors line-clamp-2">
                       {product.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 dark:text-zinc-400 text-xs mb-6 flex-grow leading-relaxed font-serif line-clamp-3">
                       {product.description}
                     </p>
@@ -467,7 +379,7 @@ export default function SugarFactorySolutionsPage() {
                         {t("home.viewDetails")}
                       </Button>
                     </Link>
-                    <Link href="/schedule-demo" className="block">
+                    <Link href="/contact" className="block">
                       <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-4 rounded-xl text-xs transition-all shadow-sm hover:shadow-[#1E94A4]/25 font-sans">
                         {t("home.requestDemo")}
                       </Button>
@@ -490,7 +402,7 @@ export default function SugarFactorySolutionsPage() {
                 {t("sugar.modernizeSugarDesc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/schedule-demo">
+                <Link href="/contact">
                   <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-slate-100 font-sans font-bold px-10">
                     {t("sugar.freeERPDemo")}
                   </Button>

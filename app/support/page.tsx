@@ -54,7 +54,7 @@ export default function SupportPage() {
       title: language === "mr" ? "On-Site Support" : "On-Site Support",
       desc: language === "mr" ? "आमची team तुमच्या office मध्ये येऊन support देते" : "Our team visits your office for in-person support",
       action: language === "mr" ? "Schedule करा" : "Schedule Visit",
-      href: "/schedule-demo",
+      href: "/contact",
       detail: language === "mr" ? "Kolhapur आणि आसपासच्या भागात" : "Kolhapur & surrounding areas",
       color: "bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-900",
       iconColor: "text-amber-600",

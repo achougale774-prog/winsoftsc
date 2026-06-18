@@ -36,7 +36,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: "लायसन्सवर फ्लॅट ४०% सूट",
           bank: "HDFC & SBI",
-          link: "/product/2"
+          link: "/gold-industry-solutions"
         },
         {
           id: 3,
@@ -47,7 +47,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "विशेष बिझनेस ऑफर",
           bank: "ICICI & AXIS",
-          link: "/product/3"
+          link: "/sugar-factory-solutions"
         },
         {
           id: 4,
@@ -58,7 +58,7 @@ export function HeroSlider() {
           bgColor: "from-[#E8F4F5] to-white",
           discount: "१००% पारदर्शक व जलद सिंक",
           bank: "Co-op & SBI Cards",
-          link: "/dairy-solutions/passbook"
+          link: "/product/2"
         },
         {
           id: 5,
@@ -69,7 +69,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "ताळेबंद, नफा-तोटा व ऑडिट रिपोर्टसह",
           bank: "Federal & State Co-op",
-          link: "/dairy-solutions/admin"
+          link: "/product/3"
         }
       ]
     } else if (language === 'kn') {
@@ -94,7 +94,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: "ಲೈಸೆನ್ಸ್ ಮೇಲೆ ಫ್ಲಾಟ್ ೪೦% ರಿಯಾಯಿತಿ",
           bank: "HDFC & SBI",
-          link: "/product/2"
+          link: "/gold-industry-solutions"
         },
         {
           id: 3,
@@ -105,7 +105,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "ವಿಶೇಷ ಉದ್ಯಮ ಬೆಲೆಗಳು",
           bank: "ICICI & AXIS",
-          link: "/product/3"
+          link: "/sugar-factory-solutions"
         },
         {
           id: 4,
@@ -116,7 +116,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: "೧೦೦% ಪಾರದರ್ಶಕತೆ ಮತ್ತು ರಿಯಲ್-ಟೈಮ್ ಸಿಂಕ್",
           bank: "Co-op & SBI Cards",
-          link: "/dairy-solutions/passbook"
+          link: "/product/2"
         },
         {
           id: 5,
@@ -127,7 +127,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ ಹಾಗೂ ಲಾಭ-ನಷ್ಟ ಖಾತೆಯೊಂದಿಗೆ",
           bank: "Federal & State Co-op",
-          link: "/dairy-solutions/admin"
+          link: "/product/3"
         }
       ]
     } else if (language === 'hi') {
@@ -152,7 +152,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: "लाइसेंस पर फ्लैट ४०% छूट",
           bank: "HDFC & SBI",
-          link: "/product/2"
+          link: "/gold-industry-solutions"
         },
         {
           id: 3,
@@ -163,7 +163,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "विशेष उद्यम मूल्य निर्धारण",
           bank: "ICICI & AXIS",
-          link: "/product/3"
+          link: "/sugar-factory-solutions"
         },
         {
           id: 4,
@@ -174,7 +174,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: "१००% पारदर्शी और रीयल-टाइम सिंक",
           bank: "Co-op & SBI Cards",
-          link: "/dairy-solutions/passbook"
+          link: "/product/2"
         },
         {
           id: 5,
@@ -185,7 +185,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "बैलेंस शीट, लाभ-हानि व ऑडिट रिपोर्ट सहित",
           bank: "Federal & State Co-op",
-          link: "/dairy-solutions/admin"
+          link: "/product/3"
         }
       ]
     } else {
@@ -210,7 +210,7 @@ export function HeroSlider() {
           bgColor: "from-[#1E94A4]/10 to-white",
           discount: t("home.heroSlide2Discount"),
           bank: "HDFC & SBI",
-          link: "/product/2"
+          link: "/gold-industry-solutions"
         },
         {
           id: 3,
@@ -221,7 +221,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: t("home.heroSlide3Discount"),
           bank: "ICICI & AXIS",
-          link: "/product/3"
+          link: "/sugar-factory-solutions"
         },
         {
           id: 4,
@@ -232,7 +232,7 @@ export function HeroSlider() {
           bgColor: "from-[#E8F4F5] to-white",
           discount: "100% Transparent & Secure Live Sync",
           bank: "Co-op & SBI Cards",
-          link: "/dairy-solutions/passbook"
+          link: "/product/2"
         },
         {
           id: 5,
@@ -243,7 +243,7 @@ export function HeroSlider() {
           bgColor: "from-[#0B7989]/10 to-white",
           discount: "Includes P&L, Balance Sheets & Audit reports",
           bank: "Federal & State Co-op",
-          link: "/dairy-solutions/admin"
+          link: "/product/3"
         }
       ]
     }
@@ -272,25 +272,6 @@ export function HeroSlider() {
                <div className="space-y-4">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-zinc-100">{slide.mainHeading}</h2>
                 <h3 className="text-2xl font-medium text-gray-700 dark:text-zinc-300">{slide.subHeading}</h3>
-                <div className="text-3xl font-bold text-[#1E94A4]">
-                  {slide.priceText}
-                </div>
-                
-                <div className="bg-white dark:bg-zinc-950/80 p-3 rounded-lg border border-gray-200 dark:border-zinc-800 inline-block">
-                  <p className="text-xs font-bold text-gray-500 dark:text-zinc-400 uppercase">
-                    {t("home.bankOffer")}
-                  </p>
-                  <p className="text-sm font-bold text-gray-900 dark:text-zinc-100">{slide.discount}</p>
-                  <p className="text-[10px] text-gray-500 dark:text-zinc-400">
-                    {t("home.tnc").replace("{bank}", slide.bank)}
-                  </p>
-                </div>
-
-                <div className="pt-2">
-                  <Button className="bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold px-8 py-6 text-lg rounded-md shadow-md dark:shadow-none">
-                    {t("home.shopNow")}
-                  </Button>
-                </div>
               </div>
 
               <div className="relative h-[250px] hidden md:block">

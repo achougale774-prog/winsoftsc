@@ -42,7 +42,7 @@ export default function NotFound() {
               { href: "/dairy-solutions", label: "🥛 Dairy Software" },
               { href: "/gold-industry-solutions", label: "💛 Gold Software" },
               { href: "/sugar-factory-solutions", label: "🏭 Sugar Factory" },
-              { href: "/schedule-demo", label: "📅 Schedule Demo" },
+              { href: "/contact", label: "📅 Schedule Demo" },
               { href: "/contact", label: "📞 Contact Us" },
             ].map((link) => (
               <Link

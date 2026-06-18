@@ -13,7 +13,7 @@ const SEARCH_DATA = [
   { title: "Sankalan Mobile App", titleMr: "Sankalan मोबाईल अॅप", href: "/mobile-software", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["sankalan", "mobile", "app", "farmer", "शेतकरी"] },
   // Pages
   { title: "Pricing & Plans", titleMr: "किंमत व योजना", href: "/pricing", category: "Page", categoryMr: "पेज", tags: ["pricing", "price", "cost", "किंमत", "plan"] },
-  { title: "Schedule Demo", titleMr: "Demo बुक करा", href: "/schedule-demo", category: "Page", categoryMr: "पेज", tags: ["demo", "schedule", "book", "डेमो"] },
+  { title: "Schedule Demo", titleMr: "Demo बुक करा", href: "/contact", category: "Page", categoryMr: "पेज", tags: ["demo", "schedule", "book", "डेमो"] },
   { title: "ROI Calculator", titleMr: "ROI Calculator", href: "/roi-calculator", category: "Tool", categoryMr: "टूल", tags: ["roi", "calculator", "savings", "बचत"] },
   { title: "Contact Us", titleMr: "संपर्क करा", href: "/contact", category: "Page", categoryMr: "पेज", tags: ["contact", "phone", "email", "संपर्क"] },
   { title: "FAQ", titleMr: "सामान्य प्रश्न", href: "/faq", category: "Page", categoryMr: "पेज", tags: ["faq", "questions", "help", "प्रश्न"] },
@@ -68,21 +68,20 @@ export function SiteSearch() {
       {/* Search trigger button */}
       <button
         onClick={() => setOpen(true)}
-        className="hidden sm:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-500 dark:text-zinc-400 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 rounded-lg border border-gray-200 dark:border-zinc-700 transition-all"
+        className="hidden sm:flex items-center gap-1.5 px-2 py-1 text-xs text-gray-500 dark:text-zinc-400 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 rounded-md border border-gray-200 dark:border-zinc-700 transition-all"
         aria-label="Search"
       >
-        <Search className="w-3.5 h-3.5" />
-        <span className="text-xs">{language === "mr" ? "Search..." : "Search..."}</span>
-        <kbd className="hidden md:inline text-[10px] bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded px-1 py-0.5 font-mono">⌘K</kbd>
+        <Search className="w-3 h-3" />
+        <kbd className="hidden md:inline text-[9px] bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded px-1 py-0.5 font-mono">⌘K</kbd>
       </button>
 
       {/* Mobile search icon */}
       <button
         onClick={() => setOpen(true)}
-        className="sm:hidden p-2 text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200 transition-colors"
+        className="sm:hidden p-1.5 text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200 transition-colors"
         aria-label="Search"
       >
-        <Search className="w-5 h-5" />
+        <Search className="w-4 h-4" />
       </button>
 
       {/* Search Modal */}

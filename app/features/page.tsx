@@ -3,6 +3,8 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { MobileAppSimulator } from "@/components/mobile-app-simulator"
+import { MilkSupplyChain } from "@/components/milk-supply-chain"
 import {
     Milk,
     Receipt,
@@ -181,7 +183,7 @@ export default function FeaturesPage() {
                                 {t("features.exploreProducts")}
                             </Button>
                         </Link>
-                        <Link href="/schedule-demo">
+                        <Link href="/contact">
                             <Button
                                 size="lg"
                                 variant="outline"
@@ -226,6 +228,10 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
+            <MobileAppSimulator />
+
+            <MilkSupplyChain />
+
             {/* CTA */}
             <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "var(--primary)" }}>
                 <div className="max-w-4xl mx-auto text-center">
@@ -236,7 +242,7 @@ export default function FeaturesPage() {
                         {t("features.ctaDesc")}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/schedule-demo">
+                        <Link href="/contact">
                             <Button
                                 size="lg"
                                 className="font-sans font-semibold text-lg px-8 py-3"

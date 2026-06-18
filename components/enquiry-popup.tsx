@@ -18,7 +18,7 @@ export function EnquiryPopup() {
   const productOptions = useMemo(() => {
     if (language === 'mr') {
       return [
-        { value: "AMCS",                 label: "स्वयंचलित दूध संकलन प्रणाली (AMCS)" },
+        { value: "AMCS",                 label: "डेअरी सॉफ्टवेअर मॅनेजमेंट (Dairy Software Management)" },
         { value: "Sankalan App",         label: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)" },
         { value: "Admin ERP",            label: "सहकारी दूध संस्था प्रशासकीय ERP" },
         { value: "Hardware Integration", label: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण" },
@@ -28,7 +28,7 @@ export function EnquiryPopup() {
       ]
     } else if (language === 'hi') {
       return [
-        { value: "AMCS",                 label: "स्वचालित दूध संग्रह प्रणाली (AMCS)" },
+        { value: "AMCS",                 label: "डेयरी सॉफ्टवेयर मैनेजमेंट (Dairy Software Management)" },
         { value: "Sankalan App",         label: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)" },
         { value: "Admin ERP",            label: "सहकारी दूध समिति प्रशासनिक ERP" },
         { value: "Hardware Integration", label: "दूध विश्लेषक और वजन कांटा एकीकरण" },
@@ -38,7 +38,7 @@ export function EnquiryPopup() {
       ]
     } else if (language === 'kn') {
       return [
-        { value: "AMCS",                 label: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)" },
+        { value: "AMCS",                 label: "ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಮ್ಯಾನೇಜ್ಮೆಂಟ್ (Dairy Software Management)" },
         { value: "Sankalan App",         label: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)" },
         { value: "Admin ERP",            label: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP" },
         { value: "Hardware Integration", label: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ" },
@@ -48,7 +48,7 @@ export function EnquiryPopup() {
       ]
     } else {
       return [
-        { value: "AMCS",                 label: "Automatic Milk Collection System (AMCS)" },
+        { value: "AMCS",                 label: "Dairy Software Management" },
         { value: "Sankalan App",         label: "Farmer Milk Passbook App (Sankalan)" },
         { value: "Admin ERP",            label: "Cooperative Society Admin ERP" },
         { value: "Hardware Integration", label: "Milk Analyzer & Hardware Integration" },
@@ -62,7 +62,7 @@ export function EnquiryPopup() {
   const text = useMemo(() => {
     const dicts: Record<string, any> = {
       mr: {
-        title: "मोफत सल्ला व Demo",
+        title: "मोफत सल्ला व मार्गदर्शन",
         subtitle: "तुमचे नाव, मोबाईल नंबर आणि हवे असलेले software निवडा. आमची टीम लवकरच call करेल.",
         nameLabel: "तुमचे नाव",
         namePlaceholder: "उदा. कृष्णा पाटील",
@@ -75,7 +75,7 @@ export function EnquiryPopup() {
         validationPhone: "कृपया 10 अंकी मोबाईल नंबर टाका.",
       },
       hi: {
-        title: "मुफ़्त सलाह और Demo",
+        title: "मुफ़्त सलाह और मार्गदर्शन",
         subtitle: "अपना नाम, मोबाइल नंबर और चाहिए सॉफ्टवेयर चुनें। हमारी टीम जल्द कॉल करेगी।",
         nameLabel: "आपका नाम",
         namePlaceholder: "उदा. कृष्णा पाटिल",
@@ -88,7 +88,7 @@ export function EnquiryPopup() {
         validationPhone: "कृपया 10 अंकों का मोबाइल नंबर दर्ज करें।",
       },
       kn: {
-        title: "ಉಚಿತ ಸಲಹೆ ಮತ್ತು Demo",
+        title: "ಉಚಿತ ಸಲಹೆ ಮತ್ತು ಮಾರ್ಗದರ್ಶನ",
         subtitle: "ನಿಮ್ಮ ಹೆಸರು, ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಮತ್ತು ಬೇಕಾದ ಸಾಫ್ಟ್‌ವೇರ್ ಆಯ್ಕೆ ಮಾಡಿ. ನಮ್ಮ ತಂಡ ಶೀಘ್ರದಲ್ಲೇ ಕರೆ ಮಾಡುತ್ತದೆ.",
         nameLabel: "ನಿಮ್ಮ ಹೆಸರು",
         namePlaceholder: "ಉದಾ. ಕೃಷ್ಣ ಪಾಟೀಲ್",
@@ -101,7 +101,7 @@ export function EnquiryPopup() {
         validationPhone: "ದಯವಿಟ್ಟು 10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ.",
       },
       en: {
-        title: "Free Expert Guidance & Demo",
+        title: "Free Expert Guidance",
         subtitle: "Enter your name, mobile number and select the software you need. Our team will call you back shortly.",
         nameLabel: "Your Full Name",
         namePlaceholder: "e.g. Krishna Patil",

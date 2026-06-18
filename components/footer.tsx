@@ -158,7 +158,7 @@ export function Footer() {
             </ul>
             <div className="mt-6">
               <Link
-                href="/schedule-demo"
+                href="/contact"
                 className="inline-block rounded-md px-5 py-2.5 text-sm font-sans font-semibold text-white transition-colors"
                 style={{ backgroundColor: "var(--accent)" }}
               >

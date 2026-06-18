@@ -310,7 +310,7 @@ export default function CaseStudiesPage() {
               {t("caseStudies.ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   className="font-sans font-semibold px-8 py-3"

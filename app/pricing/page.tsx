@@ -330,7 +330,7 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                     </div>
 
                     <div className="p-6 pt-0">
-                      <Link href="/schedule-demo">
+                      <Link href="/contact">
                         <Button
                           className={`w-full py-5 rounded-xl font-sans font-bold ${
                             plan.highlight
@@ -338,7 +338,7 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                               : "bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-800 dark:text-zinc-200"
                           }`}
                         >
-                          {language === "mr" ? "Free Demo बुक करा" : "Book Free Demo"}
+                          {language === "mr" ? "संपर्क करा" : "Contact Us"}
                         </Button>
                       </Link>
                     </div>
@@ -396,7 +396,7 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                       ))}
                     </ul>
 
-                    <Link href="/schedule-demo">
+                    <Link href="/contact">
                       <Button
                         className={`w-full py-5 rounded-xl font-sans font-bold ${
                           plan.highlight
@@ -404,7 +404,7 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                             : "bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 text-gray-800 dark:text-zinc-200"
                         }`}
                       >
-                        {language === "mr" ? "Demo बुक करा" : "Book Demo"}
+                        {language === "mr" ? "संपर्क करा" : "Contact Us"}
                       </Button>
                     </Link>
                   </div>
@@ -454,9 +454,9 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                       ))}
                     </ul>
 
-                    <Link href="/schedule-demo">
+                    <Link href="/contact">
                       <Button className="w-full py-5 rounded-xl font-sans font-bold bg-[#1E94A4] hover:bg-[#0B7989] text-white">
-                        {language === "mr" ? "Free Demo बुक करा" : "Book Free Demo"}
+                        {language === "mr" ? "संपर्क करा" : "Contact Us"}
                       </Button>
                     </Link>
                   </div>
@@ -520,10 +520,10 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                 : "Talk directly with our team. We'll suggest the best plan for your business."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button size="lg" className="bg-white text-[#1E94A4] hover:bg-gray-100 font-sans font-bold px-8">
                   <Zap className="w-4 h-4 mr-2" />
-                  {language === "mr" ? "Free Demo बुक करा" : "Book Free Demo"}
+                  {language === "mr" ? "संपर्क करा" : "Contact Us"}
                 </Button>
               </Link>
               <a href="tel:+919423039902">

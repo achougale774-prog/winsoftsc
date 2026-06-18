@@ -17,7 +17,6 @@ import {
   Shell,
   Package,
   ArrowRight,
-  MapPin,
   Users,
   Factory,
   Smartphone,
@@ -25,13 +24,17 @@ import {
   CheckCircle2,
   Brain,
   TrendingUp,
-  LayoutDashboard,
-  Activity
+  Shield,
+  Cpu,
+  Sliders,
+  Eye,
+  FileText,
+  Check
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
-import { useMemo } from "react"
+import { useState, useMemo } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import {
   ResponsiveContainer,
@@ -43,313 +46,318 @@ import {
   Tooltip,
   Legend
 } from "recharts"
+import { MobileAppSimulator } from "@/components/mobile-app-simulator"
+import { MISReportsPreview } from "@/components/mis-reports-preview"
+import { HardwareCompatibility } from "@/components/hardware-compatibility"
 
 export default function DairySolutionsPage() {
   const { t, language } = useLanguage()
+  const [activeTab, setActiveTab] = useState("modules")
 
-  const industries = useMemo(() => [
+  const modules = useMemo(() => [
     {
-      title: t("dairy.industry1Title"),
-      description: t("dairy.industry1Desc"),
-      features: [t("dairy.feat1"), t("dairy.feat2"), t("dairy.feat3"), t("dairy.feat4")],
-      icon: MapPin,
-      color: "blue",
+      key: "collection",
+      icon: Milk,
+      title: t("dairy5.modules.collection.title"),
+      items: t("dairy5.modules.collection.items") as unknown as string[] || []
     },
     {
-      title: t("dairy.industry2Title"),
-      description: t("dairy.industry2Desc"),
-      features: [t("dairy.feat5"), t("dairy.feat6"), t("dairy.feat7"), t("dairy.feat8")],
-      icon: Users,
-      color: "green",
-    },
-    {
-      title: t("dairy.industry3Title"),
-      description: t("dairy.industry3Desc"),
-      features: [t("dairy.feat9"), t("dairy.feat10"), t("dairy.feat11"), t("dairy.feat12")],
-      icon: Factory,
-      color: "orange",
-    },
-    {
-      title: t("dairy.industry4Title"),
-      description: t("dairy.industry4Desc"),
-      features: [t("dairy.feat13"), t("dairy.feat14"), t("dairy.feat15"), t("dairy.feat16")],
-      icon: Building2,
-      color: "purple",
-    },
-    {
-      title: t("dairy.industry5Title"),
-      description: t("dairy.industry5Desc"),
-      features: [t("dairy.feat17"), t("dairy.feat18"), t("dairy.feat19"), t("dairy.feat20")],
+      key: "billing",
       icon: Landmark,
-      color: "red",
+      title: t("dairy5.modules.billing.title"),
+      items: t("dairy5.modules.billing.items") as unknown as string[] || []
     },
     {
-      title: t("dairy.industry6Title"),
-      description: t("dairy.industry6Desc"),
-      features: [t("dairy.feat21"), t("dairy.feat22"), t("dairy.feat23"), t("dairy.feat24")],
+      key: "rebate",
+      icon: Users,
+      title: t("dairy5.modules.rebate.title"),
+      items: t("dairy5.modules.rebate.items") as unknown as string[] || []
+    },
+    {
+      key: "inventory",
       icon: Package,
-      color: "amber",
-    },
-  ], [t])
-
-  const tiers = useMemo(() => [
-    {
-      name: "Desktop",
-      subtitle: t("dairy.tier1Subtitle"),
-      description: t("dairy.tier1Desc"),
-      includes: t("dairy.tier1Includes"),
-      bestFor: t("dairy.tier1Best"),
-      icon: Monitor,
+      title: t("dairy5.modules.inventory.title"),
+      items: t("dairy5.modules.inventory.items") as unknown as string[] || []
     },
     {
-      name: "Advanced",
-      subtitle: t("dairy.tier2Subtitle"),
-      description: t("dairy.tier2Desc"),
-      includes: t("dairy.tier2Includes"),
-      bestFor: t("dairy.tier2Best"),
-      icon: Smartphone,
+      key: "accounting",
+      icon: Store,
+      title: t("dairy5.modules.accounting.title"),
+      items: t("dairy5.modules.accounting.items") as unknown as string[] || []
     },
     {
-      name: "Cloud",
-      subtitle: t("dairy.tier3Subtitle"),
-      description: t("dairy.tier3Desc"),
-      includes: t("dairy.tier3Includes"),
-      bestFor: t("dairy.tier3Best"),
-      icon: Cloud,
-    },
-  ], [t])
-
-  const suggestions = useMemo(() => {
-    if (language === 'mr') {
-      return [
-        {
-          title: "पशु आहार आणि फॅट/एसएनएफ नियोजन",
-          description: "जनावरांना दररोज संतुलित आहार, हिरवा आणि सुका चारा द्यावा. बायपास फॅट (Bypass Fat) आणि खनिज मिश्रण (Mineral Mixture) दिल्यामुळे दुधाचे फॅट (FAT) आणि एसएनएफ (SNF) वाढण्यास मदत होते.",
-          tips: ["नियमित संतुलित पशूखाद्य द्यावे", "हिरवा व सुका चारा यांचे योग्य प्रमाण ठेवावे", "पाण्याची चोवीस तास उपलब्धता ठेवावी"]
-        },
-        {
-          title: "स्वच्छ आणि शुद्ध दूध उत्पादन",
-          description: "दूध काढण्यापूर्वी जनावरांचे सड आणि भांडी स्वच्छ धुवावीत. स्वच्छ दुधामुळे जिवाणूंची वाढ रोखली जाते आणि दुधाला बाजारात उच्च प्रतिचा दर मिळतो.",
-          tips: ["दूध काढण्यापूर्वी भांडी निर्जंतुक करा", "सड स्वच्छ धुवून कोरडे करा", "आजारी जनावरांचे दूध वेगळे ठेवा"]
-        },
-        {
-          title: "नियमित आरोग्य आणि लसीकरण",
-          description: "जनावरांचे लाळ्या-खुरकुत (FMD) आणि इतर साथीच्या आजारांपासून संरक्षण करण्यासाठी वेळेवर लसीकरण करावे. नियमित जंतनिर्मूलन (Deworming) केल्यामुळे दूध उत्पादनात घट येत नाही.",
-          tips: ["दर ६ महिन्यांनी लसीकरण करा", "नियमित जंतनिर्मूलन करावे", "पशुवैद्यांच्या सल्ल्याने उपचार करा"]
-        },
-        {
-          title: "डेअरी ऑटोमेशन आणि पारदर्शकता",
-          description: "दूध संकलनात अचूकता आणि पारदर्शकतेसाठी नेहमी संगणकीकृत AMCS सॉफ्टवेअरचा वापर करा. यामुळे शेतकऱ्यांच्या नोंदी सुरक्षित राहतात आणि योग्य मोबदला वेळेवर मिळतो.",
-          tips: ["मानवी चुका टाळण्यासाठी डिजिटल काटे वापरा", "दूध घालताच पावती तपासा", "मोबाईल अॅपद्वारे नोंदींवर लक्ष ठेवा"]
-        }
-      ]
-    } else if (language === 'kn') {
-      return [
-        {
-          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಫ್ಯಾಟ್/ಎಸ್‌ಎನ್‌ಎಫ್ ನಿರ್ವಹಣೆ",
-          description: "ಜಾನುವಾರುಗಳಿಗೆ ದಿನನಿತ್ಯ ಸಮತೋಲಿತ ಆಹಾರ, ಹಸಿರು ಮತ್ತು ಒಣ ಮೇವನ್ನು ನೀಡಬೇಕು. ಬೈಪಾಸ್ ಫ್ಯಾಟ್ ಮತ್ತು ಖನಿಜ ಮಿಶ್ರಣವನ್ನು ನೀಡುವುದರಿಂದ ಹಾಲಿನ ಫ್ಯಾಟ್ ಮತ್ತು ಎಸ್‌ಎನ್‌ಎಫ್ ಹೆಚ್ಚಿಸಲು ಸಹಾಯವಾಗುತ್ತದೆ.",
-          tips: ["ನಿಯಮಿತ ಸಮತೋಲಿತ ಪಶು ಆಹಾರ ನೀಡಿ", "ಹಸಿರು ಮತ್ತು ಒಣ ಮೇವಿನ ಸೂಕ್ತ ಪ್ರಮಾಣ ಕಾಯ್ದುಕೊಳ್ಳಿ", "ಕುಡಿಯುವ ನೀರಿನ ನಿರಂತರ ಲಭ್ಯತೆ ಇರಲಿ"]
-        },
-        {
-          title: "ಸ್ವಚ್ಛ ಮತ್ತು ಶುದ್ಧ ಹಾಲು ಉತ್ಪಾದನೆ",
-          description: "ಹಾಲು ಕರೆಯುವ ಮುನ್ನ ಜಾನುವಾರುಗಳ ಕೆಚ್ಚಲು ಮತ್ತು ಪಾತ್ರೆಗಳನ್ನು ಸ್ವಚ್ಛವಾಗಿ ತೊಳೆಯಬೇಕು. ಸ್ವಚ್ಛ ಹಾಲಿನಿಂದ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಬೆಳವಣಿಗೆ ತಡೆಯಬಹುದು ಮತ್ತು ಹಾಲಿಗೆ ಹೆಚ್ಚಿನ ದರ ಸಿಗುತ್ತದೆ.",
-          tips: ["ಹಾಲು ಕರೆಯುವ ಪಾತ್ರೆಗಳನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ", "ಕೆಚ್ಚಲನ್ನು ತೊಳೆದು ಒಣ ಬಟ್ಟೆಯಿಂದ ಒರೆಸಿ", "ಅನಾರೋಗ್ಯ ಪೀಡಿತ ಜಾನುವಾರುಗಳ ಹಾಲು ಪ್ರತ್ಯೇಕಿಸಿ"]
-        },
-        {
-          title: "ನಿಯಮಿತ ಆರೋಗ್ಯ ಮತ್ತು ಲಸಿಕೆ",
-          description: "ಜಾನುವಾರುಗಳನ್ನು ಬಾಯಿ ಜ್ವರ (FMD) ಮತ್ತು ಇತರ ಸಾಂಕ್ರಾಮಿಕ ರೋಗಗಳಿಂದ ರಕ್ಷಿಸಲು ಸಕಾಲದಲ್ಲಿ ಲಸಿಕೆ ಹಾಕಿಸಬೇಕು. ನಿಯಮಿತ ಜಂತುನಾಶಕ ನೀಡುವುದರಿಂದ ಹಾಲು ಉತ್ಪಾದನೆ ಕುಂಠಿತವಾಗುವುದಿಲ್ಲ.",
-          tips: ["ಪ್ರತಿ ೬ ತಿಂಗಳಿಗೊಮ್ಮೆ ಲಸಿಕೆ ಹಾಕಿ", "ನಿಯಮಿತವಾಗಿ ಜಂತುನಾಶಕ ಔಷಧ ನೀಡಿ", "ಪಶುವೈದ್ಯರ ಸಲಹೆಯಂತೆ ಚಿಕಿತ್ಸೆ ಕೊಡಿಸಿ"]
-        },
-        {
-          title: "ಡೈರಿ ಆಟೊಮೇಷನ್ ಮತ್ತು ಪಾರದರ್ಶಕತೆ",
-          description: "ಹಾಲು ಸಂಗ್ರಹಣೆಯಲ್ಲಿ ನಿಖರತೆ ಮತ್ತು ಪಾರದರ್ಶಕತೆಗಾಗಿ ಯಾವಾಗಲೂ ಕಂಪ್ಯೂಟರೀಕೃತ AMCS ಸಾಫ್ಟ್‌ವೇರ್ ಬಳಸಿ. ಇದರಿಂದ ರೈತರ ದಾಖಲೆಗಳು ಸುರಕ್ಷಿತವಾಗಿರುತ್ತವೆ ಮತ್ತು ಸೂಕ್ತ ಪಾವತಿ ಲಭಿಸುತ್ತದೆ.",
-          tips: ["ಮಾನವ ತಪ್ಪುಗಳನ್ನು ತಡೆಯಲು ಡಿಜಿಟಲ್ ತೂಕ ಬಳಸಿ", "ಹಾಲು ಸಂಗ್ರಹಣೆಯಾದ ತಕ್ಷಣ ರಸೀದಿ ಪರಿಶೀಲಿಸಿ", "ಮೊಬೈಲ್ ಆಪ್ ಮೂಲಕ ದಾಖಲೆಗಳ ಮೇಲೆ ನಿಗಾ ಇರಿಸಿ"]
-        }
-      ]
-    } else if (language === 'hi') {
-      return [
-        {
-          title: "पशु आहार और फैट/एसएनएफ प्रबंधन",
-          description: "पशुओं को दैनिक संतुलित आहार, हरा और सूखा चारा देना चाहिए. बाईपास फैट (Bypass Fat) और खनिज मिश्रण देने से दूध का फैट और एसएनएफ बढ़ाने में मदद मिलती है.",
-          tips: ["नियमित संतुलित पशु आहार दें", "हरे व सूखे चारे का सही अनुपात रखें", "पीने के पानी की २४ घंटे उपलब्धता सुनिश्चित करें"]
-        },
-        {
-          title: "स्वच्छ और शुद्ध दूध उत्पादन",
-          description: "दूध निकालने से पहले पशु के थन और बर्तनों को अच्छी तरह धोएं. स्वच्छ दूध से जीवाणुओं की वृद्धि रुकती है और दूध का अधिकतम मूल्य प्राप्त होता है.",
-          tips: ["दूध निकालने के बर्तनों को कीटाणुरहित करें", "थनों को साफ करके सुखाएं", "बीमार पशुओं का दूध अलग रखें"]
-        },
-        {
-          title: "नियमित स्वास्थ्य और टीकाकरण",
-          description: "पशुओं को खुरपका-मुंहपका (FMD) और अन्य संक्रामक रोगों से बचाने के लिए समय पर टीकाकरण कराएं. नियमित कृमिनाशक (Deworming) दवा देने से दूध उत्पादन बना रहता है.",
-          tips: ["हर ६ महीने में टीकाकरण कराएं", "नियमित कृमिनाशक दवा दें", "पशु चिकित्सक की सलाह से ही उपचार करें"]
-        },
-        {
-          title: "डेयरी ऑटोमेशन और पारदर्शिता",
-          description: "दूध संग्रह में सटीकता और पारदर्शिता के लिए हमेशा स्वचालित AMCS सॉफ्टवेयर का उपयोग करें. इससे किसानों के रिकॉर्ड सुरक्षित रहते हैं और समय पर भुगतान मिलता है.",
-          tips: ["मानवीय गलतियों से बचने के लिए डिजिटल कांटे अपनाएं", "दूध जमा करते ही रसीद की जांच करें", "मोबाइल ऐप के माध्यम से रिकॉर्ड पर नजर रखें"]
-        }
-      ]
-    } else {
-      return [
-        {
-          title: "Cattle Nutrition & FAT/SNF Optimization",
-          description: "Provide cattle with a balanced daily diet of green and dry fodder. Supplementing with bypass fat and mineral mixtures significantly boosts overall milk FAT and SNF yields.",
-          tips: ["Feed high-quality balanced cattle feed daily", "Maintain proper ratios of green & dry fodder", "Provide 24/7 access to clean drinking water"]
-        },
-        {
-          title: "Clean & Hygienic Milk Production",
-          description: "Thoroughly wash cow udders and sanitize all collection cans before milking. Clean milking prevents bacterial contamination, extending milk shelf-life and ensuring top-tier payouts.",
-          tips: ["Sterilize all milking equipment before use", "Wash udders with warm water and dry cleanly", "Keep milk from sick cattle completely separate"]
-        },
-        {
-          title: "Routine Vaccination & Veterinary Care",
-          description: "Vaccinate your livestock timely against Foot-and-Mouth Disease (FMD) and other epidemics. Regular deworming preserves cow energy levels and prevents drops in milk yield.",
-          tips: ["Administer vaccinations every 6 months", "Perform regular deworming schedules", "Consult professional vets for health diagnostics"]
-        },
-        {
-          title: "Cooperative Automation & Transparency",
-          description: "Always implement automated AMCS software for high-precision weighing and FAT testing. Digitalization guarantees transparent rates, secure records, and faster direct payouts.",
-          tips: ["Utilize digital weighing scales to stop manual errors", "Always check your instant collection slips", "Monitor your ledger logs using the Mobile App"]
-        }
-      ]
+      key: "reports",
+      icon: Factory,
+      title: t("dairy5.modules.reports.title"),
+      items: t("dairy5.modules.reports.items") as unknown as string[] || []
     }
-  }, [language])
+  ], [t])
+
+  const keyFeatures = useMemo(() => [
+    {
+      key: "transparency",
+      icon: Eye,
+      title: t("dairy5.keyFeatures.transparency.title"),
+      items: t("dairy5.keyFeatures.transparency.items") as unknown as string[] || []
+    },
+    {
+      key: "security",
+      icon: Shield,
+      title: t("dairy5.keyFeatures.security.title"),
+      items: t("dairy5.keyFeatures.security.items") as unknown as string[] || []
+    },
+    {
+      key: "integration",
+      icon: Cpu,
+      title: t("dairy5.keyFeatures.integration.title"),
+      items: t("dairy5.keyFeatures.integration.items") as unknown as string[] || []
+    },
+    {
+      key: "rates",
+      icon: Sliders,
+      title: t("dairy5.keyFeatures.rates.title"),
+      items: t("dairy5.keyFeatures.rates.items") as unknown as string[] || []
+    }
+  ], [t])
+
+  const operations = useMemo(() => t("dairy5.operations") as unknown as string[] || [], [t])
+  const audit = useMemo(() => t("dairy5.audit") as unknown as string[] || [], [t])
+  const benefits = useMemo(() => t("dairy5.benefits") as unknown as string[] || [], [t])
+  const suitable = useMemo(() => t("dairy5.suitable") as unknown as string[] || [], [t])
+
+  const mobileApps = useMemo(() => [
+    {
+      key: "farmer",
+      title: t("dairy5.mobileApps.farmer.title"),
+      items: t("dairy5.mobileApps.farmer.items") as unknown as string[] || []
+    },
+    {
+      key: "admin",
+      title: t("dairy5.mobileApps.admin.title"),
+      items: t("dairy5.mobileApps.admin.items") as unknown as string[] || []
+    },
+    {
+      key: "collection",
+      title: t("dairy5.mobileApps.collection.title"),
+      items: t("dairy5.mobileApps.collection.items") as unknown as string[] || []
+    }
+  ], [t])
+
+
 
   const dairyProducts = useMemo(() => {
     if (language === 'mr') {
       return [
         {
-          id: 1,
-          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
-          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
-          image: "/dairy33.png",
+          id: "1",
+          title: "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स",
+          description: "डेअरी ५.० हे सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक दुग्ध व्यवस्थापन सोल्यूशन आहे.",
+          image: "/live-image-dairy/5.0.png",
+          tag: "डेअरी सोल्यूशन्स",
         },
         {
-          id: 2,
-          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
-          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
+          id: "web-dairy",
+          title: "वेब-बेस्ड डेअरी सॉफ्टवेअर सोल्यूशन्स",
+          description: "वेब डेअरी हे सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक वेब-बेस्ड दुग्ध व्यवस्थापन सोल्यूशन आहे.",
+          image: "/live-image-dairy/5.0_3.png",
+          tag: "वेब डेअरी",
+        },
+        {
+          id: "billing-5",
+          title: "डेअरी ५.० – दूध बिलिंग सॉफ्टवेअर",
+          description: t("billing5.overview") || "दुग्ध उत्पादक शेतकऱ्यांसाठी अचूक दूध बिल निर्मिती, पेमेंट गणना आणि सभासद खातेवही (लेझर) व्यवस्थापन स्वयंचलित करा. उचल (ॲडव्हान्स), खाद्य वसुली, कर्ज कपात, फरक (रिबेट) आणि लाभांश एकाच प्रणालीमध्ये व्यवस्थापित करा. शेतकऱ्यांसाठी सुलभ आणि पारदर्शक पेमेंट प्रक्रिया सुनिश्चित करा.",
+          image: "/live-image-dairy/milk_collection_5.0.png",
+          tag: "बिलिंग सॉफ्टवेअर",
+        },
+        {
+          id: "2",
+          title: "शेतकरी मोबाईल ॲप (संकलन)",
+          description: "दूध उत्पादक शेतकऱ्यांसाठी दैनिक दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेझर तपासण्यासाठीचे प्रगत मोबाईल ॲप्लिकेशन.",
           image: "/modern-dairy-farm.png",
+          tag: "शेतकरी ॲप",
         },
         {
-          id: 3,
-          title: "सहकारी दूध संस्था प्रशासकीय ERP",
-          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
+          id: "3",
+          title: "डेअरी प्रशासक ॲप",
+          description: "डेअरी प्रशासकांसाठी संकलन देखरेख, डॅशबोर्ड आणि विश्लेषण आणि अहवाल प्रवेश.",
           image: "/modern-office-dashboard.png",
+          tag: "प्रशासक ॲप",
         },
         {
-          id: 4,
-          title: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण",
-          description: "डिजिटल वजन काटे, थर्मल प्रिंटर, फॅट मशीन आणि आवाजाद्वारे घोषणा (Voice Announcement) यांचे परिपूर्ण एकत्रीकरण.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "पशूखाद्य आणि उचल (Advance) व्यवस्थापन",
-          description: "पशूखाद्य खरेदी-विक्री आणि बिलांमधून अॅडव्हान्सची स्वयंचलित कपात व व्याजाची सुलभ गणना.",
+          id: "5",
+          title: "उत्पादन व्यवस्थापन प्रणाली",
+          description: "कच्च्या दुधाच्या स्वागतापासून ते तयार उत्पादनांच्या उत्पादनापर्यंत संपूर्ण दूध प्रक्रिया चक्र रिअल-टाइम मॉनिटरिंग आणि इन्व्हेंटरी एकत्रीकरणासह व्यवस्थापित करा.",
           image: "/goldwin.png",
-        }
+          tag: "उत्पादन प्रणाली",
+        },
+        {
+          id: "6",
+          title: "वाहतूक व्यवस्थापन प्रणाली (Transport Management)",
+          description: "दूध संकलन मार्ग, वाहन चालन, डिस्पॅच आणि वाहतूक खर्चाचे कार्यक्षमतेने व्यवस्थापन करा.",
+          image: "/collection bike.webp",
+          tag: "वाहतूक व्यवस्थापन",
+        },
       ]
     } else if (language === 'kn') {
       return [
         {
-          id: 1,
-          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
-          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
-          image: "/dairy33.png",
+          id: "1",
+          title: "ಸಂಪೂರ್ಣ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
+          description: "ಡೈರಿ ೫.೦ ಎನ್ನುವುದು ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ.",
+          image: "/live-image-dairy/5.0.png",
+          tag: "ಡೈರಿ ಪರಿಹಾರಗಳು",
         },
         {
-          id: 2,
-          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
-          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
+          id: "web-dairy",
+          title: "ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
+          description: "ವೆಬ್ ಡೈರಿ ಎನ್ನುವುದು ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ.",
+          image: "/live-image-dairy/5.0_3.png",
+          tag: "ವೆಬ್ ಡೈರಿ",
+        },
+        {
+          id: "billing-5",
+          title: "ಡೈರಿ ೫.೦ – ಹಾಲು ಬಿಲ್ಲಿಂಗ್ ಸಾಫ್ಟ್‌ವೇರ್",
+          description: t("billing5.overview") || "ಡೈರಿ ರೈತರಿಗಾಗಿ ನಿಖರವಾದ ಹಾಲು ಬಿಲ್ ಉತ್ಪಾದನೆ, ಪಾವತಿ ಲೆಕ್ಕಾಚಾರಗಳು ಮತ್ತು ಸದಸ್ಯರ ಲೆಡ್ಜರ್ ನಿರ್ವಹಣೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸಿ. ಮುಂಗಡಗಳು, ಆಹಾರ ವಸೂಲಾತಿ, ಸಾಲ ಕಡಿತಗಳು, ರಿಯಾಯಿತಿ ಮತ್ತು ಲಾಭಾಂಶವನ್ನು ಒಂದೇ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ನಿರ್ವಹಿಸಿ. ರೈತರಿಗೆ ಜಗಳವಿಲ್ಲದ ಮತ್ತು ಪಾರದರ್ಶಕ ಪಾವತಿ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.",
+          image: "/live-image-dairy/milk_collection_5.0.png",
+          tag: "ಬಿಲ್ಲಿಂಗ್ ಸಾಫ್ಟ್‌ವೇರ್",
+        },
+        {
+          id: "2",
+          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್ (ಸಂಕಲನ)",
+          description: "ಡೈರಿ ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
           image: "/modern-dairy-farm.png",
+          tag: "ರೈತರ ಆಪ್",
         },
         {
-          id: 3,
-          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
-          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
+          id: "3",
+          title: "ಡೈರಿ ಅಡ್ಮಿನಿಸ್ಟ್ರೇಟರ್ ಆಪ್",
+          description: "ಡೈರಿ ನಿರ್ವಾಹಕರಿಗಾಗಿ ಸಂಗ್ರಹಣೆಯ ಮೇಲ್ವಿಚಾರಣೆ, ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ, ಮತ್ತು ವರದಿ ಪ್ರವೇಶ.",
           image: "/modern-office-dashboard.png",
+          tag: "ಅಡ್ಮಿನ್ ಆಪ್",
         },
         {
-          id: 4,
-          title: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ",
-          description: "ಡಿಜಿಟಲ್ ತೂಕದ ಪ್ರಮಾಣಗಳು, ಥರ್ಮಲ್ ಪ್ರಿಂಟರ್ಗಳು, ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಮತ್ತು ಧ್ವನಿ ಘೋಷಣೆಯ ಸಂಪೂರ್ಣ ಏಕೀಕರಣ.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ (Advance) ನಿರ್ವಹಣೆ",
-          description: "ಪಶು ಆಹಾರ ಖರೀದಿ-ಮಾರಾಟ ಮತ್ತು ಬಿಲ್ಲುಗಳಿಂದ ಮುಂಗಡಗಳ ಸ್ವಯಂಚಾಲಿತ ಕಡಿತ ಮತ್ತು ಬಡ್ಡಿಯ ಸುಲಭ ಲೆಕ್ಕಾಚಾರ.",
+          id: "5",
+          title: "ಉತ್ಪಾದನಾ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ",
+          description: "ಕಚ್ಚಾ ಹಾಲಿನ ಸ್ವೀಕೃತಿಯಿಂದ ಹಿಡಿದು ಸಿದ್ಧಪಡಿಸಿದ ಉತ್ಪನ್ನಗಳ ಉತ್ಪಾದನೆಯವರೆಗೆ ಸಂಪೂರ್ಣ ಹಾಲು ಸಂಸ್ಕರಣಾ ಚಕ್ರವನ್ನು ನೈಜ-ಸಮಯದ ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ದಾಸ್ತಾನು ಏಕೀಕರಣದೊಂದಿಗೆ ನಿರ್ವಹಿಸಿ.",
           image: "/goldwin.png",
-        }
+          tag: "ಉತ್ಪಾದನಾ ವ್ಯವಸ್ಥೆ",
+        },
+        {
+          id: "6",
+          title: "ಸಾರಿಗೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Transport Management)",
+          description: "ಹಾಲು ಸಂಗ್ರಹಣೆ ಮಾರ್ಗಗಳು, ವಾಹನ ಕಾರ್ಯಾಚರಣೆಗಳು, ರವಾನೆಗಳು ಮತ್ತು ಸಾರಿಗೆ ವೆಚ್ಚಗಳನ್ನು ದಕ್ಷತೆಯಿಂದ ನಿರ್ವಹಿಸಿ.",
+          image: "/collection bike.webp",
+          tag: "ಸಾರಿಗೆ ನಿರ್ವಹಣೆ",
+        },
       ]
     } else if (language === 'hi') {
       return [
         {
-          id: 1,
-          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
-          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
-          image: "/dairy33.png",
+          id: "1",
+          title: "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस",
+          description: "डेयरी ५.० एक व्यापक डेयरी प्रबंधन समाधान है जिसे डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया है।",
+          image: "/live-image-dairy/5.0.png",
+          tag: "डेयरी समाधान",
         },
         {
-          id: 2,
-          title: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)",
-          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
+          id: "web-dairy",
+          title: "वेब-बेस्ड डेयरी सॉफ्टवेयर सॉल्यूशंस",
+          description: "वेब डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक वेब-आधारित डेयरी प्रबंधन समाधान है।",
+          image: "/live-image-dairy/5.0_3.png",
+          tag: "वेब डेयरी",
+        },
+        {
+          id: "billing-5",
+          title: "डेयरी ५.० – दूध बिलिंग सॉफ्टवेयर",
+          description: t("billing5.overview") || "डेयरी किसानों के लिए सटीक दूध बिल निर्माण, भुगतान गणना और सदस्य खाता बही प्रबंधन को स्वचालित करें। अग्रिम (एडवांस), चारा वसूली, ऋण कटौती, छूट और लाभांश को एक ही प्रणाली में प्रबंधित करें। किसानों के लिए आसान और पारदर्शी भुगतान प्रक्रिया सुनिश्चित करें।",
+          image: "/live-image-dairy/milk_collection_5.0.png",
+          tag: "बिलिंग सॉफ्टवेयर",
+        },
+        {
+          id: "2",
+          title: "किसान मोबाइल ऐप (संकलन)",
+          description: "डेयरी किसानों के लिए दैनिक दूध संग्रह, १० दिनों के भुगतान रसीद और खाता बही विवरण को ट्रैक करने के लिए उन्नत मोबाइल एप्लिकेशन।",
           image: "/modern-dairy-farm.png",
+          tag: "किसान ऐप",
         },
         {
-          id: 3,
-          title: "सहकारी दूध समिति प्रशासनिक ERP",
-          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
+          id: "3",
+          title: "डेयरी प्रशासक ऐप",
+          description: "डेयरी प्रशासकों के लिए संग्रह निगरानी, ​​डैशबोर्ड और विश्लेषण, और रिपोर्ट तक पहुंच।",
           image: "/modern-office-dashboard.png",
+          tag: "प्रशासक ऐप",
         },
         {
-          id: 4,
-          title: "दूध विश्लेषक और वजन कांटा एकीकरण",
-          description: "डिजिटल वजन कांटे, थर्मल प्रिंटर, फैट मशीन और आवाज घोषणा (Voice Announcement) का सटीक एकीकरण.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "पशु आहार और अग्रिम (Advance) प्रबंधन",
-          description: "पशु आहार खरीद-बिक्री और बिलों से अग्रिम की स्वचालित कटौती और ब्याज की आसान गणना.",
+          id: "5",
+          title: "उत्पादन प्रबंधन प्रणाली",
+          description: "कच्चे दूध की प्राप्ति से लेकर तैयार उत्पाद के उत्पादन तक संपूर्ण दूध प्रसंस्करण चक्र को वास्तविक समय की निगरानी और इन्वेंट्री एकीकरण के साथ प्रबंधित करें।",
           image: "/goldwin.png",
-        }
+          tag: "उत्पादन प्रणाली",
+        },
+        {
+          id: "6",
+          title: "परिवहन प्रबंधन प्रणाली (Transport Management)",
+          description: "दूध संग्रह मार्गों, वाहन संचालन, प्रेषण और परिवहन लागतों को कुशलतापूर्वक प्रबंधित करें।",
+          image: "/collection bike.webp",
+          tag: "परिवहन प्रबंधन",
+        },
       ]
     } else {
       return [
         {
-          id: 1,
-          title: "Automatic Milk Collection System (AMCS)",
-          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
-          image: "/dairy33.png",
+          id: "1",
+          title: "Complete Dairy Software Solutions",
+          description: "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+          image: "/live-image-dairy/5.0.png",
+          tag: "Dairy Solutions",
         },
         {
-          id: 2,
-          title: "Farmer Milk Passbook App (Sankalan)",
+          id: "web-dairy",
+          title: "Web-based Dairy Software Solutions",
+          description: "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+          image: "/live-image-dairy/5.0_3.png",
+          tag: "Web Dairy",
+        },
+        {
+          id: "billing-5",
+          title: "Dairy 5.0 – Milk Billing Software",
+          description: t("billing5.overview") || "Automate milk bill generation, payment calculations, and member ledger management with complete accuracy. Manage advances, feed recovery, loan deductions, rebates, and dividends in a single system. Ensure transparent and hassle-free payment processing for dairy farmers.",
+          image: "/live-image-dairy/milk_collection_5.0.png",
+          tag: "Billing Software",
+        },
+        {
+          id: "2",
+          title: "Farmer Mobile App (Sankalan)",
           description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
           image: "/modern-dairy-farm.png",
+          tag: "Farmer App",
         },
         {
-          id: 3,
-          title: "Cooperative Society Admin ERP",
-          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
+          id: "3",
+          title: "Dairy Administrator App",
+          description: "Collection monitoring, dashboard & analytics, and report access for dairy administrators.",
           image: "/modern-office-dashboard.png",
+          tag: "Admin App",
         },
         {
-          id: 4,
-          title: "Milk Analyzer & Hardware Integrations",
-          description: "High-precision integration with digital weigh scales, FAT testing machines, thermal printers, and multilingual voice announcements.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "Cattle Feed & Advance Management",
-          description: "Streamlined module for tracking cattle feed distribution, inventory, automatic advance/loan recovery from milk bills, and interest calculation.",
+          id: "5",
+          title: "Production Management System",
+          description: "Manage the complete milk processing cycle from raw milk reception to finished product production with real-time monitoring and inventory integration.",
           image: "/goldwin.png",
-        }
+          tag: "Production System",
+        },
+        {
+          id: "6",
+          title: "Transport Management System",
+          description: "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs.",
+          image: "/collection bike.webp",
+          tag: "Transport Management",
+        },
       ]
     }
   }, [language])
+
+
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-black">
@@ -361,15 +369,14 @@ export default function DairySolutionsPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-sm font-sans font-bold mb-6 border border-[#1E94A4]/20">
-                  <div className="w-2 h-2 rounded-full bg-[#1E94A4] animate-pulse" />
-                  {t("footer.dairySoftware")}
-                </div>
-                <h1 className="text-4xl md:text-7xl font-sans font-bold mb-6 text-gray-900 dark:text-zinc-100 tracking-tight leading-[1.1]">
-                  {t("dairy.dairyTitle")} <span className="text-[#1E94A4]">{t("nav.dairy")}</span>
+
+                <h1 className="text-4xl md:text-6xl font-sans font-bold mb-6 text-gray-900 dark:text-zinc-100 tracking-tight leading-[1.15]">
+                  {language === 'mr' ? "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स" :
+                   language === 'kn' ? "ಸಂಪೂರ್ಣ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು" :
+                   language === 'hi' ? "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस" : "Complete Dairy Software Solutions"}
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-zinc-400 font-serif leading-relaxed mb-10 max-w-xl">
-                  {t("dairy.dairySubtitle")}
+                  {t("dairy5.overview")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/schedule-demo">
@@ -419,99 +426,6 @@ export default function DairySolutionsPage() {
           </div>
         </section>
 
-        {/* Industries Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                {t("dairy.industriesTitle")}
-              </h2>
-              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
-                {t("dairy.industriesSubtitle")}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {industries.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white dark:bg-zinc-950 p-8 rounded-3xl border border-slate-100 dark:border-zinc-800 hover:border-blue-200 hover:shadow-xl dark:shadow-none hover:shadow-blue-900/5 transition-all group"
-                >
-                  <div className={`w-14 h-14 rounded-2xl bg-${item.color === 'blue' ? '[#1E94A4]/10' : item.color + '-50'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                    <item.icon className={`h-7 w-7 text-${item.color === 'blue' ? '[#1E94A4]' : item.color + '-600'}`} />
-                  </div>
-                  <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">{item.title}</h3>
-                  <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
-                    {item.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {item.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-400 font-sans">
-                        <CheckCircle2 className="h-4 w-4 text-green-500" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Suggestions & Guidance Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-800 relative overflow-hidden">
-          {/* Subtle glowing elements */}
-          <div className="absolute top-1/2 left-0 w-[30%] h-[30%] bg-[#1E94A4]/5 rounded-full filter blur-3xl pointer-events-none -translate-y-1/2"></div>
-          
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
-                💡 {language === 'mr' ? "उपयुक्त मार्गदर्शन व सल्ले" : language === 'kn' ? "ಉಪಯುಕ್ತ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸಲಹೆಗಳು" : language === 'hi' ? "उपयोगी मार्गदर्शन और सुझाव" : "Business Advice & Guidelines"}
-              </span>
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                {language === 'mr' ? "दूध व्यवसायासाठी उपयुक्त सल्ले व मार्गदर्शन" :
-                 language === 'kn' ? "ಹಾಲು ವ್ಯವಹಾರಕ್ಕಾಗಿ ಉಪಯುಕ್ತ ಸಲಹೆಗಳು ಮತ್ತು ಮಾರ್ಗದರ್ಶನ" :
-                 language === 'hi' ? "दुग्ध व्यवसाय के लिए उपयोगी सुझाव और मार्गदर्शन" : "Suggestions & Guidelines for Dairy Success"}
-              </h2>
-              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
-                {language === 'mr' ? "तुमच्या दूध डेअरीचे संकलन वाढवण्यासाठी, जनावरांचे आरोग्य जपण्यासाठी आणि व्यवसायात नफा मिळवण्यासाठी काही खास सल्ले." :
-                 language === 'kn' ? "ನಿಮ್ಮ ಡೈರಿ ಸಂಗ್ರಹಣೆ ಹೆಚ್ಚಿಸಲು, ಜಾನುವಾರುಗಳ ಆರೋಗ್ಯ ಕಾಪಾಡಲು ಮತ್ತು ಲಾಭ ಗಳಿಸಲು ಕೆಲವು ವಿಶೇಷ ಸಲಹೆಗಳು." :
-                 language === 'hi' ? "आपके डेयरी संग्रह को बढ़ाने, पशुओं के स्वास्थ्य की रक्षा करने और व्यवसाय में लाभ कमाने के लिए कुछ विशेष सुझाव." : "Expert advice and practical suggestions to help optimize your daily milk collection, maintain livestock health, and maximize profitability."}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {suggestions.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-slate-50 dark:bg-zinc-900 p-8 rounded-[2rem] border border-slate-100 dark:border-zinc-800 hover:border-[#1E94A4]/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4 flex items-center gap-2">
-                      <span className="text-[#1E94A4]">0{idx + 1}.</span> {item.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className="border-t border-slate-200/60 dark:border-zinc-800 pt-4">
-                    <h4 className="text-xs font-sans font-bold text-gray-400 uppercase tracking-wider mb-3">
-                      {language === 'mr' ? "महत्त्वाचे सल्ले:" : language === 'kn' ? "ಪ್ರಮುಖ ಸಲಹೆಗಳು:" : language === 'hi' ? "महत्वपूर्ण सुझाव:" : "Key Guidelines:"}
-                    </h4>
-                    <ul className="space-y-2">
-                      {item.tips.map((tip, tIdx) => (
-                        <li key={tIdx} className="flex items-center gap-2 text-xs text-gray-500 dark:text-zinc-400 font-sans">
-                          <CheckCircle2 className="h-4 w-4 text-[#1E94A4]" />
-                          {tip}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Suggested Dairy Products & Solutions Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-900 relative overflow-hidden">
@@ -522,20 +436,20 @@ export default function DairySolutionsPage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 {language === 'mr' ? "आमची शिफारस केलेली डेअरी उत्पादने" :
-                 language === 'kn' ? "ನಮ್ಮ ಶಿಫಾರಸು ಮಾಡಿದ ಡೈರಿ ಉತ್ಪನ್ನಗಳು" :
-                 language === 'hi' ? "हमारे अनुशंसित डेयरी उत्पाद" : "Our Recommended Dairy Products"}
+                  language === 'kn' ? "ನಮ್ಮ ಶಿಫಾರಸು ಮಾಡಿದ ಡೈರಿ ಉತ್ಪನ್ನಗಳು" :
+                    language === 'hi' ? "हमारे अनुशंसित डेयरी उत्पाद" : "Our Recommended Dairy Products"}
               </h2>
               <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
                 {language === 'mr' ? "तुमच्या डेअरी व्यवसायाला गती देण्यासाठी आणि कामकाज सोपे करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
-                 language === 'kn' ? "ನಿಮ್ಮ ಡೈರಿ ವ್ಯವಹಾರವನ್ನು ವೇಗಗೊಳಿಸಲು ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಸುಗಮಗೊಳಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
-                 language === 'hi' ? "आपके डेयरी व्यवसाय को गति देने और संचालन को आसान बनाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software tools designed specifically to streamline your dairy operations, payments, and member relationships."}
+                  language === 'kn' ? "ನಿಮ್ಮ ಡೈರಿ ವ್ಯವಹಾರವನ್ನು ವೇಗಗೊಳಿಸಲು ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಸುಗಮಗೊಳಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                    language === 'hi' ? "आपके डेयरी व्यवसाय को गति देने और संचालन को आसान बनाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software tools designed specifically to streamline your dairy operations, payments, and member relationships."}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {dairyProducts.map((product) => (
-                <div 
-                  key={product.id} 
+                <div
+                  key={product.id}
                   className="bg-white dark:bg-zinc-950 hover-lift p-8 rounded-[2rem] flex flex-col justify-between min-h-[480px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
                 >
                   <div className="flex flex-col h-full">
@@ -554,7 +468,7 @@ export default function DairySolutionsPage() {
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 leading-tight mb-4 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors">
                       {product.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 dark:text-zinc-400 text-sm mb-8 flex-grow leading-relaxed font-serif">
                       {product.description}
                     </p>
@@ -583,44 +497,182 @@ export default function DairySolutionsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                {t("dairyInfo.title")}
+                {t("dairy5.title")}
               </h2>
-              <div className="max-w-4xl mx-auto text-lg text-gray-600 dark:text-zinc-400 font-serif leading-relaxed space-y-4">
-                <p>{t("dairyInfo.intro1")}</p>
-                <p>{t("dairyInfo.intro2")}</p>
+              <div className="max-w-4xl mx-auto text-lg text-gray-600 dark:text-zinc-400 font-serif leading-relaxed">
+                <p>{t("dairy5.overview")}</p>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Tabs Navigation */}
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16 p-2 bg-slate-100/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-2xl max-w-3xl mx-auto border border-slate-200/50 dark:border-zinc-800/50">
               {[
-                { title: t("dairyInfo.billingTitle"), items: t("dairyInfo.billingList"), icon: Landmark },
-                { title: t("dairyInfo.rebateTitle"), items: t("dairyInfo.rebateList"), icon: Users },
-                { title: t("dairyInfo.accountingTitle"), items: t("dairyInfo.accountingList"), icon: Store },
-                { title: t("dairyInfo.collectionTitle"), items: t("dairyInfo.collectionList"), icon: Milk },
-                { title: t("dairyInfo.companyTitle"), items: t("dairyInfo.companyList"), icon: Building2 },
-                { title: t("dairyInfo.workflowTitle"), items: t("dairyInfo.workflowList"), icon: Factory },
-                { title: t("dairyInfo.feedTitle"), items: t("dairyInfo.feedList"), icon: Package },
-                { title: t("dairyInfo.appTitle"), items: t("dairyInfo.appList"), icon: Smartphone },
-              ].map((section, idx) => (
-                <div key={idx} className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-800 hover:shadow-xl dark:shadow-none transition-all h-full">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center">
-                      <section.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100">{section.title}</h3>
-                  </div>
-                  <ul className="space-y-3">
-                    {Array.isArray(section.items) ? (section.items as any[]).map((item: any, i: number) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    )) : null}
-                  </ul>
-                </div>
-              ))}
+                { id: "modules", label: language === 'mr' ? "मुख्य मॉड्यूल्स" : language === 'kn' ? "ಪ್ರಮುಖ ಮಾಡ್ಯೂಲ್‌ಗಳು" : language === 'hi' ? "मुख्य मॉड्यूल" : "Core Modules", icon: Factory },
+                { id: "features", label: language === 'mr' ? "मुख्य वैशिष्ट्ये" : language === 'kn' ? "ಪ್ರಮುಖ ವೈಶಿಷ್ಟ್ಯಗಳು" : language === 'hi' ? "मुख्य विशेषताएं" : "Key Features", icon: Shield },
+                { id: "mobile", label: language === 'mr' ? "मोबाईल ॲप्स" : language === 'kn' ? "ಮೊಬೈಲ್ ಆಪ್‌ಗಳು" : language === 'hi' ? "मोबाइल ऐप्स" : "Mobile Apps", icon: Smartphone },
+                { id: "operations", label: language === 'mr' ? "ऑपरेशन्स व ऑडिट" : language === 'kn' ? "ಕಾರ್ಯಾಚರಣೆಗಳು ಮತ್ತು ಆಡಿಟ್" : language === 'hi' ? "संचालन और ऑडिट" : "Operations & Audit", icon: Sliders },
+              ].map((tab) => {
+                const TabIcon = tab.icon
+                const isActive = activeTab === tab.id
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-2 px-5 py-3 rounded-xl font-sans font-bold text-sm transition-all duration-300 ${isActive
+                        ? "bg-[#1E94A4] text-white shadow-md shadow-[#1E94A4]/20"
+                        : "text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-100 hover:bg-slate-200/50 dark:hover:bg-zinc-800/50"
+                      }`}
+                  >
+                    <TabIcon className="h-4 w-4" />
+                    {tab.label}
+                  </button>
+                )
+              })}
             </div>
-            
+
+            {/* Tab Contents */}
+            <div className="min-h-[400px]">
+              {activeTab === "modules" && (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fadeIn">
+                  {modules.map((section, idx) => (
+                    <div key={idx} className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl hover:border-[#1E94A4]/40 dark:hover:border-[#1E94A4]/40 transition-all duration-300 flex flex-col h-full group">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center group-hover:scale-110 transition-transform duration-350">
+                          <section.icon className="h-6 w-6" />
+                        </div>
+                        <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 group-hover:text-[#1E94A4] transition-colors">{section.title}</h3>
+                      </div>
+                      <ul className="space-y-3 flex-grow">
+                        {section.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
+                            <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === "features" && (
+                <div className="grid md:grid-cols-2 gap-8 animate-fadeIn">
+                  {keyFeatures.map((section, idx) => (
+                    <div key={idx} className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl hover:border-[#1E94A4]/40 dark:hover:border-[#1E94A4]/40 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#1E94A4]/5 rounded-bl-full group-hover:bg-[#1E94A4]/10 transition-all duration-300" />
+                      <div className="flex items-center gap-4 mb-6 relative z-10">
+                        <div className="w-12 h-12 rounded-2xl bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center">
+                          <section.icon className="h-6 w-6" />
+                        </div>
+                        <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 group-hover:text-[#1E94A4] transition-colors">{section.title}</h3>
+                      </div>
+                      <ul className="space-y-3 relative z-10">
+                        {section.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
+                            <div className="w-2 h-2 rounded-full bg-[#1E94A4] shrink-0 mt-2" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === "mobile" && (
+                <div className="grid lg:grid-cols-3 gap-8 animate-fadeIn">
+                  {mobileApps.map((app, idx) => (
+                    <div key={idx} className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl hover:border-[#1E94A4]/40 dark:hover:border-[#1E94A4]/40 transition-all duration-300 flex flex-col h-full group">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center">
+                          <Smartphone className="h-6 w-6" />
+                        </div>
+                        <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 group-hover:text-[#1E94A4] transition-colors">{app.title}</h3>
+                      </div>
+                      <ul className="space-y-3 flex-grow">
+                        {app.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
+                            <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === "operations" && (
+                <div className="grid lg:grid-cols-2 gap-8 animate-fadeIn">
+                  <div className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl transition-all duration-300">
+                    <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-2 flex items-center gap-3">
+                      <Sliders className="h-6 w-6 text-[#1E94A4]" />
+                      {t("dairy5.operationsTitle")}
+                    </h3>
+                    <p className="text-gray-500 dark:text-zinc-400 font-serif text-sm mb-6">{t("dairy5.operationsSubtitle")}</p>
+                    <ul className="space-y-4">
+                      {operations.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-zinc-300 font-serif text-sm leading-relaxed">
+                          <div className="w-6 h-6 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">{i + 1}</div>
+                          <span className="mt-0.5">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-8">
+                    <div className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl transition-all duration-300">
+                      <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6 flex items-center gap-3">
+                        <FileText className="h-6 w-6 text-[#1E94A4]" />
+                        {t("dairy5.auditTitle")}
+                      </h3>
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {audit.map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
+                            <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-white dark:bg-zinc-950 rounded-3xl p-8 border border-slate-200 dark:border-zinc-850 hover:shadow-xl transition-all duration-300">
+                      <h3 className="text-xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6 flex items-center gap-3">
+                        <Building2 className="h-6 w-6 text-[#1E94A4]" />
+                        {t("dairy5.suitableTitle")}
+                      </h3>
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {suitable.map((item, i) => (
+                          <li key={i} className="flex items-center gap-3 text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed">
+                            <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Benefits Banner */}
+            <div className="mt-16 bg-gradient-to-r from-[#1E94A4]/10 to-[#22d3ee]/10 dark:from-[#1E94A4]/5 dark:to-[#22d3ee]/5 border border-[#1E94A4]/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+              <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#1E94A4]/5 rounded-full blur-3xl animate-pulse" />
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-8 text-center flex items-center justify-center gap-3">
+                  🚀 {language === 'mr' ? "दुग्ध व्यवसायाचे फायदे" : language === 'kn' ? "ಹೈನುಗಾರಿಕೆಯ ಪ್ರಯೋಜನಗಳು" : language === 'hi' ? "डेयरी व्यवसाय के लाभ" : "Key Benefits of Dairy 5.0"}
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {benefits.map((benefit, i) => (
+                    <div key={i} className="bg-white/60 dark:bg-zinc-900/60 backdrop-blur-xs rounded-2xl p-6 border border-slate-100 dark:border-zinc-800 hover:-translate-y-1 transition-transform duration-300 text-center">
+                      <div className="w-10 h-10 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mx-auto mb-4 font-bold text-sm">✓</div>
+                      <p className="text-gray-800 dark:text-zinc-200 font-sans font-bold text-sm">{benefit}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Contact Box */}
             <div className="mt-12 bg-[#1E94A4] rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between">
               <div>
@@ -642,85 +694,14 @@ export default function DairySolutionsPage() {
           </div>
         </section>
 
-        {/* Interactive Demos Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
-                <Activity className="w-3.5 h-3.5" />
-                Live Interactive Product Demos
-              </span>
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                Try Our Live Application Mockups
-              </h2>
-              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
-                Explore the actual user experience and core modules of both the Farmer Mobile App and the Cooperative Admin System.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              
-              {/* Passbook Card */}
-              <div className="bg-slate-50 dark:bg-zinc-900 border dark:border-zinc-800 p-8 rounded-[2.5rem] flex flex-col justify-between hover:shadow-2xl transition-all group hover:-translate-y-1">
-                <div>
-                  <div className="w-14 h-14 rounded-2xl bg-[#1E94A4]/10 flex items-center justify-center text-[#1E94A4] mb-6 group-hover:scale-110 transition-transform">
-                    <Smartphone className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">Farmer Milk Passbook App</h3>
-                  <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
-                    A dedicated mobile application mockup for dairy farmers. Track real-time milk collection slips, overall passbooks, 10-day payment receipts, direct store sales, and ledger sheets.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {["Milk Slip Receipts (Daily Entries)", "10-Day Billing Cycle Overview", "Account Ledger & Advances Balance", "Multilingual (EN, मराठी, हिंदी, ಕನ್ನಡ)"].map((f, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-400 font-sans">
-                        <CheckCircle2 className="h-4.5 w-4.5 text-green-500" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <Link href="/dairy-solutions/passbook">
-                  <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-6 rounded-2xl shadow-lg shadow-[#1E94A4]/15">
-                    Launch Mobile Demo
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Admin Card */}
-              <div className="bg-slate-50 dark:bg-zinc-900 border dark:border-zinc-800 p-8 rounded-[2.5rem] flex flex-col justify-between hover:shadow-2xl transition-all group hover:-translate-y-1">
-                <div>
-                  <div className="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                    <LayoutDashboard className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">Dairy Admin Dashboard</h3>
-                  <p className="text-gray-600 dark:text-zinc-400 font-serif text-sm leading-relaxed mb-6">
-                    A comprehensive administration panel for cooperative societies and milk unions. Monitor live collection metrics, view detailed stats, process bills, and access AI-driven insights.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {["AI-Driven Dairy level Dashboard", "Dynamic Recharts Statistics & Graphs", "Daily Summary & Collection Reports", "Individual Milk Bill & Ledger Copy"].map((f, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-400 font-sans">
-                        <CheckCircle2 className="h-4.5 w-4.5 text-green-500" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <Link href="/dairy-solutions/admin">
-                  <Button className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-6 rounded-2xl shadow-lg">
-                    Launch Admin Demo
-                  </Button>
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        {/* Interactive Mobile App Simulator */}
+        <MobileAppSimulator />
 
         {/* AI Statistics Reports & Graphs Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-800">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              
+
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] text-sm font-sans font-bold">
                   <Brain className="w-4 h-4 animate-bounce" />
@@ -781,66 +762,13 @@ export default function DairySolutionsPage() {
           </div>
         </section>
 
-        {/* Product Tiers */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                {t("dairy.tiersTitle")}
-              </h2>
-              <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
-                {t("dairy.tiersSubtitle")}
-              </p>
-            </div>
+        {/* Interactive MIS Reports Preview */}
+        <MISReportsPreview />
 
-            <div className="grid md:grid-cols-3 gap-10">
-              {tiers.map((tier, idx) => (
-                <div
-                  key={idx}
-                  className={`relative p-8 rounded-3xl border ${idx === 1 ? "border-blue-600 shadow-2xl shadow-blue-900/10" : "border-slate-100 dark:border-zinc-800"} flex flex-col`}
-                >
-                  {idx === 1 && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-sans font-bold">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  <div className="mb-8">
-                    <tier.icon className={`h-12 w-12 ${idx === 1 ? "text-[#1E94A4]" : "text-slate-400"} mb-6`} />
-                    <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-2">{tier.name}</h3>
-                    <div className="text-[#1E94A4] font-sans font-bold mb-4">{tier.subtitle}</div>
-                    <p className="text-gray-500 dark:text-zinc-400 font-serif text-sm leading-relaxed">
-                      {tier.description}
-                    </p>
-                  </div>
+        {/* Interactive Hardware Compatibility Chart */}
+        <HardwareCompatibility />
 
-                  <div className="space-y-6 mt-auto">
-                    <div className="pt-6 border-t border-slate-100 dark:border-zinc-800">
-                      <div className="text-xs font-sans font-bold text-gray-400 uppercase tracking-wider mb-3">
-                        {t("product.includes")}
-                      </div>
-                      <div className="text-gray-900 dark:text-zinc-100 font-sans font-bold">{tier.includes}</div>
-                    </div>
-                    <div className="pt-6 border-t border-slate-100 dark:border-zinc-800">
-                      <div className="text-xs font-sans font-bold text-gray-400 uppercase tracking-wider mb-3">
-                        {t("product.bestFor")}
-                      </div>
-                      <div className="text-gray-700 dark:text-zinc-300 font-serif text-sm">{tier.bestFor}</div>
-                    </div>
-                    <Link href="/contact" className="block mt-8">
-                      <Button
-                        className={`w-full py-6 rounded-xl font-sans font-bold ${
-                          idx === 1 ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white" : "bg-slate-900 hover:bg-slate-800 text-white"
-                        }`}
-                      >
-                        {t("product.contactSales")}
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* Trust Stats */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950">
@@ -894,7 +822,7 @@ export default function DairySolutionsPage() {
                 {t("product.videoDesc")}
               </p>
             </div>
-            
+
             <div className="max-w-5xl mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
@@ -920,7 +848,7 @@ export default function DairySolutionsPage() {
               {t("dairy.ctaModernizeDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   className="font-sans font-semibold px-8 py-3"

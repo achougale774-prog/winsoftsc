@@ -186,7 +186,7 @@ export default function OurStoryPage() {
               {t("story.ctaDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-[#E8F4F5] font-semibold px-8 py-3">
                   {t("header.scheduleDemo") !== "header.scheduleDemo" ? t("header.scheduleDemo") : "Schedule Demo"}
                 </Button>

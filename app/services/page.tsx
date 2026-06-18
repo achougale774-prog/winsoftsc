@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <Image
-                    src="/jewelry-store-system.png"
+                    src="/gold-image-new/gold_home_page.png"
                     alt="Gold industry management system"
                     width={400}
                     height={200}
@@ -329,7 +329,7 @@ export default function ServicesPage() {
               {t("services.transformDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   className="font-sans font-semibold px-8 py-3"

@@ -23,11 +23,11 @@ const faqs = [
       },
       {
         q: "Software किती रुपयांना मिळतो?",
-        a: "Software ची किंमत तुमच्या business च्या size, required modules, आणि version (Desktop/Cloud) वर अवलंबून असते. Exact pricing साठी आम्हाला call करा: +91 94230 39902 किंवा free demo book करा — demo मध्ये सगळ्या details सांगतो.",
+        a: "Software ची किंमत तुमच्या business च्या size, required modules, आणि version (Desktop/Cloud) वर अवलंबून असते. Exact pricing साठी आम्हाला call करा: +91 94230 39902 किंवा आमच्याशी संपर्क करा — आम्ही तुम्हाला सगळ्या details सांगतो.",
       },
       {
-        q: "Trial version किंवा free demo मिळतो का?",
-        a: "हो! आम्ही free personalized demo देतो. Demo मध्ये तुम्हाला software चे सगळे features live दाखवतो. Demo साठी 'Schedule Demo' button वर click करा किंवा +91 94230 39902 वर call करा.",
+        q: "अधिक माहिती किंवा मार्गदर्शन मिळते का?",
+        a: "हो! आम्ही संपूर्ण मार्गदर्शन व माहिती देतो. अधिक माहितीसाठी 'संपर्क करा' button वर click करा किंवा +91 94230 39902 वर call करा.",
       },
     ],
   },
@@ -187,12 +187,12 @@ export default function FAQPage() {
                 : "Talk directly with our team. We're happy to answer any questions you have about our software."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   className="font-sans font-semibold px-8 bg-[#1E94A4] hover:bg-[#0B7989] text-white"
                 >
-                  {language === "mr" ? "Free Demo Book करा" : "Book a Free Demo"}
+                  {language === "mr" ? "संपर्क करा" : "Contact Us"}
                 </Button>
               </Link>
               <Link href="/contact">

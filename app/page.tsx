@@ -14,147 +14,96 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ClientLogosSection } from "@/components/client-logos-section"
 import { VideoDemoSection } from "@/components/video-demo-section"
 import { AnimatedStats } from "@/components/animated-stats"
-import { TrustBadges } from "@/components/trust-badges"
+
 import { GoogleReviews } from "@/components/google-reviews"
+import { ClientMap } from "@/components/client-map"
+
 
 export default function HomePage() {
   const { t, language } = useLanguage()
 
   const products = useMemo(() => {
-    if (language === 'mr') {
-      return [
-        {
-          id: 1,
-          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
-          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
-          image: "/dairy33.png",
-        },
-        {
-          id: 2,
-          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
-          description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
-          image: "/modern-dairy-farm.png",
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध संस्था प्रशासकीय ERP",
-          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
-          image: "/modern-office-dashboard.png",
-        },
-        {
-          id: 4,
-          title: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण",
-          description: "डिजिटल वजन काटे, थर्मल प्रिंटर, फॅट मशीन आणि आवाजाद्वारे घोषणा (Voice Announcement) यांचे परिपूर्ण एकत्रीकरण.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "पशूखाद्य आणि उचल (Advance) व्यवस्थापन",
-          description: "पशूखाद्य खरेदी-विक्री आणि बिलांमधून अॅडव्हान्सची स्वयंचलित कपात व व्याजाची सुलभ गणना.",
-          image: "/goldwin.png",
-        }
-      ]
-    } else if (language === 'kn') {
-      return [
-        {
-          id: 1,
-          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
-          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
-          image: "/dairy33.png",
-        },
-        {
-          id: 2,
-          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
-          description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
-          image: "/modern-dairy-farm.png",
-        },
-        {
-          id: 3,
-          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
-          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
-          image: "/modern-office-dashboard.png",
-        },
-        {
-          id: 4,
-          title: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ",
-          description: "ಡಿಜಿಟಲ್ ತೂಕದ ಪ್ರಮಾಣಗಳು, ಥರ್ಮಲ್ ಪ್ರಿಂಟರ್ಗಳು, ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಮತ್ತು ಧ್ವನಿ ಘೋಷಣೆಯ ಸಂಪೂರ್ಣ ಏಕೀಕರಣ.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ (Advance) ನಿರ್ವಹಣೆ",
-          description: "ಪಶು ಆಹಾರ ಖರೀದಿ-ಮಾರಾಟ ಮತ್ತು ಬಿಲ್ಲುಗಳಿಂದ ಮುಂಗಡಗಳ ಸ್ವಯಂಚಾಲಿತ ಕಡಿತ ಮತ್ತು ಬಡ್ಡಿಯ ಸುಲಭ ಲೆಕ್ಕಾಚಾರ.",
-          image: "/goldwin.png",
-        }
-      ]
-    } else if (language === 'hi') {
-      return [
-        {
-          id: 1,
-          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
-          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
-          image: "/dairy33.png",
-        },
-        {
-          id: 2,
-          title: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)",
-          description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
-          image: "/modern-dairy-farm.png",
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध समिति प्रशासनिक ERP",
-          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
-          image: "/modern-office-dashboard.png",
-        },
-        {
-          id: 4,
-          title: "दूध विश्लेषक और वजन कांटा एकीकरण",
-          description: "डिजिटल वजन कांटे, थर्मल प्रिंटर, फैट मशीन और आवाज घोषणा (Voice Announcement) का सटीक एकीकरण.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "पशु आहार और अग्रिम (Advance) प्रबंधन",
-          description: "पशु आहार खरीद-बिक्री और बिलों से अग्रिम की स्वचालित कटौती और ब्याज की आसान गणना.",
-          image: "/goldwin.png",
-        }
-      ]
-    } else {
-      return [
-        {
-          id: 1,
-          title: "Automatic Milk Collection System (AMCS)",
-          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
-          image: "/dairy33.png",
-        },
-        {
-          id: 2,
-          title: "Farmer Milk Passbook App (Sankalan)",
-          description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
-          image: "/modern-dairy-farm.png",
-        },
-        {
-          id: 3,
-          title: "Cooperative Society Admin ERP",
-          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
-          image: "/modern-office-dashboard.png",
-        },
-        {
-          id: 4,
-          title: "Milk Analyzer & Hardware Integrations",
-          description: "High-precision integration with digital weigh scales, FAT testing machines, thermal printers, and multilingual voice announcements.",
-          image: "/indian-software-office-collaboration.png",
-        },
-        {
-          id: 5,
-          title: "Cattle Feed & Advance Management",
-          description: "Streamlined module for tracking cattle feed distribution, inventory, automatic advance/loan recovery from milk bills, and interest calculation.",
-          image: "/goldwin.png",
-        }
-      ]
-    }
-  }, [language])
+    return [
+      {
+        id: 1,
+        title: t("dairy5.title") || "Complete Dairy Software Solutions",
+        description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+        image: "/live-image-dairy/5.0.png",
+        link: "/product/1",
+      },
+      {
+        id: "billing-5",
+        title: t("billing5.title") || "Dairy 5.0 – Milk Billing Software",
+        description: t("billing5.overview") || "Automate milk bill generation, payment calculations, and member ledger management with complete accuracy. Manage advances, feed recovery, loan deductions, rebates, and dividends in a single system. Ensure transparent and hassle-free payment processing for dairy farmers.",
+        image: "/live-image-dairy/milk_collection_5.0.png",
+        link: "/product/billing-5",
+      },
+      {
+        id: "web-dairy",
+        title: t("webDairy.title") || "Web-based Dairy Software Solutions",
+        description: t("webDairy.overview") || "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency on any web-enabled device.",
+        image: "/live-image-dairy/5.0_3.png",
+        link: "/product/web-dairy",
+      },
+      {
+        id: 2,
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+        image: "/modern-dairy-farm.png",
+        link: "/product/2",
+      },
+      {
+        id: 3,
+        title: t("dairy5.products.prod3.title") || "Dairy Administrator App",
+        description: t("dairy5.products.prod3.desc") || "Collection monitoring, dashboard & analytics, and report access for dairy administrators.",
+        image: "/modern-office-dashboard.png",
+        link: "/product/3",
+      },
+      {
+        id: 4,
+        title: t("dairy5.products.prod4.title") || "Milk Collection App & Machine Integration",
+        description: t("dairy5.products.prod4.desc") || "Direct integration with Fat Machine and Weighing Scales for seamless collection entry.",
+        image: "/indian-software-office-collaboration.png",
+        link: "/product/4",
+      },
+      {
+        id: 5,
+        title: t("dairy5.products.prod5.title") || "Production Management System",
+        description: t("dairy5.products.prod5.desc") || "Manage the complete milk processing cycle from raw milk reception to finished product production with real-time monitoring and inventory integration.",
+        image: "/goldwin.png",
+        link: "/product/5",
+      },
+      {
+        id: 6,
+        title: t("dairy5.products.prod6.title") || "Transport Management System",
+        description: t("dairy5.products.prod6.desc") || "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs.",
+        image: "/collection bike.webp",
+        link: "/product/6",
+      },
+      {
+        id: "gold",
+        title: language === 'mr' ? "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)" :
+          language === 'kn' ? "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)" :
+            language === 'hi' ? "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)" : "Gold Jewellery Showroom ERP (Goldwin)",
+        description: language === 'mr' ? "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट (Girvi) व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर." :
+          language === 'kn' ? "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿಯ ಲೆಕ್ಕಾಚಾರ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಸಾಫ್ಟ್‌ವೇರ್." :
+            language === 'hi' ? "ज्वेलरी शोरूम के लिए सोने-चांदी का हिसाब, बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर." : "Complete billing, account management, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
+        image: "/gold-image-new/gold_home_page.png",
+        link: "/gold-industry-solutions",
+      },
+      {
+        id: "sugar",
+        title: language === 'mr' ? "साखर कारखाना व्यवस्थापन प्रणाली" :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ" :
+            language === 'hi' ? "चीनी मिल प्रबंधन प्रणाली" : "Sugar Factory Enterprise Solutions",
+        description: language === 'mr' ? "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन." :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, तೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ." :
+            language === 'hi' ? "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान." : "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
+        image: "/sugerfac.png",
+        link: "/sugar-factory-solutions",
+      }
+    ];
+  }, [t, language]);
 
   return (
     <div className="min-h-screen bg-gray-50/50 dark:bg-zinc-950 font-sans relative overflow-hidden">
@@ -168,14 +117,12 @@ export default function HomePage() {
       <Header />
       <HeroSlider />
 
-      <TrustBadges />
-
       <main className="max-w-7xl mx-auto px-4 py-24 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="glass-card hover-lift p-8 flex flex-col justify-between min-h-[480px] group border-t border-white/40 dark:border-zinc-800/50">
               <div className="flex flex-col h-full">
-                <Link href={`/product/${product.id}`} className="block relative">
+                <Link href={product.link} className="block relative">
                   <div className="absolute inset-0 bg-blue-500/20 dark:bg-blue-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
                   <div className="relative w-full h-48 mb-8 rounded-2xl overflow-hidden border border-white/50 dark:border-zinc-800 shadow-sm">
                     <Image
@@ -190,19 +137,19 @@ export default function HomePage() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 leading-tight mb-4 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors">
                   {product.title}
                 </h3>
-                
-                <p className="text-gray-600 dark:text-zinc-400 text-base mb-8 flex-grow leading-relaxed">
+
+                <p className="text-gray-650 dark:text-zinc-400 text-base mb-8 flex-grow leading-relaxed">
                   {product.description}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <Link href={`/product/${product.id}`} className="block">
+                <Link href={product.link} className="block">
                   <Button variant="outline" className="w-full border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 font-semibold py-6 rounded-2xl hover:bg-gray-50 dark:hover:bg-zinc-800 transition-all">
                     {t("home.viewDetails")}
                   </Button>
                 </Link>
-                <Link href="/schedule-demo" className="block">
+                <Link href="/contact" className="block">
                   <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
                     {t("home.requestDemo")}
                   </Button>
@@ -216,6 +163,8 @@ export default function HomePage() {
       <VillagePortal />
 
       <ClientLogosSection />
+
+      <ClientMap />
 
       <AnimatedStats />
 

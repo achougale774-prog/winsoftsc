@@ -82,7 +82,7 @@ export function VideoDemoSection() {
                 <Play className="w-5 h-5 fill-white" />
                 {watchLabel}
               </button>
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button variant="outline" className="w-full sm:w-auto px-6 py-3 rounded-2xl border-[#1E94A4]/30 text-[#1E94A4] hover:bg-[#1E94A4]/5 font-bold">
                   {scheduleLabel}
                 </Button>

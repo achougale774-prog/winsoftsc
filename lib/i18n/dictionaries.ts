@@ -20,10 +20,220 @@ export const dictionaries = {
       "feedList": ["Cattle feed purchase/sale tracking", "Stock information", "Customer receipts", "Account statements on mobile"],
       "appTitle": "📱 Mobile App",
       "appList": ["Daily collection information", "Bills and account statements", "Permanent data storage", "Comparative analysis to help increase milk production"],
-      "contactTitle": "📞 Contact",
-      "contactName": "Jaywant Lavte",
-      "contactPhone": "9890733526 / 7499758896",
-      "contactOffice": "Offices: Kolhapur, Belagavi, Islampur, Sangli"
+      "contactTitle": "📞 Contact Us",
+      "contactName": "Winsoft Software Consultancy",
+      "contactPhone": "+91 94230 39902",
+      "contactOffice": "Plot 448, Lane 14B, Hari Om Nagar, Kolhapur - 416010"
+    },
+    billing5: {
+      title: "Dairy 5.0 – Milk Billing Software",
+      overview: "Automate milk bill generation, payment calculations, and member ledger management with complete accuracy. Manage advances, feed recovery, loan deductions, rebates, and dividends in a single system. Ensure transparent and hassle-free payment processing for dairy farmers.",
+    },
+    dairy5: {
+      title: "Complete Dairy Software Solutions",
+      overview: "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency.",
+      coreModulesTitle: "Core Modules",
+      modules: {
+        collection: {
+          title: "Milk Collection Management",
+          items: [
+            "Daily milk collection entry",
+            "Fat & SNF based milk calculation",
+            "Multiple rate chart support",
+            "Milk collection status monitoring",
+            "Milk sale entry during collection",
+            "Pending milk member tracking"
+          ]
+        },
+        billing: {
+          title: "Milk Billing System",
+          items: [
+            "Automatic milk bill generation",
+            "Earnings and deductions management",
+            "Advance recovery",
+            "Cattle feed recovery",
+            "Loan and other deductions",
+            "Payment history and ledger management"
+          ]
+        },
+        rebate: {
+          title: "Rebate & Dividend Management",
+          items: [
+            "Rebate calculation",
+            "Dividend distribution",
+            "Member-wise reports",
+            "Annual settlement reports"
+          ]
+        },
+        inventory: {
+          title: "Inventory Management",
+          items: [
+            "Cattle feed stock",
+            "Medicine stock",
+            "Dairy consumables management",
+            "Purchase and issue tracking",
+            "Stock valuation reports"
+          ]
+        },
+        accounting: {
+          title: "Accounting Management",
+          items: [
+            "Voucher entry",
+            "Cash Book",
+            "Bank Book",
+            "Ledger Management",
+            "Trial Balance",
+            "Profit & Loss Account",
+            "Balance Sheet"
+          ]
+        },
+        reports: {
+          title: "MIS Reports",
+          items: [
+            "Daily collection reports",
+            "Member-wise reports",
+            "Society performance reports",
+            "Financial reports",
+            "Collection center reports",
+            "Custom analytical reports"
+          ]
+        }
+      },
+      keyFeaturesTitle: "Key Features",
+      keyFeatures: {
+        transparency: {
+          title: "Transparency & Control",
+          items: [
+            "Complete transparency between dairy society and farmers",
+            "Real-time access to milk collection data",
+            "Digital records and audit trails"
+          ]
+        },
+        security: {
+          title: "Security",
+          items: [
+            "Role-based user management",
+            "Rights-based access control",
+            "User activity logs",
+            "Secure data management"
+          ]
+        },
+        integration: {
+          title: "Machine Integration",
+          items: [
+            "Compatible with any company's Fat Machine",
+            "Compatible with all major Weighing Scales",
+            "Automated data capture",
+            "Reduced manual errors"
+          ]
+        },
+        rates: {
+          title: "Flexible Rate Management",
+          items: [
+            "Multiple rate charts",
+            "Seasonal rate support",
+            "Society-wise rate configuration",
+            "Automatic milk value calculation"
+          ]
+        }
+      },
+      operationsTitle: "Collection Center Operations",
+      operationsSubtitle: "At the time of milk collection, operators can:",
+      operations: [
+        "Record milk collection",
+        "Record milk sales",
+        "Sell cattle feed",
+        "Issue advances",
+        "View member ledger",
+        "Check pending members",
+        "Track collection status"
+      ],
+      auditTitle: "Monitoring & Audit",
+      audit: [
+        "Milk collection log",
+        "Milk sales log",
+        "User activity log",
+        "Transaction history",
+        "Audit reports"
+      ],
+      mobileAppsTitle: "Additional Mobile Applications (Available at Extra Cost)",
+      mobileApps: {
+        farmer: {
+          title: "Farmer Mobile App",
+          items: [
+            "Daily milk collection details",
+            "Milk bill information",
+            "Ledger statement",
+            "Payment status",
+            "Notification alerts"
+          ]
+        },
+        admin: {
+          title: "Dairy Administrator App",
+          items: [
+            "Collection monitoring",
+            "Dashboard & analytics",
+            "Report access",
+            "Society performance tracking",
+            "User management"
+          ]
+        },
+        collection: {
+          title: "Milk Collection App",
+          items: [
+            "Milk collection entry",
+            "Fat/SNF recording",
+            "Member verification",
+            "Collection reports",
+            "Offline & online synchronization"
+          ]
+        }
+      },
+      benefitsTitle: "Benefits",
+      benefits: [
+        "Increase operational efficiency",
+        "Reduce manual work",
+        "Improve accuracy",
+        "Ensure transparency",
+        "Better financial control",
+        "Faster decision making",
+        "Complete dairy digitization"
+      ],
+      suitableTitle: "Suitable For",
+      suitable: [
+        "Village Dairy Cooperative Societies",
+        "Milk Collection Centers",
+        "Milk Unions",
+        "Dairy Processing Plants",
+        "Private Dairy Businesses",
+        "Large Dairy Networks"
+      ],
+      products: {
+        prod2: {
+          title: "Farmer Mobile App (Sankalan)",
+          desc: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements."
+        },
+        prod3: {
+          title: "Dairy Administrator App",
+          desc: "Collection monitoring, dashboard & analytics, and report access for dairy administrators."
+        },
+        prod4: {
+          title: "Milk Collection App & Machine Integration",
+          desc: "Direct integration with Fat Machine and Weighing Scales for seamless collection entry."
+        },
+        prod5: {
+          title: "Production Management System",
+          desc: "Manage the complete milk processing cycle from raw milk reception to finished product production with real-time monitoring and inventory integration."
+        },
+        prod6: {
+          title: "Transport Management System",
+          desc: "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs."
+        }
+      }
+    },
+    webDairy: {
+      title: "Web-based Dairy Software Solutions",
+      overview: "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency on any web-enabled device."
     },
     features: {
       "milkTitle": "Milk Procurement",
@@ -101,10 +311,10 @@ export const dictionaries = {
       "heroTitle": "Powerful Features for Modern Business",
       "heroSubtitle": "Everything you need to manage, scale, and optimize your operations from a single platform.",
       "exploreProducts": "Explore Products",
-      "requestDemo": "Request Demo",
+      "requestDemo": "Contact Us",
       "ctaTitle": "Ready to Transform Your Business?",
       "ctaDesc": "Join thousands of businesses that trust WinSoft for their daily operations.",
-      "requestFreeDemo": "Request Free Demo",
+      "requestFreeDemo": "Contact Us",
       "contactUs": "Contact Us"
     },
     nav: {
@@ -121,7 +331,7 @@ export const dictionaries = {
     hero: {
       "title": "Empowering Businesses with Smart Digital Solutions",
       "subtitle": "Specialized ERP, Billing, and Management software for Dairy, Sugar, and Gold industries since 1998.",
-      "cta1": "Request Demo",
+      "cta1": "Contact Us",
       "cta2": "Contact Us",
     },
     home: {
@@ -134,7 +344,7 @@ export const dictionaries = {
       "product3Title": "Sugar Factory Complete ERP Solution",
       "product3Desc": "End-to-end management for sugar factories, including cane management and inventory.",
       "viewDetails": "View Details",
-      "requestDemo": "Request Demo",
+      "requestDemo": "Contact Us",
       "heroSlide1Title": "Mega Dairy Tech Sale",
       "heroSlide1Desc": "Complete Dairy Management Software",
       "heroSlide1Price": "Starting ₹45,000",
@@ -174,7 +384,7 @@ export const dictionaries = {
       "blog": "Blog",
       "caseStudies": "Case Studies",
       "contact": "Contact",
-      "requestDemo": "Request Demo",
+      "requestDemo": "Contact Us",
       "allRightsReserved": "All Rights Reserved.",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service"
@@ -225,18 +435,37 @@ export const dictionaries = {
       "feat24": "Expiry management",
       "tiersTitle": "Choose the Right Software for Your Dairy",
       "tiersSubtitle": "Three product tiers designed for different scales of dairy operations",
-      "tier1Subtitle": "Desktop Solutions",
-      "tier1Desc": "Reliable desktop-based software for milk procurement and billing. Perfect for collection centers.",
-      "tier1Includes": "2 modules — Procurement & Billing, Accounting",
-      "tier1Best": "Small dairies & collection centers",
-      "tier2Subtitle": "Advanced Version",
-      "tier2Desc": "Advanced features including production tracking, mobile apps, and mini ERP.",
-      "tier2Includes": "6 modules — Procurement, Accounting, Production, Mobile App, Mini ERP",
-      "tier2Best": "Medium to large dairies & cooperatives",
-      "tier3Subtitle": "Cloud Based Solutions",
-      "tier3Desc": "100% cloud-based platform with real-time access and enterprise ERP.",
-      "tier3Includes": "5 modules — Procurement, Accounting, Production, Transport, Enterprise ERP",
-      "tier3Best": "Milk unions, Sangh & federations",
+      "tier1Title": "Complete Dairy Software Solutions",
+      "tier1Subtitle": "Village cooperatives / Personal Dairy's",
+      "tier1Desc": "Village cooperatives/Personal Dairy’s. milk collection, periodic 7/10/15/20 days milk payment, inventory & Accounting management.",
+      "tier1Includes": "Procurement, Billing, 7/10/15/20 Days Payments, Inventory & Accounting",
+      "tier1Best": "Village Level Cooperatives & Personal Dairies",
+      "tier2Title": "Medium Dairy",
+      "tier2Subtitle": "Dairy mini ERP",
+      "tier2Desc": "Dairy mini ERP consists DOCK System, Quality analysis, billing, Inventory & accounting management.",
+      "tier2Includes": "Procurement, DOCK System, Quality Analysis, Billing, Inventory & Accounting",
+      "tier2Best": "Medium size cooperative societies & private dairies",
+      "tier3Title": "Large Dairy",
+      "tier3Subtitle": "Dairy ERP",
+      "tier3Desc": "Dairy ERP contains RMRD, billing, transport, production, inventory & accounting management.",
+      "tier3Includes": "RMRD, Billing, Transport, Production, Inventory & Accounting ERP",
+      "tier3Best": "Large dairies, milk unions & federations",
+      "smallFeat1": "Automated Milk Collection & Weighing Integration",
+      "smallFeat2": "FAT / SNF & Rate Calculation",
+      "smallFeat3": "Periodic Milk Payments (7/10/15/20 Days)",
+      "smallFeat4": "Cattle Feed & Advance Recovery",
+      "smallFeat5": "Inventory & Simple Accounting Management",
+      "mediumFeat1": "DOCK Collection System",
+      "mediumFeat2": "Automatic Quality Analysis & FAT/SNF Testing",
+      "mediumFeat3": "Complete Billing & Online Bank Transfers",
+      "mediumFeat4": "Inventory & Cattle Feed Management",
+      "mediumFeat5": "Financial Accounting, Ledger & Daybook",
+      "largeFeat1": "RMRD (Raw Milk Receiving Dock) System",
+      "largeFeat2": "Advanced Billing & Payment Gateway Integration",
+      "largeFeat3": "Transport, Route Optimization & Vehicle Tracking",
+      "largeFeat4": "Production Planning & Batch Quality Control",
+      "largeFeat5": "Enterprise Inventory & Warehouse Management",
+      "largeFeat6": "Full Financial Accounting, GST Ready & Multi-branch ERP",
       "ctaModernizeTitle": "Ready to Modernize Your Dairy Operations?",
       "ctaModernizeDesc": "Join hundreds of dairy businesses who have transformed their operations with Winsoft solutions.",
       "supportLabel": "Support"
@@ -280,7 +509,7 @@ export const dictionaries = {
       "optimizedProcDesc": "Reduce cane drying time with intelligent scheduling and weight bridge integration.",
       "modernizeSugarTitle": "Modernize Your Sugar Factory",
       "modernizeSugarDesc": "Partner with WinSoft for a reliable, scalable, and industry-proven ERP.",
-      "freeERPDemo": "Get a Free ERP Demo",
+      "freeERPDemo": "Contact Us",
       "connectWithUs": "Connect with Us"
     },
     gold: {
@@ -307,7 +536,7 @@ export const dictionaries = {
       "module7": "Worker (Karigar) management",
       "module8": "Girdwi (Mortgage) management",
       "module9": "Financial accounting & GST reports",
-      "requestDemoBtn": "Request Demo",
+      "requestDemoBtn": "Contact Us",
       "advancedFeaturesTitle": "Advanced Capabilities",
       "secureAudit": "Secure Auditing",
       "secureAuditDesc": "Complete track of every transaction with user-level permissions and audit trails.",
@@ -321,7 +550,7 @@ export const dictionaries = {
       "contactExpert": "Talk to an Expert"
     },
     header: {
-      "scheduleDemo": "Schedule Demo",
+      "scheduleDemo": "Contact Us",
       "contact": "Contact",
     },
     product: {
@@ -337,7 +566,7 @@ export const dictionaries = {
       "keyFeatures": "Key Features",
       "interested": "Interested?",
       "personalizedWalkthrough": "Get a free personalized walkthrough of our software.",
-      "requestDemo": "Request Live Demo",
+      "requestDemo": "Contact Us",
       "supportAssistance": "Support & Assistance",
       "support247": "24/7 Support",
       "callUs": "Call us at +91 98XXX XXXXX",
@@ -476,7 +705,7 @@ export const dictionaries = {
       "readMore": "Read More",
       "ctaTitle": "Ready to Write Your Success Story?",
       "ctaDesc": "Join hundreds of successful businesses who have transformed their operations with Winsoft solutions.",
-      "scheduleDemo": "Schedule a Demo",
+      "scheduleDemo": "Contact Us",
       "contactTeam": "Contact Our Team",
       "study1Title": "Modernizing Dairy Operations: 300% Efficiency Increase",
       "study1Client": "Maharashtra Dairy Cooperative",
@@ -557,8 +786,8 @@ export const dictionaries = {
       "customReports": "Custom Reports",
       "support247": "24/7 Support",
       "readyToTransform": "Ready to Transform Your Business?",
-      "transformDesc": "Schedule a personalized demo to see how our solutions can streamline your operations and boost productivity.",
-      "scheduleDemo": "Schedule a Demo",
+      "transformDesc": "Contact us to see how our solutions can streamline your operations and boost productivity.",
+      "scheduleDemo": "Contact Us",
       "requestQuote": "Request Quote"
     },
     story: {
@@ -656,6 +885,29 @@ export const dictionaries = {
       "testimonialAuthor": "Rajesh Kumar",
       "testimonialRole": "Production Manager, Maharashtra Sugar Mills",
       "errorMsg": "There was an error scheduling your demo. Please try again."
+    },
+    productsPage: {
+      "heroTitle": "Our Products & Solutions",
+      "heroSubtitle": "Explore our comprehensive suite of software products designed specifically for your industry's unique operational needs.",
+      "dairySoftware": "Dairy Software",
+      "goldJewellery": "Gold & Jewellery Software",
+      "invAcc": "Inventory & Accounting",
+      "sugarIndustry": "Sugar Industry ERP",
+      "goldExchange": "Gold Exchange Management",
+      "goldExchangeDesc": "Specialized software for gold exchange transactions, weight verification, and customer scheme balances.",
+      "goldExchangeBilling": "Gold Exchange Billing",
+      "goldExchangeBillingDesc": "Billing system combining retail/wholesale gold purchase and sales transactions with integrated GST.",
+      "goldFull": "Gold Showroom Full ERP",
+      "goldFullDesc": "End-to-end ERP including inventory management, customer schemes, sales billing, karigar tracking, and finance.",
+      "goldBooking": "Gold Booking & Schemes",
+      "goldBookingDesc": "Manage monthly investment schemes, gold booking options, interest calculations, and automated reminders.",
+      "invAccSoftware": "Inventory & Accounting Software",
+      "invAccSoftwareDesc": "Simple yet powerful accounting and stock tracking system designed for general merchants and retailers.",
+      "fullBusinessSoftware": "Full Business Suite",
+      "fullBusinessSoftwareDesc": "Enterprise accounting, multiple warehouse management, barcode billing, and robust financial reporting.",
+      "notSureTitle": "Not sure which product fits your business?",
+      "notSureDesc": "Our experts can help you choose the right configuration or design a customized solution for your enterprise.",
+      "contactSales": "Contact Sales"
     }
   },
   mr: {
@@ -679,10 +931,220 @@ export const dictionaries = {
       "feedList": ["पशुखाद्य खरेदी/विक्री ट्रॅकिंग", "स्टॉक माहिती", "ग्राहक पावती", "मोबाईलवर खाते उतारा"],
       "appTitle": "📱 मोबाईल अॅप",
       "appList": ["रोजचे संकलन माहिती", "बिल आणि खाते उतारा", "कायमस्वरूपी डेटा स्टोरेज", "तुलना करून दूध उत्पादन वाढवण्यास मदत"],
-      "contactTitle": "📞 संपर्क",
-      "contactName": "जयवंत लाटे",
-      "contactPhone": "9890733526 / 7499758896",
-      "contactOffice": "ऑफिस: कोल्हापूर, बेळगाव, इस्लामपूर, सांगली"
+      "contactTitle": "📞 आमच्याशी संपर्क साधा",
+      "contactName": "विनसॉफ्ट सॉफ्टवेअर कन्सल्टन्सी",
+      "contactPhone": "+91 94230 39902",
+      "contactOffice": "प्लॉट ४४८, लेन १४बी, हरी ओम नगर, कोल्हापूर - ४१६०१०"
+    },
+    billing5: {
+      title: "डेअरी ५.० – दूध बिलिंग सॉफ्टवेअर",
+      overview: "दुग्ध उत्पादक शेतकऱ्यांसाठी अचूक दूध बिल निर्मिती, पेमेंट गणना आणि सभासद खातेवही (लेझर) व्यवस्थापन स्वयंचलित करा. उचल (ॲडव्हान्स), खाद्य वसुली, कर्ज कपात, फरक (रिबेट) आणि लाभांश एकाच प्रणालीमध्ये व्यवस्थापित करा. शेतकऱ्यांसाठी सुलभ आणि पारदर्शक पेमेंट प्रक्रिया सुनिश्चित करा.",
+    },
+    dairy5: {
+      title: "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स",
+      overview: "डेअरी ५.० हे सहकारी दूध व्यावसायिक संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांट्ससाठी तयार केलेले एक व्यापक डेअरी व्यवस्थापन सोल्यूशन आहे. हे सॉफ्टवेअर पारदर्शकता आणि कार्यात्मक कार्यक्षमता सुनिश्चित करत दूध खरेदी, बिलिंग, इन्व्हेंटरी, अकाउंटिंग आणि व्यवस्थापकीय अहवाल स्वयंचलित करते.",
+      coreModulesTitle: "मुख्य मॉड्यूल्स",
+      modules: {
+        collection: {
+          title: "दूध संकलन व्यवस्थापन",
+          items: [
+            "रोजची दूध संकलन नोंद",
+            "फॅट आणि एसएनएफ आधारित दुधाची गणना",
+            "मल्टीपल रेट चार्ट सपोर्ट",
+            "दूध संकलन स्थितीचे मॉनिटरिंग",
+            "संकलनादरम्यान दूध विक्रीची नोंद",
+            "प्रलंबित दूध उत्पादक सभासद ट्रॅकिंग"
+          ]
+        },
+        billing: {
+          title: "दूध बिलिंग प्रणाली",
+          items: [
+            "स्वयंचलित दूध बिल निर्मिती",
+            "उत्पन्न आणि कपात व्यवस्थापन",
+            "उचल (Advance) वसुली",
+            "पशुखाद्य रक्कम वसुली",
+            "कर्ज आणि इतर कपात",
+            "पेमेंट इतिहास आणि खातेवही व्यवस्थापन"
+          ]
+        },
+        rebate: {
+          title: "रिबेट आणि लाभांश व्यवस्थापन",
+          items: [
+            "रिबेट (फरक) गणना",
+            "लाभांश वितरण",
+            "सभासदनिहाय अहवाल",
+            "वार्षिक सेटलमेंट अहवाल"
+          ]
+        },
+        inventory: {
+          title: "इन्व्हेंटरी व्यवस्थापन",
+          items: [
+            "पशुखाद्य स्टॉक",
+            "औषध साठा",
+            "डेअरी वापराच्या वस्तूंचे व्यवस्थापन",
+            "खरेदी आणि वाटप ट्रॅकिंग",
+            "स्टॉक मूल्यांकन अहवाल"
+          ]
+        },
+        accounting: {
+          title: "अकाउंटिंग व्यवस्थापन",
+          items: [
+            "व्हॉउचर नोंदणी",
+            "कीर्द वही (Cash Book)",
+            "बँक बुक",
+            "खातेवही व्यवस्थापन",
+            "ट्रायल बॅलन्स",
+            "नफा आणि तोटा पत्रक",
+            "ताळेबंद"
+          ]
+        },
+        reports: {
+          title: "एमआयएस अहवाल",
+          items: [
+            "दैनिक संकलन अहवाल",
+            "सभासदनिहाय अहवाल",
+            "संस्थेचा कामगिरी अहवाल",
+            "आर्थिक अहवाल",
+            "संकलन केंद्र अहवाल",
+            "सानुकूल विश्लेषणात्मक अहवाल"
+          ]
+        }
+      },
+      keyFeaturesTitle: "मुख्य वैशिष्ट्ये",
+      keyFeatures: {
+        transparency: {
+          title: "पारदर्शकता आणि नियंत्रण",
+          items: [
+            "डेअरी संस्था आणि शेतकरी यांच्यात संपूर्ण पारदर्शकता",
+            "दूध संकलन डेटाचा रिअल-टाइम ऍक्सेस",
+            "डिजिटल रेकॉर्ड आणि ऑडिट ट्रेल्स"
+          ]
+        },
+        security: {
+          title: "सुरक्षा",
+          items: [
+            "भूमिका-आधारित वापरकर्ता व्यवस्थापन",
+            "हक्क-आधारित प्रवेश नियंत्रण",
+            "वापरकर्ता क्रियाकलाप लॉग",
+            "सुरक्षित डेटा व्यवस्थापन"
+          ]
+        },
+        integration: {
+          title: "मशीन एकत्रीकरण",
+          items: [
+            "कोणत्याही कंपनीच्या फॅट मशीनशी सुसंगत",
+            "सर्व प्रमुख वजन काट्यांशी सुसंगत",
+            "स्वयंचलित डेटा कॅप्चर",
+            "मानवी चुकांमध्ये घट"
+          ]
+        },
+        rates: {
+          title: "लवचिक दर व्यवस्थापन",
+          items: [
+            "मल्टीपल रेट चार्ट्स",
+            "हंगामी दर समर्थन",
+            "संस्था-निहाय दर कॉन्फिगरेशन",
+            "स्वयंचलित दुधाच्या मूल्याची गणना"
+          ]
+        }
+      },
+      operationsTitle: "संकलन केंद्र ऑपरेशन्स",
+      operationsSubtitle: "दूध संकलनाच्या वेळी, ऑपरेटर्स खालील गोष्टी करू शकतात:",
+      operations: [
+        "दूध संकलनाची नोंद करणे",
+        "दूध विक्रीची नोंद करणे",
+        "पशुखाद्य विक्री करणे",
+        "उचल (Advance) देणे",
+        "सभासद खातेवही पाहणे",
+        "प्रलंबित सभासद तपासणे",
+        "संकलन स्थितीचा मागोवा घेणे"
+      ],
+      auditTitle: "मॉनिटरिंग आणि ऑडिट",
+      audit: [
+        "दूध संकलन लॉग",
+        "दूध विक्री लॉग",
+        "वापरकर्ता क्रियाकलाप लॉग",
+        "व्यवहारांचा इतिहास",
+        "ऑडिट अहवाल"
+      ],
+      mobileAppsTitle: "अतिरिक्त मोबाईल ॲप्लिकेशन्स (अतिरिक्त शुल्कासह उपलब्ध)",
+      mobileApps: {
+        farmer: {
+          title: "शेतकरी मोबाईल ॲप",
+          items: [
+            "रोजच्या दूध संकलनाचा तपशील",
+            "दूध बिलाची माहिती",
+            "खातेवही उतारा",
+            "पेमेंटची स्थिती",
+            "नोटीफिकेशन अलर्ट"
+          ]
+        },
+        admin: {
+          title: "डेअरी प्रशासक ॲप",
+          items: [
+            "दूध संकलन मॉनिटरिंग",
+            "डॅशबोर्ड आणि विश्लेषण",
+            "विविध अहवाल ऍक्सेस",
+            "संस्थेच्या कामगिरीचा मागोवा",
+            "वापरकर्ता व्यवस्थापन"
+          ]
+        },
+        collection: {
+          title: "दूध संकलन ॲप",
+          items: [
+            "दूध संकलन नोंदणी",
+            "फॅट/एसएनएफ रेकॉर्डिंग",
+            "सभासद पडताळणी",
+            "संकलन अहवाल",
+            "ऑफलाइन आणि ऑनलाइन सिंक्रोनाइझेशन"
+          ]
+        }
+      },
+      benefitsTitle: "फायदे",
+      benefits: [
+        "कार्यक्षमता वाढवणे",
+        "मानवी काम कमी करणे",
+        "अचूकता सुधारणे",
+        "पारदर्शकता सुनिश्चित करणे",
+        "उत्तम आर्थिक नियंत्रण",
+        "जलद निर्णय घेणे",
+        "संपूर्ण डेअरी डिजिटायझेशन"
+      ],
+      suitableTitle: "यांच्यासाठी सुयोग्य",
+      suitable: [
+        "सहकारी दूध उत्पादक संस्था",
+        "दूध संकलन केंद्रे",
+        "दूध संघ (Milk Unions)",
+        "दुग्ध प्रक्रिया उद्योग",
+        "खाजगी दूध व्यवसाय",
+        "मोठे डेअरी नेटवर्क (Large Dairy Networks)"
+      ],
+      products: {
+        prod2: {
+          title: "शेतकरी मोबाईल ॲप (संकलन)",
+          desc: "दूध उत्पादक शेतकऱ्यांसाठी दैनिक दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेझर तपासण्यासाठीचे प्रगत मोबाईल ॲप्लिकेशन."
+        },
+        prod3: {
+          title: "डेअरी प्रशासक ॲप",
+          desc: "डेअरी प्रशासकांसाठी संकलन देखरेख, डॅशबोर्ड आणि विश्लेषण आणि अहवाल प्रवेश."
+        },
+        prod4: {
+          title: "दूध संकलन ॲप आणि मशीन एकत्रीकरण",
+          desc: "तब्बल अचूक दूध संकलन नोंदीसाठी फॅट मशीन आणि वजन काट्यांसोबत थेट जोडणी."
+        },
+        prod5: {
+          title: "उत्पादन व्यवस्थापन प्रणाली",
+          desc: "कच्च्या दुधाच्या स्वागतापासून ते तयार उत्पादनांच्या उत्पादनापर्यंत संपूर्ण दूध प्रक्रिया चक्र रिअल-टाइम मॉनिटरिंग आणि इन्व्हेंटरी एकत्रीकरणासह व्यवस्थापित करा."
+        },
+        prod6: {
+          title: "वाहतूक व्यवस्थापन प्रणाली (Transport Management)",
+          desc: "दूध संकलन मार्ग, वाहन चालन, डिस्पॅच आणि वाहतूक खर्चाचे कार्यक्षमतेने व्यवस्थापन करा."
+        }
+      }
+    },
+    webDairy: {
+      title: "वेब-बेस्ड डेअरी सॉफ्टवेअर सोल्यूशन्स",
+      overview: "वेब डेअरी हे सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक वेब-बेस्ड दुग्ध व्यवस्थापन सोल्यूशन आहे. हे सॉफ्टवेअर दूध खरेदी, बिलिंग, इन्व्हेंटरी, अकाउंटिंग आणि व्यवस्थापकीय अहवाल कोणत्याही वेब-सक्षम डिव्हाइसवर पारदर्शकता आणि कार्यक्षमता सुनिश्चित करत स्वयंचलित करते."
     },
     features: {
       "milkTitle": "दूध संकलन",
@@ -760,10 +1222,10 @@ export const dictionaries = {
       "heroTitle": "आधुनिक व्यवसायासाठी शक्तिशाली वैशिष्ट्ये",
       "heroSubtitle": "एका प्लॅटफॉर्मवरून तुमचे ऑपरेशन्स व्यवस्थापित करण्यासाठी, स्केल करण्यासाठी आणि ऑप्टिमाइझ करण्यासाठी आवश्यक असलेले सर्वकाही.",
       "exploreProducts": "उत्पादने एक्सप्लोर करा",
-      "requestDemo": "डेमोची विनंती करा",
+      "requestDemo": "संपर्क करा",
       "ctaTitle": "तुमचा व्यवसाय बदलण्यासाठी तयार आहात?",
       "ctaDesc": "त्यांच्या दैनंदिन ऑपरेशन्ससाठी WinSoft वर विश्वास ठेवणाऱ्या हजारो व्यवसायांमध्ये सामील व्हा.",
-      "requestFreeDemo": "मोफत डेमोची विनंती करा",
+      "requestFreeDemo": "संपर्क करा",
       "contactUs": "आमच्याशी संपर्क साधा"
     },
     nav: {
@@ -780,7 +1242,7 @@ export const dictionaries = {
     hero: {
       "title": "स्मार्ट डिजिटल सोल्यूशन्ससह व्यवसायांचे सक्षमीकरण",
       "subtitle": "१९९८ पासून दुग्ध, साखर आणि सुवर्ण उद्योगांसाठी विशेष ईआरपी, बिलिंग आणि व्यवस्थापन सॉफ्टवेअर.",
-      "cta1": "डेमोची विनंती करा",
+      "cta1": "संपर्क करा",
       "cta2": "आमच्याशी संपर्क साधा",
     },
     home: {
@@ -793,7 +1255,7 @@ export const dictionaries = {
       "product3Title": "साखर कारखाना संपूर्ण ईआरपी सोल्यूशन",
       "product3Desc": "ऊस व्यवस्थापन आणि इन्व्हेंटरीसह साखर कारखान्यांसाठी शेवटपासून शेवटपर्यंत व्यवस्थापन.",
       "viewDetails": "तपशील पहा",
-      "requestDemo": "डेमोची विनंती करा",
+      "requestDemo": "संपर्क करा",
       "heroSlide1Title": "मेगा डेअरी टेक सेल",
       "heroSlide1Desc": "संपूर्ण दुग्ध व्यवस्थापन सॉफ्टवेअर",
       "heroSlide1Price": "₹४५,००० पासून सुरू",
@@ -833,7 +1295,7 @@ export const dictionaries = {
       "blog": "ब्लॉग",
       "caseStudies": "केस स्टडीज",
       "contact": "संपर्क",
-      "requestDemo": "डेमोची विनंती करा",
+      "requestDemo": "संपर्क करा",
       "allRightsReserved": "सर्व हक्क राखीव.",
       "privacyPolicy": "गोपनीयता धोरण",
       "termsOfService": "सेवा अटी"
@@ -884,18 +1346,37 @@ export const dictionaries = {
       "feat24": "कालबाह्यता व्यवस्थापन",
       "tiersTitle": "आपल्या डेअरीसाठी योग्य सॉफ्टवेअर निवडा",
       "tiersSubtitle": "दुग्धव्यवसाय ऑपरेशन्सच्या विविध स्केलसाठी डिझाइन केलेले तीन उत्पादन स्तर",
-      "tier1Subtitle": "डेस्कटॉप सोल्यूशन्स",
-      "tier1Desc": "दूध खरेदी आणि बिलिंगसाठी विश्वसनीय डेस्कटॉप-आधारित सॉफ्टवेअर. संकलन केंद्रांसाठी योग्य.",
-      "tier1Includes": "२ मॉड्यूल्स — खरेदी आणि बिलिंग, अकाउंटिंग",
-      "tier1Best": "लहान डेअरी आणि संकलन केंद्रे",
-      "tier2Subtitle": "प्रगत आवृत्ती",
-      "tier2Desc": "उत्पादन ट्रॅकिंग, मोबाइल अॅप्स आणि मिनी ईआरपी सह प्रगत वैशिष्ट्ये.",
-      "tier2Includes": "६ मॉड्यूल्स — खरेदी, अकाउंटिंग, उत्पादन, मोबाइल अॅप, मिनी ईआरपी",
-      "tier2Best": "मध्यम ते मोठ्या डेअरी आणि सहकारी संस्था",
-      "tier3Subtitle": "क्लाउड आधारित सोल्यूशन्स",
-      "tier3Desc": "रिअल-टाइम प्रवेश आणि एंटरप्राइझ ईआरपीसह १००% क्लाउड-आधारित प्लॅटफॉर्म.",
-      "tier3Includes": "५ मॉड्यूल्स — खरेदी, अकाउंटिंग, उत्पादन, वाहतूक, एंटरप्राइझ ईआरपी",
-      "tier3Best": "दूध संघ, संघ आणि महासंघ",
+      "tier1Title": "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स",
+      "tier1Subtitle": "ग्रामपातळीवरील संस्था / वैयक्तिक डेअरी",
+      "tier1Desc": "ग्रामपातळीवरील सहकारी संस्था/वैयक्तिक डेअरी. दूध संकलन, आवर्तक ७/१०/१५/२० दिवसांचे दूध पेमेंट, इन्व्हेंटरी आणि अकाउंटिंग व्यवस्थापन.",
+      "tier1Includes": "संकलन, बिलिंग, ७/१०/१५/२० दिवसांचे पेमेंट, इन्व्हेंटरी आणि अकाउंटिंग",
+      "tier1Best": "ग्रामपातळीवरील सहकारी संस्था आणि वैयक्तिक डेअरी",
+      "tier2Title": "Medium Dairy (मध्यम डेअरी)",
+      "tier2Subtitle": "डेअरी मिनी ERP",
+      "tier2Desc": "डेअरी मिनी ERP मध्ये डॉक (DOCK) सिस्टम, गुणवत्ता विश्लेषण, बिलिंग, इन्व्हेंटरी आणि अकाउंटिंग व्यवस्थापन समाविष्ट आहे.",
+      "tier2Includes": "संकलन, डॉक सिस्टम, गुणवत्ता विश्लेषण, बिलिंग, इन्व्हेंटरी आणि अकाउंटिंग",
+      "tier2Best": "मध्यम आकाराच्या सहकारी संस्था आणि खाजगी डेअरी",
+      "tier3Title": "Large Dairy (मोठी डेअरी)",
+      "tier3Subtitle": "डेअरी ERP",
+      "tier3Desc": "डेअरी ERP मध्ये RMRD, बिलिंग, वाहतूक, उत्पादन, इन्व्हेंटरी आणि अकाउंटिंग व्यवस्थापन समाविष्ट आहे.",
+      "tier3Includes": "RMRD, बिलिंग, वाहतूक, उत्पादन, इन्व्हेंटरी आणि अकाउंटिंग ERP",
+      "tier3Best": "मोठ्या डेअरी, दूध संघ आणि महासंघ",
+      "smallFeat1": "स्वयंचलित दूध संकलन आणि वजन काटा एकत्रीकरण",
+      "smallFeat2": "फॅट (FAT) / एसएनएफ (SNF) आणि दर गणना",
+      "smallFeat3": "नियतकालिक दूध देयके (७/१०/१५/२० दिवस पेमेंट)",
+      "smallFeat4": "पशुखाद्य खरेदी-विक्री आणि उचल (Advance) व्यवस्थापन",
+      "smallFeat5": "इन्व्हेंटरी आणि सुलभ अकाउंटिंग व्यवस्थापन",
+      "mediumFeat1": "डॉक (DOCK) संकलन प्रणाली",
+      "mediumFeat2": "स्वयंचलित गुणवत्ता विश्लेषण आणि फॅट मशीन जोडणी",
+      "mediumFeat3": "अचूक बिलिंग आणि बँक ट्रान्सफर सोल्यूशन",
+      "mediumFeat4": "इन्व्हेंटरी आणि स्टॉक व्यवस्थापन",
+      "mediumFeat5": "अकाउंटिंग, रोजकीर्द आणि खातेवही व्यवस्थापन",
+      "largeFeat1": "RMRD (Raw Milk Receiving Dock) प्रणाली",
+      "largeFeat2": "प्रगत बिलिंग आणि स्वयंचलित पेमेंट गेटवे",
+      "largeFeat3": "वाहतूक, रूट ऑप्टिमायझेशन आणि वाहन ट्रॅकिंग",
+      "largeFeat4": "उत्पादन नियोजन आणि बॅच गुणवत्ता नियंत्रण",
+      "largeFeat5": "एंटरप्राइझ इन्व्हेंटरी आणि गोदाम व्यवस्थापन",
+      "largeFeat6": "संपूर्ण वित्तीय अकाउंटिंग, GST रेडी आणि मल्टि-ब्रांच ERP",
       "ctaModernizeTitle": "आपल्या दुग्धव्यवसाय ऑपरेशन्सचे आधुनिकीकरण करण्यास तयार आहात का?",
       "ctaModernizeDesc": "विन्सोफ्ट सोल्यूशन्ससह आपले ऑपरेशन्स बदललेल्या शेकडो दुग्ध व्यवसायांमध्ये सामील व्हा.",
       "supportLabel": "सपोर्ट"
@@ -939,7 +1420,7 @@ export const dictionaries = {
       "optimizedProcDesc": "इंटेलिजेंट शेड्यूलिंग आणि वेट ब्रिज एकत्रीकरणासह ऊस वाळवण्याचा वेळ कमी करा.",
       "modernizeSugarTitle": "आपल्या साखर कारखान्याचे आधुनिकीकरण करा",
       "modernizeSugarDesc": "विश्वासार्ह, स्केलेबल आणि उद्योग-सिद्ध ईआरपीसाठी विन्सोफ्ट सोबत भागीदारी करा.",
-      "freeERPDemo": "मोफत ईआरपी डेमो मिळवा",
+      "freeERPDemo": "संपर्क करा",
       "connectWithUs": "आमच्याशी कनेक्ट व्हा"
     },
     gold: {
@@ -966,7 +1447,7 @@ export const dictionaries = {
       "module7": "कारागीर व्यवस्थापन",
       "module8": "गहाण (Mortgage) व्यवस्थापन",
       "module9": "वित्तीय अकाउंटिंग आणि जीएसटी अहवाल",
-      "requestDemoBtn": "डेमोची विनंती करा",
+      "requestDemoBtn": "संपर्क करा",
       "advancedFeaturesTitle": "प्रगत क्षमता",
       "secureAudit": "सुरक्षित ऑडिटिंग",
       "secureAuditDesc": "वापरकर्ता-स्तरीय परवानग्या आणि ऑडिट ट्रेल्ससह प्रत्येक व्यवहाराचा संपूर्ण मागोवा.",
@@ -996,7 +1477,7 @@ export const dictionaries = {
       "keyFeatures": "मुख्य वैशिष्ट्ये",
       "interested": "इच्छुक आहात?",
       "personalizedWalkthrough": "आमच्या सॉफ्टवेअरचा मोफत वैयक्तिक वॉकथ्रू मिळवा.",
-      "requestDemo": "लाइव्ह डेमोची विनंती करा",
+      "requestDemo": "संपर्क करा",
       "supportAssistance": "सपोर्ट आणि सहाय्य",
       "support247": "२४/७ सपोर्ट",
       "callUs": "आम्हाला +९१ ९८XXX XXXXX वर कॉल करा",
@@ -1315,6 +1796,29 @@ export const dictionaries = {
       "testimonialAuthor": "राजेश कुमार",
       "testimonialRole": "उत्पादन व्यवस्थापक, महाराष्ट्र साखर कारखाना",
       "errorMsg": "तुमचा डेमो शेड्यूल करताना एरर आली. कृपया पुन्हा प्रयत्न करा."
+    },
+    productsPage: {
+      "heroTitle": "आमची उत्पादने आणि सोल्यूशन्स",
+      "heroSubtitle": "तुमच्या उद्योगाच्या विशिष्ट कामकाजाच्या गरजांसाठी तयार केलेल्या आमच्या सॉफ्टवेअर उत्पादनांची विस्तृत श्रेणी पहा.",
+      "dairySoftware": "दुग्ध व्यवसाय सॉफ्टवेअर",
+      "goldJewellery": "सुवर्ण व दागिने सॉफ्टवेअर",
+      "invAcc": "इन्व्हेंटरी आणि अकाउंटिंग",
+      "sugarIndustry": "साखर कारखाना ERP",
+      "goldExchange": "सुवर्ण विनिमय व्यवस्थापन",
+      "goldExchangeDesc": "सुवर्ण विनिमय व्यवहार, वजन पडताळणी आणि ग्राहकांच्या योजनांच्या शिलकीसाठी विशेष सॉफ्टवेअर.",
+      "goldExchangeBilling": "सुवर्ण विनिमय बिलिंग",
+      "goldExchangeBillingDesc": "एकात्मिक जीएसटीसह किरकोळ/घाऊक सुवर्ण खरेदी आणि विक्री व्यवहारांची जोडणी करणारी बिलिंग प्रणाली.",
+      "goldFull": "सुवर्ण शोरूम संपूर्ण ERP",
+      "goldFullDesc": "इन्व्हेंटरी व्यवस्थापन, ग्राहक योजना, विक्री बिलिंग, कारागीर ट्रॅकिंग आणि फायनान्ससह संपूर्ण ERP.",
+      "goldBooking": "सुवर्ण बुकिंग आणि योजना",
+      "goldBookingDesc": "मासिक गुंतवणूक योजना, सुवर्ण बुकिंग पर्याय, व्याज गणना आणि स्वयंचलित स्मरणपत्रे व्यवस्थापित करा.",
+      "invAccSoftware": "इन्व्हेंटरी आणि अकाउंटिंग सॉफ्टवेअर",
+      "invAccSoftwareDesc": "साधी पण शक्तिशाली अकाउंटिंग आणि स्टॉक ट्रॅकिंग प्रणाली.",
+      "fullBusinessSoftware": "संपूर्ण बिझनेस सूट",
+      "fullBusinessSoftwareDesc": "एंटरप्राइझ अकाउंटिंग, मल्टिपल वेअरहाउस व्यवस्थापन, बारकोड बिलिंग आणि मजबूत वित्तीय अहवाल.",
+      "notSureTitle": "कोणते उत्पादन तुमच्या व्यवसायासाठी योग्य आहे याबद्दल खात्री नाही?",
+      "notSureDesc": "आमचे तज्ञ तुम्हाला योग्य कॉन्फिगरेशन निवडण्यात किंवा तुमच्या एंटरप्राइझसाठी सानुकूलित सोल्यूशन डिझाइन करण्यात मदत करू शकतात.",
+      "contactSales": "विक्री विभागाशी संपर्क साधा"
     }
   },
   hi: {
@@ -1338,10 +1842,220 @@ export const dictionaries = {
       "feedList": ["पशु चारा खरीद/बिक्री ट्रैकिंग", "स्टॉक की जानकारी", "ग्राहक रसीदें", "मोबाइल पर खाता विवरण"],
       "appTitle": "📱 मोबाइल ऐप",
       "appList": ["दैनिक संग्रह की जानकारी", "बिल और खाता विवरण", "स्थायी डेटा भंडारण", "दूध उत्पादन बढ़ाने में मदद के लिए तुलनात्मक विश्लेषण"],
-      "contactTitle": "📞 संपर्क करें",
-      "contactName": "जयवंत लाटे",
-      "contactPhone": "9890733526 / 7499758896",
-      "contactOffice": "कार्यालय: कोल्हापुर, बेलगावी, इस्लामपुर, सांगली"
+      "contactTitle": "📞 हमसे संपर्क करें",
+      "contactName": "विनसॉफ्ट सॉफ्टवेयर कंसलटेंसी",
+      "contactPhone": "+91 94230 39902",
+      "contactOffice": "प्लॉट ४४८, लेन १४बी, हरी ओम नगर, कोल्हापुर - ४१६०१०"
+    },
+    billing5: {
+      title: "डेयरी ५.० – दूध बिलिंग सॉफ्टवेयर",
+      overview: "डेयरी किसानों के लिए सटीक दूध बिल निर्माण, भुगतान गणना और सदस्य खाता बही प्रबंधन को स्वचालित करें। अग्रिम (एडवांस), चारा वसूली, ऋण कटौती, छूट और लाभांश को एक ही प्रणाली में प्रबंधित करें। किसानों के लिए आसान और पारदर्शी भुगतान प्रक्रिया सुनिश्चित करें।",
+    },
+    dairy5: {
+      title: "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस",
+      overview: "डेयरी ५.० डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक डेयरी प्रबंधन समाधान है। यह सॉफ्टवेयर स्वतंत्रता, पारदर्शिता और परिचालन दक्षता सुनिश्चित करते हुए दूध खरीद, बिलिंग, इन्वेंट्री, अकाउंटिंग और प्रबंधन रिपोर्टिंग को स्वचालित करता है.",
+      coreModulesTitle: "मुख्य मॉड्यूल",
+      modules: {
+        collection: {
+          title: "दूध संग्रह प्रबंधन",
+          items: [
+            "दैनिक दूध संग्रह प्रविष्टि",
+            "फैट और एसएनएफ आधारित दूध गणना",
+            "मल्टीपल रेट चार्ट सपोर्ट",
+            "दूध संग्रह स्थिति की निगरानी",
+            "संग्रह के दौरान दूध बिक्री प्रविष्टि",
+            "लंबित दूध उत्पादक सदस्य ट्रैकिंग"
+          ]
+        },
+        billing: {
+          title: "दूध बिलिंग प्रणाली",
+          items: [
+            "स्वचालित दूध बिल उत्पादन",
+            "आय और कटौती प्रबंधन",
+            "अग्रिम (Advance) वसूली",
+            "पशु चारा वसूली",
+            "ऋण और अन्य कटौती",
+            "भुगतान इतिहास और खाता बही प्रबंधन"
+          ]
+        },
+        rebate: {
+          title: "छूट और लाभांश प्रबंधन",
+          items: [
+            "छूट (अंतर) की गणना",
+            "लाभांश वितरण",
+            "सदस्य-वार रिपोर्ट",
+            "वार्षिक निपटान रिपोर्ट"
+          ]
+        },
+        inventory: {
+          title: "इंवेंट्री प्रबंधन",
+          items: [
+            "पशु चारा स्टॉक",
+            "दवा स्टॉक",
+            "डेयरी उपभोग्य वस्तु प्रबंधन",
+            "खरीद और वितरण ट्रैकिंग",
+            "स्टॉक मूल्यांकन रिपोर्ट"
+          ]
+        },
+        accounting: {
+          title: "अकाउंटिंग प्रबंधन",
+          items: [
+            "वाउचर प्रविष्टि",
+            "रोकड़ बही (Cash Book)",
+            "बैंक बुक",
+            "खाता बही प्रबंधन",
+            "ट्रायल बैलेंस",
+            "लाभ और हानि खाता",
+            "बैलेंस शीट"
+          ]
+        },
+        reports: {
+          title: "एमआईएस रिपोर्ट",
+          items: [
+            "दैनिक संग्रह रिपोर्ट",
+            "सदस्य-वार रिपोर्ट",
+            "समिति प्रदर्शन रिपोर्ट",
+            "वित्तीय रिपोर्ट",
+            "संग्रह केंद्र रिपोर्ट",
+            "कस्टम विश्लेषणात्मक रिपोर्ट"
+          ]
+        }
+      },
+      keyFeaturesTitle: "मुख्य विशेषताएं",
+      keyFeatures: {
+        transparency: {
+          title: "पारदर्शिता और नियंत्रण",
+          items: [
+            "डेयरी समिति और किसानों के बीच पूर्ण पारदर्शिता",
+            "दूध संग्रह डेटा की रीयल-टाइम पहुंच",
+            "डिजिटल रिकॉर्ड और ऑडिट ट्रेल्स"
+          ]
+        },
+        security: {
+          title: "सुरक्षा",
+          items: [
+            "भूमिका-आधारित उपयोगकर्ता प्रबंधन",
+            "अधिकार-आधारित पहुंच नियंत्रण",
+            "उपयोगकर्ता गतिविधि लॉग",
+            "सुरक्षित डेटा प्रबंधन"
+          ]
+        },
+        integration: {
+          title: "मशीन एकीकरण",
+          items: [
+            "किसी भी कंपनी की फैट मशीन के साथ संगत",
+            "सभी प्रमुख वजन तराजू के साथ संगत",
+            "स्वचालित डेटा कैप्चर",
+            "मानवीय त्रुटियों में कमी"
+          ]
+        },
+        rates: {
+          title: "लवचिक दर प्रबंधन",
+          items: [
+            "मल्टीपल रेट चार्ट",
+            "मौसमी दर समर्थन",
+            "समिति-वार दर कॉन्फ़िगरेशन",
+            "स्वचालित दूध मूल्य गणना"
+          ]
+        }
+      },
+      operationsTitle: "संग्रह केंद्र संचालन",
+      operationsSubtitle: "दूध संग्रह के समय, ऑपरेटर निम्नलिखित कार्य कर सकते हैं:",
+      operations: [
+        "दूध संग्रह दर्ज करना",
+        "दूध की बिक्री दर्ज करना",
+        "पशु चारा बेचना",
+        "अग्रिम (Advance) जारी करना",
+        "सदस्य खाता बही देखना",
+        "लंबित सदस्यों की जांच करना",
+        "संग्रह स्थिति को ट्रैक करना"
+      ],
+      auditTitle: "निगरानी और ऑडिट",
+      audit: [
+        "दूध संग्रह लॉग",
+        "दूध बिक्री लॉग",
+        "उपयोगकर्ता गतिविधि लॉग",
+        "लेनदेन इतिहास",
+        "ऑडिट रिपोर्ट"
+      ],
+      mobileAppsTitle: "अतिरिक्त मोबाइल एप्लिकेशन (अतिरिक्त शुल्क पर उपलब्ध)",
+      mobileApps: {
+        farmer: {
+          title: "किसान मोबाइल ऐप",
+          items: [
+            "दैनिक दूध संग्रह विवरण",
+            "दूध बिल की जानकारी",
+            "खाता बही विवरण",
+            "भुगतान की स्थिति",
+            "अधिसूचना अलर्ट"
+          ]
+        },
+        admin: {
+          title: "डेयरी प्रशासक ऐप",
+          items: [
+            "संग्रह की निगरानी",
+            "डैशबोर्ड और विश्लेषण",
+            "रिपोर्ट तक पहुंच",
+            "समिति प्रदर्शन ट्रैकिंग",
+            "उपयोगकर्ता प्रबंधन"
+          ]
+        },
+        collection: {
+          title: "दूध संग्रह ऐप",
+          items: [
+            "दूध संग्रह प्रविष्टि",
+            "फैट/एसएनएफ रिकॉर्डिंग",
+            "सदस्य सत्यापन",
+            "संग्रह रिपोर्ट",
+            "ऑफ़लाइन और ऑनलाइन सिंक्रनाइज़ेशन"
+          ]
+        }
+      },
+      benefitsTitle: "लाभ",
+      benefits: [
+        "परिचालन दक्षता बढ़ाएं",
+        "मानवीय कार्य कम करें",
+        "सटीकता में सुधार करें",
+        "पारदर्शिता सुनिश्चित करें",
+        "बेहतर वित्तीय नियंत्रण",
+        "त्वरित निर्णय लेना",
+        "पूर्ण डेयरी डिजिटलीकरण"
+      ],
+      suitableTitle: "इसके लिए उपयुक्त",
+      suitable: [
+        "ग्रामीण डेयरी सहकारी समितियां",
+        "दूध संग्रह केंद्र",
+        "दूध संघ (Milk Unions)",
+        "डेयरी प्रसंस्करण संयंत्र",
+        "निजी डेयरी व्यवसाय",
+        "बड़े डेयरी नेटवर्क (Large Dairy Networks)"
+      ],
+      products: {
+        prod2: {
+          title: "किसान मोबाइल ऐप (संकलन)",
+          desc: "डेयरी किसानों के लिए दैनिक दूध संग्रह, १० दिनों के भुगतान रसीद और खाता बही विवरण को ट्रैक करने के लिए उन्नत मोबाइल एप्लिकेशन।"
+        },
+        prod3: {
+          title: "डेयरी प्रशासक ऐप",
+          desc: "डेयरी प्रशासकों के लिए संग्रह निगरानी, ​​डैशबोर्ड और विश्लेषण, और रिपोर्ट तक पहुंच।"
+        },
+        prod4: {
+          title: "दूध संग्रह ऐप और मशीन एकीकरण",
+          desc: "सटीक दूध संग्रह प्रविष्टि के लिए फैट मशीन और वजन कांटे के साथ सीधे एकीकरण।"
+        },
+        prod5: {
+          title: "उत्पादन प्रबंधन प्रणाली",
+          desc: "कच्चे दूध की प्राप्ति से लेकर तैयार उत्पाद के उत्पादन तक संपूर्ण दूध प्रसंस्करण चक्र को वास्तविक समय की निगरानी और इन्वेंट्री एकीकरण के साथ प्रबंधित करें।"
+        },
+        prod6: {
+          title: "परिवहन प्रबंधन प्रणाली (Transport Management)",
+          desc: "दूध संग्रह मार्गों, वाहन संचालन, प्रेषण और परिवहन लागतों को कुशलतापूर्वक प्रबंधित करें।"
+        }
+      }
+    },
+    webDairy: {
+      title: "वेब-बेस्ड डेयरी सॉफ्टवेयर सॉल्यूशंस",
+      overview: "वेब डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक वेब-आधारित डेयरी प्रबंधन समाधान है। यह सॉफ्टवेयर किसी भी वेब-सक्षम डिवाइस पर पारदर्शकता और परिचालन दक्षता सुनिश्चित करते हुए दूध खरीद, बिलिंग, इन्वेंट्री, अकाउंटिंग और प्रबंधन रिपोर्टिंग को स्वचालित करता है।"
     },
     features: {
       "milkTitle": "दूध खरीद",
@@ -1419,7 +2133,7 @@ export const dictionaries = {
       "heroTitle": "आधुनिक व्यापार के लिए शक्तिशाली विशेषताएं",
       "heroSubtitle": "एक ही प्लेटफ़ॉर्म से अपने संचालन को प्रबंधित, स्केल और अनुकूलित करने के लिए आवश्यक सब कुछ।",
       "exploreProducts": "उत्पादों का अन्वेषण करें",
-      "requestDemo": "डेमो का अनुरोध करें",
+      "requestDemo": "संपर्क करें",
       "ctaTitle": "क्या आप अपना व्यवसाय बदलने के लिए तैयार हैं?",
       "ctaDesc": "उन हजारों व्यवसायों से जुड़ें जो अपने दैनिक संचालन के लिए WinSoft पर भरोसा करते हैं।",
       "requestFreeDemo": "मुफ्त डेमो का अनुरोध करें",
@@ -1439,7 +2153,7 @@ export const dictionaries = {
     hero: {
       "title": "स्मार्ट डिजिटल समाधानों के साथ व्यवसायों का सशक्तिकरण",
       "subtitle": "1998 से डेयरी, चीनी और स्वर्ण उद्योगों के लिए विशेष ईआरपी, बिलिंग और प्रबंधन सॉफ्टवेयर।",
-      "cta1": "डेमो का अनुरोध करें",
+      "cta1": "संपर्क करें",
       "cta2": "संपर्क करें",
     },
     home: {
@@ -1452,7 +2166,7 @@ export const dictionaries = {
       "product3Title": "चीनी मिल पूर्ण ईआरपी समाधान",
       "product3Desc": "गन्ना प्रबंधन और इन्वेंट्री के साथ चीनी मिलों के लिए एंड-टू-एंड प्रबंधन।",
       "viewDetails": "विवरण देखें",
-      "requestDemo": "डेमो का अनुरोध करें",
+      "requestDemo": "संपर्क करें",
       "heroSlide1Title": "मेगा डेयरी टेक सेल",
       "heroSlide1Desc": "संपूर्ण डेयरी प्रबंधन सॉफ्टवेयर",
       "heroSlide1Price": "₹45,000 से शुरू",
@@ -1484,7 +2198,7 @@ export const dictionaries = {
       "blog": "ब्लॉग",
       "caseStudies": "केस स्टडीज",
       "contact": "संपर्क",
-      "requestDemo": "डेमो का अनुरोध करें",
+      "requestDemo": "संपर्क करें",
       "allRightsReserved": "सर्वाधिकार सुरक्षित।",
       "privacyPolicy": "गोपनीयता नीति",
       "termsOfService": "सेवा की शर्तें"
@@ -1535,18 +2249,37 @@ export const dictionaries = {
       "feat24": "समाप्ति प्रबंधन",
       "tiersTitle": "अपनी डेयरी के लिए सही सॉफ्टवेयर चुनें",
       "tiersSubtitle": "डेयरी संचालन के विभिन्न पैमानों के लिए डिज़ाइन किए गए तीन उत्पाद स्तर",
-      "tier1Subtitle": "Desktop समाधान",
-      "tier1Desc": "दूध खरीद और बिलिंग के लिए विश्वसनीय डेस्कटॉप-आधारित सॉफ्टवेयर। संग्रह केंद्रों के लिए बिल्कुल सही।",
-      "tier1Includes": "2 मॉड्यूल — खरीद और बिलिंग, लेखांकन",
-      "tier1Best": "छोटी डेयरी और संग्रह केंद्र",
-      "tier2Subtitle": "उन्नत संस्करण",
-      "tier2Desc": "उत्पादन ट्रैकिंग, मोबाइल ऐप और मिनी ईआरपी सहित उन्नत विशेषताएं।",
-      "tier2Includes": "6 मॉड्यूल — खरीद, लेखांकन, उत्पादन, मोबाइल ऐप, मिनी ईआरपी",
-      "tier2Best": "मध्यम से बड़ी डेयरी और सहकारी समितियां",
-      "tier3Subtitle": "क्लाउड आधारित समाधान",
-      "tier3Desc": "वास्तविक समय पहुंच और एंटरप्राइज ईआरपी के साथ 100% क्लाउड-आधारित प्लेटफॉर्म।",
-      "tier3Includes": "5 मॉड्यूल — खरीद, लेखांकन, उत्पादन, परिवहन, एंटरप्राइज ईआरपी",
-      "tier3Best": "दूध संघ, संघ और महासंघ",
+      "tier1Title": "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस",
+      "tier1Subtitle": "ग्रामीण सहकारी समितियां / व्यक्तिगत डेयरी",
+      "tier1Desc": "ग्रामीण सहकारी समितियां/व्यक्तिगत डेयरी। दूध संग्रह, आवधिक 7/10/15/20 दिनों का दूध भुगतान, इन्वेंट्री और अकाउंटिंग प्रबंधन।",
+      "tier1Includes": "संग्रह, बिलिंग, 7/10/15/20 दिनों का भुगतान, इन्वेंट्री और अकाउंटिंग",
+      "tier1Best": "ग्राम स्तर की सहकारी समितियां और व्यक्तिगत डेयरी",
+      "tier2Title": "Medium Dairy (मध्यम डेयरी)",
+      "tier2Subtitle": "डेयरी मिनी ERP",
+      "tier2Desc": "डेयरी मिनी ERP में डॉक (DOCK) सिस्टम, गुणवत्ता विश्लेषण, बिलिंग, इन्वेंट्री और अकाउंटिंग प्रबंधन शामिल हैं।",
+      "tier2Includes": "संग्रह, डॉक सिस्टम, गुणवत्ता विश्लेषण, बिलिंग, इन्वेंट्री और अकाउंटिंग",
+      "tier2Best": "मध्यम आकार की सहकारी समितियां और निजी डेयरी",
+      "tier3Title": "Large Dairy (बड़ी डेयरी)",
+      "tier3Subtitle": "डेयरी ERP",
+      "tier3Desc": "डेयरी ERP में RMRD, बिलिंग, परिवहन, उत्पादन, इन्वेंट्री और अकाउंटिंग प्रबंधन शामिल हैं।",
+      "tier3Includes": "RMRD, बिलिंग, परिवहन, उत्पादन, इन्वेंट्री और अकाउंटिंग ERP",
+      "tier3Best": "बड़ी डेयरी, दूध संघ और महासंघ",
+      "smallFeat1": "स्वचालित दूध संग्रह और वजन कांटा एकीकरण",
+      "smallFeat2": "फैट (FAT) / एसएनएफ (SNF) और दर गणना",
+      "smallFeat3": "आवधिक दूध भुगतान (7/10/15/20 दिन पेमेंट)",
+      "smallFeat4": "पशु आहार और अग्रिम (Advance) प्रबंधन",
+      "smallFeat5": "इवेंट्री और सरल अकाउंटिंग प्रबंधन",
+      "mediumFeat1": "डॉक (DOCK) संग्रह प्रणाली",
+      "mediumFeat2": "स्वचालित गुणवत्ता विश्लेषण और फैट मशीन एकीकरण",
+      "mediumFeat3": "सटीक बिलिंग और बैंक ट्रांसफर समाधान",
+      "mediumFeat4": "इन्वेंट्री और स्टॉक प्रबंधन",
+      "mediumFeat5": "लेखांकन, बहीखाता और खाता बही प्रबंधन",
+      "largeFeat1": "RMRD (Raw Milk Receiving Dock) प्रणाली",
+      "largeFeat2": "उन्नत बिलिंग और स्वचालित भुगतान गेटवे",
+      "largeFeat3": "परिवहन, रूट ऑप्टिमाइजेशन और वाहन ट्रैकिंग",
+      "largeFeat4": "उत्पादन योजना और बैच गुणवत्ता नियंत्रण",
+      "largeFeat5": "एंटरप्राइज इन्वेंट्री और गोदाम प्रबंधन",
+      "largeFeat6": "संपूर्ण वित्तीय लेखांकन, GST रेडी और मल्टी-ब्रांच ERP",
       "ctaModernizeTitle": "अपने डेयरी संचालन को आधुनिक बनाने के लिए तैयार हैं?",
       "ctaModernizeDesc": "उन सैकड़ों डेयरी व्यवसायों में शामिल हों जिन्होंने विन्सोफ्ट समाधानों के साथ अपने संचालन को बदल दिया है।",
       "supportLabel": "सपोर्ट"
@@ -1617,7 +2350,7 @@ export const dictionaries = {
       "module7": "कारीगर प्रबंधन",
       "module8": "गिरवी (Mortgage) प्रबंधन",
       "module9": "वित्तीय लेखांकन और जीएसटी रिपोर्ट",
-      "requestDemoBtn": "डेमो का अनुरोध करें",
+      "requestDemoBtn": "संपर्क करें",
       "advancedFeaturesTitle": "उन्नत क्षमताएं",
       "secureAudit": "सुरक्षित ऑडिटिंग",
       "secureAuditDesc": "उपयोगकर्ता-स्तरीय अनुमतियों और ऑडिट ट्रेल्स के साथ हर लेनदेन का पूरा ट्रैक।",
@@ -1631,7 +2364,7 @@ export const dictionaries = {
       "contactExpert": "विशेषज्ञ से बात करें"
     },
     header: {
-      "scheduleDemo": "डेमो शेड्यूल करें",
+      "scheduleDemo": "संपर्क करें",
       "contact": "संपर्क",
     },
     blog: {
@@ -1730,7 +2463,7 @@ export const dictionaries = {
       "readMore": "और पढ़ें",
       "ctaTitle": "अपनी सफलता की कहानी लिखने के लिए तैयार हैं?",
       "ctaDesc": "उन सैकड़ों सफल व्यवसायों में शामिल हों जिन्होंने विन्सोफ्ट समाधानों के साथ अपने संचालन को बदल दिया है।",
-      "scheduleDemo": "डेमो शेड्यूल करें",
+      "scheduleDemo": "संपर्क करें",
       "contactTeam": "हमारी टीम से संपर्क करें",
       "study1Title": "डेयरी संचालन का आधुनिकीकरण: 300% दक्षता वृद्धि",
       "study1Client": "महाराष्ट्र डेयरी सहकारी समिति",
@@ -1812,7 +2545,7 @@ export const dictionaries = {
       "support247": "24/7 Support",
       "readyToTransform": "अपने व्यवसाय को बदलने के लिए तैयार हैं?",
       "transformDesc": "यह देखने के लिए एक व्यक्तिगत डेमो शेड्यूल करें कि हमारे समाधान आपके कार्यों को कैसे सुव्यवस्थित कर सकते हैं और उत्पादकता बढ़ा सकते हैं।",
-      "scheduleDemo": "डेमो शेड्यूल करें",
+      "scheduleDemo": "संपर्क करें",
       "requestQuote": "कोटेशन का अनुरोध करें"
     },
     story: {
@@ -1924,7 +2657,7 @@ export const dictionaries = {
       "keyFeatures": "प्रमुख विशेषताएं",
       "interested": "रुचि है?",
       "personalizedWalkthrough": "हमारे सॉफ़्टवेयर का निःशुल्क व्यक्तिगत वॉकथ्रू प्राप्त करें।",
-      "requestDemo": "लाइव डेमो का अनुरोध करें",
+      "requestDemo": "संपर्क करें",
       "supportAssistance": "सहायता और समर्थन",
       "support247": "24/7 सहायता",
       "callUs": "हमें +91 98XXX XXXXX पर कॉल करें",
@@ -1966,6 +2699,29 @@ export const dictionaries = {
       "lifetime": "आजीवन वैधता",
       "support247Text": "24/7 टेलीफोन और ऑनलाइन",
       "yes": "हाँ",
+    },
+    productsPage: {
+      "heroTitle": "हमारे उत्पाद और समाधान",
+      "heroSubtitle": "अपने उद्योग की अनूठी परिचालन आवश्यकताओं के लिए विशेष रूप से डिज़ाइन किए गए हमारे सॉफ़्टवेयर उत्पादों की व्यापक श्रेणी देखें।",
+      "dairySoftware": "डेयरी सॉफ्टवेयर",
+      "goldJewellery": "सोना और आभूषण सॉफ्टवेयर",
+      "invAcc": "इन्वेंटरी और अकाउंटिंग",
+      "sugarIndustry": "चीनी उद्योग ईआरपी",
+      "goldExchange": "स्वर्ण विनिमय प्रबंधन",
+      "goldExchangeDesc": "सोने के विनिमय लेनदेन, वजन सत्यापन और ग्राहक योजना शेष राशि के लिए विशेष सॉफ़्टवेयर।",
+      "goldExchangeBilling": "स्वर्ण विनिमय बिलिंग",
+      "goldExchangeBillingDesc": "एकीकृत जीएसटी के साथ खुदरा/थोक सोने की खरीद और बिक्री लेनदेन को जोड़ने वाली बिलिंग प्रणाली।",
+      "goldFull": "स्वर्ण शोरूम संपूर्ण ईआरपी",
+      "goldFullDesc": "इन्वेंट्री प्रबंधन, ग्राहक योजनाएं, बिक्री बिलिंग, कारीगर ट्रैकिंग और वित्त सहित संपूर्ण ईआरपी।",
+      "goldBooking": "स्वर्ण बुकिंग और योजनाएं",
+      "goldBookingDesc": "मासिक निवेश योजनाओं, स्वर्ण बुकिंग विकल्पों, ब्याज गणना और स्वचालित अनुस्मारक प्रबंधित करें।",
+      "invAccSoftware": "इन्वेंटरी और Accounting सॉफ्टवेयर",
+      "invAccSoftwareDesc": "सरल लेकिन शक्तिशाली अकाउंटिंग और स्टॉक ट्रैकिंग प्रणाली।",
+      "fullBusinessSoftware": "संपूर्ण बिजनेस सूट",
+      "fullBusinessSoftwareDesc": "एंटरप्राइज़ अकाउंटिंग, मल्टीपल वेयरहाउस प्रबंधन, बारकोड बिलिंग और मजबूत वित्तीय रिपोर्टिंग।",
+      "notSureTitle": "सुनिश्चित नहीं हैं कि कौन सा उत्पाद आपके व्यवसाय के लिए उपयुक्त है?",
+      "notSureDesc": "हमारे विशेषज्ञ आपको सही कॉन्फिगरेशन चुनने या आपके उद्यम के लिए अनुकूलित समाधान तैयार करने में मदद कर सकते हैं।",
+      "contactSales": "बिक्री टीम से संपर्क करें"
     }
   },
   kn: {
@@ -1984,15 +2740,225 @@ export const dictionaries = {
       "companyTitle": "🏢 ಕಂಪನಿಯ ವೈಶಿಷ್ಟ್ಯಗಳು",
       "companyList": ["30+ ವರ್ಷಗಳ ಅನುಭವ", "ಅನುಭವಿ ಸಾಫ್ಟ್‌ವೇರ್ ಎಂಜಿನಿಯರಿಂಗ್ ತಂಡ", "ಆಧುನಿಕ ತಂತ್ರಜ್ಞಾನದ ಬಳಕೆ", "ನಿರಂತರವಾಗಿ ನವೀಕರಿಸಿದ ಸಾಫ್ಟ್‌ವೇರ್", "ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ ಲಭ್ಯವಿದೆ", "ಫೋನ್/ಇಂಟರ್ನೆಟ್ ಬೆಂಬಲ", "ಮರಾಠಿ, ಇಂಗ್ಲಿಷ್, ಕನ್ನಡ ಭಾಷಾ ಬೆಂಬಲ", "ತರಬೇತಿ ಸೌಲಭ್ಯಗಳು"],
       "workflowTitle": "⚙️ ಸಾಫ್ಟ್‌ವೇರ್ ಕೆಲಸದ ಹರಿವು",
-      "workflowList": ["ಒಂದೇ ಸಂಸ್ಥೆಯಲ್ಲಿ ಬಹು ಡೈರಿ ನಿರ್ವಹಣೆ", "ಶಾಖೆಗಳ ನಡುವೆ ಆನ್‌ಲೈನ್ ಡೇಟಾ ವರ್ಗಾವಣೆ", "ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ ಮೂಲಕ: ಖರೀದಿ, ಮಾರಾಟ, ಫೀಡ್ ಮಾರಾಟ, ಷೇರುಗಳು, ಮತದಾರರ ಪಟ್ಟಿ, ಜಾನುವಾರು ಮಾಹಿತಿ", "ಸರ್ಕಾರಿ ಸಬ್ಸಿಡಿ ದಾಖಲೆಗಳು", "ಆಡಿಟ್ ವರದಿಗಳು ಲಭ್ಯವಿದೆ", "ವಿವಿಧ ಇಲಾಖೆಗಳನ್ನು ಲಾಕ್ ಮಾಡುವ ಸೌಲಭ್ಯ"],
+      "workflowList": ["ಒಂದೇ ಸಂಸ್ಥೆಯಲ್ಲಿ ಬಹು ಡೈರಿ ನಿರ್ವಹಣೆ", "ಶಾಖೆಗಳ ನಡುವೆ ಆನ್‌ಲೈನ್ ಡೇಟಾ ವರ್ಗಾವಣೆ", "ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ ಮೂಲಕ: ಖರೀದಿ, ಮಾರಾಟ, ಫೀಡ್ ಮಾರಾಟ, ಷೇರುಗಳು, ಮತದಾರರ ಪಟ್ಟಿ, ಜಾನುವಾರು ಮಾಹಿತಿ", "ಸರ್ಕಾರಿ ಸಬ್ಸಿಡಿ ದಾಖಲೆಗಳು", "ಆಡಿಟ್ ವರದಿಗಳು ಲಭ್ಯವಿದೆ", "ವಿವಿಧಿ ಇಲಾಖೆಗಳನ್ನು ಲಾಕ್ ಮಾಡುವ ಸೌಲಭ್ಯ"],
       "feedTitle": "🌾 ಜಾನುವಾರು ಆಹಾರ ವಿಭಾಗ",
       "feedList": ["ಜಾನುವಾರು ಆಹಾರ ಖರೀದಿ/ಮಾರಾಟ ಟ್ರ್ಯಾಕಿಂಗ್", "ಸ್ಟಾಕ್ ಮಾಹಿತಿ", "ಗ್ರಾಹಕರ ರಶೀದಿಗಳು", "ಮೊಬೈಲ್‌ನಲ್ಲಿ ಖಾತೆ ಹೇಳಿಕೆಗಳು"],
       "appTitle": "📱 ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್",
       "appList": ["ದೈನಂದಿನ ಸಂಗ್ರಹಣೆ ಮಾಹಿತಿ", "ಬಿಲ್‌ಗಳು ಮತ್ತು ಖಾತೆ ಹೇಳಿಕೆಗಳು", "ಶಾಶ್ವತ ಡೇಟಾ ಸಂಗ್ರಹಣೆ", "ಹಾಲು ಉತ್ಪಾದನೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ಸಹಾಯ ಮಾಡುವ ತುಲನಾತ್ಮಕ ವಿಶ್ಲೇಷಣೆ"],
-      "contactTitle": "📞 ಸಂಪರ್ಕ",
-      "contactName": "ಜಯವಂತ್ ಲಾಟೆ",
-      "contactPhone": "9890733526 / 7499758896",
-      "contactOffice": "ಕಚೇರಿಗಳು: ಕೊಲ್ಹಾಪುರ, ಬೆಳಗಾವಿ, ಇಸ್ಲಾಂಪುರ, ಸಾಂಗ್ಲಿ"
+      "contactTitle": "📞 ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
+      "contactName": "ವಿನ್‌ಸಾಫ್ಟ್ ಸಾಫ್ಟ್‌ವೇರ್ ಕನ್ಸಲ್ಟೆನ್ಸಿ",
+      "contactPhone": "+91 94230 39902",
+      "contactOffice": "ಪ್ಲಾಟ್ 448, ಲೇನ್ 14ಬಿ, ಹರಿ ಓಂ ನಗರ, ಕೊಲ್ಹಾಪುರ - 416010"
+    },
+    billing5: {
+      title: "ಡೈರಿ ೫.೦ – ಹಾಲು ಬಿಲ್ಲಿಂಗ್ ಸಾಫ್ಟ್‌ವೇರ್",
+      overview: "ಡೈರಿ ರೈತರಿಗಾಗಿ ನಿಖರವಾದ ಹಾಲು ಬಿಲ್ ಉತ್ಪಾದನೆ, ಪಾವತಿ ಲೆಕ್ಕಾಚಾರಗಳು ಮತ್ತು ಸದಸ್ಯರ ಲೆಡ್ಜರ್ ನಿರ್ವಹಣೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸಿ. ಮುಂಗಡಗಳು, ಆಹಾರ ವಸೂಲಾತಿ, ಸಾಲ ಕಡಿತಗಳು, ರಿಯಾಯಿತಿ ಮತ್ತು ಲಾಭಾಂಶವನ್ನು ಒಂದೇ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ನಿರ್ವಹಿಸಿ. ರೈತರಿಗೆ ಜಗಳವಿಲ್ಲದ ಮತ್ತು ಪಾರದರ್ಶಕ ಪಾವತಿ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.",
+    },
+    dairy5: {
+      title: "ಸಂಪೂರ್ಣ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
+      overview: "ಡೈರಿ ೫.೦ ಎಂಬುದು ಸಣ್ಣ, ಮಧ್ಯಮ ಮತ್ತು ದೊಡ್ಡ ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣา ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ. ಈ ಸಾಫ್ಟ್‌ವೇರ್ ಪಾರದರ್ಶಕತೆ ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಯ ದಕ್ಷತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳುವ ಮೂಲಕ ಹಾಲು ಸಂಗ್ರಹಣೆ, ಬಿಲ್ಲಿಂಗ್, ದಾಸ್ತಾನು, ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ನಿರ್ವಹಣಾ ವರದಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸುತ್ತದೆ.",
+      coreModulesTitle: "ಪ್ರಮುಖ ಮಾಡ್ಯೂಲ್‌ಗಳು",
+      modules: {
+        collection: {
+          title: "ಹಾಲು ಸಂಗ್ರಹಣೆ ನಿರ್ವಹಣೆ",
+          items: [
+            "ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ ನಮೂದು",
+            "ಫ್ಯಾಟ್ ಮತ್ತು ಎಸ್‌ಎನ್‌ಎಫ್ ಆಧಾರಿತ ಹಾಲಿನ ಲೆಕ್ಕಾಚಾರ",
+            "ಮಲ್ಟಿಪಲ್ ದರ ಪಟ್ಟಿ ಬೆಂಬಲ",
+            "ಹಾಲು ಸಂಗ್ರಹಣೆ ಸ್ಥಿತಿಯ ಮೇಲ್ವಿಚಾರಣೆ",
+            "ಸಂಗ್ರಹಣೆಯ ಸಮಯದಲ್ಲಿ ಹಾಲಿನ ಮಾರಾಟ ನಮೂದು",
+            "ಬಾಕಿ ಇರುವ ಹಾಲು ಸದಸ್ಯರ ಟ್ರ್ಯಾಕಿಂಗ್"
+          ]
+        },
+        billing: {
+          title: "ಹಾಲು ಬಿಲ್ಲಿಂಗ್ ವ್ಯವಸ್ಥೆ",
+          items: [
+            "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಬಿಲ್ ರಚನೆ",
+            "ಗಳಿಕೆ ಮತ್ತು ಕಡಿತಗಳ ನಿರ್ವಹಣೆ",
+            "ಮುಂಗಡ (Advance) ವಸೂಲಾತಿ",
+            "ಪಶು ಆಹಾರ ಹಣ ವಸೂಲಾತಿ",
+            "ಸಾಲ ಮತ್ತು ಇತರ ಕಡಿತಗಳು",
+            "ಪಾವತಿ ಇತಿಹಾಸ ಮತ್ತು ಲೆಡ್ಜರ್ ನಿರ್ವಹಣೆ"
+          ]
+        },
+        rebate: {
+          title: "ರಿಯಾಯಿತಿ ಮತ್ತು ಲಾಭಾಂಶ ನಿರ್ವಹಣೆ",
+          items: [
+            "ರಿಯಾಯಿತಿ (ವ್ಯತ್ಯಾಸ) ಲೆಕ್ಕಾಚಾರ",
+            "ಲಾಭಾಂಶ ವಿತರಣೆ",
+            "ಸದಸ್ಯರಾವಾರು ವರದಿಗಳು",
+            "ವಾರ್ಷಿಕ ಇತ್ಯರ್ಥ ವರದಿಗಳು"
+          ]
+        },
+        inventory: {
+          title: "ದಾಸ್ತಾನು ನಿರ್ವಹಣೆ",
+          items: [
+            "ಪಶು ಆಹಾರ ದಾಸ್ತಾನು",
+            "ಔಷಧಿ ದಾಸ್ತಾನು",
+            "ಡೈರಿ ಉಪಭೋಗ್ಯ ವಸ್ತುಗಳ ನಿರ್ವಹಣೆ",
+            "ಖರೀದಿ ಮತ್ತು ವಿತರಣೆ ಟ್ರ್ಯಾಕಿಂಗ್",
+            "ದಾಸ್ತಾನು ಮೌಲ್ಯಮಾಪನ ವರದಿಗಳು"
+          ]
+        },
+        accounting: {
+          title: "ಅಕೌಂಟಿಂಗ್ ನಿರ್ವಹಣೆ",
+          items: [
+            "ವೋಚರ್ ನಮೂದು",
+            "ನಗದು ಪುಸ್ತಕ (Cash Book)",
+            "ಬ್ಯಾಂಕ್ ಬುಕ್",
+            "ಲೆಡ್ಜರ್ ನಿರ್ವಹಣೆ",
+            "ಟ್ರಯಲ್ ಬ್ಯಾಲೆನ್ಸ್",
+            "ಲಾಭ ಮತ್ತು ನಷ್ಟ ಖಾತೆ",
+            "ಬ್ಯಾಲೆನ್ಸ್ ಶೀಟ್"
+          ]
+        },
+        reports: {
+          title: "ಎಂಐಎಸ್ ವರದಿಗಳು",
+          items: [
+            "ದೈನಂದಿನ ಸಂಗ್ರಹಣೆ ವರದಿಗಳು",
+            "ಸದಸ್ಯರಾವಾರು ವರದಿಗಳು",
+            "ಸಂಘದ ಕಾರ್ಯಕ್ಷಮತೆಯ ವರದಿಗಳು",
+            "ಹಣಕಾಸು ವರದಿಗಳು",
+            "ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರದ ವರದಿಗಳು",
+            "ಕಸ್ಟಮ್ ವಿಶ್ಲೇಷಣಾತ್ಮಕ ವರದಿಗಳು"
+          ]
+        }
+      },
+      keyFeaturesTitle: "ಪ್ರಮುಖ ವೈಶಿಷ್ಟ್ಯಗಳು",
+      keyFeatures: {
+        transparency: {
+          title: "ಪಾರದರ್ಶಕತೆ ಮತ್ತು ನಿಯಂತ್ರಣ",
+          items: [
+            "ಡೈರಿ ಸಂಘ ಮತ್ತು ರೈತರ ನಡುವೆ ಸಂಪೂರ್ಣ ಪಾರದರ್ಶಕತೆ",
+            "ಹಾಲು ಸಂಗ್ರಹಣಾ ಡೇಟಾಗೆ ನೈಜ-ಸಮಯದ ಪ್ರವೇಶ",
+            "ಡಿಜಿಟಲ್ ದಾಖಲೆಗಳು ಮತ್ತು ಆಡಿಟ್ ಟ್ರೇಲ್‌ಗಳು"
+          ]
+        },
+        security: {
+          title: "ಭದ್ರತೆ",
+          items: [
+            "ಪಾತ್ರ-ಆಧಾರಿತ ಬಳಕೆದಾರ ನಿರ್ವಹಣೆ",
+            "ಹಕ್ಕು-ಆಧಾರಿತ ಪ್ರವೇಶ ನಿಯಂತ್ರಣ",
+            "ಬಳಕೆದಾರ ಚಟುವಟಿಕೆ ಲಾಗ್‌ಗಳು",
+            "ಸುರಕ್ಷಿತ ಡೇಟಾ ನಿರ್ವಹಣೆ"
+          ]
+        },
+        integration: {
+          title: "ಯಂತ್ರ ಏಕೀಕರಣ",
+          items: [
+            "ಯಾವುದೇ ಕಂಪನಿಯ ಫ್ಯಾಟ್ ಯಂತ್ರದೊಂದಿಗೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ",
+            "ಎಲ್ಲಾ ಪ್ರಮುಖ ತೂಕದ ಮಾಪಕಗಳೊಂದಿಗೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ",
+            "ಸ್ವಯಂಚಾಲಿತ ಡೇಟಾ ಕ್ಯಾಪ್ಚರ್",
+            "ಹಸ್ತಚಾಲಿತ ದೋಷಗಳ ಕಡಿತ"
+          ]
+        },
+        rates: {
+          title: "ಹೊಂದಿಕೊಳ್ಳುವ ದರ ನಿರ್ವಹಣೆ",
+          items: [
+            "ಬಹು ದರ ಪಟ್ಟಿಗಳು",
+            "ಕಾಲೋಚಿತ ದರ ಬೆಂಬಲ",
+            "ಸಂಘ-ವಾರು ದರ ಸಂರಚನೆ",
+            "ಸ್ವಯಂಚಾಲಿತ ಹಾಲಿನ ಮೌಲ್ಯದ ಲೆಕ್ಕಾಚಾರ"
+          ]
+        }
+      },
+      operationsTitle: "ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರ ಕಾರ್ಯಾಚರಣೆಗಳು",
+      operationsSubtitle: "ಹಾಲು ಸಂಗ್ರಹಣೆಯ ಸಮಯದಲ್ಲಿ, ಆಪರೇಟರ್‌ಗಳು ಈ ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಬಹುದು:",
+      operations: [
+        "ಹಾಲು ಸಂಗ್ರಹಣೆಯನ್ನು ದಾಖಲಿಸುವುದು",
+        "ಹಾಲಿನ ಮಾರಾಟವನ್ನು ದಾಖಲಿಸುವುದು",
+        "ಪಶು ಆಹಾರವನ್ನು ಮಾರಾಟ ಮಾಡುವುದು",
+        "ಮುಂಗಡಗಳನ್ನು ನೀಡುವುದು",
+        "ಸದಸ್ಯರ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸುವುದು",
+        "ಬಾಕಿ ಇರುವ ಸದಸ್ಯರನ್ನು ಪರಿಶೀಲಿಸುವುದು",
+        "ಸಂಗ್ರಹಣೆ ಸ್ಥಿತಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದು"
+      ],
+      auditTitle: "ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ಆಡಿಟ್",
+      audit: [
+        "ಹಾಲು ಸಂಗ್ರಹಣೆ ಲಾಗ್",
+        "ಹಾಲಿನ ಮಾರಾಟದ ಲಾಗ್",
+        "ಬಳಕೆದಾರ ಚಟುವಟಿಕೆ ಲಾಗ್",
+        "ವಹಿವಾಟಿನ ಇತಿಹಾಸ",
+        "ಆಡಿಟ್ ವರದಿಗಳು"
+      ],
+      mobileAppsTitle: "ಹೆಚ್ಚುವರಿ ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು (ಹೆಚ್ಚುವರಿ ಶುಲ್ಕದಲ್ಲಿ ಲಭ್ಯ)",
+      mobileApps: {
+        farmer: {
+          title: "ರೈತ ಮೊಬೈಲ್ ಆಪ್",
+          items: [
+            "ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ ವಿವರಗಳು",
+            "ಹಾಲಿನ ಬಿಲ್ ಮಾಹಿತಿ",
+            "ಲೆಡ್ಜರ್ ಹೇಳಿಕೆ",
+            "ಪಾವತಿ ಸ್ಥಿತಿ",
+            "ಅಧಿಸೂಚನೆ ಎಚ್ಚರಿಕೆಗಳು"
+          ]
+        },
+        admin: {
+          title: "ಡೈರಿ ನಿರ್ವಾಹಕ ಆಪ್",
+          items: [
+            "ಸಂಗ್ರಹಣೆ ಮೇಲ್ವಿಚಾರಣೆ",
+            "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
+            "ವರದಿ ಪ್ರವೇಶ",
+            "ಸಂಘದ ಕಾರ್ಯಕ್ಷಮತೆಯ ಟ್ರ್ಯಾಕಿಂಗ್",
+            "ಬಳಕೆದಾರ ನಿರ್ವಹಣೆ"
+          ]
+        },
+        collection: {
+          title: "ಹಾಲು ಸಂಗ್ರಹಣೆ ಆಪ್",
+          items: [
+            "ಹಾಲು ಸಂಗ್ರಹಣೆ ನಮೂದು",
+            "ಫ್ಯಾಟ್/ಎಸ್‌ಎನ್‌ಎಫ್ ರೆಕಾರ್ಡಿಂಗ್",
+            "ಸದಸ್ಯರ ಪರಿಶೀಲನೆ",
+            "ಸಂಗ್ರಹಣೆ ವರದಿಗಳು",
+            "ಆಫ್‌ಲೈನ್ ಮತ್ತು ಆನ್‌ಲೈನ್ ಸಿಂಕ್ರೊನೈಸೇಶನ್"
+          ]
+        }
+      },
+      benefitsTitle: "ಪ್ರಯೋಜನಗಳು",
+      benefits: [
+        "ಕಾರ್ಯಾಚರಣೆಯ ದಕ್ಷತೆಯನ್ನು ಹೆಚ್ಚಿಸಿ",
+        "ಹಸ್ತಚಾಲಿತ ಕೆಲಸವನ್ನು ಕಡಿಮೆ ಮಾಡಿ",
+        "ನಿಖರತೆಯನ್ನು ಸುಧಾರಿಸಿ",
+        "ಪಾರದರ್ಶಕತೆಯನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ",
+        "ಉತ್ತಮ ಹಣಕಾಸು ನಿಯಂತ್ರಣ",
+        "ವೇಗವಾಗಿ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವುದು",
+        "ಸಂಪೂರ್ಣ ಡೈರಿ ಡಿಜಿಟಲೀಕರಣ"
+      ],
+      suitableTitle: "ಯಾರಿಗೆ ಸೂಕ್ತವಾಗಿದೆ",
+      suitable: [
+        "ಗ್ರಾಮೀಣ ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು",
+        "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು",
+        "ಹಾಲು ಒಕ್ಕೂಟಗಳು (Milk Unions)",
+        "ಡೈರಿ ಸಂಸ್ಕರಣಾ ಘಟಕಗಳು",
+        "ಖಾಸಗಿ ಡೈರಿ ಉದ್ಯಮಗಳು",
+        "ದೊಡ್ಡ ಡೈರಿ ಜಾಲಗಳು (Large Dairy Networks)"
+      ],
+      products: {
+        prod2: {
+          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್ (ಸಂಕಲನ)",
+          desc: "ಡೈರಿ ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್."
+        },
+        prod3: {
+          title: "ಡೈರಿ ಅಡ್ಮಿನಿಸ್ಟ್ರೇಟರ್ ಆಪ್",
+          desc: "ಡೈರಿ ನಿರ್ವಾಹಕರಿಗಾಗಿ ಸಂಗ್ರಹಣೆಯ ಮೇಲ್ವಿಚಾರಣೆ, ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ, ಮತ್ತು ವರದಿ ಪ್ರವೇಶ."
+        },
+        prod4: {
+          title: "ಹಾಲು ಸಂಗ್ರಹಣೆ ಆಪ್ ಮತ್ತು ಯಂತ್ರ ಏಕೀಕರಣ",
+          desc: "ಹಾಲು ಸಂಗ್ರಹಣೆಗಾಗಿ ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಮತ್ತು ತೂಕದ ಮಾಪಕಗಳೊಂದಿಗೆ ನೇರ ಏಕೀಕರಣ."
+        },
+        prod5: {
+          title: "ಉತ್ಪಾದನಾ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ",
+          desc: "ಕಚ್ಚಾ ಹಾಲಿನ ಸ್ವೀಕೃತಿಯಿಂದ ಹಿಡಿದು ಸಿದ್ಧಪಡಿಸಿದ ಉತ್ಪನ್ನಗಳ ಉತ್ಪಾದನೆಯವರೆಗೆ ಸಂಪೂರ್ಣ ಹಾಲು ಸಂಸ್ಕರಣಾ ಚಕ್ರವನ್ನು ನೈಜ-ಸಮಯದ ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ದಾಸ್ತಾನು ಏಕೀಕರಣದೊಂದಿಗೆ ನಿರ್ವಹಿಸಿ."
+        },
+        prod6: {
+          title: "ಸಾರಿಗೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Transport Management)",
+          desc: "ಹಾಲು ಸಂಗ್ರಹಣೆ ಮಾರ್ಗಗಳು, ವಾಹನ ಕಾರ್ಯಾಚರಣೆಗಳು, ರವಾನೆಗಳು ಮತ್ತು ಸಾರಿಗೆ ವೆಚ್ಚಗಳನ್ನು ದಕ್ಷತೆಯಿಂದ ನಿರ್ವಹಿಸಿ."
+        }
+      }
+    },
+    webDairy: {
+      title: "ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
+      overview: "ವೆಬ್ ಡೈರಿ ಎನ್ನುವುದು ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ. ಈ ಸಾಫ್ಟ್‌ವೇರ್ ಯಾವುದೇ ವೆಬ್-ಸಕ್ರಿಯಗೊಳಿಸಿದ ಸಾಧನದಲ್ಲಿ ಹಾಲು ಸಂಗ್ರಹಣೆ, ಬಿಲ್ಲಿಂಗ್, ದಾಸ್ತಾನು, ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ನಿರ್ವಹಣಾ ವರದಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸುತ್ತದೆ."
     },
     features: {
       "milkTitle": "ಹಾಲು ಸಂಗ್ರಹಣೆ",
@@ -2070,10 +3036,10 @@ export const dictionaries = {
       "heroTitle": "ಆಧುನಿಕ ವ್ಯಾಪಾರಕ್ಕಾಗಿ ಶಕ್ತಿಯುತ ವೈಶಿಷ್ಟ್ಯಗಳು",
       "heroSubtitle": "ಒಂದೇ ವೇದಿಕೆಯಿಂದ ನಿಮ್ಮ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ನಿರ್ವಹಿಸಲು, ಸ್ಕೇಲ್ ಮಾಡಲು ಮತ್ತು ಆಪ್ಟಿಮೈಜ್ ಮಾಡಲು ನಿಮಗೆ ಅಗತ್ಯವಿರುವ ಎಲ್ಲವೂ.",
       "exploreProducts": "ಉತ್ಪನ್ನಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
-      "requestDemo": "ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestDemo": "ಸಂಪರ್ಕಿಸಿ",
       "ctaTitle": "ನಿಮ್ಮ ವ್ಯಾಪಾರವನ್ನು ಪರಿವರ್ತಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
       "ctaDesc": "ತಮ್ಮ ದೈನಂದಿನ ಕಾರ್ಯಾಚರಣೆಗಳಿಗಾಗಿ WinSoft ಅನ್ನು ನಂಬುವ ಸಾವಿರಾರು ವ್ಯವಹಾರಗಳಿಗೆ ಸೇರಿಕೊಳ್ಳಿ.",
-      "requestFreeDemo": "ಉಚಿತ ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestFreeDemo": "ಸಂಪರ್ಕಿಸಿ",
       "contactUs": "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ"
     },
     nav: {
@@ -2090,7 +3056,7 @@ export const dictionaries = {
     hero: {
       "title": "ಸ್ಮಾರ್ಟ್ ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳೊಂದಿಗೆ ವ್ಯವಹಾರಗಳ ಸಬಲೀಕರಣ",
       "subtitle": "1998 ರಿಂದ ಡೈರಿ, ಸಕ್ಕರೆ och ಚಿನ್ನದ ಉದ್ಯಮಗಳಿಗೆ ವಿಶೇಷ ಇಆರ್‌ಪಿ, ಬಿಲ್ಲಿಂಗ್ ಮತ್ತು ನಿರ್ವಹಣಾ ಸಾಫ್ಟ್‌ವೇರ್.",
-      "cta1": "ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "cta1": "ಸಂಪರ್ಕಿಸಿ",
       "cta2": "ಸಂಪರ್ಕಿಸಿ",
     },
     home: {
@@ -2103,7 +3069,7 @@ export const dictionaries = {
       "product3Title": "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ಸಂಪೂರ್ಣ ಇಆರ್‌ಪಿ ಪರಿಹಾರ",
       "product3Desc": "ಕಬ್ಬು ನಿರ್ವಹಣೆ ಮತ್ತು ದಾಸ್ತಾನು ಸೇರಿದಂತೆ ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗೆ ಎಂಡ್-ಟು-ಎಂಡ್ ನಿರ್ವಹಣೆ.",
       "viewDetails": "ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
-      "requestDemo": "ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestDemo": "ಸಂಪರ್ಕಿಸಿ",
       "heroSlide1Title": "ಮೆಗಾ ಡೈರಿ ಟೆಕ್ ಸೇಲ್",
       "heroSlide1Desc": "ಸಂಪೂರ್ಣ ಡೈರಿ ನಿರ್ವಹಣಾ ಸಾಫ್ಟ್‌ವೇರ್",
       "heroSlide1Price": "₹45,000 ರಿಂದ ಪ್ರಾರಂಭ",
@@ -2135,7 +3101,7 @@ export const dictionaries = {
       "blog": "ಬಲಾಗ್",
       "caseStudies": "ಕೇಸ್ ಸ್ಟಡೀಸ್",
       "contact": "ಸಂಪರ್ಕ",
-      "requestDemo": "ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestDemo": "ಸಂಪರ್ಕಿಸಿ",
       "allRightsReserved": "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
       "privacyPolicy": "ಗೌಪ್ಯತಾ ನೀತಿ",
       "termsOfService": "ಸೇವಾ ನಿಯಮಗಳು"
@@ -2186,18 +3152,37 @@ export const dictionaries = {
       "feat24": "ಮುಕ್ತಾಯ ದಿನಾಂಕ ನಿರ್ವಹಣೆ",
       "tiersTitle": "ನಿಮ್ಮ ಡೈರಿಗಾಗಿ ಸರಿಯಾದ ಸಾಫ್ಟ್‌ವೇರ್ ಆಯ್ಕೆಮಾಡಿ",
       "tiersSubtitle": "ಡೈರಿ ಕಾರ್ಯಾಚರಣೆಗಳ ವಿವಿಧ ಪ್ರಮಾಣಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಮೂರು ಉತ್ಪನ್ನ ಶ್ರೇಣಿಗಳು",
-      "tier1Subtitle": "ಡೆಸ್ಕ್‌ಟಾಪ್ ಪರಿಹಾರಗಳು",
-      "tier1Desc": "ಹಾಲು ಸಂಗ್ರಹಣೆ ಮತ್ತು ಬಿಲ್ಲಿಂಗ್‌ಗಾಗಿ ವಿಶ್ವಾಸಾರ್ಹ ಡೆಸ್ಕ್‌ಟಾಪ್-ಆಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್. ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗೆ ಸೂಕ್ತವಾಗಿದೆ.",
-      "tier1Includes": "2 ಮಾಡ್ಯೂಲ್‌ಗಳು — ಸಂಗ್ರಹಣೆ ಮತ್ತು ಬಿಲ್ಲಿಂಗ್, ಅಕೌಂಟಿಂಗ್",
-      "tier1Best": "ಸಣ್ಣ ಡೈರಿಗಳು ಮತ್ತು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು",
-      "tier2Subtitle": "ಸುಧಾರಿತ ಆವೃತ್ತಿ",
-      "tier2Desc": "ಉತ್ಪಾದನಾ ಟ್ರ್ಯಾಕಿಂಗ್, ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಮಿನಿ ಇಆರ್‌ಪಿ ಸೇರಿದಂತೆ ಸುಧಾರಿತ ವೈಶಿಷ್ಟ್ಯಗಳು.",
-      "tier2Includes": "6 ಮಾಡ್ಯೂಲ್‌ಗಳು — ಸಂಗ್ರಹಣೆ, ಅಕೌಂಟಿಂಗ್, ಉತ್ಪಾದನೆ, ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್, ಮಿನಿ ಇಆರ್‌ಪಿ",
-      "tier2Best": "ಮಧ್ಯಮದಿಂದ ದೊಡ್ಡ ಡೈರಿಗಳು ಮತ್ತು ಸಹಕಾರ ಸಂಸ್ಥೆಗಳು",
-      "tier3Subtitle": "ಕ್ಲೌಡ್ ಆಧಾರಿತ ಪರಿಹಾರಗಳು",
-      "tier3Desc": "ನೈಜ-ಸಮಯದ ಪ್ರವೇಶ ಮತ್ತು ಎಂಟರ್‌ಪ್ರೈಸ್ ಇಆರ್‌ಪಿ ಹೊಂದಿರುವ 100% ಕ್ಲೌಡ್-ಆಧಾರಿತ ವೇದಿಕೆ.",
-      "tier3Includes": "5 ಮಾಡ್ಯೂಲ್‌ಗಳು — ಸಂಗ್ರಹಣೆ, ಅಕೌಂಟಿಂಗ್, ಉತ್ಪಾದನೆ, ಸಾರಿಗೆ, ಎಂಟರ್‌ಪ್ರೈಸ್ ಇಆರ್‌ಪಿ",
-      "tier3Best": "ಹಾಲು ಒಕ್ಕೂಟಗಳು, ಸಂಘ ಮತ್ತು ಫೆಡರೇಶನ್‌ಗಳು",
+      "tier1Title": "ಸಂಪೂರ್ಣ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
+      "tier1Subtitle": "ಗ್ರಾಮ ಮಟ್ಟದ ಸಹಕಾರ ಸಂಘಗಳು / ವೈಯಕ್ತಿಕ ಡೈರಿ",
+      "tier1Desc": "ಗ್ರಾಮ ಮಟ್ಟದ ಸಹಕಾರ ಸಂಘಗಳು/ವೈಯಕ್ತಿಕ ಡೈರಿ. ಹಾಲು ಸಂಗ್ರಹಣೆ, ನಿಯತಕಾಲಿಕ 7/10/15/20 ದಿನಗಳ ಹಾಲಿನ ಪಾವತಿ, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್ ನಿರ್ವಹಣೆ.",
+      "tier1Includes": "ಸಂಗ್ರಹಣೆ, ಬಿಲ್ಲಿಂಗ್, 7/10/15/20 ದಿನಗಳ ಪಾವತಿಗಳು, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್",
+      "tier1Best": "ಗ್ರಾಮ ಮಟ್ಟದ ಸಹಕಾರ ಸಂಘಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಡೈರಿಗಳು",
+      "tier2Title": "Medium Dairy (ಮಧ್ಯಮ ಡೈರಿ)",
+      "tier2Subtitle": "ಡೈರಿ ಮಿನಿ ERP",
+      "tier2Desc": "ಡೈರಿ ಮಿನಿ ERP ಯಲ್ಲಿ ಡಾಕ್ (DOCK) ವ್ಯವಸ್ಥೆ, ಗುಣಮಟ್ಟದ ವಿಶ್ಲೇಷಣೆ, ಬಿಲ್ಲಿಂಗ್, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್ ನಿರ್ವಹಣೆ ಇರುತ್ತದೆ.",
+      "tier2Includes": "ಸಂಗ್ರಹಣೆ, ಡಾಕ್ ವ್ಯವಸ್ಥೆ, ಗುಣಮಟ್ಟದ ವಿಶ್ಲೇಷಣೆ, ಬಿಲ್ಲಿಂಗ್, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್",
+      "tier2Best": "ಮಧ್ಯಮ ಗಾತ್ರದ ಸಹಕಾರ ಸಂಘಗಳು ಮತ್ತು ಖಾಸಗಿ ಡೈರಿಗಳು",
+      "tier3Title": "Large Dairy (ದೊಡ್ಡ ಡೈರಿ)",
+      "tier3Subtitle": "ಡೈರಿ ERP",
+      "tier3Desc": "ಡೈರಿ ERP ಯು RMRD, ಬಿಲ್ಲಿಂಗ್, ಸಾರಿಗೆ, ಉತ್ಪಾದನೆ, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್ ನಿರ್ವಹಣೆಯನ್ನು ಒಳಗೊಂಡಿದೆ.",
+      "tier3Includes": "RMRD, ಬಿಲ್ಲಿಂಗ್, ಸಾರಿಗೆ, ಉತ್ಪಾದನೆ, ದಾಸ್ತಾನು ಮತ್ತು ಅಕೌಂಟಿಂಗ್ ERP",
+      "tier3Best": "ದೊಡ್ಡ ಡೈರಿಗಳು, ಹಾಲು ಒಕ್ಕೂಟಗಳು ಮತ್ತು ಫೆಡರೇಶನ್‌ಗಳು",
+      "smallFeat1": "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ",
+      "smallFeat2": "ಫ್ಯಾಟ್ (FAT) / ಎಸ್ಎನ್ಎಫ್ (SNF) ಮತ್ತು ದರ ಲೆಕ್ಕಾಚಾರ",
+      "smallFeat3": "ನಿಯತಕಾಲಿಕ ಹಾಲಿನ ಪಾವತಿಗಳು (7/10/15/20 ದಿನಗಳ ಪಾವತಿ)",
+      "smallFeat4": "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ (Advance) ನಿರ್ವಹಣೆ",
+      "smallFeat5": "ದಾಸ್ತಾನು ಮತ್ತು ಸರಳ ಅಕೌಂಟಿಂಗ್ ನಿರ್ವಹಣೆ",
+      "mediumFeat1": "ಡಾಕ್ (DOCK) ಸಂಗ್ರಹಣಾ ವ್ಯವಸ್ಥೆ",
+      "mediumFeat2": "ಸ್ವಯಂಚಾಲಿತ ಗುಣಮಟ್ಟದ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಫ್ಯಾಟ್ ಮೆಷಿನ್ ಏಕೀಕರಣ",
+      "mediumFeat3": "ನಿಖರವಾದ ಬಿಲ್ಲಿಂಗ್ ಮತ್ತು ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ ಪರಿಹಾರ",
+      "mediumFeat4": "ದಾಸ್ತಾನು ಮತ್ತು ಸ್ಟಾಕ್ ನಿರ್ವಹಣೆ",
+      "mediumFeat5": "ಅಕೌಂಟಿಂಗ್, ದಿನಚರಿ ಮತ್ತು ಲೆಡ್ಜರ್ ನಿರ್ವಹಣೆ",
+      "largeFeat1": "RMRD (Raw Milk Receiving Dock) ವ್ಯವಸ್ಥೆ",
+      "largeFeat2": "ಸುಧಾರಿತ ಬಿಲ್ಲಿಂಗ್ ಮತ್ತು ಸ್ವಯಂಚಾಲಿತ ಪಾವತಿ ಗೇಟ್‌ವೇ",
+      "largeFeat3": "ಸಾರಿಗೆ, ಮಾರ್ಗ ಆಪ್ಟಿಮೈಸೇಶನ್ ಮತ್ತು ವಾಹನ ಟ್ರ್ಯಾಕಿಂಗ್",
+      "largeFeat4": "ಉತ್ಪಾದನಾ ಯೋಜನೆ ಮತ್ತು ಬ್ಯಾಚ್ ಗುಣಮಟ್ಟ ನಿಯಂತ್ರಣ",
+      "largeFeat5": "ಎಂಟರ್‌ಪ್ರೈಸ್ ದಾಸ್ತಾನು ಮತ್ತು ಗೋದಾಮು ನಿರ್ವಹಣೆ",
+      "largeFeat6": "ಸಂಪೂರ್ಣ ಹಣಕಾಸು ಅಕೌಂಟಿಂಗ್, ಜಿಎಸ್‌ಟಿ ರೆಡಿ ಮತ್ತು ಮಲ್ಟಿ-ಬ್ರಾಂಚ್ ERP",
       "ctaModernizeTitle": "ನಿಮ್ಮ ಡೈರಿ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಆಧುನೀಕರಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
       "ctaModernizeDesc": "ವಿನ್ಸೋಫ್ಟ್ ಪರಿಹಾರಗಳೊಂದಿಗೆ ತಮ್ಮ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಬದಲಾಯಿಸಿಕೊಂಡ ನೂರಾರು ಡೈರಿ ವ್ಯವಹಾರಗಳೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ.",
       "supportLabel": "ಬೆಂಬಲ"
@@ -2268,7 +3253,7 @@ export const dictionaries = {
       "module7": "ಕೆಲಸಗಾರರ (ಕರಿಗಾರ್) ನಿರ್ವಹಣೆ",
       "module8": "ಗಿಡವಿ (Mortgage) ನಿರ್ವಹಣೆ",
       "module9": "ಹಣಕಾಸು ಅಕೌಂಟಿಂಗ್ ಮತ್ತು GST ವರದಿಗಳು",
-      "requestDemoBtn": "ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestDemoBtn": "ಸಂಪರ್ಕಿಸಿ",
       "advancedFeaturesTitle": "ಸುಧಾರಿತ ಸಾಮರ್ಥ್ಯಗಳು",
       "secureAudit": "ಸುರಕ್ಷಿತ ಆಡಿಟಿಂಗ್",
       "secureAuditDesc": "ಬಳಕೆದಾರ ಮಟ್ಟದ ಅನುಮತಿಗಳು ಮತ್ತು ಆಡಿಟ್ ಟ್ರೇಲ್‌ಗಳೊಂದಿಗೆ ಪ್ರತಿ ವಹಿವಾಟಿನ ಸಂಪೂರ್ಣ ಟ್ರ್ಯಾಕ್.",
@@ -2282,7 +3267,7 @@ export const dictionaries = {
       "contactExpert": "ತಜ್ಞರೊಂದಿಗೆ ಮಾತನಾಡಿ"
     },
     header: {
-      "scheduleDemo": "ಡೆಮೊ ನಿಗದಿಪಡಿಸಿ",
+      "scheduleDemo": "ಸಂಪರ್ಕಿಸಿ",
       "contact": "ಸಂಪರ್ಕ",
     },
     product: {
@@ -2298,7 +3283,7 @@ export const dictionaries = {
       "keyFeatures": "ಪ್ರಮುಖ ವೈಶಿಷ್ಟ್ಯಗಳು",
       "interested": "ಆಸಕ್ತಿ ಇದೆಯೇ?",
       "personalizedWalkthrough": "ನಮ್ಮ ಸಾಫ್ಟ್‌ವೇರ್‌ನ ಉಚಿತ ವೈಯಕ್ತಿಕ ಪರಿಚಯವನ್ನು ಪಡೆಯಿರಿ.",
-      "requestDemo": "ಲೈವ್ ಡೆಮೊ ವಿನಂತಿಸಿ",
+      "requestDemo": "ಸಂಪರ್ಕಿಸಿ",
       "supportAssistance": "ಬೆಂಬಲ ಮತ್ತು ಸಹಾಯ",
       "support247": "24/7 ಬೆಂಬಲ",
       "callUs": "ನಮಗೆ +91 98XXX XXXXX ಗೆ ಕರೆ ಮಾಡಿ",
@@ -2437,7 +3422,7 @@ export const dictionaries = {
       "readMore": "ಮತ್ತಷ್ಟು ಓದಿ",
       "ctaTitle": "ನಿಮ್ಮ ಯಶೋಗಾಥೆಯನ್ನು ಬರೆಯಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
       "ctaDesc": "ತಮ್ಮ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಬದಲಾಯಿಸಲು ವಿನ್ಸೋಫ್ಟ್ ಪರಿಹಾರಗಳನ್ನು ನಂಬಿದ ನೂರಾರು ಯಶಸ್ವಿ ವ್ಯವಹಾರಗಳೊಂದಿಗೆ ಸೇರಿಕೊಳ್ಳಿ.",
-      "scheduleDemo": "ಡೆಮೊ ನಿಗದಿಪಡಿಸಿ",
+      "scheduleDemo": "ಸಂಪರ್ಕಿಸಿ",
       "contactTeam": "ನಮ್ಮ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ",
       "study1Title": "ಡೈರಿ ಕಾರ್ಯಾಚರಣೆಗಳ ಆಧುನೀಕರಣ: 300% ದಕ್ಷತೆ ಹೆಚ್ಚಳ",
       "study1Client": "ಮಹಾರಾಷ್ಟ್ರ ಡೈರಿ ಸಹಕಾರ ಸಂಘ",
@@ -2519,7 +3504,7 @@ export const dictionaries = {
       "support247": "24/7 Support",
       "readyToTransform": "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಬದಲಾಯಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
       "transformDesc": "ನಮ್ಮ ಪರಿಹಾರಗಳು ನಿಮ್ಮ ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಹೇಗೆ ಸುಗಮಗೊಳಿಸಬಹುದು ಮತ್ತು ಉತ್ಪಾದಕತೆಯನ್ನು ಹೇಗೆ ಹೆಚ್ಚಿಸಬಹುದು ಎಂಬುದನ್ನು ನೋಡಲು ವೈಯಕ್ತಿಕ ಡೆಮೊ ನಿಗದಿಪಡಿಸಿ.",
-      "scheduleDemo": "ಡೆಮೊ ನಿಗದಿಪಡಿಸಿ",
+      "scheduleDemo": "ಸಂಪರ್ಕಿಸಿ",
       "requestQuote": "ಉಲ್ಲೇಖವನ್ನು ವಿನಂತಿಸಿ"
     },
     story: {
@@ -2617,6 +3602,29 @@ export const dictionaries = {
       "testimonialAuthor": "ರಾಜೇಶ್ ಕುಮಾರ್",
       "testimonialRole": "ಉತ್ಪಾದನಾ ವ್ಯವಸ್ಥಾಪಕರು, ಮಹಾರಾಷ್ಟ್ರ ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳು",
       "errorMsg": "ನಿಮ್ಮ ಡೆಮೊ ನಿಗದಿಪಡಿಸುವಲ್ಲಿ ದೋಷ ಉಂಟಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    productsPage: {
+      "heroTitle": "ನಮ್ಮ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಪರಿಹಾರಗಳು",
+      "heroSubtitle": "ನಿಮ್ಮ ಉದ್ಯಮದ ವಿಶಿಷ್ಟ ಕಾರ್ಯಾಚರಣೆಯ ಅಗತ್ಯಗಳಿಗಾಗಿ ವಿಶೇಷವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ನಮ್ಮ ಸಾಫ್ಟ್‌ವೇರ್ ಉತ್ಪನ್ನಗಳ ಸಮಗ್ರ ಶ್ರೇಣಿಯನ್ನು ಅನ್ವೇಷಿಸಿ.",
+      "dairySoftware": "ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್",
+      "goldJewellery": "ಚಿನ್ನ ಮತ್ತು ಆಭರಣ ಸಾಫ್ಟ್‌ವೇರ್",
+      "invAcc": "ಇನ್ವೆಂಟರಿ ಮತ್ತು ಅಕೌಂಟಿಂಗ್",
+      "sugarIndustry": "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ಇಆರ್‌ಪಿ",
+      "goldExchange": "ಚಿನ್ನದ ವಿನಿಮಯ ನಿರ್ವಹಣೆ",
+      "goldExchangeDesc": "ಚಿನ್ನದ ವಿನಿಮಯ ವಹಿವಾಟುಗಳು, ತೂಕದ ಪರಿಶೀಲನೆ ಮತ್ತು ಗ್ರಾಹಕರ ಯೋಜನೆಯ ಬಾಕಿಗಳಿಗಾಗಿ ವಿಶೇಷ ಸಾಫ್ಟ್‌ವೇರ್.",
+      "goldExchangeBilling": "ಚಿನ್ನದ ವಿನಿಮಯ ಬಿಲ್ಲಿಂಗ್",
+      "goldExchangeBillingDesc": "ಸಂಯೋಜಿತ ಜಿಎಸ್‌ಟಿಯೊಂದಿಗೆ ಚಿಲ್ಲರೆ/ಸಗಟು ಚಿನ್ನದ ಖರೀದಿ ಮತ್ತು ಮಾರಾಟದ ವಹಿವಾಟುಗಳನ್ನು ಸಂಯೋಜಿಸುವ ಬಿಲ್ಲಿಂಗ್ ವ್ಯವಸ್ಥೆ.",
+      "goldFull": "ಚಿನ್ನದ ಶೋರೂಮ್ ಸಂಪೂರ್ಣ ಇಆರ್‌ಪಿ",
+      "goldFullDesc": "ದಾಸ್ತಾನು ನಿರ್ವಹಣೆ, ಗ್ರಾಹಕ ಯೋಜನೆಗಳು, ಮಾರಾಟ ಬಿಲ್ಲಿಂಗ್, ಕೆಲಸಗಾರರ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಹಣಕಾಸು ಸೇರಿದಂತೆ ಎಂಡ್-ಟು-ಎಂಡ್ ಇಆರ್‌ಪಿ.",
+      "goldBooking": "ಚಿನ್ನದ ಬುಕಿಂಗ್ ಮತ್ತು ಯೋಜನೆಗಳು",
+      "goldBookingDesc": "ಮಾಸಿಕ ಹೂಡಿಕೆ ಯೋಜನೆಗಳು, ಚಿನ್ನದ ಬುಕಿಂಗ್ ಆಯ್ಕೆಗಳು, ಬಡ್ಡಿ ಲೆಕ್ಕಾಚಾರಗಳು ಮತ್ತು ಸ್ವಯಂಚಾಲಿತ ಜ್ಞಾಪನೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+      "invAccSoftware": "ಇನ್ವೆಂಟರಿ ಮತ್ತು ಅಕೌಂಟಿಂಗ್ ಸಾಫ್ಟ್‌ವೇರ್",
+      "invAccSoftwareDesc": "ಸರಳ ಮತ್ತು ಶಕ್ತಿಯುತ ಅಕೌಂಟಿಂಗ್ ಮತ್ತು ಸ್ಟಾಕ್ ಟ್ರ್ಯಾಕಿಂಗ್ ವ್ಯವಸ್ಥೆ.",
+      "fullBusinessSoftware": "ಸಂಪೂರ್ಣ ವ್ಯಾಪಾರ ಸೂಟ್",
+      "fullBusinessSoftwareDesc": "ಎಂಟರ್‌ಪ್ರೈಸ್ ಅಕೌಂಟಿಂಗ್, ಮಲ್ಟಿಪಲ್ ಗೋದಾಮು ನಿರ್ವಹಣೆ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್ ಮತ್ತು ದೃಢವಾದ ಹಣಕಾಸು ವರದಿ.",
+      "notSureTitle": "ನಿಮ್ಮ ವ್ಯವಹಾರಕ್ಕೆ ಯಾವ ಉತ್ಪನ್ನ ಸೂಕ್ತವಾಗಿದೆ ಎಂದು ಖಚಿತವಾಗಿಲ್ಲವೇ?",
+      "notSureDesc": "ಸರಿಯಾದ ಕಾನ್ಫಿಗರೇಶನ್ ಆಯ್ಕೆ ಮಾಡಲು ಅಥವಾ ನಿಮ್ಮ ಉದ್ಯಮಕ್ಕಾಗಿ ಕಸ್ಟಮೈಸ್ ಮಾಡಿದ ಪರಿಹಾರವನ್ನು ವಿನ್ಯಾಸಗೊಳಿಸಲು ನಮ್ಮ ತಜ್ಞರು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಬಹುದು.",
+      "contactSales": "ಮಾರಾಟ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ"
     }
   }
 };

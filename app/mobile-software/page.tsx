@@ -17,148 +17,60 @@ export default function MobileSoftwarePage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', skipSnaps: false }, [Autoplay({ delay: 3000 })])
 
   const recommendedSolutions = useMemo(() => {
-    if (language === 'mr') {
-      return [
-        {
-          id: 1,
-          title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
-          description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "डेअरी सोल्यूशन"
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध संस्था प्रशासकीय ERP",
-          description: "दूध संस्था आणि संघांसाठी संकलन, पशूखाद्य विक्री, सभासद व्यवस्थापन आणि ऑडिट रिपोर्टचे संपूर्ण सोल्यूशन.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP सिस्टीम"
-        },
-        {
-          id: "gold",
-          title: "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)",
-          description: "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट (Girvi) व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "सुवर्ण सोल्यूशन"
-        },
-        {
-          id: "sugar",
-          title: "साखर कारखाना व्यवस्थापन प्रणाली",
-          description: "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन.",
-          image: "/sugerfac.png",
-          link: "/sugar-factory-solutions",
-          tag: "कारखाना सोल्यूशन"
-        }
-      ]
-    } else if (language === 'kn') {
-      return [
-        {
-          id: 1,
-          title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
-          description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "ಡೈರಿ ಪರಿಹಾರ"
-        },
-        {
-          id: 3,
-          title: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP",
-          description: "ಹಾಲು ಸಂಘಗಳು ಮತ್ತು ಒಕ್ಕೂಟಗಳಿಗಾಗಿ ಸಂಗ್ರಹಣೆ, ಪಶು ಆಹಾರ ಮಾರಾಟ, ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP ಸಿಸ್ಟಮ್"
-        },
-        {
-          id: "gold",
-          title: "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)",
-          description: "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿಯ ಲೆಕ್ಕಾಚಾರ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಸಾಫ್ಟ್‌ವೇರ್.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "ಚಿನ್ನದ ಪರಿಹಾರ"
-        },
-        {
-          id: "sugar",
-          title: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ",
-          description: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ.",
-          image: "/sugerfac.png",
-          link: "/sugar-factory-solutions",
-          tag: "ಕಾರ್ಖಾನೆ ಪರಿಹಾರ"
-        }
-      ]
-    } else if (language === 'hi') {
-      return [
-        {
-          id: 1,
-          title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
-          description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "डेयरी समाधान"
-        },
-        {
-          id: 3,
-          title: "सहकारी दूध समिति प्रशासनिक ERP",
-          description: "दूध समितियों और संघों के लिए संग्रह, पशु आहार बिक्री, सदस्य प्रबंधन और ऑडिट रिपोर्ट का संपूर्ण समाधान.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP सिस्टम"
-        },
-        {
-          id: "gold",
-          title: "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)",
-          description: "ज्वेलरी शोरूम के लिए सोने-चांदी का हिसाब, बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "स्वर्ण समाधान"
-        },
-        {
-          id: "sugar",
-          title: "चीनी मिल प्रबंधन प्रणाली",
-          description: "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान.",
-          image: "/sugerfac.png",
-          link: "/sugar-factory-solutions",
-          tag: "फैक्ट्री समाधान"
-        }
-      ]
-    } else {
-      return [
-        {
-          id: 1,
-          title: "Automatic Milk Collection System (AMCS)",
-          description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
-          image: "/dairy33.png",
-          link: "/product/1",
-          tag: "Dairy Solution"
-        },
-        {
-          id: 3,
-          title: "Cooperative Society Admin ERP",
-          description: "Comprehensive enterprise administration dashboard to manage collection metrics, member profiles, feed sales, and society-level accounting.",
-          image: "/modern-office-dashboard.png",
-          link: "/product/3",
-          tag: "ERP System"
-        },
-        {
-          id: "gold",
-          title: "Gold Jewellery Showroom ERP (Goldwin)",
-          description: "Complete billing, account management, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
-          image: "/jewelry-store-system.png",
-          link: "/gold-industry-solutions",
-          tag: "Gold Solution"
-        },
-        {
-          id: "sugar",
-          title: "Sugar Factory Enterprise Solutions",
-          description: "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
-          image: "/sugerfac.png",
-          link: "/sugar-factory-solutions",
-          tag: "Enterprise Solution"
-        }
-      ]
-    }
-  }, [language])
+    const allSolutions = [
+      {
+        id: 1,
+        title: t("dairy5.title") || "Complete Dairy Software Solutions",
+        description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+        image: "/dairy33.png",
+        link: "/product/1",
+        tag: language === 'mr' ? "डेअरी सोल्यूशन" : language === 'kn' ? "ಡೈರಿ ಪರಿಹಾರ" : language === 'hi' ? "डेयरी समाधान" : "Dairy Solution"
+      },
+      {
+        id: 2,
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
+        image: "/modern-dairy-farm.png",
+        link: "/product/2",
+        tag: language === 'mr' ? "मोबाईल ॲप" : language === 'kn' ? "ಮೊಬೈಲ್ ಆಪ್" : language === 'hi' ? "मोबाइल ऐप" : "Mobile App"
+      },
+      {
+        id: 3,
+        title: t("dairy5.products.prod3.title") || "Dairy Administrator App",
+        description: t("dairy5.products.prod3.desc") || "Collection monitoring, dashboard & analytics, and report access for dairy administrators.",
+        image: "/modern-office-dashboard.png",
+        link: "/product/3",
+        tag: language === 'mr' ? "ERP सिस्टीम" : language === 'kn' ? "ERP ಸಿಸ್ಟಮ್" : language === 'hi' ? "ERP सिस्टम" : "ERP System"
+      },
+      {
+        id: "gold",
+        title: language === 'mr' ? "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)" :
+          language === 'kn' ? "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)" :
+            language === 'hi' ? "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)" : "Gold Jewellery Showroom ERP (Goldwin)",
+        description: language === 'mr' ? "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट (Girvi) व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर." :
+          language === 'kn' ? "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿಯ ಲೆಕ್ಕಾಚಾರ, ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಸಾಫ್ಟ್‌ವೇರ್." :
+            language === 'hi' ? "ज्वेलरी शोरूम के लिए सोने-चांदी का हिसाब, बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर." : "Complete billing, account management, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
+        image: "/gold-image-new/gold_home_page.png",
+        link: "/gold-industry-solutions",
+        tag: language === 'mr' ? "सुवर्ण सोल्यूशन" : language === 'kn' ? "ಚಿನ್ನದ ಪರಿಹಾರ" : language === 'hi' ? "स्वर्ण समाधान" : "Gold Solution"
+      },
+      {
+        id: "sugar",
+        title: language === 'mr' ? "साखर कारखाना व्यवस्थापन प्रणाली" :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ" :
+            language === 'hi' ? "चीनी मिल प्रबंधन प्रणाली" : "Sugar Factory Enterprise Solutions",
+        description: language === 'mr' ? "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन." :
+          language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ." :
+            language === 'hi' ? "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान." : "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
+        image: "/sugerfac.png",
+        link: "/sugar-factory-solutions",
+        tag: language === 'mr' ? "कारखाना सोल्यूशन" : language === 'kn' ? "ಕಾರ್ಖಾನೆ ಪರಿಹಾರ" : language === 'hi' ? "फैक्ट्री समाधान" : "Enterprise Solution"
+      }
+    ];
+
+    const filterIds = [1, 3, "gold", "sugar"];
+    return allSolutions.filter(sol => filterIds.includes(sol.id));
+  }, [language, t]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -169,10 +81,10 @@ export default function MobileSoftwarePage() {
   }, [emblaApi])
 
   const screenshots = [
-    { 
-      id: 1, 
-      title: "Milk Collection", 
-      desc: "Real-time FAT/SNF testing & data entry", 
+    {
+      id: 1,
+      title: "Milk Collection",
+      desc: "Real-time FAT/SNF testing & data entry",
       color: "from-blue-600 to-indigo-700",
       content: (
         <div className="w-full space-y-4">
@@ -203,10 +115,10 @@ export default function MobileSoftwarePage() {
         </div>
       )
     },
-    { 
-      id: 2, 
-      title: "Farmer Dashboard", 
-      desc: "Manage profiles & collection history", 
+    {
+      id: 2,
+      title: "Farmer Dashboard",
+      desc: "Manage profiles & collection history",
       color: "from-green-600 to-emerald-700",
       content: (
         <div className="w-full space-y-3">
@@ -227,10 +139,10 @@ export default function MobileSoftwarePage() {
         </div>
       )
     },
-    { 
-      id: 3, 
-      title: "Payment Receipts", 
-      desc: "Instant digital receipts via WhatsApp", 
+    {
+      id: 3,
+      title: "Payment Receipts",
+      desc: "Instant digital receipts via WhatsApp",
       color: "from-purple-600 to-violet-700",
       content: (
         <div className="w-full bg-white text-gray-900 rounded-2xl p-4 shadow-xl">
@@ -255,10 +167,10 @@ export default function MobileSoftwarePage() {
         </div>
       )
     },
-    { 
-      id: 4, 
-      title: "Milk Analysis", 
-      desc: "Detailed reports & trends", 
+    {
+      id: 4,
+      title: "Milk Analysis",
+      desc: "Detailed reports & trends",
       color: "from-orange-500 to-red-600",
       content: (
         <div className="w-full space-y-4">
@@ -280,10 +192,10 @@ export default function MobileSoftwarePage() {
         </div>
       )
     },
-    { 
-      id: 5, 
-      title: "Smart Settings", 
-      desc: "Configure rate charts & cattle types", 
+    {
+      id: 5,
+      title: "Smart Settings",
+      desc: "Configure rate charts & cattle types",
       color: "from-teal-500 to-cyan-600",
       content: (
         <div className="w-full space-y-3">
@@ -306,7 +218,7 @@ export default function MobileSoftwarePage() {
             </div>
           </div>
           <div className="bg-white/10 p-3 rounded-xl text-left border border-white/10 flex items-center gap-3 opacity-50">
-             <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
               <Smartphone className="w-4 h-4" />
             </div>
             <div>
@@ -333,7 +245,7 @@ export default function MobileSoftwarePage() {
               Dairy Software for Mobile
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 font-serif leading-relaxed mb-8">
-              Complete mobile app for Milk Delivery, Milk Sale Purchase with FAT/SNF multiple rate charts. 
+              Complete mobile app for Milk Delivery, Milk Sale Purchase with FAT/SNF multiple rate charts.
               Manage farmers, customers, and payments directly from your smartphone.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -370,24 +282,24 @@ export default function MobileSoftwarePage() {
                     <div className="relative mx-auto w-full max-w-[300px] aspect-[9/19] rounded-[2.5rem] border-[12px] border-black bg-black shadow-2xl dark:border-zinc-800 dark:bg-zinc-800 group hover:-translate-y-2 transition-transform duration-300">
                       {/* Notch */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-28 bg-black dark:bg-zinc-800 rounded-b-2xl z-20"></div>
-                      
+
                       {/* Screen Content Mockup */}
                       <div className={`relative h-full w-full rounded-[1.8rem] overflow-hidden bg-gradient-to-br ${screen.color} flex flex-col items-center p-6 text-white text-center shadow-inner pt-12`}>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/30"></div>
-                        
+
                         <div className="relative z-10 w-full flex flex-col items-center">
                           <h3 className="text-xl font-bold mb-1 font-sans">{screen.title}</h3>
                           <p className="text-white/80 text-[10px] mb-6 font-sans uppercase tracking-wider">{screen.desc}</p>
-                          
+
                           {/* Realistic Content */}
                           {screen.content}
                         </div>
-                        
+
                         {/* Fake bottom navigation bar */}
                         <div className="absolute bottom-0 left-0 right-0 h-14 bg-white/10 backdrop-blur-md flex items-center justify-around px-4 border-t border-white/10">
-                           <div className="w-5 h-5 rounded-md bg-white/20"></div>
-                           <div className="w-10 h-1 bg-white/40 rounded-full"></div>
-                           <div className="w-5 h-5 rounded-md bg-white/20"></div>
+                          <div className="w-5 h-5 rounded-md bg-white/20"></div>
+                          <div className="w-10 h-1 bg-white/40 rounded-full"></div>
+                          <div className="w-5 h-5 rounded-md bg-white/20"></div>
                         </div>
                       </div>
                     </div>
@@ -419,33 +331,33 @@ export default function MobileSoftwarePage() {
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {[
-                { 
-                  name: "Silver", 
-                  price: "2,000", 
-                  duration: "1 Year", 
-                  color: "border-slate-200", 
+                {
+                  name: "Silver",
+                  price: "2,000",
+                  duration: "1 Year",
+                  color: "border-slate-200",
                   iconColor: "text-slate-400",
-                  highlight: false 
+                  highlight: false
                 },
-                { 
-                  name: "Gold", 
-                  price: "3,000", 
-                  duration: "2 Years", 
-                  color: "border-[#1E94A4]", 
+                {
+                  name: "Gold",
+                  price: "3,000",
+                  duration: "2 Years",
+                  color: "border-[#1E94A4]",
                   iconColor: "text-yellow-500",
-                  highlight: true 
+                  highlight: true
                 },
-                { 
-                  name: "Platinum", 
-                  price: "5,000", 
-                  duration: "5 Years", 
-                  color: "border-slate-800", 
+                {
+                  name: "Platinum",
+                  price: "5,000",
+                  duration: "5 Years",
+                  color: "border-slate-800",
                   iconColor: "text-indigo-500",
-                  highlight: false 
+                  highlight: false
                 },
               ].map((plan, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className={`relative bg-white dark:bg-zinc-900 rounded-3xl p-8 border-2 ${plan.color} shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col`}
                 >
                   {plan.highlight && (
@@ -480,12 +392,11 @@ export default function MobileSoftwarePage() {
                   </div>
 
                   <Link href="/schedule-demo" className="mt-auto">
-                    <Button 
-                      className={`w-full py-6 rounded-xl font-bold transition-all ${
-                        plan.highlight 
-                          ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white" 
+                    <Button
+                      className={`w-full py-6 rounded-xl font-bold transition-all ${plan.highlight
+                          ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white"
                           : "bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white"
-                      }`}
+                        }`}
                     >
                       Buy Now
                     </Button>
@@ -529,21 +440,21 @@ export default function MobileSoftwarePage() {
               </span>
               <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-3">
                 {language === 'mr' ? "Apps थेट Download करा" :
-                 language === 'hi' ? "Apps सीधे Download करें" : "Download Winsoft Apps Directly"}
+                  language === 'hi' ? "Apps सीधे Download करें" : "Download Winsoft Apps Directly"}
               </h2>
               <p className="text-gray-500 dark:text-zinc-400 font-serif max-w-xl mx-auto">
                 {language === 'mr'
                   ? "खालील buttons वर click करा — APK file download होईल. Android phone वर install करा."
                   : language === 'hi'
-                  ? "नीचे दिए buttons पर click करें — APK file download होगी। Android phone पर install करें।"
-                  : "Click the button below to download the APK file directly. Install on your Android phone."}
+                    ? "नीचे दिए buttons पर click करें — APK file download होगी। Android phone पर install करें।"
+                    : "Click the button below to download the APK file directly. Install on your Android phone."}
               </p>
 
               {/* Android only note */}
               <div className="inline-flex items-center gap-2 mt-4 px-3 py-1.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl text-xs text-amber-700 dark:text-amber-400 font-semibold">
                 ⚠️ {language === 'mr' ? "फक्त Android साठी — Install करण्यापूर्वी Settings मध्ये 'Unknown Sources' चालू करा"
                   : language === 'hi' ? "केवल Android के लिए — Install से पहले Settings में 'Unknown Sources' चालू करें"
-                  : "Android only — Enable 'Unknown Sources' in Settings before installing"}
+                    : "Android only — Enable 'Unknown Sources' in Settings before installing"}
               </div>
             </div>
 
@@ -709,20 +620,20 @@ export default function MobileSoftwarePage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 {language === 'mr' ? "आमची इतर प्रीमियम सोल्यूशन्स" :
-                 language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
-                 language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
+                  language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
+                    language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
               </h2>
               <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
                 {language === 'mr' ? "तुमच्या व्यवसायाला अत्याधुनिक डिजिटल युगात नेण्यासाठी आणि दैनंदिन कामकाज सुलभ करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
-                 language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
-                 language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
+                  language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                    language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {recommendedSolutions.map((product) => (
-                <div 
-                  key={product.id} 
+                <div
+                  key={product.id}
                   className="bg-white dark:bg-zinc-950 hover-lift p-6 rounded-[2rem] flex flex-col justify-between min-h-[440px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
                 >
                   <div className="flex flex-col h-full">
@@ -744,7 +655,7 @@ export default function MobileSoftwarePage() {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-zinc-100 leading-snug mb-3 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors line-clamp-2">
                       {product.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 dark:text-zinc-400 text-xs mb-6 flex-grow leading-relaxed font-serif line-clamp-3">
                       {product.description}
                     </p>

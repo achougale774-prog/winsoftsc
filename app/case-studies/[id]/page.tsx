@@ -256,13 +256,13 @@ export default function CaseStudyDetailPage() {
             </h2>
             <p className="text-white/80 font-serif mb-8 text-lg">
               {language === "mr"
-                ? "आमच्या team शी बोला आणि तुमच्या business साठी free demo बुक करा."
-                : "Talk to our team and book a free demo for your business."}
+                ? "आमच्या टीमशी बोला आणि तुमच्या बिझनेससाठी योग्य माहिती मिळवा."
+                : "Talk to our team and get the right solutions for your business."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button size="lg" className="bg-white text-[#1E94A4] hover:bg-gray-100 font-sans font-bold px-8">
-                  {language === "mr" ? "Free Demo बुक करा" : "Book Free Demo"}
+                  {language === "mr" ? "संपर्क करा" : "Contact Us"}
                 </Button>
               </Link>
               <a href="tel:+919423039902">

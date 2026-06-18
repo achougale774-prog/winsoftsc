@@ -148,14 +148,15 @@ export function GoogleReviews() {
   const subheading = {
     mr: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
     hi: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
+    kn: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
     en: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
   }[language] || `${TOTAL_REVIEWS}+ verified Google reviews`
 
   const reviewLabel = { mr: "Review द्या", hi: "Review दें", en: "Write a Review", kn: "Review ಬರೆಯಿರಿ" }[language] || "Write a Review"
   const viewAllLabel = { mr: "Google वर सगळे Reviews बघा", hi: "Google पर सभी Reviews देखें", en: "View All Reviews on Google", kn: "Google ನಲ್ಲಿ ಎಲ್ಲಾ Reviews ನೋಡಿ" }[language] || "View All Reviews on Google"
-  const showMoreLabel = { mr: "आणखी Reviews बघा", hi: "और Reviews देखें", en: "Show More Reviews" }[language] || "Show More"
-  const verifiedLabel = { mr: "Verified", hi: "Verified", en: "Verified" }[language] || "Verified"
-  const helpfulLabel = { mr: "उपयुक्त", hi: "उपयोगी", en: "Helpful" }[language] || "Helpful"
+  const showMoreLabel = { mr: "आणखी Reviews बघा", hi: "और Reviews देखें", en: "Show More Reviews", kn: "ಇನ್ನಷ್ಟು Reviews ನೋಡಿ" }[language] || "Show More"
+  const verifiedLabel = { mr: "Verified", hi: "Verified", en: "Verified", kn: "Verified" }[language] || "Verified"
+  const helpfulLabel = { mr: "उपयुक्त", hi: "उपयोगी", en: "Helpful", kn: "ಸಹಾಯಕಾರಿಯಾಗಿದೆ" }[language] || "Helpful"
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-gray-100 dark:border-zinc-800">

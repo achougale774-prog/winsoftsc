@@ -223,9 +223,9 @@ export default function ROICalculatorPage() {
             </div>
 
             {/* CTA */}
-            <Link href="/schedule-demo" className="block">
+            <Link href="/contact" className="block">
               <Button className="w-full py-6 text-base font-bold rounded-2xl bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white shadow-lg hover:shadow-[#1E94A4]/25 transition-all">
-                Free Demo बुक करा — आजच सुरुवात करा
+                संपर्क करा — आजच सुरुवात करा
               </Button>
             </Link>
             <p className="text-center text-xs text-gray-400 dark:text-zinc-600 font-serif">

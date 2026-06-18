@@ -264,13 +264,13 @@ export default function BlogPostPage() {
             </h3>
             <p className="text-gray-600 dark:text-zinc-400 font-serif mb-6">
               {language === "mr"
-                ? "आमच्या team शी बोला आणि तुमच्या business साठी free demo बुक करा."
-                : "Talk to our team and book a free demo for your business."}
+                ? "आमच्या टीमशी बोला आणि तुमच्या बिझनेससाठी योग्य सोल्यूशन्स मिळवा."
+                : "Talk to our team and get the right solutions for your business."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact">
                 <Button className="bg-[#1E94A4] hover:bg-[#0B7989] text-white font-sans font-bold px-8">
-                  {language === "mr" ? "Free Demo बुक करा" : "Book Free Demo"}
+                  {language === "mr" ? "संपर्क करा" : "Contact Us"}
                 </Button>
               </Link>
               <a href="tel:+919423039902">

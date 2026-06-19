@@ -151,7 +151,7 @@ export default function DairySolutionsPage() {
         {
           id: "1",
           title: "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स",
-          description: "डेअरी ५.० हे सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक दुग्ध व्यवस्थापन सोल्यूशन आहे.",
+          description: "सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक दुग्ध व्यवस्थापन सोल्यूशन आहे.",
           image: "/live-image-dairy/5.0.png",
           tag: "डेअरी सोल्यूशन्स",
         },
@@ -159,7 +159,7 @@ export default function DairySolutionsPage() {
           id: "web-dairy",
           title: "वेब-बेस्ड डेअरी सॉफ्टवेअर सोल्यूशन्स",
           description: "वेब डेअरी हे सहकारी दूध संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांटसाठी डिझाइन केलेले एक व्यापक वेब-बेस्ड दुग्ध व्यवस्थापन सोल्यूशन आहे.",
-          image: "/live-image-dairy/5.0_3.png",
+          image: "/live-image-dairy/first-page.png",
           tag: "वेब डेअरी",
         },
         {
@@ -171,7 +171,7 @@ export default function DairySolutionsPage() {
         },
         {
           id: "2",
-          title: "शेतकरी मोबाईल ॲप (संकलन)",
+          title: "शेतकरी मोबाईल ॲप",
           description: "दूध उत्पादक शेतकऱ्यांसाठी दैनिक दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेझर तपासण्यासाठीचे प्रगत मोबाईल ॲप्लिकेशन.",
           image: "/modern-dairy-farm.png",
           tag: "शेतकरी ॲप",
@@ -194,7 +194,7 @@ export default function DairySolutionsPage() {
           id: "6",
           title: "वाहतूक व्यवस्थापन प्रणाली (Transport Management)",
           description: "दूध संकलन मार्ग, वाहन चालन, डिस्पॅच आणि वाहतूक खर्चाचे कार्यक्षमतेने व्यवस्थापन करा.",
-          image: "/collection bike.webp",
+          image: "/transport.jpg",
           tag: "वाहतूक व्यवस्थापन",
         },
       ]
@@ -203,7 +203,7 @@ export default function DairySolutionsPage() {
         {
           id: "1",
           title: "ಸಂಪೂರ್ಣ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
-          description: "ಡೈರಿ ೫.೦ ಎನ್ನುವುದು ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ.",
+          description: "ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ.",
           image: "/live-image-dairy/5.0.png",
           tag: "ಡೈರಿ ಪರಿಹಾರಗಳು",
         },
@@ -211,7 +211,7 @@ export default function DairySolutionsPage() {
           id: "web-dairy",
           title: "ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರಗಳು",
           description: "ವೆಬ್ ಡೈರಿ ಎನ್ನುವುದು ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು, ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ಡೈರಿ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಮಗ್ರ ವೆಬ್-ಆಧಾರಿತ ಡೈರಿ ನಿರ್ವಹಣಾ ಪರಿಹಾರವಾಗಿದೆ.",
-          image: "/live-image-dairy/5.0_3.png",
+          image: "/live-image-dairy/first-page.png",
           tag: "ವೆಬ್ ಡೈರಿ",
         },
         {
@@ -223,7 +223,7 @@ export default function DairySolutionsPage() {
         },
         {
           id: "2",
-          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್ (ಸಂಕಲನ)",
+          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್",
           description: "ಡೈರಿ ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
           image: "/modern-dairy-farm.png",
           tag: "ರೈತರ ಆಪ್",
@@ -246,7 +246,7 @@ export default function DairySolutionsPage() {
           id: "6",
           title: "ಸಾರಿಗೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Transport Management)",
           description: "ಹಾಲು ಸಂಗ್ರಹಣೆ ಮಾರ್ಗಗಳು, ವಾಹನ ಕಾರ್ಯಾಚರಣೆಗಳು, ರವಾನೆಗಳು ಮತ್ತು ಸಾರಿಗೆ ವೆಚ್ಚಗಳನ್ನು ದಕ್ಷತೆಯಿಂದ ನಿರ್ವಹಿಸಿ.",
-          image: "/collection bike.webp",
+          image: "/transport.jpg",
           tag: "ಸಾರಿಗೆ ನಿರ್ವಹಣೆ",
         },
       ]
@@ -255,15 +255,15 @@ export default function DairySolutionsPage() {
         {
           id: "1",
           title: "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस",
-          description: "डेयरी ५.० एक व्यापक डेयरी प्रबंधन समाधान है जिसे डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया है।",
+          description: "डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक डेयरी प्रबंधन समाधान है।",
           image: "/live-image-dairy/5.0.png",
           tag: "डेयरी समाधान",
         },
         {
           id: "web-dairy",
           title: "वेब-बेस्ड डेयरी सॉफ्टवेयर सॉल्यूशंस",
-          description: "वेब डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक वेब-आधारित डेयरी प्रबंधन समाधान है।",
-          image: "/live-image-dairy/5.0_3.png",
+          description: "वेब डेयरी सहकारी समितियों, दूध संग्रह केंद्रों and डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक वेब-आधारित डेयरी प्रबंधन समाधान है।",
+          image: "/live-image-dairy/first-page.png",
           tag: "वेब डेयरी",
         },
         {
@@ -275,7 +275,7 @@ export default function DairySolutionsPage() {
         },
         {
           id: "2",
-          title: "किसान मोबाइल ऐप (संकलन)",
+          title: "किसान मोबाइल ऐप",
           description: "डेयरी किसानों के लिए दैनिक दूध संग्रह, १० दिनों के भुगतान रसीद और खाता बही विवरण को ट्रैक करने के लिए उन्नत मोबाइल एप्लिकेशन।",
           image: "/modern-dairy-farm.png",
           tag: "किसान ऐप",
@@ -298,7 +298,7 @@ export default function DairySolutionsPage() {
           id: "6",
           title: "परिवहन प्रबंधन प्रणाली (Transport Management)",
           description: "दूध संग्रह मार्गों, वाहन संचालन, प्रेषण और परिवहन लागतों को कुशलतापूर्वक प्रबंधित करें।",
-          image: "/collection bike.webp",
+          image: "/transport.jpg",
           tag: "परिवहन प्रबंधन",
         },
       ]
@@ -307,7 +307,7 @@ export default function DairySolutionsPage() {
         {
           id: "1",
           title: "Complete Dairy Software Solutions",
-          description: "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+          description: "A comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
           image: "/live-image-dairy/5.0.png",
           tag: "Dairy Solutions",
         },
@@ -315,7 +315,7 @@ export default function DairySolutionsPage() {
           id: "web-dairy",
           title: "Web-based Dairy Software Solutions",
           description: "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
-          image: "/live-image-dairy/5.0_3.png",
+          image: "/live-image-dairy/first-page.png",
           tag: "Web Dairy",
         },
         {
@@ -327,7 +327,7 @@ export default function DairySolutionsPage() {
         },
         {
           id: "2",
-          title: "Farmer Mobile App (Sankalan)",
+          title: "Farmer Mobile App",
           description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
           image: "/modern-dairy-farm.png",
           tag: "Farmer App",
@@ -350,7 +350,7 @@ export default function DairySolutionsPage() {
           id: "6",
           title: "Transport Management System",
           description: "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs.",
-          image: "/collection bike.webp",
+          image: "/transport.jpg",
           tag: "Transport Management",
         },
       ]
@@ -365,7 +365,7 @@ export default function DairySolutionsPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-b relative overflow-hidden">
+        <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-b relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="max-w-2xl">
@@ -379,7 +379,7 @@ export default function DairySolutionsPage() {
                   {t("dairy5.overview")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/schedule-demo">
+                  <Link href="/contact?inquiryType=demo">
                     <Button
                       size="lg"
                       className="font-sans font-bold px-8 py-4 bg-[#1E94A4] hover:bg-[#0B7989] text-white rounded-xl shadow-lg dark:shadow-none shadow-[#1E94A4]/20"
@@ -480,7 +480,7 @@ export default function DairySolutionsPage() {
                         {t("home.viewDetails")}
                       </Button>
                     </Link>
-                    <Link href="/schedule-demo" className="block">
+                    <Link href="/contact?inquiryType=demo" className="block">
                       <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
                         {t("home.requestDemo")}
                       </Button>

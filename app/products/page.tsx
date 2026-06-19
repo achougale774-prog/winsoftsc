@@ -50,19 +50,26 @@ export default function ProductsPage() {
                 id: 1,
                 title: t("dairy5.title") || "Complete Dairy Software Solutions",
                 description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
-                image: "/dairy33.png",
+                image: "/live-image-dairy/5.0.png",
                 link: "/product/1",
+            },
+            {
+                id: "billing-5",
+                title: t("billing5.title") || "Dairy 5.0 – Milk Billing Software",
+                description: t("billing5.overview") || "Automate milk bill generation, payment calculations, and member ledger management with complete accuracy. Manage advances, feed recovery, loan deductions, rebates, and dividends in a single system. Ensure transparent and hassle-free payment processing for dairy farmers.",
+                image: "/live-image-dairy/milk_collection_5.0.png",
+                link: "/product/billing-5",
             },
             {
                 id: "web-dairy",
                 title: t("webDairy.title") || "Web-based Dairy Software Solutions",
                 description: t("webDairy.overview") || "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
-                image: "/live-image-dairy/5.0_3.png",
+                image: "/live-image-dairy/first-page.png",
                 link: "/product/web-dairy",
             },
             {
                 id: 2,
-                title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+                title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
                 description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
                 image: "/modern-dairy-farm.png",
                 link: "/product/2",
@@ -92,7 +99,7 @@ export default function ProductsPage() {
                 id: 6,
                 title: t("dairy5.products.prod6.title") || "Transport Management System",
                 description: t("dairy5.products.prod6.desc") || "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs.",
-                image: "/collection bike.webp",
+                image: "/transport.jpg",
                 link: "/product/6",
             },
             {
@@ -193,7 +200,7 @@ export default function ProductsPage() {
             ]
         },
         {
-            title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+            title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
             icon: Smartphone,
             color: "#2563eb",
             description: t("dairy5.products.prod2.desc"),

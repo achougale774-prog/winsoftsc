@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study1Result4"),
       ],
       timeline: `6 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीने" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
       featured: true,
     },
     {
@@ -78,7 +78,7 @@ export default function CaseStudiesPage() {
         t("caseStudies.study4Result4"),
       ],
       timeline: `12 ${t("caseStudies.timeline") === "कालावधी" ? "महिने" : t("caseStudies.timeline") === "समयरेखा" ? "महीने" : t("caseStudies.timeline") === "ಕಾಲಮಿತಿ" ? "ತಿಂಗಳು" : "months"}`,
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
       featured: false,
     },
   ]

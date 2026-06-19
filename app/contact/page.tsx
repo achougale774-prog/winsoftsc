@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -25,6 +25,16 @@ export default function ContactPage() {
     inquiryType: "",
     message: "",
   })
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search)
+      const type = params.get("inquiryType") || params.get("type")
+      if (type) {
+        setFormData(prev => ({ ...prev, inquiryType: type }))
+      }
+    }
+  }, [])
 
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)

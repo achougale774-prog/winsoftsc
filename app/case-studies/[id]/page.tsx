@@ -18,7 +18,7 @@ const caseStudies: Record<string, any> = {
     clientMr: "महाराष्ट्र डेअरी सहकारी संस्था",
     industry: "Dairy Industry",
     timeline: "6 months",
-    image: "/dairy33.png",
+    image: "/live-image-dairy/5.0.png",
     challenge: "Manual milk collection processes, inconsistent quality testing, and delayed farmer payments were affecting operations. The cooperative was managing 200+ farmers across 5 villages with paper-based records, leading to frequent disputes and errors.",
     challengeMr: "हाताने दूध संकलन प्रक्रिया, असंगत गुणवत्ता चाचणी, आणि उशिरा शेतकरी पेमेंट कामकाजावर परिणाम करत होते. सहकारी संस्था ५ गावांमध्ये २०० हून अधिक शेतकऱ्यांचे व्यवस्थापन कागदावरील नोंदींसह करत होती.",
     solution: "Winsoft implemented a complete AMCS (Automatic Milk Collection System) with digital weighing scales, FAT/SNF analyzers, thermal printers, and the Sankalan mobile app for farmers. The cooperative society admin ERP was also deployed for accounting and audit.",

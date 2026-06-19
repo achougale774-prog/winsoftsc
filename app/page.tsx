@@ -27,7 +27,7 @@ export default function HomePage() {
       {
         id: 1,
         title: t("dairy5.title") || "Complete Dairy Software Solutions",
-        description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+        description: t("dairy5.overview") || "A comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
         image: "/live-image-dairy/5.0.png",
         link: "/product/1",
       },
@@ -42,12 +42,12 @@ export default function HomePage() {
         id: "web-dairy",
         title: t("webDairy.title") || "Web-based Dairy Software Solutions",
         description: t("webDairy.overview") || "Web Dairy is a comprehensive web-based dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency on any web-enabled device.",
-        image: "/live-image-dairy/5.0_3.png",
+        image: "/live-image-dairy/first-page.png",
         link: "/product/web-dairy",
       },
       {
         id: 2,
-        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
         description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
         image: "/modern-dairy-farm.png",
         link: "/product/2",
@@ -77,7 +77,7 @@ export default function HomePage() {
         id: 6,
         title: t("dairy5.products.prod6.title") || "Transport Management System",
         description: t("dairy5.products.prod6.desc") || "Efficiently manage milk collection routes, vehicle operations, dispatches, and transportation costs.",
-        image: "/collection bike.webp",
+        image: "/transport.jpg",
         link: "/product/6",
       },
       {
@@ -118,6 +118,24 @@ export default function HomePage() {
       <HeroSlider />
 
       <main className="max-w-7xl mx-auto px-4 py-24 relative z-10">
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 dark:bg-[#1E94A4]/20 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
+            📦 {language === 'mr' ? "उत्पादने व सोल्यूशन्स" : language === 'kn' ? "ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಪರಿಹಾರಗಳು" : language === 'hi' ? "उत्पाद और समाधान" : "Products & Solutions"}
+          </span>
+          <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">
+            {language === 'mr' ? "आमची उत्पादने" :
+             language === 'kn' ? "ನಮ್ಮ ಉತ್ಪನ್ನಗಳು" :
+             language === 'hi' ? "हमारे उत्पाद" : "Our Products"}
+          </h2>
+          <div className="h-1.5 w-20 bg-[#1E94A4] mx-auto rounded-full mb-6" />
+          <p className="text-gray-655 dark:text-zinc-400 font-serif max-w-2xl mx-auto text-lg">
+            {language === 'mr' ? "तुमच्या व्यवसायाची कार्यक्षमता वाढवण्यासाठी डिझाइन केलेली आमची प्रगत आणि विश्वासू डिजिटल सोल्यूशन्स." :
+             language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರದ ದಕ್ಷತೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ನಮ್ಮ ಸುಧಾರಿತ ಮತ್ತು ವಿಶ್ವಾಸಾರ್ಹ ಡಿಜಿಟಲ್ ಪರಿಹಾರಗಳು." :
+             language === 'hi' ? "आपके व्यवसाय की दक्षता बढ़ाने के लिए डिज़ाइन किए गए हमारे उन्नत और विश्वसनीय डिजिटल समाधान।" :
+             "Explore our advanced, secure, and reliable digital business solutions tailored to grow your operations."}
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Card key={product.id} className="glass-card hover-lift p-8 flex flex-col justify-between min-h-[480px] group border-t border-white/40 dark:border-zinc-800/50">

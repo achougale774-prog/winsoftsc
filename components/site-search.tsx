@@ -10,7 +10,7 @@ const SEARCH_DATA = [
   { title: "Dairy Software (AMCS)", titleMr: "डेअरी सॉफ्टवेअर (AMCS)", href: "/product/1", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["dairy", "amcs", "milk", "दूध", "डेअरी"] },
   { title: "Gold Jewellery Software", titleMr: "सुवर्ण पेढी सॉफ्टवेअर", href: "/product/2", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["gold", "jewellery", "goldwin", "सोने", "ज्वेलरी"] },
   { title: "Sugar Factory ERP", titleMr: "साखर कारखाना ERP", href: "/product/3", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["sugar", "factory", "erp", "साखर", "कारखाना"] },
-  { title: "Sankalan Mobile App", titleMr: "Sankalan मोबाईल अॅप", href: "/mobile-software", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["sankalan", "mobile", "app", "farmer", "शेतकरी"] },
+  { title: "Farmer Mobile App", titleMr: "शेतकरी मोबाईल अॅप", href: "/mobile-software", category: "Product", categoryMr: "प्रॉडक्ट", tags: ["sankalan", "mobile", "app", "farmer", "शेतकरी"] },
   // Pages
   { title: "Pricing & Plans", titleMr: "किंमत व योजना", href: "/pricing", category: "Page", categoryMr: "पेज", tags: ["pricing", "price", "cost", "किंमत", "plan"] },
   { title: "Schedule Demo", titleMr: "Demo बुक करा", href: "/contact", category: "Page", categoryMr: "पेज", tags: ["demo", "schedule", "book", "डेमो"] },

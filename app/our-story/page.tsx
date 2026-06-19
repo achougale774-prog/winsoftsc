@@ -17,7 +17,7 @@ export default function OurStoryPage() {
       year: "1998",
       title: t("story.event1Title"),
       description: t("story.event1Desc"),
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
     },
     {
       year: "2000s",
@@ -35,7 +35,7 @@ export default function OurStoryPage() {
       year: "2010s",
       title: t("story.event4Title"),
       description: t("story.event4Desc"),
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
     },
     {
       year: "2018",

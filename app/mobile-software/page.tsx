@@ -22,13 +22,13 @@ export default function MobileSoftwarePage() {
         id: 1,
         title: t("dairy5.title") || "Complete Dairy Software Solutions",
         description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
-        image: "/dairy33.png",
+        image: "/live-image-dairy/5.0.png",
         link: "/product/1",
         tag: language === 'mr' ? "डेअरी सोल्यूशन" : language === 'kn' ? "ಡೈರಿ ಪರಿಹಾರ" : language === 'hi' ? "डेयरी समाधान" : "Dairy Solution"
       },
       {
         id: 2,
-        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
         description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
         image: "/modern-dairy-farm.png",
         link: "/product/2",
@@ -239,7 +239,7 @@ export default function MobileSoftwarePage() {
         <section className="py-20 px-4 bg-gradient-to-b from-[#1E94A4]/10 to-white dark:from-zinc-900 dark:to-black">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] font-bold mb-6">
-              <Smartphone className="w-4 h-4" /> Sankalan App
+              <Smartphone className="w-4 h-4" /> Farmer Mobile App
             </div>
             <h1 className="text-4xl md:text-6xl font-sans font-bold mb-6 text-gray-900 dark:text-white">
               Dairy Software for Mobile
@@ -249,7 +249,7 @@ export default function MobileSoftwarePage() {
               Manage farmers, customers, and payments directly from your smartphone.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/schedule-demo">
+              <Link href="/contact?inquiryType=demo">
                 <Button size="lg" className="bg-[#1E94A4] hover:bg-[#0B7989] text-white px-8 font-bold">
                   Get Free Demo
                 </Button>
@@ -270,7 +270,7 @@ export default function MobileSoftwarePage() {
               App Gallery & Features
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg font-serif">
-              Explore the clean, intuitive, and powerful interface of the Sankalan Mobile App.
+              Explore the clean, intuitive, and powerful interface of the Farmer Mobile App.
             </p>
           </div>
 
@@ -391,7 +391,7 @@ export default function MobileSoftwarePage() {
                     ))}
                   </div>
 
-                  <Link href="/schedule-demo" className="mt-auto">
+                  <Link href="/contact?inquiryType=demo" className="mt-auto">
                     <Button
                       className={`w-full py-6 rounded-xl font-bold transition-all ${plan.highlight
                           ? "bg-[#1E94A4] hover:bg-[#0B7989] text-white"
@@ -462,9 +462,9 @@ export default function MobileSoftwarePage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  name: "Sankalan Passbook App",
-                  nameMr: "Sankalan पासबुक अॅप",
-                  nameHi: "Sankalan पासबुक ऐप",
+                  name: "Farmer Passbook App",
+                  nameMr: "शेतकरी पासबुक अॅप",
+                  nameHi: "किसान पासबुक ऐप",
                   desc: "Farmer milk passbook — daily slips, 10-day billing, ledger",
                   descMr: "शेतकरी दूध पासबुक — रोजचे slips, १० दिवसांचे बिल, खाते",
                   descHi: "किसान दूध पासबुक — रोज के slips, 10 दिन का बिल, खाता",
@@ -667,7 +667,7 @@ export default function MobileSoftwarePage() {
                         {t("home.viewDetails")}
                       </Button>
                     </Link>
-                    <Link href="/schedule-demo" className="block">
+                    <Link href="/contact?inquiryType=demo" className="block">
                       <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-4 rounded-xl text-xs transition-all shadow-sm hover:shadow-[#1E94A4]/25 font-sans">
                         {t("home.requestDemo")}
                       </Button>
@@ -683,12 +683,12 @@ export default function MobileSoftwarePage() {
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-[#1E94A4] to-[#0B7989] rounded-3xl p-12 text-center text-white shadow-2xl">
             <h2 className="text-3xl md:text-5xl font-bold font-sans mb-6">Ready to Digitalize Your Dairy?</h2>
-            <p className="text-xl opacity-90 mb-8 font-serif">Join thousands of farmers and dairy owners using Sankalan Mobile App.</p>
+            <p className="text-xl opacity-90 mb-8 font-serif">Join thousands of farmers and dairy owners using Farmer Mobile App.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/schedule-demo">
+              <Link href="/contact?inquiryType=demo">
                 <Button size="lg" className="bg-white text-[#1E94A4] hover:bg-gray-50 px-8 font-bold">Book a Demo</Button>
               </Link>
-              <WhatsAppButton className="w-fit mx-auto sm:mx-0" productName="Sankalan Mobile App" />
+              <WhatsAppButton className="w-fit mx-auto sm:mx-0" productName="Farmer Mobile App" />
             </div>
           </div>
         </section>

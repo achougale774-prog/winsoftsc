@@ -29,9 +29,9 @@ const testimonials = [
     image: "/indian-businessman-ceo.png",
     rating: 5,
     review:
-      "Sankalan mobile app मुळे आमच्या शेतकऱ्यांना त्यांचे daily slips आणि payment mobile वर पाहता येतात. Support team खूप responsive आहे — कोणतीही problem असली तरी लगेच solve होते.",
+      "मोबाईल ॲप मुळे आमच्या शेतकऱ्यांना त्यांचे daily slips आणि payment mobile वर पाहता येतात. Support team खूप responsive आहे — कोणतीही problem असली तरी लगेच solve होते.",
     reviewEn:
-      "The Sankalan mobile app allows our farmers to view their daily slips and payments on mobile. The support team is very responsive — any problem gets solved immediately.",
+      "The mobile app allows our farmers to view their daily slips and payments on mobile. The support team is very responsive — any problem gets solved immediately.",
   },
   {
     name: "Vijay Kulkarni",

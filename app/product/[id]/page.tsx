@@ -42,7 +42,7 @@ export default function ProductDetailPage() {
       title: getT("title") || "Complete Dairy Software Solutions",
       brand: "WinSoft Solutions",
       category: t("contact.dairy"),
-      description: getT("overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
+      description: getT("overview") || "A comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
       variants: [t("product.prod1Variant1"), t("product.prod1Variant2"), t("product.prod1Variant3")],
       details: {
         [t("product.softwareType")]: "Desktop & Cloud",
@@ -68,7 +68,7 @@ export default function ProductDetailPage() {
     },
     "2": {
       id: 2,
-      title: getT("products.prod2.title") || "Farmer Mobile App (Sankalan)",
+      title: getT("products.prod2.title") || "Farmer Mobile App",
       brand: "WinSoft Sankalan App",
       category: t("contact.dairy"),
       description: getT("products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
@@ -264,7 +264,7 @@ export default function ProductDetailPage() {
         "GPS Integration Support",
         "Benefits: Optimized transportation operations, reduced logistics costs, timely milk collection and delivery, better vehicle utilization, and complete transport visibility."
       ],
-      images: ["/collection bike.webp", "/trucksheet 1.webp"],
+      images: ["/transport.jpg", "/collection bike.webp", "/trucksheet 1.webp"],
       videoUrl: "/dairy.mp4",
     },
     "billing-5": {
@@ -316,9 +316,10 @@ export default function ProductDetailPage() {
         getT("modules.reports.title") + " - " + (getT("modules.reports.items") as unknown as string[] || []).join(", "),
       ],
       images: [
-        "/live-image-dairy/5.0_3.png",
-        "/live-image-dairy/5.0.png",
-        "/live-image-dairy/milk_collection_5.0.png"
+        "/live-image-dairy/first-page.png",
+        "/live-image-dairy/second-page.png",
+        "/live-image-dairy/milk-collection.png",
+        "/live-image-dairy/account.png"
       ],
       videoUrl: "",
     }
@@ -553,6 +554,7 @@ export default function ProductDetailPage() {
                 <div
                   className={`relative w-20 h-20 border-2 rounded-2xl cursor-pointer overflow-hidden transition-all flex items-center justify-center bg-zinc-900 ${activeMedia.type === 'video' ? 'border-purple-600 shadow-md scale-105' : 'border-gray-200 dark:border-zinc-800 hover:border-purple-300'}`}
                   onClick={() => setActiveMedia({ type: 'video', url: product.videoUrl })}
+                  onMouseEnter={() => setActiveMedia({ type: 'video', url: product.videoUrl })}
                 >
                   <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center">
                     <Play className="w-8 h-8 text-white fill-white" />
@@ -567,6 +569,7 @@ export default function ProductDetailPage() {
                   key={idx}
                   className={`relative w-20 h-20 border-2 rounded-2xl cursor-pointer overflow-hidden transition-all ${activeMedia.type === 'image' && activeMedia.url === img ? 'border-purple-600 shadow-md dark:shadow-none scale-105' : 'border-gray-200 dark:border-zinc-800 hover:border-purple-300'}`}
                   onClick={() => setActiveMedia({ type: 'image', url: img })}
+                  onMouseEnter={() => setActiveMedia({ type: 'image', url: img })}
                 >
                   <Image src={img} alt="Thumbnail" fill className="object-cover" />
                 </div>

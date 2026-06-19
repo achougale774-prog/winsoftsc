@@ -31,7 +31,7 @@ export const dictionaries = {
     },
     dairy5: {
       title: "Complete Dairy Software Solutions",
-      overview: "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency.",
+      overview: "A comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants. The software automates milk procurement, billing, inventory, accounting, and management reporting while ensuring transparency and operational efficiency.",
       coreModulesTitle: "Core Modules",
       modules: {
         collection: {
@@ -210,7 +210,7 @@ export const dictionaries = {
       ],
       products: {
         prod2: {
-          title: "Farmer Mobile App (Sankalan)",
+          title: "Farmer Mobile App",
           desc: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements."
         },
         prod3: {
@@ -319,7 +319,7 @@ export const dictionaries = {
     },
     nav: {
       "home": "Home",
-      "about us": "About Us",
+      "about us": "About",
       "products": "Products",
       "features": "Features",
       "industries": "Industries",
@@ -606,7 +606,7 @@ export const dictionaries = {
       "prod3About4": "Payroll Management: Employee attendance, salary calculation, and PF/ESI.",
       "prod3About5": "Share Department: Member management and dividend calculation.",
       "lifetime": "Lifetime Validity",
-      "support247Text": "24/7 Telephone & Online",
+      "support247Text": "Telephone & Online",
       "yes": "Yes",
     },
     blog: {
@@ -942,7 +942,7 @@ export const dictionaries = {
     },
     dairy5: {
       title: "संपूर्ण डेअरी सॉफ्टवेअर सोल्यूशन्स",
-      overview: "डेअरी ५.० हे सहकारी दूध व्यावसायिक संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांट्ससाठी तयार केलेले एक व्यापक डेअरी व्यवस्थापन सोल्यूशन आहे. हे सॉफ्टवेअर पारदर्शकता आणि कार्यात्मक कार्यक्षमता सुनिश्चित करत दूध खरेदी, बिलिंग, इन्व्हेंटरी, अकाउंटिंग आणि व्यवस्थापकीय अहवाल स्वयंचलित करते.",
+      overview: "सहकारी दूध व्यावसायिक संस्था, दूध संकलन केंद्रे आणि डेअरी प्लांट्ससाठी तयार केलेले एक व्यापक डेअरी व्यवस्थापन सोल्यूशन आहे. हे सॉफ्टवेअर पारदर्शकता आणि कार्यात्मक कार्यक्षमता सुनिश्चित करत दूध खरेदी, बिलिंग, इन्व्हेंटरी, अकाउंटिंग आणि व्यवस्थापकीय अहवाल स्वयंचलित करते.",
       coreModulesTitle: "मुख्य मॉड्यूल्स",
       modules: {
         collection: {
@@ -1121,7 +1121,7 @@ export const dictionaries = {
       ],
       products: {
         prod2: {
-          title: "शेतकरी मोबाईल ॲप (संकलन)",
+          title: "शेतकरी मोबाईल ॲप",
           desc: "दूध उत्पादक शेतकऱ्यांसाठी दैनिक दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेझर तपासण्यासाठीचे प्रगत मोबाईल ॲप्लिकेशन."
         },
         prod3: {
@@ -1479,7 +1479,7 @@ export const dictionaries = {
       "personalizedWalkthrough": "आमच्या सॉफ्टवेअरचा मोफत वैयक्तिक वॉकथ्रू मिळवा.",
       "requestDemo": "संपर्क करा",
       "supportAssistance": "सपोर्ट आणि सहाय्य",
-      "support247": "२४/७ सपोर्ट",
+      "support247": "सपोर्ट",
       "callUs": "आम्हाला +९१ ९८XXX XXXXX वर कॉल करा",
       "dataSecurity": "डेटा सुरक्षा",
       "certified": "GDPR आणि ISO प्रमाणित",
@@ -1517,7 +1517,7 @@ export const dictionaries = {
       "prod3About4": "पेरोल मॅनेजमेंट: कर्मचाऱ्यांची उपस्थिती, पगार गणना आणि PF/ESI.",
       "prod3About5": "शेअर विभाग: सभासद व्यवस्थापन आणि लाभांश गणना.",
       "lifetime": "आजीवन वैधता",
-      "support247Text": "२४/७ टेलिफोन आणि ऑनलाइन",
+      "support247Text": "टेलिफोन आणि ऑनलाइन",
       "yes": "हो",
     },
     blog: {
@@ -1695,7 +1695,7 @@ export const dictionaries = {
       "realTimeSync": "रिअल-टाइम सिंक",
       "apiIntegration": "API एकत्रीकरण",
       "customReports": "सानुकूल अहवाल",
-      "support247": "२४/७ सपोर्ट",
+      "support247": "सपोर्ट",
       "readyToTransform": "तुमचा व्यवसाय बदलण्यास तयार आहात का?",
       "transformDesc": "आमचे सोल्यूशन्स तुमचे ऑपरेशन्स कसे सुव्यवस्थित करू शकतात आणि उत्पादकता कशी वाढवू शकतात हे पाहण्यासाठी वैयक्तिक डेमो शेड्यूल करा.",
       "scheduleDemo": "डेमो शेड्यूल करा",
@@ -1853,7 +1853,7 @@ export const dictionaries = {
     },
     dairy5: {
       title: "संपूर्ण डेयरी सॉफ्टवेयर सॉल्यूशंस",
-      overview: "डेयरी ५.० डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक डेयरी प्रबंधन समाधान है। यह सॉफ्टवेयर स्वतंत्रता, पारदर्शिता और परिचालन दक्षता सुनिश्चित करते हुए दूध खरीद, बिलिंग, इन्वेंट्री, अकाउंटिंग और प्रबंधन रिपोर्टिंग को स्वचालित करता है.",
+      overview: "डेयरी सहकारी समितियों, दूध संग्रह केंद्रों और डेयरी संयंत्रों के लिए डिज़ाइन किया गया एक व्यापक डेयरी प्रबंधन समाधान है। यह सॉफ्टवेयर स्वतंत्रता, पारदर्शिता और परिचालन दक्षता सुनिश्चित करते हुए दूध खरीद, बिलिंग, इन्वेंट्री, अकाउंटिंग और प्रबंधन रिपोर्टिंग को स्वचालित करता है.",
       coreModulesTitle: "मुख्य मॉड्यूल",
       modules: {
         collection: {
@@ -2032,7 +2032,7 @@ export const dictionaries = {
       ],
       products: {
         prod2: {
-          title: "किसान मोबाइल ऐप (संकलन)",
+          title: "किसान मोबाइल ऐप",
           desc: "डेयरी किसानों के लिए दैनिक दूध संग्रह, १० दिनों के भुगतान रसीद और खाता बही विवरण को ट्रैक करने के लिए उन्नत मोबाइल एप्लिकेशन।"
         },
         prod3: {
@@ -2697,7 +2697,7 @@ export const dictionaries = {
       "prod3About4": "पेरोल प्रबंधन: कर्मचारी उपस्थिति, वेतन गणना और पीएफ/ईएसआई।",
       "prod3About5": "शेयर विभाग: सदस्य प्रबंधन और लाभांश गणना।",
       "lifetime": "आजीवन वैधता",
-      "support247Text": "24/7 टेलीफोन और ऑनलाइन",
+      "support247Text": "टेलीफोन और ऑनलाइन",
       "yes": "हाँ",
     },
     productsPage: {
@@ -2935,7 +2935,7 @@ export const dictionaries = {
       ],
       products: {
         prod2: {
-          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್ (ಸಂಕಲನ)",
+          title: "ರೈತರ ಮೊಬೈಲ್ ಆಪ್",
           desc: "ಡೈರಿ ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್."
         },
         prod3: {
@@ -3323,7 +3323,7 @@ export const dictionaries = {
       "prod3About4": "ಪೇರೋಲ್ ಮ್ಯಾನೇಜ್ಮೆಂಟ್: ಉದ್ಯೋಗಿಗಳ ಹಾಜರಾತಿ, ಸಂಬಳ ಲೆಕ್ಕಾಚಾರ ಮತ್ತು PF/ESI.",
       "prod3About5": "ಷೇರು ಇಲಾಖೆ: ಸದಸ್ಯರ ನಿರ್ವಹಣೆ ಮತ್ತು ಲಾಭಾಂಶ ಲೆಕ್ಕಾಚಾರ.",
       "lifetime": "ಜೀವಮಾನದ ಮಾನ್ಯತೆ",
-      "support247Text": "24/7 ಟೆಲಿಫೋನ್ ಮತ್ತು ಆನ್‌ಲೈನ್",
+      "support247Text": "ಟೆಲಿಫೋನ್ ಮತ್ತು ಆನ್‌ಲೈನ್",
       "yes": "ಹೌದು",
     },
     blog: {

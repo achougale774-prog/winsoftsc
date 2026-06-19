@@ -53,13 +53,13 @@ export default function SugarFactorySolutionsPage() {
         id: 1,
         title: t("dairy5.title") || "Complete Dairy Software Solutions",
         description: t("dairy5.overview") || "Dairy 5.0 is a comprehensive dairy management solution designed for Dairy Cooperative Societies, Milk Collection Centers, and Dairy Plants.",
-        image: "/dairy33.png",
+        image: "/live-image-dairy/5.0.png",
         link: "/product/1",
         tag: language === 'mr' ? "डेअरी सोल्यूशन" : language === 'kn' ? "ಡೈರಿ ಪರಿಹಾರ" : language === 'hi' ? "डेयरी समाधान" : "Dairy Solution"
       },
       {
         id: 2,
-        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
         description: t("dairy5.products.prod2.desc") || "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
         image: "/modern-dairy-farm.png",
         link: "/product/2",

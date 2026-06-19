@@ -19,7 +19,7 @@ export function EnquiryPopup() {
     if (language === 'mr') {
       return [
         { value: "AMCS",                 label: "डेअरी सॉफ्टवेअर मॅनेजमेंट (Dairy Software Management)" },
-        { value: "Sankalan App",         label: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)" },
+        { value: "Sankalan App",         label: "शेतकरी दूध पासबुक मोबाईल अॅप" },
         { value: "Admin ERP",            label: "सहकारी दूध संस्था प्रशासकीय ERP" },
         { value: "Hardware Integration", label: "दूध विश्लेषक आणि वजन काटा एकत्रीकरण" },
         { value: "Cattle Feed",          label: "पशूखाद्य आणि उचल व्यवस्थापन" },
@@ -29,7 +29,7 @@ export function EnquiryPopup() {
     } else if (language === 'hi') {
       return [
         { value: "AMCS",                 label: "डेयरी सॉफ्टवेयर मैनेजमेंट (Dairy Software Management)" },
-        { value: "Sankalan App",         label: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)" },
+        { value: "Sankalan App",         label: "किसान दूध पासबुक मोबाइल ऐप" },
         { value: "Admin ERP",            label: "सहकारी दूध समिति प्रशासनिक ERP" },
         { value: "Hardware Integration", label: "दूध विश्लेषक और वजन कांटा एकीकरण" },
         { value: "Cattle Feed",          label: "पशु आहार और अग्रिम प्रबंधन" },
@@ -39,7 +39,7 @@ export function EnquiryPopup() {
     } else if (language === 'kn') {
       return [
         { value: "AMCS",                 label: "ಡೈರಿ ಸಾಫ್ಟ್‌ವೇರ್ ಮ್ಯಾನೇಜ್ಮೆಂಟ್ (Dairy Software Management)" },
-        { value: "Sankalan App",         label: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)" },
+        { value: "Sankalan App",         label: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್" },
         { value: "Admin ERP",            label: "ಸಹಕಾರಿ ಹಾಲು ಉತ್ಪಾದಕರ ಸಂಘದ ಆಡಳಿತ ERP" },
         { value: "Hardware Integration", label: "ಹಾಲು ವಿಶ್ಲೇಷಕ ಮತ್ತು ತೂಕದ ಪ್ರಮಾಣ ಏಕೀಕರಣ" },
         { value: "Cattle Feed",          label: "ಪಶು ಆಹಾರ ಮತ್ತು ಮುಂಗಡ ನಿರ್ವಹಣೆ" },
@@ -49,7 +49,7 @@ export function EnquiryPopup() {
     } else {
       return [
         { value: "AMCS",                 label: "Dairy Software Management" },
-        { value: "Sankalan App",         label: "Farmer Milk Passbook App (Sankalan)" },
+        { value: "Sankalan App",         label: "Farmer Milk Passbook App" },
         { value: "Admin ERP",            label: "Cooperative Society Admin ERP" },
         { value: "Hardware Integration", label: "Milk Analyzer & Hardware Integration" },
         { value: "Cattle Feed",          label: "Cattle Feed & Advance Management" },

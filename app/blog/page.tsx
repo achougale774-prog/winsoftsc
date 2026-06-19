@@ -35,7 +35,7 @@ export default function BlogPage() {
       date: "2024-01-15",
       category: t("blog.dairy"),
       readTime: t("blog.readTime").replace("{n}", "8"),
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
       featured: true,
     },
     {
@@ -68,7 +68,7 @@ export default function BlogPage() {
       date: "2023-12-28",
       category: t("blog.tech"),
       readTime: t("blog.readTime").replace("{n}", "7"),
-      image: "/dairy33.png",
+      image: "/live-image-dairy/5.0.png",
       featured: false,
     },
     {

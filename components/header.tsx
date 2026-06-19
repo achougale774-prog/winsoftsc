@@ -43,7 +43,7 @@ const navItems = (t: (key: string) => string, language: string) => [
       },
       {
         href: "/product/2",
-        title: t("dairy5.products.prod2.title") || "Farmer Mobile App (Sankalan)",
+        title: t("dairy5.products.prod2.title") || "Farmer Mobile App",
         description: language === 'mr' ? 'रोजचे दूध संकलन आणि बिल मोबाईलवर ट्रॅक करा' :
                      language === 'kn' ? 'ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ ಮತ್ತು ಬಿಲ್ಲುಗಳನ್ನು ಮೊಬೈಲ್‌ನಲ್ಲಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ' :
                      language === 'hi' ? 'दैनिक दूध संग्रह और भुगतान मोबाइल पर ट्रैक करें' :
@@ -115,10 +115,10 @@ const navItems = (t: (key: string) => string, language: string) => [
       },
       {
         href: "/mobile-software",
-        title: language === 'mr' ? 'मोबाईल सॉफ्टवेअर (संकलन)' :
-               language === 'kn' ? 'ಮೊಬೈಲ್ ಸಾಫ್ಟ್‌ವೇರ್ (ಸಂಕಲನ)' :
-               language === 'hi' ? 'मोबाइल सॉफ्टवेयर (संकलन)' :
-               "Mobile Software (Sankalan)",
+        title: language === 'mr' ? 'मोबाईल सॉफ्टवेअर' :
+               language === 'kn' ? 'ಮೊಬೈಲ್ ಸಾಫ್ಟ್‌ವೇರ್' :
+               language === 'hi' ? 'मोबाइल सॉफ्टवेयर' :
+               "Mobile Software",
         description: language === 'mr' ? 'दूध संकलनासाठी संपूर्ण मोबाईल ॲप' :
                      language === 'kn' ? 'ಡೈರಿ ನಿರ್ವಹಣೆಗಾಗಿ ಸಂಪೂರ್ಣ ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್' :
                      language === 'hi' ? 'डेयरी प्रबंधन के लिए संपूर्ण मोबाइल ऐप' :

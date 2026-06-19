@@ -18,7 +18,7 @@ const blogPosts: Record<string, any> = {
     date: "January 15, 2024",
     category: "Dairy Industry",
     readTime: "8 min read",
-    image: "/dairy33.png",
+    image: "/live-image-dairy/5.0.png",
     content: [
       {
         heading: "Introduction",
@@ -117,7 +117,7 @@ const blogPosts: Record<string, any> = {
     date: "December 28, 2023",
     category: "Technology",
     readTime: "7 min read",
-    image: "/dairy33.png",
+    image: "/live-image-dairy/5.0.png",
     content: [
       {
         heading: "ERP Evolution in Indian Manufacturing",

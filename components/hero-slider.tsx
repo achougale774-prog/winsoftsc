@@ -17,238 +17,113 @@ export function HeroSlider() {
     if (language === 'mr') {
       return [
         {
-          id: 1,
-          mainHeading: "महा डेअरी टेक सेल",
-          subHeading: "स्वयंचलित दूध संकलन सॉफ्टवेअर",
-          priceText: "किंमत ₹४५,००० पासून",
-          image: "/dairy33.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: "१०% पर्यंत त्वरित सूट",
-          bank: "BOBCARD & HSBC",
-          link: "/product/1"
+          id: "dairy",
+          mainHeading: "दुग्ध व्यवसाय सोल्यूशन्स (Dairy Solutions)",
+          subHeading: "सहकारी दूध संस्था, संकलन केंद्रे आणि डेअरी प्लांटसाठी प्रगत सॉफ्टवेअर",
+          image: "/live-image-dairy/first-page.png",
+          bgColor: "from-sky-100 to-white dark:from-zinc-900 dark:to-black",
+          link: "/dairy-solutions"
         },
         {
-          id: 2,
-          mainHeading: "सुवर्ण ज्वेलरी टेक एक्स्पो",
-          subHeading: "गोल्ड आणि ज्वेलरी एक्सचेंज सॉफ्टवेअर",
-          priceText: "किंमत ₹३०,००० पासून",
-          image: "/goldwin.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: "लायसन्सवर फ्लॅट ४०% सूट",
-          bank: "HDFC & SBI",
+          id: "gold",
+          mainHeading: "सुवर्ण पेढी व दागिने व्यवस्थापन प्रणाली (Goldwin)",
+          subHeading: "सराफा दुकानांसाठी बिलिंग, जीएसटी रिपोर्ट्स, गहाणवट (Girvi) आणि सोन्याचे हिशोब व्यवस्थापन",
+          image: "/gold-image-new/gold_home_page.png",
+          bgColor: "from-amber-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/gold-industry-solutions"
         },
         {
-          id: 3,
-          mainHeading: "इंडस्ट्रियल ERP सोल्युशन्स",
-          subHeading: "साखर कारखाना मॅनेजमेंट सिस्टीम",
-          priceText: "किंमत ₹१,२०,००० पासून",
+          id: "sugar",
+          mainHeading: "साखर कारखाना व्यवस्थापन प्रणाली",
+          subHeading: "ऊस खरेदी, वजन काटा एकत्रीकरण, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन",
           image: "/sugerfac.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "विशेष बिझनेस ऑफर",
-          bank: "ICICI & AXIS",
+          bgColor: "from-red-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/sugar-factory-solutions"
-        },
-        {
-          id: 4,
-          mainHeading: "शेतकरी दूध पासबुक अॅप (Sankalan)",
-          subHeading: "तुमचे दैनिक संकलन, बिल आणि खाते लेजर तपासा",
-          priceText: "फ्री मोबाईल डेमो सुरू करा",
-          image: "/modern-dairy-farm.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: "१००% पारदर्शक व जलद सिंक",
-          bank: "Co-op & SBI Cards",
-          link: "/product/2"
-        },
-        {
-          id: 5,
-          mainHeading: "डेअरी ॲडमिन डॅशबोर्ड",
-          subHeading: "संस्थेचे दूध संकलन, पशूखाद्य आणि बँक खात्यांचे थेट नियंत्रण",
-          priceText: "ॲडमिन ईआरपी डेमो सुरू करा",
-          image: "/modern-office-dashboard.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "ताळेबंद, नफा-तोटा व ऑडिट रिपोर्टसह",
-          bank: "Federal & State Co-op",
-          link: "/product/3"
         }
       ]
     } else if (language === 'kn') {
       return [
         {
-          id: 1,
-          mainHeading: "ಮಹಾ ಡೈರಿ ಟೆಕ್ ಸೇಲ್",
-          subHeading: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ಸಾಫ್ಟ್‌ವೇರ್",
-          priceText: "ಪ್ರಾರಂಭ ₹೪೫,೦೦೦",
-          image: "/dairy33.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: "೧೦% ವರೆಗೆ ತ್ವರಿತ ರಿಯಾಯಿತಿ",
-          bank: "BOBCARD & HSBC",
-          link: "/product/1"
+          id: "dairy",
+          mainHeading: "ಡೈರಿ ಉದ್ಯಮ ಪರಿಹಾರಗಳು (Dairy Solutions)",
+          subHeading: "ಡೈರಿ ಸಹಕಾರಿ ಸಂಘಗಳು ಮತ್ತು ಹಾಲು ಉತ್ಪಾದನಾ ಪ್ಲಾಂಟ್‌ಗಳಿಗಾಗಿ ಅತ್ಯಾಧುನಿಕ ಸಾಫ್ಟ್‌ವೇರ್",
+          image: "/live-image-dairy/first-page.png",
+          bgColor: "from-sky-100 to-white dark:from-zinc-900 dark:to-black",
+          link: "/dairy-solutions"
         },
         {
-          id: 2,
-          mainHeading: "ಸುವರ್ಣ ಜ್ಯುವೆಲ್ಲರಿ ಟೆಕ್ ಎಕ್ಸ್‌ಪೋ",
-          subHeading: "ಚಿನ್ನ ಮತ್ತು ಜ್ಯುವೆಲ್ಲರಿ ಎಕ್ಸ್ಚೇಂಜ್ ಸಾಫ್ಟ್‌ವೇರ್",
-          priceText: "ಪ್ರಾರಂಭ ₹೩೦,೦೦೦",
-          image: "/goldwin.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: "ಲೈಸೆನ್ಸ್ ಮೇಲೆ ಫ್ಲಾಟ್ ೪೦% ರಿಯಾಯಿತಿ",
-          bank: "HDFC & SBI",
+          id: "gold",
+          mainHeading: "ಚಿನ್ನದ ಅಂಗಡಿ ಮತ್ತು ಆಭರಣ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ (Goldwin)",
+          subHeading: "ಬಿಲ್ಲಿಂಗ್, ಇನ್ವೆಂಟರಿ, ಗಿರವಿ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಜಿಎಸ್‌ಟಿ ವರದಿಗಳ ಸಂಪೂರ್ಣ ಪರಿಹಾರ",
+          image: "/gold-image-new/gold_home_page.png",
+          bgColor: "from-amber-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/gold-industry-solutions"
         },
         {
-          id: 3,
-          mainHeading: "ಇಂಡಸ್ಟ್ರಿಯಲ್ ERP ಪರಿಹಾರಗಳು",
-          subHeading: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್ ಸಿಸ್ಟಮ್ಸ್",
-          priceText: "ಪ್ರಾರಂಭ ₹೧,೨೦,೦೦೦",
+          id: "sugar",
+          mainHeading: "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ",
+          subHeading: "ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ",
           image: "/sugerfac.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "ವಿಶೇಷ ಉದ್ಯಮ ಬೆಲೆಗಳು",
-          bank: "ICICI & AXIS",
+          bgColor: "from-red-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/sugar-factory-solutions"
-        },
-        {
-          id: 4,
-          mainHeading: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
-          subHeading: "ನಿಮ್ಮ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ಬಿಲ್ ಮತ್ತು ಲೆಡ್ಜರ್ ಪರಿಶೀಲಿಸಿ",
-          priceText: "ಉಚಿತ ಮೊಬೈಲ್ ಡೆಮೊ ಪ್ರಾರಂಭಿಸಿ",
-          image: "/modern-dairy-farm.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: "೧೦೦% ಪಾರದರ್ಶಕತೆ ಮತ್ತು ರಿಯಲ್-ಟೈಮ್ ಸಿಂಕ್",
-          bank: "Co-op & SBI Cards",
-          link: "/product/2"
-        },
-        {
-          id: 5,
-          mainHeading: "ಡೈರಿ ಅಡ್ಮಿನ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ERP",
-          subHeading: "ಸಂಘದ ಹಾಲು ಸಂಗ್ರಹಣೆ ಮತ್ತು ಬ್ಯಾಂಕ್ ಖಾತೆಗಳ ನೇರ ನಿಯಂತ್ರಣ",
-          priceText: "ಅಡ್ಮಿನ್ ಡೆಮೊ ವೀಕ್ಷಿಸಿ",
-          image: "/modern-office-dashboard.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "ಸಂಪೂರ್ಣ ಆಡಿಟ್ ವರದಿ ಹಾಗೂ ಲಾಭ-ನಷ್ಟ ಖಾತೆಯೊಂದಿಗೆ",
-          bank: "Federal & State Co-op",
-          link: "/product/3"
         }
       ]
     } else if (language === 'hi') {
       return [
         {
-          id: 1,
-          mainHeading: "महा डेयरी टेक सेल",
-          subHeading: "स्वचालित दूध संग्रह सॉफ्टवेयर",
-          priceText: "कीमत ₹४५,००० से प्रारंभ",
-          image: "/dairy33.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: "१०% तक त्वरित छूट",
-          bank: "BOBCARD & HSBC",
-          link: "/product/1"
+          id: "dairy",
+          mainHeading: "डेयरी उद्योग समाधान (Dairy Solutions)",
+          subHeading: "सहकारी डेयरी समितियों, दूध संग्रह केंद्रों और डेयरी प्लांट के लिए संपूर्ण सॉफ्टवेयर",
+          image: "/live-image-dairy/first-page.png",
+          bgColor: "from-sky-100 to-white dark:from-zinc-900 dark:to-black",
+          link: "/dairy-solutions"
         },
         {
-          id: 2,
-          mainHeading: "स्वर्ण आभूषण टेक एक्सपो",
-          subHeading: "गोल्ड और ज्वेलरी एक्सचेंज सॉफ्टवेयर",
-          priceText: "कीमत ₹३०,००० से प्रारंभ",
-          image: "/goldwin.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: "लाइसेंस पर फ्लैट ४०% छूट",
-          bank: "HDFC & SBI",
+          id: "gold",
+          mainHeading: "स्वर्ण आभूषण शोरूम प्रबंधन प्रणाली (Goldwin)",
+          subHeading: "ज्वेलरी शोरूम के लिए बिलिंग, इन्वेंटरी, गिरवी और संपूर्ण जीएसटी रिपोर्ट्स",
+          image: "/gold-image-new/gold_home_page.png",
+          bgColor: "from-amber-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/gold-industry-solutions"
         },
         {
-          id: 3,
-          mainHeading: "औद्योगिक ERP समाधान",
-          subHeading: "चीनी मिल प्रबंधन प्रणाली",
-          priceText: "कीमत ₹१,२०,००० से प्रारंभ",
+          id: "sugar",
+          mainHeading: "चीनी मिल प्रबंधन प्रणाली",
+          subHeading: "गन्ना खरीद, वजन कांटा एकीकरण और संपूर्ण प्रशासनिक ERP समाधान",
           image: "/sugerfac.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "विशेष उद्यम मूल्य निर्धारण",
-          bank: "ICICI & AXIS",
+          bgColor: "from-red-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/sugar-factory-solutions"
-        },
-        {
-          id: 4,
-          mainHeading: "किसान दूध पासबुक मोबाइल ऐप (Sankalan)",
-          subHeading: "अपना दैनिक दूध संग्रह, बिल और खाता बही देखें",
-          priceText: "मुफ़्त मोबाइल डेमो शुरू करें",
-          image: "/modern-dairy-farm.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: "१००% पारदर्शी और रीयल-टाइम सिंक",
-          bank: "Co-op & SBI Cards",
-          link: "/product/2"
-        },
-        {
-          id: 5,
-          mainHeading: "डेयरी एडमिन डैशबोर्ड ERP",
-          subHeading: "समिति का दूध संग्रह और बैंक खातों का सीधा नियंत्रण",
-          priceText: "एडमिन ईआरपी डेमो शुरू करें",
-          image: "/modern-office-dashboard.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "बैलेंस शीट, लाभ-हानि व ऑडिट रिपोर्ट सहित",
-          bank: "Federal & State Co-op",
-          link: "/product/3"
         }
       ]
     } else {
       return [
         {
-          id: 1,
-          mainHeading: t("home.heroSlide1Title"),
-          subHeading: t("home.heroSlide1Desc"),
-          priceText: t("home.heroSlide1Price"),
-          image: "/dairy33.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: t("home.heroSlide1Discount"),
-          bank: "BOBCARD & HSBC",
-          link: "/product/1"
+          id: "dairy",
+          mainHeading: "Dairy Industry Solutions",
+          subHeading: "Comprehensive ERP & billing software for cooperative societies and large plants",
+          image: "/live-image-dairy/first-page.png",
+          bgColor: "from-sky-100 to-white dark:from-zinc-900 dark:to-black",
+          link: "/dairy-solutions"
         },
         {
-          id: 2,
-          mainHeading: t("home.heroSlide2Title"),
-          subHeading: t("home.heroSlide2Desc"),
-          priceText: t("home.heroSlide2Price"),
-          image: "/goldwin.png",
-          bgColor: "from-[#1E94A4]/10 to-white",
-          discount: t("home.heroSlide2Discount"),
-          bank: "HDFC & SBI",
+          id: "gold",
+          mainHeading: "Gold Jewellery Showroom ERP (Goldwin)",
+          subHeading: "Complete billing, account management, Girvi/pledge tracking, and GST returns",
+          image: "/gold-image-new/gold_home_page.png",
+          bgColor: "from-amber-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/gold-industry-solutions"
         },
         {
-          id: 3,
-          mainHeading: t("home.heroSlide3Title"),
-          subHeading: t("home.heroSlide3Desc"),
-          priceText: t("home.heroSlide3Price"),
+          id: "sugar",
+          mainHeading: "Sugar Factory Enterprise ERP",
+          subHeading: "End-to-end ERP system to manage cane procurement, weighbridge operations, and factory accounts",
           image: "/sugerfac.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: t("home.heroSlide3Discount"),
-          bank: "ICICI & AXIS",
+          bgColor: "from-red-100 to-white dark:from-zinc-900 dark:to-black",
           link: "/sugar-factory-solutions"
-        },
-        {
-          id: 4,
-          mainHeading: "Farmer Milk Passbook App (Sankalan)",
-          subHeading: "Track your real-time daily milk slips, 10-day bill, and ledger statements",
-          priceText: "Start Free Mobile Demo App",
-          image: "/modern-dairy-farm.png",
-          bgColor: "from-[#E8F4F5] to-white",
-          discount: "100% Transparent & Secure Live Sync",
-          bank: "Co-op & SBI Cards",
-          link: "/product/2"
-        },
-        {
-          id: 5,
-          mainHeading: "Dairy Admin Dashboard ERP",
-          subHeading: "Monitor society collection, bulk bank payouts, and complete co-op financials",
-          priceText: "Launch Admin ERP Demo Now",
-          image: "/modern-office-dashboard.png",
-          bgColor: "from-[#0B7989]/10 to-white",
-          discount: "Includes P&L, Balance Sheets & Audit reports",
-          bank: "Federal & State Co-op",
-          link: "/product/3"
         }
       ]
     }
-  }, [language, t])
-
+  }, [language])
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()

@@ -18,16 +18,27 @@ import {
   Award,
   BarChart3,
   Search,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
 import { useLanguage } from "@/components/language-provider"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function GoldIndustrySolutionsPage() {
   const { t, language } = useLanguage()
+  const [activeImage, setActiveImage] = useState("/gold-image-new/gold_home_page.png")
+
+  const goldImages = useMemo(() => [
+    "/gold-image-new/gold_home_page.png",
+    "/gold-image-new/gold_1.png",
+    "/gold-image-new/gold_2.png",
+    "/gold-image-new/inword_outword.png",
+    "/gold-image-new/inword_outword2.png"
+  ], [])
 
   const goldProducts = useMemo(() => [
     {
@@ -120,13 +131,13 @@ export default function GoldIndustrySolutionsPage() {
           id: 1,
           title: "स्वयंचलित दूध संकलन प्रणाली (AMCS)",
           description: "दूध संकलन केंद्रांसाठी संगणकीकृत वजन काटा आणि FAT/SNF तपासणीचे स्वयंचलित एकत्रीकरण.",
-          image: "/dairy33.png",
+          image: "/live-image-dairy/5.0.png",
           link: "/product/1",
           tag: "डेअरी सोल्यूशन"
         },
         {
           id: 2,
-          title: "शेतकरी दूध पासबुक मोबाईल अॅप (Sankalan)",
+          title: "शेतकरी दूध पासबुक मोबाईल अॅप",
           description: "शेतकऱ्यांसाठी दररोजचे दूध संकलन, १० दिवसांचे बिल आणि खात्याचे लेजर पाहण्यासाठीचे प्रगत मोबाईल अॅप्लिकेशन.",
           image: "/modern-dairy-farm.png",
           link: "/product/2",
@@ -155,13 +166,13 @@ export default function GoldIndustrySolutionsPage() {
           id: 1,
           title: "ಸ್ವಯಂಚಾಲಿತ ಹಾಲು ಸಂಗ್ರಹಣೆ ವ್ಯವಸ್ಥೆ (AMCS)",
           description: "ಹಾಲು ಸಂಗ್ರಹಣಾ ಕೇಂದ್ರಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟರೀಕೃತ ತೂಕದ ಪ್ರಮಾಣ ಮತ್ತು FAT/SNF ಪರೀಕ್ಷೆಯ ಸ್ವಯಂಚಾಲಿತ ಏಕೀಕರಣ.",
-          image: "/dairy33.png",
+          image: "/live-image-dairy/5.0.png",
           link: "/product/1",
           tag: "ಡೈರಿ ಪರಿಹಾರ"
         },
         {
           id: 2,
-          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್ (Sankalan)",
+          title: "ರೈತರ ಹಾಲು ಪಾಸ್ಬುಕ್ ಮೊಬೈಲ್ ಆಪ್",
           description: "ರೈತರಿಗಾಗಿ ದೈನಂದಿನ ಹಾಲು ಸಂಗ್ರಹಣೆ, ೧೦ ದಿನಗಳ ಬಿಲ್ ಮತ್ತು ಖಾತೆಯ ಲೆಡ್ಜರ್ ವೀಕ್ಷಿಸಲು ಸುಧಾರಿತ ಮೊಬೈಲ್ ಆಪ್.",
           image: "/modern-dairy-farm.png",
           link: "/product/2",
@@ -190,13 +201,13 @@ export default function GoldIndustrySolutionsPage() {
           id: 1,
           title: "स्वचालित दूध संग्रह प्रणाली (AMCS)",
           description: "दूध संग्रह केंद्रों के लिए कम्प्यूटरीकृत वजन कांटा और FAT/SNF परीक्षण का स्वचालित एकीकरण.",
-          image: "/dairy33.png",
+          image: "/live-image-dairy/5.0.png",
           link: "/product/1",
           tag: "डेयरी समाधान"
         },
         {
           id: 2,
-          title: "किसान दूध पासबुक mobile app (Sankalan)",
+          title: "किसान दूध पासबुक मोबाइल ऐप",
           description: "किसानों के लिए दैनिक दूध संग्रह, १० दिनों का बिल और खाता बही देखने के लिए उन्नत मोबाइल ऐप.",
           image: "/modern-dairy-farm.png",
           link: "/product/2",
@@ -225,13 +236,13 @@ export default function GoldIndustrySolutionsPage() {
           id: 1,
           title: "Automatic Milk Collection System (AMCS)",
           description: "Complete computerized weighing scale and FAT/SNF testing integration for seamless village milk collection.",
-          image: "/dairy33.png",
+          image: "/live-image-dairy/5.0.png",
           link: "/product/1",
           tag: "Dairy Solution"
         },
         {
           id: 2,
-          title: "Farmer Milk Passbook App (Sankalan)",
+          title: "Farmer Milk Passbook App",
           description: "Advanced mobile application for dairy farmers to track real-time daily milk slips, 10-day payment receipts, and ledger statements.",
           image: "/modern-dairy-farm.png",
           link: "/product/2",
@@ -297,14 +308,50 @@ export default function GoldIndustrySolutionsPage() {
                   </Link>
                 </div>
               </div>
-              <div className="relative">
-                <Image
-                  src="/jewelry-store-system.png"
-                  alt="Jewellery management software"
-                  width={600}
-                  height={450}
-                  className="rounded-2xl shadow-2xl relative z-10"
-                />
+              <div className="space-y-6">
+                <div className="relative w-full aspect-[4/3] border border-gray-200 dark:border-zinc-800 rounded-3xl overflow-hidden bg-black flex items-center justify-center shadow-lg dark:shadow-none group">
+                  <Image
+                    src={activeImage}
+                    alt="Goldwin Software Screen"
+                    fill
+                    className="object-contain p-2 transition-all duration-300"
+                  />
+                  <button
+                    onClick={() => {
+                      const idx = goldImages.indexOf(activeImage)
+                      const prevIdx = (idx - 1 + goldImages.length) % goldImages.length
+                      setActiveImage(goldImages[prevIdx])
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10 focus:outline-none cursor-pointer"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const idx = goldImages.indexOf(activeImage)
+                      const nextIdx = (idx + 1) % goldImages.length
+                      setActiveImage(goldImages[nextIdx])
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 z-10 focus:outline-none cursor-pointer"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </div>
+                <div className="flex flex-wrap gap-3 justify-center">
+                  {goldImages.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className={`relative w-20 h-16 border-2 rounded-xl cursor-pointer overflow-hidden transition-all ${activeImage === img
+                          ? "border-[#1E94A4] shadow-md scale-105"
+                          : "border-gray-200 dark:border-zinc-800 hover:border-amber-300"
+                        }`}
+                      onClick={() => setActiveImage(img)}
+                      onMouseEnter={() => setActiveImage(img)}
+                    >
+                      <Image src={img} alt={`Thumbnail ${idx + 1}`} fill className="object-cover" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -433,7 +480,7 @@ export default function GoldIndustrySolutionsPage() {
                 {t("product.videoDesc")}
               </p>
             </div>
-            
+
             <div className="max-w-5xl mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
@@ -458,20 +505,20 @@ export default function GoldIndustrySolutionsPage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 {language === 'mr' ? "आमची इतर प्रीमियम सोल्यूशन्स" :
-                 language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
-                 language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
+                  language === 'kn' ? "ನಮ್ಮ ಇತರ ಪ್ರೀಮಿಯಂ ಪರಿಹಾರಗಳು" :
+                    language === 'hi' ? "हमारे अन्य प्रीमियम समाधान" : "Our Other Premium Solutions"}
               </h2>
               <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-3xl mx-auto text-lg">
                 {language === 'mr' ? "तुमच्या व्यवसायाला अत्याधुनिक डिजिटल युगात नेण्यासाठी आणि दैनंदिन कामकाज सुलभ करण्यासाठी तयार करण्यात आलेली प्रगत सॉफ्टवेअर्स." :
-                 language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
-                 language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
+                  language === 'kn' ? "ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಅತ್ಯಾಧುನಿಕ ಡಿಜಿಟಲ್ ಯುಗಕ್ಕೆ ಕೊಂಡೊಯ್ಯಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸುಧಾರಿತ ಸಾಫ್ಟ್‌ವೇರ್." :
+                    language === 'hi' ? "आपके व्यवसाय को अत्याधुनिक डिजिटल युग में ले जाने के लिए डिज़ाइन किए गए उन्नत सॉफ़्टवेयर।" : "Advanced software products designed to digitalize operations, increase efficiency, and boost profitability across industries."}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {recommendedSolutions.map((product) => (
-                <div 
-                  key={product.id} 
+                <div
+                  key={product.id}
                   className="bg-white dark:bg-zinc-950 hover-lift p-6 rounded-[2rem] flex flex-col justify-between min-h-[440px] group border border-slate-100 dark:border-zinc-800/50 shadow-sm"
                 >
                   <div className="flex flex-col h-full">
@@ -493,7 +540,7 @@ export default function GoldIndustrySolutionsPage() {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-zinc-100 leading-snug mb-3 group-hover:text-[#1E94A4] dark:group-hover:text-[#22d3ee] transition-colors line-clamp-2">
                       {product.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 dark:text-zinc-400 text-xs mb-6 flex-grow leading-relaxed font-serif line-clamp-3">
                       {product.description}
                     </p>

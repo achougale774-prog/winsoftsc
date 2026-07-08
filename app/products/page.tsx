@@ -34,7 +34,18 @@ import {
     Zap,
     Users,
     Cloud,
-    Search
+    Search,
+    Sprout,
+    Scale,
+    Wrench,
+    FlaskConical,
+    Boxes,
+    Flame,
+    Droplet,
+    ShoppingCart,
+    Calculator,
+    PieChart,
+    TrendingUp
 } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
@@ -114,15 +125,70 @@ export default function ProductsPage() {
                 link: "/gold-industry-solutions",
             },
             {
-                id: "sugar",
-                title: language === 'mr' ? "साखर कारखाना व्यवस्थापन प्रणाली" :
-                    language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ" :
-                        language === 'hi' ? "चीनी मिल प्रबंधन प्रणाली" : "Sugar Factory Enterprise Solutions",
-                description: language === 'mr' ? "साखर कारखान्यांसाठी ऊस खरेदी, वजन काटा जोडणी, शेतकरी नोंदणी आणि संपूर्ण प्रशासकीय ERP सोल्यूशन." :
-                    language === 'kn' ? "ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆಗಳಿಗಾಗಿ ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ಪ್ರಮಾಣ ಜೋಡಣೆ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಸಂಪೂರ್ಣ ಆಡಳಿತಾತ್ಮಕ ERP ಪರಿಹಾರ." :
-                        language === 'hi' ? "चीनी मिलों के लिए गन्ना खरीद, वजन कांटा एकीकरण, किसान पंजीकरण और संपूर्ण प्रशासनिक ERP समाधान." : "Complete ERP system for sugar factories to manage cane procurement, weighbridge operations, farmer billing, and factory accounts.",
-                image: "/sugerfac.png",
-                link: "/sugar-factory-solutions",
+                id: "sugar-erp",
+                title: language === 'mr' ? "संपूर्ण साखर कारखाना ERP सोल्यूशन" :
+                    language === 'kn' ? "ಸಂಪೂರ್ಣ ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ERP ಪರಿಹಾರ" :
+                        language === 'hi' ? "संपूर्ण चीनी मिल ERP समाधान" : "Complete Sugar Factory ERP Solution",
+                description: language === 'mr' ? "साखर कारखान्यांसाठी शेतकरी नोंदणीपासून ते साखर विक्रीपर्यंत सर्व विभागांचे एकत्रित ERP व्यवस्थापन सोल्यूशन." :
+                    language === 'kn' ? "ಸಂಪೂರ್ಣ ಸಕ್ಕರೆ ಕಾರ್ಖಾನೆ ERP ಪರಿಹಾರ" :
+                        language === 'hi' ? "चीनी मिलों के लिए किसान पंजीकरण से लेकर चीनी बिक्री तक सभी विभागों का एकीकृत ERP प्रबंधन समाधान." : "An integrated ERP management solution for sugar factories covering all departments from farmer registration to sugar sales.",
+                image: "/suger-factory-images/sugar-erp.jpg",
+                link: "/product/sugar-erp",
+            },
+            {
+                id: "sugar-agri",
+                title: language === 'mr' ? "कृषी व तोडणी व्यवस्थापन" :
+                    language === 'kn' ? "ಕೃಷಿ ಮತ್ತು ಕಟಾವು ನಿರ್ವಹಣೆ" :
+                        language === 'hi' ? "कृषि एवं कटाई प्रबंधन" : "Agriculture & Harvesting Management",
+                description: language === 'mr' ? "शेतकरी नोंदणी, जमीन मोजणी, ऊस लागवड व्यवस्थापन, खत व बियाणे वितरण आणि तोडणी कार्यक्रम नियोजन." :
+                    language === 'kn' ? "ರೈತರ ನೋಂದಣಿ, ಭೂ ಸಮೀಕ್ಷೆ, ಕಬ್ಬು ನಾಟಿ ನಿರ್ವಹಣೆ, ಗೊಬ್ಬರ ಮತ್ತು ಬೀಜ ವಿತರಣೆ ಮತ್ತು ಕಟಾವು ಯೋಜನೆ." :
+                        language === 'hi' ? "किसान पंजीकरण, भूमि सर्वेक्षण, गल्ला रोपण प्रबंधन, उर्वरक व बीज वितरण और कटाई कार्यक्रम योजना." : "Farmer registration, land survey & mapping, sugarcane plantation management, fertilizer & seed distribution, and harvesting program planning.",
+                image: "/suger-factory-images/sugar-agri.jpg",
+                link: "/product/sugar-agri",
+            },
+            {
+                id: "sugar-procurement",
+                title: language === 'mr' ? "ऊस खरेदी व वजन काटा व्यवस्थापन" :
+                    language === 'kn' ? "ಕಬ್ಬು ಖರೀದಿ ಮತ್ತು ತೂಕ ನಿರ್ವಹಣೆ" :
+                        language === 'hi' ? "गन्ना खरीद व तुलाई प्रबंधन" : "Cane Procurement & Weighbridge Management",
+                description: language === 'mr' ? "ऊस खरेदी नोंदणी, शेतकरी बिलिंग, वजन नोंदणी, गुणवत्ता विश्लेषण (रिकव्हरी/फॅट) आणि पेमेंट प्रक्रिया." :
+                    language === 'kn' ? "ಕಬ್ಬು ಖರೀದಿ ನೋಂದಣಿ, ರೈತರ ಬಿಲ್ಲಿಂಗ್, ತೂಕ ದಾಖಲಾತಿ, ಗುಣಮಟ್ಟ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಪಾವತಿ ಪ್ರಕ್ರಿಯೆ." :
+                        language === 'hi' ? "गन्ना खरीद पंजीकरण, किसान बिलिंग, वजन रिकॉर्डिंग, गुणवत्ता विश्लेषण (रिकवरी/फैट) और भुगतान प्रक्रिया." : "Cane purchase registration, farmer billing, weight recording, quality analysis (Recovery/Fat/Lab Reports), and payment processing.",
+                image: "/suger-factory-images/sugar-procurement.jpg",
+                link: "/product/sugar-procurement",
+            },
+            {
+                id: "sugar-production",
+                title: language === 'mr' ? "उत्पादन व्यवस्थापन प्रणाली" :
+                    language === 'kn' ? "ಉತ್ಪಾದನಾ ನಿರ್ವಹಣಾ ವ್ಯವಸ್ಥೆ" :
+                        language === 'hi' ? "उत्पादन प्रबंधन प्रणाली" : "Production Management System",
+                description: language === 'mr' ? "ऊस गाळप व्यवस्थापन, दैनिक उत्पादन नियोजन, साखर निर्मिती प्रक्रिया देखरेख, स्टीम व वीज वापर ट्रॅकिंग." :
+                    language === 'kn' ? "ಕಬ್ಬು ಅರೆಯುವ ನಿರ್ವಹಣೆ, ದೈನಂದಿನ ಉತ್ಪಾದನಾ ಯೋಜನೆ, ಸಕ್ಕರೆ ತಯಾರಿಕೆ ಪ್ರಕ್ರಿಯೆ ಮೇಲ್ವಿಚಾರಣೆ ಮತ್ತು ಉಗಿ/ವಿದ್ಯುತ್ ಟ್ರ್ಯಾಕಿಂಗ್." :
+                        language === 'hi' ? "गन्ना पेराई प्रबंधन, दैनिक उत्पादन योजना, चीनी निर्माण प्रक्रिया निगरानी, भाप और बिजली खपत ट्रैकिंग." : "Cane crushing management, daily production planning, sugar manufacturing process monitoring, steam & power consumption tracking, and yield analysis.",
+                image: "/sugar-factory-production-line.png",
+                link: "/product/sugar-production",
+            },
+            {
+                id: "sugar-inventory",
+                title: language === 'mr' ? "साखर इन्व्हेंटरी व विक्री व्यवस्थापन" :
+                    language === 'kn' ? "ಸಕ್ಕರೆ ದಾಸ್ತಾನು ಮತ್ತು ಮಾರಾಟ ನಿರ್ವಹಣೆ" :
+                        language === 'hi' ? "चीनी इन्वेंटरी व बिक्री प्रबंधन" : "Sugar Inventory & Sales Management",
+                description: language === 'mr' ? "साखर स्टॉक व्यवस्थापन, गोदाम नियंत्रण, बॅगिंग, ग्राहक व्यवस्थापन, सेल्स ऑर्डर, GST इनव्हॉइस, विक्रेता खरेदी (PO/GRN) आणि स्टोअर इन्व्हेंटरी ट्रॅकिंग." :
+                    language === 'kn' ? "ಸಕ್ಕರೆ ಸ್ಟಾಕ್ ನಿರ್ವಹಣೆ, ಗೋದಾಮು ನಿಯಂತ್ರಣ, ಬ್ಯಾಗಿಂಗ್ ನಿರ್ವಹಣೆ, ಗ್ರಾಹಕ ನಿರ್ವಹಣೆ, GST ಸರಕುಪಟ್ಟಿ, ಮಾರಾಟಗಾರರ ಖರೀದಿ (PO/GRN) ಮತ್ತು ಸ್ಟೋರ್ ದಾಸ್ತಾನು ಟ್ರ್ಯಾಕಿಂಗ್." :
+                        language === 'hi' ? "चीनी स्टॉक प्रबंधन, गोदाम नियंत्रण, पैकिंग, ग्राहक प्रबंधन, बिक्री आदेश, GST चालान, विक्रेता खरीद (PO/GRN) और स्टोर इन्वेंटरी ट्रैकिंग." : "Sugar stock management, godown control, bagging management, customer management, sales order processing, dispatch, GST invoice, vendor purchase (PO/GRN) and store inventory tracking.",
+                image: "/suger-factory-images/sugar-inventory.jpg",
+                link: "/product/sugar-inventory",
+            },
+            {
+                id: "sugar-accounts",
+                title: language === 'mr' ? "लेखा, वेतन व MIS अहवाल" :
+                    language === 'kn' ? "ಲೆಕ್ಕಪತ್ರ, ವೇತನ ಮತ್ತು MIS ವರದಿಗಳು" :
+                        language === 'hi' ? "लेखा, वेतन व MIS रिपोर्ट" : "Accounts, Payroll & MIS Reports",
+                description: language === 'mr' ? "सामान्य खातेवही, बजेट, GST लेखा, कर्मचारी वेतन, PF/ESIC, प्रतिबंधात्मक देखभाल, प्रयोगशाळा चाचणी, MIS अहवाल आणि सामान्य ERP वैशिष्ट्ये." :
+                    language === 'kn' ? "ಸಾಮಾನ್ಯ ಲೆಡ್ಜರ್, ಬಜೆಟ್, GST, ನೌಕರರ ವೇತನ, PF/ESIC, ನಿವಾರಕ ನಿರ್ವಹಣೆ, ಪ್ರಯೋಗಾಲಯ ಪರೀಕ್ಷೆ, MIS ವರದಿಗಳು ಮತ್ತು ಸಾಮಾನ್ಯ ERP ವೈಶಿಷ್ಟ್ಯಗಳು." :
+                        language === 'hi' ? "सामान्य बही, बजट, GST लेखांकन, कर्मचारी वेतन, PF/ESIC, निवारक रखरखाव, प्रयोगशाला परीक्षण, MIS रिपोर्ट और सामान्य ERP विशेषताएं." : "General ledger, accounts payable/receivable, budget, GST accounting, employee payroll, PF/ESIC, maintenance, laboratory testing, MIS reports, and common ERP features.",
+                image: "/suger-factory-images/sugar-accounts.jpg",
+                link: "/product/sugar-accounts",
             },
             {
                 id: "roi",
@@ -309,20 +375,175 @@ export default function ProductsPage() {
     // ─── SUGAR INDUSTRY ───
     const sugarProducts = [
         {
-            title: t("sugar.sugarSystemTitle"),
+            title: t("sugar.agriDeptTitle"),
+            icon: Sprout,
+            color: "#dc2626",
+            description: language === 'mr' ? "ऊसाची शेती, शेतकरी नोंदणी आणि जमीन मोजणीचे व्यवस्थापन." :
+                         language === 'kn' ? "ಕಬ್ಬು ಕೃಷಿ, ರೈತರ ನೋಂದಣಿ ಮತ್ತು ಭೂ ಸಮೀಕ್ಷೆ ನಿರ್ವಹಣೆ." :
+                         language === 'hi' ? "गन्ना कृषि, किसान पंजीकरण और भूमि सर्वेक्षण प्रबंधन।" : "Managing cane cultivation, farmer registration, and land surveys.",
+            features: t("sugar.agriDeptItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.harvestMgmtTitle"),
+            icon: CalendarCheck,
+            color: "#dc2626",
+            description: language === 'mr' ? "तोडणी कार्यक्रम नियोजन, वेळापत्रक आणि कंत्राटदार बिलिंगचे नियंत्रण." :
+                         language === 'kn' ? "ಕಟಾವು ಯೋಜನೆ, ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಗುತ್ತಿಗೆದಾರರ ಬಿಲ್ಲಿಂಗ್ ನಿಯಂತ್ರಣ." :
+                         language === 'hi' ? "कटाई योजना, समय सारणी और ठेकेदार बिलिंग नियंत्रण।" : "Controlling harvesting program planning, scheduling, and contractor billing.",
+            features: t("sugar.harvestMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.transMgmtTitle"),
+            icon: Truck,
+            color: "#dc2626",
+            description: language === 'mr' ? "वाहन नोंदणी, वाहतूक कंत्राटदार आणि जीपीएस ट्रॅकिंगचे नियंत्रण." :
+                         language === 'kn' ? "ವಾಹನ ನೋಂದಣಿ, ಸಾರಿಗೆ ಗುತ್ತಿಗೆದಾರರು ಮತ್ತು ಜಿಪಿಎಸ್ ಟ್ರ್ಯಾಕಿಂಗ್ ನಿಯಂತ್ರಣ." :
+                         language === 'hi' ? "वाहन पंजीकरण, परिवहन ठेकेदार और जीपीएस ट्रैकिंग नियंत्रण।" : "Managing vehicle registration, transport contractors, and GPS tracking.",
+            features: t("sugar.transMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.caneProcTitle"),
+            icon: ShoppingBag,
+            color: "#dc2626",
+            description: language === 'mr' ? "ऊस खरेदी, वजन नोंदणी, गुणवत्ता विश्लेषण आणि पेमेंट प्रक्रिया." :
+                         language === 'kn' ? "ಕಬ್ಬು ಖರೀದಿ, ತೂಕದ ರೆಕಾರ್ಡಿಂಗ್, ಗುಣಮಟ್ಟದ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಪಾವತಿ ಪ್ರಕ್ರಿಯೆ." :
+                         language === 'hi' ? "गन्ना खरीद, वजन रिकॉर्डिंग, गुणवत्ता विश्लेषण और भुगतान प्रसंस्करण।" : "Cane purchase registration, weight recording, quality analysis, and payments.",
+            features: t("sugar.caneProcItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.weighbridgeMgmtTitle"),
+            icon: Scale,
+            color: "#dc2626",
+            description: language === 'mr' ? "वाहनांचे प्रवेश, ग्रॉस/टॅरे/निव्वळ वजन आणि वजन पावती निर्मिती." :
+                         language === 'kn' ? "ವಾಹನ ಪ್ರವೇಶ, ಒಟ್ಟು/ಖಾಲಿ/ನಿವ್ವಳ ತೂಕದ ರೆಕಾರ್ಡಿಂಗ್ ಮತ್ತು ತೂಕದ ಚೀಟಿ ರಚನೆ." :
+                         language === 'hi' ? "वाहन प्रवेश, सकल/खाली/शुद्ध वजन और वजन पर्ची जनरेशन।" : "Vehicle entry, gross/tare/net weight recording, and slip generation.",
+            features: t("sugar.weighbridgeMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.prodMgmtTitle"),
+            icon: Factory,
+            color: "#dc2626",
+            description: language === 'mr' ? "ऊस गाळप, साखर निर्मिती प्रक्रिया आणि वीज/स्टीम वापर ट्रॅकिंग." :
+                         language === 'kn' ? "ಕಬ್ಬು ನುರಿಸುವಿಕೆ, ಸಕ್ಕರೆ ತಯಾರಿಕೆ ಪ್ರಕ್ರಿಯೆ ಮತ್ತು ವಿದ್ಯುತ್/ಉಗಿ ಬಳಕೆ ಟ್ರ್ಯಾಕಿಂಗ್." :
+                         language === 'hi' ? "गन्ना पेराई, चीनी निर्माण प्रक्रिया और बिजली/भाप खपत ट्रैकिंग।" : "Cane crushing, sugar manufacturing process, and steam/power consumption tracking.",
+            features: t("sugar.prodMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.sugarInvMgmtTitle"),
             icon: Warehouse,
             color: "#dc2626",
-            description: t("sugar.sugarHeroSubtitle"),
-            features: [t("sugar.module1"), t("sugar.module2"), t("sugar.module3"), t("sugar.module4"), t("sugar.module5"), t("sugar.module8")],
+            description: language === 'mr' ? "साखर स्टॉक व्यवस्थापन, गोदाम आणि बॅगिंग नियंत्रण." :
+                         language === 'kn' ? "ಸಕ್ಕರೆ ಸ್ಟಾಕ್ ನಿರ್ವಹಣೆ, ಗೋದಾಮು ಮತ್ತು ಬ್ಯಾಗಿಂಗ್ ನಿಯಂತ್ರಣ." :
+                         language === 'hi' ? "चीनी स्टॉक प्रबंधन, गोदाम और पैकिंग नियंत्रण।" : "Sugar stock management, godown control, and bagging management.",
+            features: t("sugar.sugarInvMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.sugarSalesMgmtTitle"),
+            icon: TrendingUp,
+            color: "#dc2626",
+            description: language === 'mr' ? "ग्राहक व्यवस्थापन, सेल्स ऑर्डर, डिस्पॅच आणि जीएसटी इनव्हॉइस." :
+                         language === 'kn' ? "ಗ್ರಾಹಕರ ನಿರ್ವಹಣೆ, ಮಾರಾಟ ಆದೇಶ, ರವಾನೆ ಮತ್ತು ಜಿಎಸ್ಟಿ ಸರಕುಪಟ್ಟಿ." :
+                         language === 'hi' ? "ग्राहक प्रबंधन, बिक्री आदेश, प्रेषण और जीएसटी चालान।" : "Customer management, sales orders, dispatch, and GST invoices.",
+            features: t("sugar.sugarSalesMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.molassesMgmtTitle"),
+            icon: Droplet,
+            color: "#dc2626",
+            description: language === 'mr' ? "मळी उत्पादन, स्टोरेज टँक आणि विक्री/डिस्पॅच ट्रॅकिंग." :
+                         language === 'kn' ? "ಮೊಳಾಸಿಸ್ ಉತ್ಪಾದನೆ, ಶೇಖರಣಾ ಟ್ಯಾಂಕ್ ಮತ್ತು ಮಾರಾಟ/ರವಾನೆ ಟ್ರ್ಯಾಕಿಂಗ್." :
+                         language === 'hi' ? "शीरा उत्पादन, भंडारण टैंक और बिक्री/प्रेषण ट्रैकिंग।" : "Molasses production, storage tank management, sales, and dispatches.",
+            features: t("sugar.molassesMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.bagasseMgmtTitle"),
+            icon: Flame,
+            color: "#dc2626",
+            description: language === 'mr' ? "बगॅस उत्पादन, अंतर्गत वापर आणि विक्री नियंत्रण." :
+                         language === 'kn' ? "ಬಗಾಸ್ ಉತ್ಪಾದನೆ, ಆಂತರಿಕ ಬಳಕೆ ಮತ್ತು ಮಾರಾಟ ನಿಯಂತ್ರಣ." :
+                         language === 'hi' ? "खोई उत्पादन, आंतरिक खपत और बिक्री नियंत्रण।" : "Bagasse production tracking, internal consumption, sales, and dispatches.",
+            features: t("sugar.bagasseMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.purchaseMgmtTitle"),
+            icon: ShoppingCart,
+            color: "#dc2626",
+            description: language === 'mr' ? "विक्रेता व्यवस्थापन, खरेदी मागणी, पीओ, जीआरएन आणि देयके." :
+                         language === 'kn' ? "ಮಾರಾಟಗಾರರ ನಿರ್ವಹಣೆ, ಖರೀದಿ ವಿನಂತಿ, ಪಿಒ, ಜಿಆರ್ಎನ್ ಮತ್ತು ಪಾವತಿಗಳು." :
+                         language === 'hi' ? "विक्रेता प्रबंधन, खरीद मांग, पीओ, जीआरएन और भुगतान।" : "Vendor management, purchase requisitions, PO, GRN, and vendor payments.",
+            features: t("sugar.purchaseMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.storeInvMgmtTitle"),
+            icon: Boxes,
+            color: "#dc2626",
+            description: language === 'mr' ? "मटेरियल मास्टर, स्टॉक एंट्री आणि इश्यू आणि स्टोअर लेझर." :
+                         language === 'kn' ? "ವಸ್ತು ಮಾಸ್ಟರ್, ಸ್ಟಾಕ್ ಎಂಟ್ರಿ ಮತ್ತು ವಿತರಣೆ ಮತ್ತು ಸ್ಟೋರ್ ಲೆಡ್ಜರ್." :
+                         language === 'hi' ? "सामग्री मास्टर, स्टॉक प्रविष्टि और जारी करना और स्टोर लेज़र।" : "Material master, stock entry and issue, and store ledger management.",
+            features: t("sugar.storeInvMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.payrollMgmtTitle"),
+            icon: Users,
+            color: "#dc2626",
+            description: language === 'mr' ? "कर्मचारी उपस्थिती, रजा, पगार प्रक्रिया आणि पीएफ/ईएसआयसी गणना." :
+                         language === 'kn' ? "ನೌಕರರ ಹಾಜರಾತಿ, ರಜೆ, ಸಂಬಳ ಪ್ರಕ್ರಿಯೆ ಮತ್ತು ಪಿಎಫ್/ಇಎಸ್ಐಸಿ ಲೆಕ್ಕಾಚಾರ." :
+                         language === 'hi' ? "कर्मचारी उपस्थिति, छुट्टी, वेतन प्रसंस्करण और पीएफ/ईएसआईसी गणना।" : "Employee attendance, leave management, salary processing, and PF/ESIC deductions.",
+            features: t("sugar.payrollMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.accountingFinanceTitle"),
+            icon: Calculator,
+            color: "#dc2626",
+            description: language === 'mr' ? "सामान्य खातेवही, देय/प्राप्त खाती, बजेट आणि जीएसटी लेखा." :
+                         language === 'kn' ? "ಸಾಮಾನ್ಯ ಲೆಡ್ಜರ್, ಪಾವತಿಸಬೇಕಾದ/ಸ್ವೀಕರಿಸಬೇಕಾದ ಖಾತೆಗಳು, ಬಜೆಟ್ ಮತ್ತು ಜಿಎಸ್ಟಿ ಲೆಕ್ಕಪತ್ರ." :
+                         language === 'hi' ? "सामान्य बही, देय/प्राप्य खाते, बजट और जीएसटी लेखांकन।" : "General ledger, AP/AR, cash & bank management, and GST accounting.",
+            features: t("sugar.accountingFinanceItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.maintMgmtTitle"),
+            icon: Wrench,
+            color: "#dc2626",
+            description: language === 'mr' ? "उपकरणे, प्रतिबंधात्मक आणि ब्रेकडाउन देखभाल आणि स्पेअर पार्ट्स व्यवस्थापन." :
+                         language === 'kn' ? "ಉಪಕರಣಗಳು, ನಿವಾರಕ ಮತ್ತು ಸ್ಥಗಿತ ನಿರ್ವಹಣೆ ಮತ್ತು ಬಿಡಿಭಾಗಗಳ ನಿರ್ವಹಣೆ." :
+                         language === 'hi' ? "उपकरण, निवारक और ब्रेकडाउन रखरखाव और स्पेयर पार्ट्स प्रबंधन।" : "Equipment master, preventive/breakdown maintenance, and spare parts.",
+            features: t("sugar.maintMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.labMgmtTitle"),
+            icon: FlaskConical,
+            color: "#dc2626",
+            description: language === 'mr' ? "ऊस गुणवत्ता, साखर रिकव्हरी आणि उत्पादन गुणवत्ता चाचणी." :
+                         language === 'kn' ? "ಕಬ್ಬಿನ ಗುಣಮಟ್ಟ, ಸಕ್ಕರೆ ರಿಕವರಿ ಮತ್ತು ಉತ್ಪಾದನಾ ಗುಣಮಟ್ಟದ ಪರೀಕ್ಷೆ." :
+                         language === 'hi' ? "गन्ना गुणवत्ता, चीनी रिकवरी और उत्पादन गुणवत्ता परीक्षण।" : "Cane quality testing, sugar recovery analysis, and lab reports.",
+            features: t("sugar.labMgmtItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.misTitle"),
+            icon: PieChart,
+            color: "#dc2626",
+            description: language === 'mr' ? "कार्यकारी डॅशबोर्ड आणि रिअल-टाइम उत्पादन/विक्री/वित्तीय अहवाल." :
+                         language === 'kn' ? "ಕಾರ್ಯನಿರ್ವಾಹಕ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಮತ್ತು ನೈಜ-ಸಮಯದ ಉತ್ಪಾದನೆ/ಮಾರಾಟ/ಹಣಕಾಸು ವರದಿಗಳು." :
+                         language === 'hi' ? "कार्यकारी डैशबोर्ड और वास्तविक समय उत्पादन/बिक्री/वित्तीय रिपोर्ट।" : "Executive dashboard, real-time production, sales, and financial analytics.",
+            features: t("sugar.misItems") as unknown as string[] || [],
+        },
+        {
+            title: t("sugar.commonFeaturesTitle"),
+            icon: ShieldCheck,
+            color: "#dc2626",
+            description: language === 'mr' ? "वापरकर्ता प्रवेश नियंत्रण, मोबाईल ऍप, वर्कफ्लो मंजुरी आणि ऑडिट ट्रेल." :
+                         language === 'kn' ? "ಬಳಕೆದಾರ ಪ್ರವೇಶ ನಿಯಂತ್ರಣ, ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್, ಕಾರ್ಯಪ್ರವಾಹ ಅನುಮೋದನೆ ಮತ್ತು ಆಡಿಟ್ ಟ್ರೇಲ್." :
+                         language === 'hi' ? "उपयोगकर्ता पहुंच नियंत्रण, मोबाइल ऐप, कार्यप्रवाह अनुमोदन और ऑडिट ट्रेल्स।" : "Access control, mobile integration, notifications, and workflow approval.",
+            features: t("sugar.commonFeaturesItems") as unknown as string[] || [],
         },
     ]
 
     const categories = [
-        { id: "all", name: language === 'mr' ? 'सर्व उत्पादने' : language === 'kn' ? 'ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳು' : language === 'hi' ? 'सभी उत्पाद' : 'All Products', icon: ShoppingBag, color: "#2563eb", count: 14 },
+        { id: "all", name: language === 'mr' ? 'सर्व उत्पादने' : language === 'kn' ? 'ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳು' : language === 'hi' ? 'सभी उत्पाद' : 'All Products', icon: ShoppingBag, color: "#2563eb", count: 31 },
         { id: "dairy", name: t("productsPage.dairySoftware"), icon: Milk, color: "#2563eb", count: 7 },
         { id: "gold", name: t("productsPage.goldJewellery"), icon: Gem, color: "#b45309", count: 4 },
         { id: "inventory", name: t("productsPage.invAcc"), icon: Package, color: "#059669", count: 2 },
-        { id: "sugar", name: t("productsPage.sugarIndustry"), icon: Factory, color: "#dc2626", count: 1 },
+        { id: "sugar", name: t("productsPage.sugarIndustry"), icon: Factory, color: "#dc2626", count: 18 },
     ]
 
     return (

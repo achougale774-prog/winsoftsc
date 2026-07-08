@@ -415,7 +415,7 @@ export default function DairySolutionsPage() {
               <div className="relative lg:h-[600px] hidden lg:block">
                 <div className="absolute inset-0 bg-blue-600/5 rounded-[40px] rotate-3 translate-x-4 translate-y-4" />
                 <Image
-                  src="/modern-dairy-farm.png"
+                  src="/live-image-dairy/5.0.png"
                   alt="Modern Dairy Management"
                   width={800}
                   height={600}

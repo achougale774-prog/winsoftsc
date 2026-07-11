@@ -40,12 +40,14 @@ export function MobileCallBar() {
           </a>
 
           {/* WhatsApp button */}
+          {/*
           <a href="https://wa.me/919423039902?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Winsoft%20software."
             target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5 px-4 py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-sm rounded-xl shadow-lg shadow-[#25D366]/25 transition-all active:scale-95">
             <MessageSquare className="w-4 h-4" />
             {label.wa}
           </a>
+          */}
 
           {/* Dismiss */}
           <button onClick={() => setDismissed(true)}

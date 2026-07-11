@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   },
   description:
     "Winsoft provides professional ERP software solutions for dairy, sugar factory, and gold/jewellery industry. 25+ years of experience. Trusted by 2000+ clients across India.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   keywords: [
     "dairy software",
     "dairy management software",

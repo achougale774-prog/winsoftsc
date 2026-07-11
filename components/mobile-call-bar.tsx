@@ -5,6 +5,8 @@ import { Phone, X, MessageSquare } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export function MobileCallBar() {
+  return null // Hiding the entire sticky bottom bar on mobile
+
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const { language } = useLanguage()

@@ -61,7 +61,7 @@ export function AnimatedStats() {
 
   const stats = [
     {
-      number: 500, suffix: "+",
+      number: 2000, suffix: "+",
       labelMr: "आनंदी ग्राहक",
       labelEn: "Happy Clients",
       emoji: "😊", delay: 0,

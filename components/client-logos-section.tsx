@@ -65,6 +65,7 @@ export function ClientLogosSection() {
         </div>
 
         {/* Client Cards Grid */}
+        {/* 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-10">
           {clients.map((client, idx) => (
             <div
@@ -81,6 +82,7 @@ export function ClientLogosSection() {
             </div>
           ))}
         </div>
+        */}
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">

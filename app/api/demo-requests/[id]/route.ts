@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 
-const DATA_FILE = path.join(process.cwd(), 'data', 'demo_requests.json');
+const DOTNET_API_URL = 'http://localhost:5000/api/demorequests';
 
-// PATCH — update status of a demo request
+// PATCH — update status/notes of a demo request
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -13,54 +11,68 @@ export async function PATCH(
     const { id } = await params;
     const body = await request.json();
     const { status, notes } = body;
-    const numericId = parseInt(id);
 
-    if (!fs.existsSync(DATA_FILE)) {
-      return NextResponse.json({ error: 'No data found' }, { status: 404 });
-    }
-
-    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    const index = data.findIndex((item: any) => item.id === numericId);
-
-    if (index === -1) {
-      return NextResponse.json({ error: 'Request not found' }, { status: 404 });
-    }
-
-    data[index] = {
-      ...data[index],
-      status: status || data[index].status,
-      notes: notes !== undefined ? notes : data[index].notes,
-      updated_at: new Date().toISOString(),
+    const payload = {
+      status,
+      notes
     };
 
-    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+    const response = await fetch(`${DOTNET_API_URL}/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
 
-    return NextResponse.json({ data: data[index], error: null });
+    if (!response.ok) {
+      const errText = await response.text();
+      console.error(`Dotnet PATCH demo-request ${id} failed:`, errText);
+      return NextResponse.json({ error: 'Failed to update backend' }, { status: response.status });
+    }
+
+    const updatedLead = await response.json();
+    const mapped = {
+      id: updatedLead.id,
+      name: updatedLead.name,
+      phone: updatedLead.phone,
+      email: updatedLead.email,
+      company: updatedLead.company,
+      industry: updatedLead.industry,
+      currentChallenges: updatedLead.currentChallenges,
+      preferredDate: updatedLead.preferredDate,
+      preferredTime: updatedLead.preferredTime,
+      status: updatedLead.status,
+      notes: updatedLead.notes,
+      created_at: updatedLead.createdAt,
+      updated_at: updatedLead.updatedAt
+    };
+
+    return NextResponse.json({ data: mapped, error: null });
   } catch (error) {
+    console.error(`Next.js PATCH demo-request ${id} error:`, error);
     return NextResponse.json({ error: 'Failed to update' }, { status: 500 });
   }
 }
 
-// DELETE
+// DELETE — remove a demo request
 export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
-    const numericId = parseInt(id);
 
-    if (!fs.existsSync(DATA_FILE)) {
-      return NextResponse.json({ error: 'No data found' }, { status: 404 });
+    const response = await fetch(`${DOTNET_API_URL}/${id}`, {
+      method: 'DELETE'
+    });
+
+    if (!response.ok) {
+      console.error(`Dotnet DELETE demo-request ${id} failed`);
+      return NextResponse.json({ error: 'Failed to delete from backend' }, { status: response.status });
     }
-
-    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-    const filtered = data.filter((item: any) => item.id !== numericId);
-
-    fs.writeFileSync(DATA_FILE, JSON.stringify(filtered, null, 2));
 
     return NextResponse.json({ success: true });
   } catch (error) {
+    console.error(`Next.js DELETE demo-request ${id} error:`, error);
     return NextResponse.json({ error: 'Failed to delete' }, { status: 500 });
   }
 }

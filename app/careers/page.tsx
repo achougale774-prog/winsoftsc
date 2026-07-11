@@ -1,197 +1,266 @@
 "use client"
 
-import Image from "next/image"
-import { Heart, Shield, Calendar, GraduationCap, Users, Coffee, ChevronRight } from "lucide-react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/components/language-provider"
+import { toast } from "sonner"
 
 export default function CareersPage() {
-  const { t } = useLanguage()
+  const { language } = useLanguage()
 
-  const benefits = [
-    { icon: Heart, title: t("careers.benefit1"), description: t("careers.benefit1Desc") },
-    { icon: Shield, title: t("careers.benefit2"), description: t("careers.benefit2Desc") },
-    { icon: Calendar, title: t("careers.benefit3"), description: t("careers.benefit3Desc") },
-    {
-      icon: GraduationCap,
-      title: t("careers.benefit4"),
-      description: t("careers.benefit4Desc"),
-    },
-    { icon: Users, title: t("careers.benefit5"), description: t("careers.benefit5Desc") },
-    { icon: Coffee, title: t("careers.benefit6"), description: t("careers.benefit6Desc") },
-  ]
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    position: "",
+    message: "",
+  })
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [submitting, setSubmitting] = useState(false)
 
-  const openings = [
-    {
-      title: t("careers.seniorDev"),
-      location: t("careers.location"),
-      type: t("careers.type"),
-      description: t("careers.seniorDevDesc"),
-    },
-    {
-      title: t("careers.ba"),
-      location: t("careers.location"),
-      type: t("careers.type"),
-      description: t("careers.baDesc"),
-    },
-    {
-      title: t("careers.qa"),
-      location: t("careers.location"),
-      type: t("careers.type"),
-      description: t("careers.qaDesc"),
-    },
-    {
-      title: t("careers.uiux"),
-      location: t("careers.location"),
-      type: t("careers.type"),
-      description: t("careers.uiuxDesc"),
-    },
-  ]
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0])
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitting(true)
+
+    // Simulate API call
+    setTimeout(() => {
+      setSubmitting(false)
+      toast.success(
+        language === "mr"
+          ? "✅ तुमचा अर्ज यशस्वीरित्या सबमिट झाला आहे! आमची टीम लवकरच संपर्क करेल."
+          : "✅ Application submitted successfully! Our team will get back to you soon."
+      )
+      setFormData({ name: "", email: "", phone: "", position: "", message: "" })
+      setSelectedFile(null)
+    }, 1500)
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-sky-50 py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-sky-50 dark:from-zinc-900/50 dark:to-zinc-950 py-20 border-b dark:border-zinc-800">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-zinc-100 mb-6 font-sans">
-            {t("careers.title")}
+            {language === 'mr' ? 'करिअर' : 'Careers'}
           </h1>
           <p className="text-xl text-gray-600 dark:text-zinc-400 max-w-3xl mx-auto">
-            {t("careers.subtitle")}
+            {language === 'mr' 
+              ? 'आमच्यासोबत काम करा आणि नवीन तंत्रज्ञानाद्वारे उद्योगांना सक्षम बनवा.' 
+              : 'Join our team and build the future of enterprise software solutions.'}
           </p>
         </div>
       </section>
 
-      {/* Life at Company Section */}
-      <section className="py-20 bg-white dark:bg-zinc-950">
+      {/* Tech Stack Section */}
+      <section className="py-16 bg-white dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-900">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-zinc-100 mb-16 font-sans">
-            {t("careers.partnershipTitle")}
-          </h2>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div>
-              <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-6">
-                {t("careers.desc1")}
-              </p>
-              <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed">
-                {t("careers.desc2")}
-              </p>
-            </div>
-            <div className="relative">
-              <Image
-                src="/indian-software-office-collaboration.png"
-                alt="Life at Winsoft"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg dark:shadow-none"
-              />
-            </div>
-          </div>
-
-          {/* Photo Gallery */}
-          <div className="grid md:grid-cols-3 gap-4">
-            <Image
-              src="/indian-software-team-celebration.png"
-              alt="Team celebration"
-              width={300}
-              height={250}
-              className="rounded-lg shadow-md dark:shadow-none"
-            />
-            <Image
-              src="/indian-developers-training.png"
-              alt="Training session"
-              width={300}
-              height={250}
-              className="rounded-lg shadow-md dark:shadow-none"
-            />
-            <Image
-              src="/placeholder-h4kej.png"
-              alt="Team lunch"
-              width={300}
-              height={250}
-              className="rounded-lg shadow-md dark:shadow-none"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-zinc-100 mb-16 font-sans">
-            {t("careers.perksTitle")}
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white dark:bg-zinc-950 rounded-lg p-6 shadow-md dark:shadow-none border border-gray-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-zinc-100 mb-2">{benefit.title}</h3>
-                <p className="text-gray-600 dark:text-zinc-400">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Open Positions Section */}
-      <section className="py-20 bg-white dark:bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-zinc-100 mb-16 font-sans">
-            {t("careers.openingsTitle")}
-          </h2>
-
-          <div className="space-y-6 mb-12">
-            {openings.map((job, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-lg p-6 hover:shadow-md dark:shadow-none transition-shadow"
-              >
-                <div className="flex justify-between items-start">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-zinc-100 mb-2">{job.title}</h3>
-                    <div className="flex items-center text-gray-600 dark:text-zinc-400 mb-3 space-x-4">
-                      <span>{job.location}</span>
-                      <span>•</span>
-                      <span>{job.type}</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-zinc-400 mb-4">{job.description}</p>
-                  </div>
-                  <a
-                    href={`mailto:careers@winsoft.in?subject=Application for ${job.title}&body=Hello Winsoft Team,%0A%0AI am interested in applying for the ${job.title} position.%0A%0APlease find my details below:%0A%0AName:%0APhone:%0AExperience:%0A%0AThank you.`}
-                    className="ml-4 flex-shrink-0"
-                  >
-                    <Button variant="outline" className="bg-transparent border-[#1E94A4] text-[#1E94A4] hover:bg-[#1E94A4] hover:text-white transition-colors">
-                      {t("careers.applyNow")}
-                      <ChevronRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Don't see a fit section */}
-          <div className="bg-blue-50 dark:bg-blue-950 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100 mb-4">
-              {t("careers.noFitTitle")}
-            </h3>
-            <p className="text-gray-600 dark:text-zinc-400 mb-6 max-w-2xl mx-auto">
-              {t("careers.noFitDesc")}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-4 font-sans">
+              {language === 'mr' ? 'आमची मुख्य तंत्रज्ञान प्रणाली' : 'Our Technology Stack'}
+            </h2>
+            <p className="text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto">
+              {language === 'mr' ? 'आम्ही खालील आधुनिक आणि प्रगत तंत्रज्ञान वापरून दर्जेदार सॉफ्टवेअर विकसित करतो:' : 'We build and scale high-performance applications using these modern technologies:'}
             </p>
-            <a href="mailto:careers@winsoft.in?subject=Resume Submission&body=Hello Winsoft Team,%0A%0AI would like to submit my resume for consideration.%0A%0AName:%0APhone:%0ASkills:%0A%0AThank you.">
-              <Button className="bg-[#1E94A4] hover:bg-[#0B7989] text-white">
-                {t("careers.sendResume")}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Frontend */}
+            <div className="bg-gradient-to-br from-blue-50/50 to-white dark:from-zinc-900/50 dark:to-zinc-950 border border-blue-100/50 dark:border-zinc-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 font-sans font-bold text-blue-500">
+                ANG
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-zinc-100 mb-2">Frontend</h3>
+              <p className="text-[#1E94A4] dark:text-[#22d3ee] text-sm font-semibold mb-3">Angular</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm leading-relaxed">
+                {language === 'mr' ? 'वापरकर्त्यांना गतिमान, जलद आणि प्रतिसादात्मक अनुभव देण्यासाठी आम्ही मॉडर्न अँगुलर (Angular) फ्रेमवर्क वापरतो.' : 'We design structured, robust, and interactive user interfaces using Angular framework.'}
+              </p>
+            </div>
+
+            {/* Backend */}
+            <div className="bg-gradient-to-br from-purple-50/50 to-white dark:from-zinc-900/50 dark:to-zinc-950 border border-purple-100/50 dark:border-zinc-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4 font-sans font-bold text-purple-600">
+                .NET
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-zinc-100 mb-2">Backend</h3>
+              <p className="text-[#1E94A4] dark:text-[#22d3ee] text-sm font-semibold mb-3">C# & .NET Core Web API</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm leading-relaxed">
+                {language === 'mr' ? 'सुरक्षितता, व्यावसायिक लॉजिक आणि वेगवान API प्रतिसादांसाठी आम्ही बॅकएंडला मायक्रोसॉफ्ट .NET तंत्रज्ञान वापरतो.' : 'We build highly secure, scalable, enterprise-grade business logic and REST APIs using Microsoft .NET.'}
+              </p>
+            </div>
+
+            {/* Database */}
+            <div className="bg-gradient-to-br from-cyan-50/50 to-white dark:from-zinc-900/50 dark:to-zinc-950 border border-cyan-100/50 dark:border-zinc-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center mb-4 font-sans font-bold text-cyan-600">
+                DB
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-zinc-100 mb-2">Database</h3>
+              <p className="text-[#1E94A4] dark:text-[#22d3ee] text-sm font-semibold mb-3">PostgreSQL</p>
+              <p className="text-gray-600 dark:text-zinc-400 text-sm leading-relaxed">
+                {language === 'mr' ? 'उद्योगांचा महत्त्वाचा डेटा सुरक्षित, संघटित आणि अतिशय गतीने व्यवस्थापित करण्यासाठी आम्ही पोस्टग्रेस डेटाबेस वापरतो.' : 'We structure, optimize, and safely manage relational data using PostgreSQL database systems.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hidden / Commented Sections as requested */}
+      {/* 
+      <section className="py-20 bg-white dark:bg-zinc-950">
+        ... (More Than a Job, It's a Partnership & Life at Winsoft)
+      </section>
+      <section className="py-20 bg-gray-50 dark:bg-zinc-900/50">
+        ... (Perks & Benefits)
+      </section>
+      <section className="py-20 bg-white dark:bg-zinc-950">
+        ... (Current Openings)
+      </section> 
+      */}
+
+      {/* Form Section */}
+      <section className="py-20 bg-gray-50 dark:bg-zinc-900/30">
+        <div className="max-w-6xl mx-auto px-6">
+          <div id="apply-form" className="bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-xl max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-2 text-center">
+              {language === 'mr' ? 'थेट अर्ज करा' : 'Apply Online'}
+            </h3>
+            <p className="text-gray-500 dark:text-zinc-400 text-center mb-8">
+              {language === 'mr' ? 'खालील अर्ज भरून तुमचा रेझ्युमे (Resume) अपलोड करा' : 'Please fill the details and upload your latest resume'}
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                    {language === 'mr' ? 'पूर्ण नाव' : 'Full Name'} *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-[#1E94A4] transition-all"
+                    placeholder=""
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                    {language === 'mr' ? 'ईमेल पत्ता' : 'Email Address'} *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-[#1E94A4] transition-all"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                    {language === 'mr' ? 'मोबाईल नंबर' : 'Mobile Number'} *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-[#1E94A4] transition-all"
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                    {language === 'mr' ? 'कामाचे पद' : 'Position Applied For'} *
+                  </label>
+                  <select
+                    required
+                    name="position"
+                    value={formData.position}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-[#1E94A4] transition-all"
+                  >
+                    <option value="">{language === 'mr' ? 'पद निवडा' : 'Select Position'}</option>
+                    <option value="Frontend Developer (Angular)">Frontend Developer (Angular)</option>
+                    <option value="Backend Developer (.NET)">Backend Developer (.NET)</option>
+                    <option value="Database Engineer (PostgreSQL)">Database Engineer (PostgreSQL)</option>
+                    <option value="QA Engineer">QA Engineer</option>
+                    <option value="UI/UX Designer">UI/UX Designer</option>
+                    <option value="Other">Other / System Admin</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                  {language === 'mr' ? 'रेझ्युमे अपलोड करा (PDF, DOCX)' : 'Upload Resume (PDF, DOCX)'} *
+                </label>
+                <div className="relative border-2 border-dashed border-gray-300 dark:border-zinc-700 rounded-2xl p-6 text-center hover:border-[#1E94A4] transition-colors bg-gray-50/50 dark:bg-zinc-900/50">
+                  <input
+                    type="file"
+                    required
+                    accept=".pdf,.docx,.doc"
+                    onChange={handleFileChange}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <div className="space-y-1">
+                    <svg className="mx-auto h-10 w-10 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                      <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <div className="flex text-sm text-gray-600 dark:text-zinc-400 justify-center">
+                      <span className="font-semibold text-[#1E94A4] hover:text-[#0B7989]">
+                        {selectedFile ? selectedFile.name : (language === 'mr' ? 'फाईल निवडा किंवा ड्रॅग करा' : 'Choose a file or drag here')}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">PDF, DOCX up to 10MB</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+                  {language === 'mr' ? 'अनुभव किंवा इतर माहिती' : 'Experience / Message'}
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-[#1E94A4] transition-all"
+                  placeholder={language === 'mr' ? 'तुमच्या कौशल्यांबद्दल किंवा अनुभवाबद्दल माहिती लिहा...' : 'Briefly describe your skill set or work experience...'}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={submitting}
+                className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white py-6 rounded-xl font-semibold shadow-lg shadow-[#1E94A4]/20 transition-all text-base"
+              >
+                {submitting
+                  ? (language === 'mr' ? 'अर्ज सबमिट होत आहे...' : 'Submitting Application...')
+                  : (language === 'mr' ? 'अर्ज सबमिट करा' : 'Submit Application')}
               </Button>
-            </a>
-            <p className="text-sm text-gray-500 dark:text-zinc-400 mt-2">careers@winsoft.in</p>
+            </form>
           </div>
         </div>
       </section>

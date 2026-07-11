@@ -39,7 +39,7 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-  const { t } = useLanguage()
+  const { language, t } = useLanguage()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -72,7 +72,9 @@ export default function ContactPage() {
       })
 
       // Construct WhatsApp Message
-      const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+      const messageText = formData.inquiryType === 'dealer'
+        ? `*New Dealer Inquiry Submission*\n\n*Dealer Name:* ${formData.name}\n*Business/Shop Name:* ${formData.company || "N/A"}\n*WhatsApp Number:* ${formData.phone}\n*Email:* ${formData.email}\n*Location/Address:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+        : `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
       const whatsappUrl = `https://wa.me/919423039902?text=${encodeURIComponent(messageText)}`
 
       // Attempt to open WhatsApp
@@ -175,25 +177,31 @@ export default function ContactPage() {
 
                         <div>
                           <Label htmlFor="name" className="font-sans font-medium">
-                            {t("contactPage.fullName")} *
+                            {formData.inquiryType === 'dealer'
+                              ? (language === 'mr' ? 'पूर्ण नाव / संपर्क व्यक्ती *' : 'Full Name / Contact Person *')
+                              : `${t("contactPage.fullName")} *`}
                           </Label>
                           <Input
                             id="name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             required
+                            placeholder=""
                             className="font-serif mt-1"
                           />
                         </div>
 
                         <div>
                           <Label htmlFor="company" className="font-sans font-medium">
-                            {t("contact.companyName") !== "contact.companyName" ? t("contact.companyName") : "Company Name"}
+                            {formData.inquiryType === 'dealer'
+                              ? (language === 'mr' ? 'व्यवसाय / दुकानाचे नाव (पर्यायी)' : 'Business / Shop Name (Optional)')
+                              : (t("contact.companyName") !== "contact.companyName" ? t("contact.companyName") : "Company Name")}
                           </Label>
                           <Input
                             id="company"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                            placeholder=""
                             className="font-serif mt-1"
                           />
                         </div>
@@ -208,19 +216,23 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
+                            placeholder=""
                             className="font-serif mt-1"
                           />
                         </div>
 
                         <div>
                           <Label htmlFor="phone" className="font-sans font-medium">
-                            {t("contactPage.phone")} *
+                            {formData.inquiryType === 'dealer'
+                              ? (language === 'mr' ? 'व्हॉट्सॲप नंबर *' : 'WhatsApp Number *')
+                              : `${t("contactPage.phone")} *`}
                           </Label>
                           <Input
                             id="phone"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             required
+                            placeholder=""
                             className="font-serif mt-1"
                           />
                         </div>
@@ -241,6 +253,7 @@ export default function ContactPage() {
                               <SelectItem value="dairy">{t("nav.dairy")}</SelectItem>
                               <SelectItem value="sugar">{t("nav.sugar")}</SelectItem>
                               <SelectItem value="gold">{t("nav.gold")}</SelectItem>
+                              <SelectItem value="dealer">{language === 'mr' ? 'डीलर चौकशी (Dealer Inquiry)' : 'Dealer Inquiry'}</SelectItem>
                               <SelectItem value="support">{t("dairy.supportLabel")}</SelectItem>
                               <SelectItem value="general">{t("nav.contact")}</SelectItem>
                             </SelectContent>
@@ -249,7 +262,9 @@ export default function ContactPage() {
 
                         <div>
                           <Label htmlFor="message" className="font-sans font-medium">
-                            {t("contactPage.message")} *
+                            {formData.inquiryType === 'dealer'
+                              ? (language === 'mr' ? 'सध्याचे ठिकाण / पूर्ण पत्ता *' : 'Current Location / Full Address *')
+                              : `${t("contactPage.message")} *`}
                           </Label>
                           <Textarea
                             id="message"
@@ -257,6 +272,7 @@ export default function ContactPage() {
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             required
                             rows={5}
+                            placeholder=""
                             className="font-serif mt-1"
                           />
                         </div>
@@ -282,7 +298,9 @@ export default function ContactPage() {
                       <p className="text-green-700 mb-6">If WhatsApp didn't open automatically, click the button below:</p>
                       <Button 
                         onClick={() => {
-                          const messageText = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+                          const messageText = formData.inquiryType === 'dealer'
+                            ? `*New Dealer Inquiry Submission*\n\n*Dealer Name:* ${formData.name}\n*Business/Shop Name:* ${formData.company || "N/A"}\n*WhatsApp Number:* ${formData.phone}\n*Email:* ${formData.email}\n*Location/Address:* ${formData.message}\n\nThank you for connecting with Winsoft.`
+                            : `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Company:* ${formData.company || "N/A"}\n*Inquiry:* ${formData.inquiryType}\n*Message:* ${formData.message}\n\nThank you for connecting with Winsoft.`
                           window.open(`https://wa.me/919423039902?text=${encodeURIComponent(messageText)}`, "_blank")
                         }}
                         className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-xl flex items-center justify-center gap-2 mx-auto"

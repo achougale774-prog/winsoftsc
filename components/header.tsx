@@ -12,7 +12,31 @@ import { SiteSearch } from "@/components/site-search"
 
 const navItems = (t: (key: string) => string, language: string) => [
   { label: t("nav.home"), href: "/" },
-  { label: t("nav.about us"), href: "/our-story" },
+  {
+    label: language === 'mr' ? 'कंपनी' : language === 'kn' ? 'ಕಂಪನಿ' : language === 'hi' ? 'कंपनी' : 'Company',
+    children: [
+      {
+        href: "/our-story",
+        title: language === 'mr' ? 'आमच्याबद्दल (About Us)' : language === 'kn' ? 'ನಮ್ಮ ಬಗ್ಗೆ (About Us)' : language === 'hi' ? 'हमारे बारे में (About Us)' : 'About Us',
+        description: language === 'mr' ? 'आमची कथा, ध्येय आणि इतिहास.' : language === 'kn' ? 'ನಮ್ಮ ಕಥೆ, ಧ್ಯೇಯ ಮತ್ತು ಇತಿಹಾಸ.' : language === 'hi' ? 'हमारी कहानी, मिशन और इतिहास।' : 'Learn about our story, mission, and history.'
+      },
+      {
+        href: "/careers",
+        title: language === 'mr' ? 'करिअर (Careers)' : language === 'kn' ? 'ಉದ್ಯೋಗಾವಕಾಶಗಳು (Careers)' : language === 'hi' ? 'करियर (Careers)' : 'Careers',
+        description: language === 'mr' ? 'आमच्यासोबत काम करा आणि पुढे जा.' : language === 'kn' ? 'ನಮ್ಮೊಂದಿಗೆ ಕೆಲಸ ಮಾಡಿ ಮತ್ತು ಬೆಳೆಯಿರಿ.' : language === 'hi' ? 'हमारे साथ काम करें और बढ़ें।' : 'Join our team and build the future of software.'
+      },
+      {
+        href: "/support",
+        title: language === 'mr' ? 'सपोर्ट (Support)' : language === 'kn' ? 'ಬೆಂಬಲ (Support)' : language === 'hi' ? 'सहायता (Support)' : 'Support',
+        description: language === 'mr' ? '२४/७ तांत्रिक साहाय्य मिळवा.' : language === 'kn' ? '೨४/೭ ತಾಂತ್ರಿಕ ಸಹಾಯ ಪಡೆಯಿರಿ.' : language === 'hi' ? '२४/७ तकनीकी सहायता प्राप्त करें।' : 'Get 24/7 technical support and assistance.'
+      },
+      {
+        href: "/dealer-inquiry",
+        title: language === 'mr' ? 'डीलर चौकशी (Dealer Inquiry)' : language === 'kn' ? 'ಡೀಲರ್ ವಿಚಾರಣೆ (Dealer Inquiry)' : language === 'hi' ? 'डीलर पूछताछ (Dealer Inquiry)' : 'Dealer Inquiry',
+        description: language === 'mr' ? 'आमच्या अधिकृत डीलर नेटवर्कमध्ये सामील व्हा.' : language === 'kn' ? 'ನಮ್ಮ ಅಧಿಕೃತ ಡೀಲರ್ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸೇರಿ.' : language === 'hi' ? 'हमारे अधिकृत डीलर नेटवर्क में शामिल हों।' : 'Become an authorized partner or dealer.'
+      }
+    ]
+  },
   {
     label: t("nav.products"),
     wide: true,
@@ -90,7 +114,7 @@ const navItems = (t: (key: string) => string, language: string) => [
         description: language === 'mr' ? 'सराफा दुकानांसाठी बिलिंग, इन्व्हेंटरी आणि सोने ठेव योजना' :
                      language === 'kn' ? 'ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಬಿಲ್ಲಿಂಗ್, ಇನ್ವೆಂಟರಿ ಮತ್ತು ಚಿನ್ನದ ಯೋಜನೆಗಳು' :
                      language === 'hi' ? 'ज्वेलरी शोरूम के लिए बिलिंग, इन्वेंटरी और स्वर्ण योजनाएं' :
-                     "Billing, inventory and gold scheme management for jewellery showrooms"
+                      "Billing, inventory and gold scheme management for jewellery showrooms"
       },
     ],
   },
@@ -266,11 +290,11 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2 ml-3">
             <SiteSearch />
 
-            <Link href="/pricing">
+            {/* <Link href="/pricing">
               <Button variant="outline" className="h-9 px-3.5 font-sans font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 transition-all">
                 {language === 'mr' ? 'दरपत्रक' : language === 'kn' ? 'ದರಪಟ್ಟಿ' : language === 'hi' ? 'दरपत्रक' : 'Pricing'}
               </Button>
-            </Link>
+            </Link> */}
 
             <Select value={language} onValueChange={(val: any) => setLanguage(val)}>
               <SelectTrigger className="w-[120px] h-9">
@@ -331,13 +355,13 @@ export function Header() {
                 )
               )}
 
-              <div className="px-3 py-3 border-t border-gray-100 dark:border-zinc-800 mt-2">
+              {/* <div className="px-3 py-3 border-t border-gray-100 dark:border-zinc-800 mt-2">
                 <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-5 rounded-xl transition-all shadow-md">
                     {language === 'mr' ? 'दरपत्रक (Pricing)' : language === 'kn' ? 'ದರಪಟ್ಟಿ (Pricing)' : language === 'hi' ? 'दरपत्रक (Pricing)' : 'Pricing'}
                   </Button>
                 </Link>
-              </div>
+              </div> */}
 
             </div>
           </div>

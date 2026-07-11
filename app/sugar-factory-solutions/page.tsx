@@ -721,33 +721,6 @@ export default function SugarFactorySolutionsPage() {
           </div>
         </section>
 
-        {/* Video Demo Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100">
-                {t("product.videoTitle")}
-              </h2>
-              <div className="h-1.5 w-20 bg-red-600 mx-auto rounded-full" />
-              <p className="text-lg text-gray-600 dark:text-zinc-400 font-serif">
-                {t("product.videoDesc")}
-              </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-orange-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title={t("product.videoTitle")}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Other Recommended Solutions Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-900 relative overflow-hidden">
@@ -784,7 +757,7 @@ export default function SugarFactorySolutionsPage() {
                   description: language === 'mr' ? "सराफा दुकानांसाठी सोन्या-चांदीचे हिशोब, बारकोड बिलिंग, गहाणवट व्यवस्थापन आणि GST रिपोर्टचे संपूर्ण सॉफ्टवेअर." : language === 'kn' ? "ಆಭರಣ ಮಳಿಗೆಗಳಿಗಾಗಿ ಬಾರ್‌ಕೋಡ್ ಬಿಲ್ಲಿಂಗ್, ಗಿರವಿ ನಿರ್ವಹಣೆ ಮತ್ತು GST ವರದಿಗಳ ಸಾಫ್ಟ್‌ವೇರ್." : language === 'hi' ? "ज्वेलरी शोरूम के लिए बारकोड बिलिंग, गिरवी प्रबंधन और GST रिपोर्ट का संपूर्ण सॉफ्टवेयर." : "Complete billing, barcode scanning, Girvi/pledge tracking, and GST returns software for jewellery showrooms.",
                   image: "/gold-image-new/gold_home_page.png",
                   link: "/gold-industry-solutions",
-                  tag: language === 'mr' ? "सुवर्ण सोल्यूशन" : language === 'kn' ? "ಚಿನ್ನದ ಪರಿಹಾರ" : language === 'hi' ? "स्वर्ण समाधान" : "Gold Solution"
+                  tag: language === 'mr' ? "सुवर्ण सोल्यूशन" : language === 'kn' ? "ಚಿன்னದ ಪರಿಹಾರ" : language === 'hi' ? "स्वर्ण समाधान" : "Gold Solution"
                 },
                 {
                   id: "mobile",

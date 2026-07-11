@@ -12,7 +12,6 @@ import { useLanguage } from "@/components/language-provider"
 import { VillagePortal } from "@/components/village-portal"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ClientLogosSection } from "@/components/client-logos-section"
-import { VideoDemoSection } from "@/components/video-demo-section"
 import { AnimatedStats } from "@/components/animated-stats"
 
 import { GoogleReviews } from "@/components/google-reviews"
@@ -185,8 +184,6 @@ export default function HomePage() {
       <ClientMap />
 
       <AnimatedStats />
-
-      <VideoDemoSection />
 
       <GoogleReviews />
 

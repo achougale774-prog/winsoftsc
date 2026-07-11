@@ -130,5 +130,27 @@
     "inquiry_type": "Exit Intent Popup",
     "message": "Exit intent lead | Language: EN",
     "status": "new"
+  },
+  {
+    "id": 1783656527021,
+    "created_at": "2026-07-10T04:08:47.021Z",
+    "name": "adinath",
+    "company": "winsoft",
+    "phone": "123456",
+    "email": "adinath@gmail.com",
+    "inquiry_type": "Dealer Inquiry",
+    "message": "Shop Name: winsoft\nAddress/Location: hari on nagar kolhapur ",
+    "status": "new"
+  },
+  {
+    "id": 1783661652989,
+    "created_at": "2026-07-10T05:34:12.991Z",
+    "name": "ayush ",
+    "company": "ayush ",
+    "phone": "12345",
+    "email": "ayush@gmail.com",
+    "inquiry_type": "Dealer Inquiry",
+    "message": "Shop Name: ayush \nAddress/Location: plot 1232",
+    "status": "new"
   }
 ]

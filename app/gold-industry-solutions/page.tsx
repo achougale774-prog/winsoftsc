@@ -20,6 +20,9 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
+  Users,
+  Coins,
+  Archive,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -40,61 +43,341 @@ export default function GoldIndustrySolutionsPage() {
     "/gold-image-new/inword_outword2.png"
   ], [])
 
-  const goldProducts = useMemo(() => [
-    {
-      title: t("gold.goldProd1Title"),
-      icon: ArrowLeftRight,
-      description: t("gold.goldProd1Desc"),
-      features: [
-        t("gold.goldProd1Feat1"),
-        t("gold.goldProd1Feat2"),
-        t("gold.goldProd1Feat3"),
-        t("gold.goldProd1Feat4"),
-        t("gold.goldProd1Feat5"),
-        t("gold.goldProd1Feat6"),
-      ],
-    },
-    {
-      title: t("gold.goldProd2Title"),
-      icon: ShoppingBag,
-      description: t("gold.goldProd2Desc"),
-      features: [
-        t("gold.goldProd2Feat1"),
-        t("gold.goldProd2Feat2"),
-        t("gold.goldProd2Feat3"),
-        t("gold.goldProd2Feat4"),
-        t("gold.goldProd2Feat5"),
-        t("gold.goldProd2Feat6"),
-      ],
-    },
-    {
-      title: t("gold.goldProd3Title"),
-      icon: FileText,
-      description: t("gold.goldProd3Desc"),
-      features: [
-        t("gold.goldProd3Feat1"),
-        t("gold.goldProd3Feat2"),
-        t("gold.goldProd3Feat3"),
-        t("gold.goldProd3Feat4"),
-        t("gold.goldProd3Feat5"),
-        t("gold.goldProd3Feat6"),
-        t("gold.goldProd3Feat7"),
-      ],
-    },
-    {
-      title: t("gold.goldProd4Title"),
-      icon: CalendarCheck,
-      description: t("gold.goldProd4Desc"),
-      features: [
-        t("gold.goldProd4Feat1"),
-        t("gold.goldProd4Feat2"),
-        t("gold.goldProd4Feat3"),
-        t("gold.goldProd4Feat4"),
-        t("gold.goldProd4Feat5"),
-        t("gold.goldProd4Feat6"),
-      ],
-    },
-  ], [t])
+  const pageData = useMemo(() => {
+    if (language === 'mr') {
+      return {
+        badge: "गोल्ड एक्सचेंज सोल्यूशन",
+        heroTitle: "गोल्ड एक्सचेंज सॉफ्टवेअर",
+        heroSubtitle: "सोने व्यापारी, सराफा डीलर, ज्वेलरी शॉप्स आणि गोल्ड एक्सचेंज व्यवसायांसाठी डिझाइन केलेली संपूर्ण ERP प्रणाली. लाइव्ह सोन्याचे दर, खरेदी-विक्री, इन्व्हेंटरी, अकाउंटिंग आणि रिपोर्टिंग सर्व काही एकाच सुरक्षित प्लॅटफॉर्मवर व्यवस्थापित करा.",
+        solutionsTitle: "आमचे की-फीचर्स",
+        solutionsDesc: "तुमच्या सुवर्ण विनिमय व्यवसायाची कार्यक्षमता वाढवण्यासाठी आणि कामकाज डिजिटल करण्यासाठी प्रगत वैशिष्ट्ये.",
+        products: [
+          {
+            title: "१. लाइव्ह सोने आणि चांदीचे दर",
+            icon: TrendingUp,
+            description: "बाजारातील चढ-उतारांवर लक्ष ठेवण्यासाठी रिअल-टाइम मेटल दर व्यवस्थापन.",
+            features: [
+              "रिअल-टाइम सोन्याचे दर (24K, 22K, 18K)",
+              "चांदीचे दर व्यवस्थापन",
+              "स्वयंचलित दर अपडेट्स",
+              "ऐतिहासिक किंमत तक्ते (Charts)",
+              "मार्केट ओपन/क्लोज स्टेटस",
+            ],
+          },
+          {
+            title: "२. ग्राहक व्यवस्थापन",
+            icon: Users,
+            description: "ग्राहकांची नोंदणी, व्यवहार इतिहास आणि पत मर्यादा सुलभपणे व्यवस्थापित करा.",
+            features: [
+              "ग्राहक नोंदणी व प्रोफाइल",
+              "KYC दस्तऐवज व्यवस्थापन",
+              "ग्राहक वॉलेट / शिल्लक रक्कम",
+              "क्रेडिट मर्यादा व्यवस्थापन",
+              "ग्राहक खातेवही (Ledger)",
+              "व्यवहारांचा इतिहास आणि लॉयल्टी प्रोग्राम",
+            ],
+          },
+          {
+            title: "३. सोने खरेदी (Buy Gold)",
+            icon: Coins,
+            description: "लाइव्ह सोन्याचे दर आणि अचूक हिशोबासह सुलभ खरेदी नोंदणी.",
+            features: [
+              "सोने खरेदी नोंदणी",
+              "लाइव्ह दरानुसार स्वयंचलित गणना",
+              "GST व कर गणना",
+              "पेमेंट पद्धती (रोख, UPI, बँक, कार्ड)",
+              "खरेदी इनव्हॉइस आणि पावती निर्मिती",
+            ],
+          },
+          {
+            title: "४. सोने विक्री (Sell Gold)",
+            icon: ShoppingBag,
+            description: "जलद बिलिंग, बारकोड स्कॅनिंग आणि अचूक विक्री व्यवस्थापन.",
+            features: [
+              "सोने विक्री नोंदणी",
+              "इनव्हॉइस जनरेशन आणि बारकोड सपोर्ट",
+              "डिस्काउंट व्यवस्थापन",
+              "पेमेंट ट्रॅकिंग आणि डिलिव्हरी कन्फर्मेशन",
+            ],
+          },
+          {
+            title: "५. जुने सोने एक्सचेंज",
+            icon: ArrowLeftRight,
+            description: "जुन्या दागिन्यांच्या बदल्यात नवीन दागिने एक्सचेंजची संपूर्ण पारदर्शक प्रक्रिया.",
+            features: [
+              "जुन्या दागिन्यांची खरेदी व वजन नोंदणी",
+              "शुद्धता (कॅरेट) पडताळणी",
+              "दगडाचे वजन वजा करणे",
+              "वितळण्याचे नुकसान (Melting loss) गणना",
+              "निव्वळ सोन्याच्या मूल्याची गणना",
+              "नवीन दागिन्यांच्या बदल्यात विनिमय आणि इनव्हॉइस",
+            ],
+          },
+          {
+            title: "६. इन्व्हेंटरी व्यवस्थापन",
+            icon: Archive,
+            description: "सोन्याच्या विटा, नाणी आणि दागिन्यांच्या साठ्याची रिअल-टाइम ट्रॅकिंग.",
+            features: [
+              "सोन्याच्या विटा (Gold bars) व नाणी (Coins) ट्रॅकिंग",
+              "दागिन्यांचा साठा आणि चांदीची इन्व्हेंटरी",
+              "वेअरहाऊस व बारकोड व्यवस्थापन",
+              "कमी साठा इशारे (Low-stock alerts)",
+              "स्टॉक ट्रान्सफर व्यवस्थापन",
+            ],
+          },
+        ]
+      };
+    } else if (language === 'kn') {
+      return {
+        badge: "ಚಿನ್ನದ ವಿನಿಮಯ ಪರಿಹಾರ",
+        heroTitle: "ಗೋಲ್ಡ್ ಎಕ್ಸ್ಚೇಂಜ್ ಸಾಫ್ಟ್‌ವೇರ್",
+        heroSubtitle: "ಚಿನ್ನದ ವ್ಯಾಪಾರಿಗಳು, ಬುಲಿಯನ್ ವಿತರಕರು, ಆಭರಣ ಮಳಿಗೆಗಳು ಮತ್ತು ಚಿನ್ನದ ವಿನಿಮಯ ವ್ಯವಹಾರಗಳಿಗಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಸಂಪೂರ್ಣ ERP ವ್ಯವಸ್ಥೆ. ಲೈವ್ ಚಿನ್ನದ ದರಗಳು, ಖರೀದಿ, ಮಾರಾಟ, ದಾಸ್ತಾನು ಮತ್ತು ವರದಿಗಳನ್ನು ಒಂದೇ ಸುರಕ್ಷಿತ ವೇದಿಕೆಯಲ್ಲಿ ನಿರ್ವಹಿಸಿ.",
+        solutionsTitle: "ನಮ್ಮ ಪ್ರಮುಖ ವೈಶಿಷ್ಟ್ಯಗಳು",
+        solutionsDesc: "ನಿಮ್ಮ ಚಿನ್ನದ ವ್ಯವಹಾರದ ದಕ್ಷತೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಕಾರ್ಯಾಚರಣೆಗಳನ್ನು ಡಿಜಿಟಲೈಸ್ ಮಾಡಲು ಸುಧಾರಿತ ವೈಶಿಷ್ಟ್ಯಗಳು.",
+        products: [
+          {
+            title: "೧. ಲೈವ್ ಚಿನ್ನ ಮತ್ತು ಬೆಳ್ಳಿ ದರಗಳು",
+            icon: TrendingUp,
+            description: "ಮಾರುಕಟ್ಟೆಯ ಏರಿಳಿತಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ನೈಜ-ಸಮಯದ ಲೋಹದ ದರ ನಿರ್ವಹಣೆ.",
+            features: [
+              "ರಿಯಲ್-ಟೈಮ್ ಚಿನ್ನದ ದರಗಳು (24K, 22K, 18K)",
+              "ಬೆಳ್ಳಿ ದರಗಳು",
+              "ಸ್ವಯಂಚಾಲಿತ ದರ ನವೀಕರಣಗಳು",
+              "ಐತಿಹಾಸಿಕ ಬೆಲೆ ಚಾರ್ಟ್‌ಗಳು",
+              "ಮಾರುಕಟ್ಟೆ ಓಪನ್/ಕ್ಲೋಸ್ ಸ್ಥಿತಿ",
+            ],
+          },
+          {
+            title: "೨. ಗ್ರಾಹಕ ನಿರ್ವಹಣೆ",
+            icon: Users,
+            description: "ಗ್ರಾಹಕರ ನೋಂದಣಿ, ವಹಿವಾಟು ಇತಿಹಾಸ ಮತ್ತು ಕ್ರೆಡಿಟ್ ಮಿತಿಗಳನ್ನು ಸುಲಭವಾಗಿ ನಿರ್ವಹಿಸಿ.",
+            features: [
+              "ಗ್ರಾಹಕರ ನೋಂದಣಿ ಮತ್ತು ಪ್ರೊಫೈಲ್",
+              "KYC ದಾಖಲೆ ನಿರ್ವಹಣೆ",
+              "ಗ್ರಾಹಕ ವಾಲೆಟ್ / ಬಾಕಿ ಮೊತ್ತ",
+              "ಕ್ರೆಡಿಟ್ ಮಿತಿ ನಿರ್ವಹಣೆ",
+              "ಗ್ರಾಹಕ ಲೆಡ್ಜರ್ ಮತ್ತು ವಹಿವಾಟು ಇತಿಹಾಸ",
+              "ಲಾಯಲ್ಟಿ ಪ್ರೋಗ್ರಾಂ",
+            ],
+          },
+          {
+            title: "೩. ಚಿನ್ನದ ಖರೀದಿ (Buy Gold)",
+            icon: Coins,
+            description: "ಲೈವ್ ಚಿನ್ನದ ದರಗಳು ಮತ್ತು ನಿಖರ ಲೆಕ್ಕಾಚಾರದೊಂದಿಗೆ ಸುಲಭ ಖರೀದಿ ಪ್ರವೇಶ.",
+            features: [
+              "ಚಿನ್ನದ ಖರೀದಿ ಪ್ರವೇಶ",
+              "ಲೈವ್ ದರ ಸ್ವಯಂಚಾಲಿತ ಲೆಕ್ಕಾಚಾರ",
+              "ಜಿಎಸ್ಟಿ ಮತ್ತು ತೆರಿಗೆ ಲೆಕ್ಕಾಚಾರ",
+              "ಪಾವತಿ ವಿಧಾನಗಳು (ನಗದು, UPI, ಬ್ಯಾಂಕ್, ಕಾರ್ಡ್)",
+              "ಖರೀದಿ ಇನ್‌ವಾಯ್ಸ್‌ಗಳು ಮತ್ತು ರಶೀದಿ ರಚನೆ",
+            ],
+          },
+          {
+            title: "೪. ಚಿನ್ನದ ಮಾರಾಟ (Sell Gold)",
+            icon: ShoppingBag,
+            description: "ವೇಗದ ಬಿಲ್ಲಿಂಗ್, ಬಾರ್‌ಕೋಡ್ ಸ್ಕ್ಯಾನಿಂಗ್ ಮತ್ತು ನಿಖರ ಮಾರಾಟ ನಿರ್ವಹಣೆ.",
+            features: [
+              "ಚಿನ್ನದ ಮಾರಾಟ ಪ್ರವೇಶ",
+              "ಇನ್‌ವಾಯ್ಸ್ ರಚನೆ ಮತ್ತು ಬಾರ್‌ಕೋಡ್ ಬೆಂಬಲ",
+              "ರಿಯಾಯಿತಿ ನಿರ್ವಹಣೆ",
+              "ಪಾವತಿ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ವಿತರಣೆ ದೃಢೀಕರಣ",
+            ],
+          },
+          {
+            title: "೫. ಹಳೆಯ ಚಿನ್ನದ ವಿನಿಮಯ",
+            icon: ArrowLeftRight,
+            description: "ಹಳೆಯ ಆಭರಣಗಳ ಬದಲಿಗೆ ಹೊಸ ಆಭರಣಗಳ ವಿನಿಮಯದ ಸಂಪೂರ್ಣ ಪಾರದರ್ಶಕ ಪ್ರಕ್ರಿಯೆ.",
+            features: [
+              "ಹಳೆಯ ಆಭರಣಗಳ ಖರೀದಿ ಮತ್ತು ತೂಕ ಪ್ರವೇಶ",
+              "ಶುದ್ಧತೆ (ಕ್ಯಾರೆಟ್) ಪರಿಶೀಲನೆ",
+              "ಕಲ್ಲಿನ ತೂಕ ಕಡಿತ",
+              "ಕರಗುವ ನಷ್ಟದ ಲೆಕ್ಕಾಚಾರ",
+              "ನಿವ್ವಳ ಚಿನ್ನದ ಮೌಲ್ಯದ ಲೆಕ್ಕಾಚಾರ",
+              "ಹೊಸ ಆಭರಣಗಳ ವಿನಿಮಯ ಮತ್ತು ಇನ್‌ವಾಯ್ಸ್",
+            ],
+          },
+          {
+            title: "೬. ದಾಸ್ತಾನು ನಿರ್ವಹಣೆ",
+            icon: Archive,
+            description: "ಚಿನ್ನದ ಗಟ್ಟಿಗಳು, ನಾಣ್ಯಗಳು ಮತ್ತು ಆಭರಣಗಳ ಸ್ಟಾಕ್‌ನ ನೈಜ-ಸಮಯದ ಟ್ರ್ಯಾಕಿಂಗ್.",
+            features: [
+              "ಚಿನ್ನದ ಗಟ್ಟಿಗಳು (Gold bars) ಮತ್ತು ನಾಣ್ಯಗಳ (Coins) ಟ್ರ್ಯಾಕಿಂಗ್",
+              "ಆಭರಣಗಳ ಸ್ಟಾಕ್ ಮತ್ತು ಬೆಳ್ಳಿ ದಾಸ್ತಾನು",
+              "ಗೋದಾಮು ಮತ್ತು ಬಾರ್‌ಕೋಡ್ ನಿರ್ವಹಣೆ",
+              "ಕಡಿಮೆ ದಾಸ್ತಾನು ಎಚ್ಚರಿಕೆಗಳು",
+              "ಸ್ಟಾಕ್ ವರ್ಗಾವಣೆ ನಿರ್ವಹಣೆ",
+            ],
+          },
+        ]
+      };
+    } else if (language === 'hi') {
+      return {
+        badge: "गोल्ड एक्सचेंज समाधान",
+        heroTitle: "गोल्ड एक्सचेंज सॉफ्टवेयर",
+        heroSubtitle: "सोना व्यापारियों, सर्राफा डीलरों, आभूषण दुकानों और गोल्ड एक्सचेंज व्यवसायों के लिए डिज़ाइन की गई संपूर्ण ERP प्रणाली। लाइव सोने की दरों, खरीद-बिक्री, इन्वेंट्री, Accounting और रिपोर्टिंग को एक सुरक्षित प्लेटफॉर्म पर प्रबंधित करें।",
+        solutionsTitle: "हमारे प्रमुख फीचर्स",
+        solutionsDesc: "आपके स्वर्ण विनिमय व्यवसाय की दक्षता बढ़ाने और संचालन को डिजिटल बनाने के लिए उन्नत सुविधाएँ।",
+        products: [
+          {
+            title: "१. लाइव सोना और चांदी की दरें",
+            icon: TrendingUp,
+            description: "बाजार के उतार-चढ़ाव पर नजर रखने के लिए रीयल-टाइम मेटल दर प्रबंधन।",
+            features: [
+              "रीयल-टाइम सोने की दरें (24K, 22K, 18K)",
+              "चांदी की दर प्रबंधन",
+              "स्वचालित दर अपडेट",
+              "ऐतिहासिक मूल्य चार्ट (Charts)",
+              "मार्केट ओपन/क्लोज स्टेटस",
+            ],
+          },
+          {
+            title: "२. ग्राहक प्रबंधन",
+            icon: Users,
+            description: "ग्राहकों का पंजीकरण, लेनदेन का इतिहास और क्रेडिट सीमा को आसानी से प्रबंधित करें।",
+            features: [
+              "ग्राहक पंजीकरण और प्रोफाइल",
+              "KYC दस्तावेज़ प्रबंधन",
+              "ग्राहक वॉलेट / शेष राशि",
+              "क्रेडिट सीमा प्रबंधन",
+              "ग्राहक बहीखाता (Ledger) और लेनदेन इतिहास",
+              "लॉयल्टी प्रोग्राम",
+            ],
+          },
+          {
+            title: "३. सोना खरीद (Buy Gold)",
+            icon: Coins,
+            description: "लाइव सोने की दरों और सटीक गणना के साथ आसान खरीद प्रविष्टि।",
+            features: [
+              "सोना खरीद प्रविष्टि",
+              "लाइव दर स्वचालित गणना",
+              "GST और टैक्स गणना",
+              "भुगतान विधियां (नकद, UPI, बैंक, कार्ड)",
+              "खरीद चालान और रसीद निर्माण",
+            ],
+          },
+          {
+            title: "४. सोना बिक्री (Sell Gold)",
+            icon: ShoppingBag,
+            description: "तेज़ बिलिंग, बारकोड स्कैनिंग और सटीक बिक्री प्रबंधन।",
+            features: [
+              "सोना बिक्री प्रविष्टि",
+              "चालान जनरेशन और बारकोड सपोर्ट",
+              "छूट प्रबंधन",
+              "भुगतान ट्रैकिंग और डिलीवरी की पुष्टि",
+            ],
+          },
+          {
+            title: "५. पुराना सोना एक्सचेंज",
+            icon: ArrowLeftRight,
+            description: "पुराने आभूषणों के बदले नए आभूषणों के एक्सचेंज की पूरी पारदर्शी प्रक्रिया।",
+            features: [
+              "पुराने आभूषणों की खरीद और वजन प्रविष्टि",
+              "शुद्धता (कैरेट) सत्यापन",
+              "पत्थर का वजन घटाना",
+              "पिघलने का नुकसान (Melting loss) गणना",
+              "शुद्ध सोने के मूल्य की गणना",
+              "नए आभूषणों के बदले एक्सचेंज और चालान",
+            ],
+          },
+          {
+            title: "६. इन्वेंटरी प्रबंधन",
+            icon: Archive,
+            description: "सोने की छड़ें, सिक्के और आभूषणों के स्टॉक की रीयल-टाइम ट्रैकिंग।",
+            features: [
+              "सोने की छड़ें (Gold bars) और सिक्के (Coins) ट्रैकिंग",
+              "आभूषण स्टॉक और चांदी की इन्वेंट्री",
+              "वेयरहाउस और बारकोड प्रबंधन",
+              "कम स्टॉक अलर्ट",
+              "स्टॉक ट्रांसफर प्रबंधन",
+            ],
+          },
+        ]
+      };
+    } else {
+      return {
+        badge: "Gold Exchange Solution",
+        heroTitle: "Gold Exchange Software",
+        heroSubtitle: "A complete ERP system designed for gold traders, bullion dealers, jewellery shops, refiners, and gold exchange businesses. Manage the entire process from live gold rates to buying, selling, inventory, accounting, and reporting in one secure platform.",
+        solutionsTitle: "Key Features",
+        solutionsDesc: "Advanced features tailored to power your gold exchange operations and digitalize daily business workflows.",
+        products: [
+          {
+            title: "1. Live Gold & Silver Rates",
+            icon: TrendingUp,
+            description: "Real-time metal rate management to stay aligned with market fluctuations.",
+            features: [
+              "Real-time Gold (24K, 22K, 18K) rates",
+              "Silver rates tracking",
+              "Automatic rate updates",
+              "Historical price charts",
+              "Market open/closed status",
+            ],
+          },
+          {
+            title: "2. Customer Management",
+            icon: Users,
+            description: "Streamline customer onboarding, transaction history, and credit parameters.",
+            features: [
+              "Customer registration & profiling",
+              "KYC document management",
+              "Customer wallet/balance tracking",
+              "Credit limit management",
+              "Customer ledger and transaction history",
+              "Loyalty program management",
+            ],
+          },
+          {
+            title: "3. Buy Gold",
+            icon: Coins,
+            description: "Seamless purchase entry linked with live rates and tax calculations.",
+            features: [
+              "Gold purchase entry",
+              "Live rate automatic calculation",
+              "GST and billing computation",
+              "Multiple payment methods (Cash, UPI, Bank, Card)",
+              "Purchase invoices and receipt generation",
+            ],
+          },
+          {
+            title: "4. Sell Gold",
+            icon: ShoppingBag,
+            description: "Accelerate sales with barcode scanning, custom invoicing, and order tracking.",
+            features: [
+              "Gold sales entry",
+              "Invoice generation and barcode support",
+              "Discount & scheme management",
+              "Payment tracking and delivery confirmation",
+            ],
+          },
+          {
+            title: "5. Old Gold Exchange",
+            icon: ArrowLeftRight,
+            description: "Complete transparent old-to-new gold valuation, melting analysis, and invoicing.",
+            features: [
+              "Old jewellery purchase & weight entry",
+              "Purity (Karat) verification",
+              "Stone weight deduction",
+              "Melting loss calculation",
+              "Net gold value calculation",
+              "Exchange against new jewellery with exchange invoice",
+            ],
+          },
+          {
+            title: "6. Inventory Management",
+            icon: Archive,
+            description: "Real-time stock tracking for bullion, coins, finished jewellery, and silver.",
+            features: [
+              "Gold bars and coins stock tracking",
+              "Finished jewellery stock and silver inventory",
+              "Warehouse & bin location management",
+              "Barcode generation & scanning",
+              "Low-stock alerts and stock transfer logs",
+            ],
+          },
+        ]
+      };
+    }
+  }, [language])
 
   const challenges = useMemo(() => [
     {
@@ -283,14 +566,14 @@ export default function GoldIndustrySolutionsPage() {
                     <Gem className="h-6 w-6 text-amber-600" />
                   </div>
                   <Badge variant="secondary" className="px-3 py-1 font-sans bg-amber-50 text-amber-700 border-amber-200">
-                    {t("gold.goldBadge")}
+                    {pageData.badge}
                   </Badge>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-sans font-bold mb-6 text-gray-900 dark:text-zinc-100 leading-tight">
-                  {t("gold.goldHeroTitle")}
+                  {pageData.heroTitle}
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-zinc-400 font-serif leading-relaxed mb-8">
-                  {t("gold.goldHeroSubtitle")}
+                  {pageData.heroSubtitle}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/schedule-demo">
@@ -392,15 +675,15 @@ export default function GoldIndustrySolutionsPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">
-                {t("gold.goldSolutionsTitle")}
+                {pageData.solutionsTitle}
               </h2>
               <p className="text-gray-600 dark:text-zinc-400 font-serif text-lg">
-                {t("gold.goldSolutionsDesc")}
+                {pageData.solutionsDesc}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {goldProducts.map((product, idx) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pageData.products.map((product, idx) => (
                 <Card key={idx} className="border border-slate-100 dark:border-zinc-800 hover:border-amber-200 transition-colors bg-white dark:bg-zinc-950 shadow-sm dark:shadow-none hover:shadow-lg dark:shadow-none overflow-hidden flex flex-col">
                   <div className="p-8 flex-1">
                     <div className="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center mb-6">
@@ -468,33 +751,6 @@ export default function GoldIndustrySolutionsPage() {
           </div>
         </section>
 
-        {/* Video Demo Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-              <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100">
-                {t("product.videoTitle")}
-              </h2>
-              <div className="h-1.5 w-20 bg-amber-600 mx-auto rounded-full" />
-              <p className="text-lg text-gray-600 dark:text-zinc-400 font-serif">
-                {t("product.videoDesc")}
-              </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 to-yellow-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title={t("product.videoTitle")}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Recommended Solutions Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-black border-t border-slate-200 dark:border-zinc-900 relative overflow-hidden">
@@ -584,7 +840,7 @@ export default function GoldIndustrySolutionsPage() {
                   {t("gold.contactExpert")}
                 </Button>
               </Link>
-              <WhatsAppButton productName={t("gold.goldHeroTitle")} />
+              <WhatsAppButton productName={pageData.heroTitle} />
             </div>
           </div>
         </section>

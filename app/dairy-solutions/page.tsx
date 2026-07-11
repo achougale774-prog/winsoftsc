@@ -810,33 +810,6 @@ export default function DairySolutionsPage() {
           </div>
         </section>
 
-        {/* Video Demo Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-slate-100 dark:border-zinc-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
-              <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100">
-                {t("product.videoTitle")}
-              </h2>
-              <div className="h-1.5 w-20 bg-[#1E94A4] mx-auto rounded-full" />
-              <p className="text-lg text-gray-600 dark:text-zinc-400 font-serif">
-                {t("product.videoDesc")}
-              </p>
-            </div>
-
-            <div className="max-w-5xl mx-auto relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] rounded-[2.5rem] blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title={t("product.videoTitle")}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "var(--primary)" }}>

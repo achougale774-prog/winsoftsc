@@ -76,7 +76,7 @@ export function Footer() {
                   {t("footer.features")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/pricing" className="text-white/80 hover:text-white text-sm transition-colors">
                   Pricing
                 </Link>
@@ -85,7 +85,7 @@ export function Footer() {
                 <Link href="/faq" className="text-white/80 hover:text-white text-sm transition-colors">
                   FAQ
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -100,17 +100,17 @@ export function Footer() {
                    {t("footer.aboutUs")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/our-team" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.ourTeam")}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/careers" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.careers")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/blog" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.blog")}
                 </Link>
@@ -119,7 +119,7 @@ export function Footer() {
                 <Link href="/case-studies" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.caseStudies")}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/support" className="text-white/80 hover:text-white text-sm transition-colors">
                   Support

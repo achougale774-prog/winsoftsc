@@ -40,7 +40,7 @@ export function StarRatingSchema({
     "author": {
       "@type": "Organization",
       "name": brand,
-      "url": "https://www.winsoft.in",
+      "url": "https://www.winsoftsc.com",
     },
   }
 
@@ -58,8 +58,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Winsoft Software Consultancy",
-    "url": "https://www.winsoft.in",
-    "logo": "https://www.winsoft.in/winsoftlogo.jpg",
+    "url": "https://www.winsoftsc.com",
+    "logo": "https://www.winsoftsc.com/winsoftlogo.jpg",
     "foundingDate": "1998",
     "description": "Professional ERP software for dairy, sugar factory, and gold/jewellery industry. 25+ years of experience.",
     "address": {

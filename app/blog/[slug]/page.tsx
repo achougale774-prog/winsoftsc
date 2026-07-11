@@ -286,7 +286,7 @@ export default function BlogPostPage() {
             <Share2 className="w-5 h-5 text-gray-400" />
             <span className="text-sm text-gray-500 dark:text-zinc-400 font-sans">Share this article:</span>
             <a
-              href={`https://wa.me/?text=${encodeURIComponent(title + " - Read on Winsoft Blog: https://www.winsoft.in/blog/" + slug)}`}
+              href={`https://wa.me/?text=${encodeURIComponent(title + " - Read on Winsoft Blog: https://www.winsoftsc.com/blog/" + slug)}`}
               target="_blank" rel="noopener noreferrer"
               className="text-sm text-[#25D366] hover:underline font-sans font-medium"
             >

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.winsoft.in'
+  const baseUrl = 'https://www.winsoftsc.com'
 
   return [
     {

@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Winsoft Software Consultancy ("Winsoft", "we", "us", or "our") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit
-              our website <strong>www.winsoft.in</strong> or use our software products and services.
+              our website <strong>www.winsoftsc.com</strong> or use our software products and services.
             </p>
             <p className="mt-3">
               By using our website or services, you agree to the collection and use of information in accordance with

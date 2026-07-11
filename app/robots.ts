@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/dairy-solutions/admin', '/dashboard'],
       },
     ],
-    sitemap: 'https://www.winsoft.in/sitemap.xml',
+    sitemap: 'https://www.winsoftsc.com/sitemap.xml',
   }
 }

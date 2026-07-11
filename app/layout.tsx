@@ -63,11 +63,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Winsoft Software Consultancy" }],
   creator: "Winsoft Software Consultancy",
   publisher: "Winsoft Software Consultancy",
-  metadataBase: new URL("https://www.winsoft.in"),
+  metadataBase: new URL("https://www.winsoftsc.com"),
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.winsoft.in",
+    url: "https://www.winsoftsc.com",
     siteName: "Winsoft Software",
     title: "Winsoft - Industry Software Solutions Since 1998",
     description:

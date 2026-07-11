@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-4 font-sans">1. Acceptance of Terms</h2>
             <p>
-              By accessing or using the website <strong>www.winsoft.in</strong> or any software products and services
+              By accessing or using the website <strong>www.winsoftsc.com</strong> or any software products and services
               provided by Winsoft Software Consultancy ("Winsoft", "we", "us", or "our"), you agree to be bound by
               these Terms of Service ("Terms").
             </p>

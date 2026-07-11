@@ -104,12 +104,12 @@ export function TestimonialsSection() {
           </span>
           <h2 className="text-3xl md:text-5xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-6">
             {language === "mr"
-              ? "500+ ग्राहक आमच्यावर विश्वास ठेवतात"
+              ? "2000+ ग्राहक आमच्यावर विश्वास ठेवतात"
               : language === "hi"
-              ? "500+ ग्राहक हम पर भरोसा करते हैं"
+              ? "2000+ ग्राहक हम पर भरोसा करते हैं"
               : language === "kn"
-              ? "500+ ಗ್ರಾಹಕರು ನಮ್ಮನ್ನು ನಂಬುತ್ತಾರೆ"
-              : "500+ Clients Trust Winsoft"}
+              ? "2000+ ಗ್ರಾಹಕರು ನಮ್ಮನ್ನು ನಂಬುತ್ತಾರೆ"
+              : "2000+ Clients Trust Winsoft"}
           </h2>
           <p className="text-gray-600 dark:text-zinc-400 font-serif max-w-2xl mx-auto text-lg">
             {language === "mr"
@@ -123,7 +123,7 @@ export function TestimonialsSection() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {[
-            { number: "500+", label: language === "mr" ? "आनंदी ग्राहक" : "Happy Clients" },
+            { number: "2000+", label: language === "mr" ? "आनंदी ग्राहक" : "Happy Clients" },
             { number: "25+", label: language === "mr" ? "वर्षांचा अनुभव" : "Years Experience" },
             { number: "4.9/5", label: language === "mr" ? "सरासरी Rating" : "Average Rating" },
             { number: "99.9%", label: language === "mr" ? "Uptime Guarantee" : "Uptime Guarantee" },

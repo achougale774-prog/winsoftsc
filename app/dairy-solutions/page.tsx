@@ -403,7 +403,7 @@ export default function DairySolutionsPage() {
                     <div className="text-sm text-gray-500 dark:text-zinc-400 font-serif">{t("dairy.yearsExp")}</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-1">500+</div>
+                    <div className="text-3xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-1">2000+</div>
                     <div className="text-sm text-gray-500 dark:text-zinc-400 font-serif">{t("dairy.happyClients")}</div>
                   </div>
                   <div>
@@ -784,7 +784,7 @@ export default function DairySolutionsPage() {
               </div>
               <div>
                 <div className="text-4xl font-sans font-bold mb-2" style={{ color: "var(--accent)" }}>
-                  500+
+                  2000+
                 </div>
                 <p className="text-gray-600 dark:text-zinc-400 font-medium text-sm">
                   {t("dairy.happyClients")}

@@ -38,7 +38,7 @@ export function ClientLogosSection() {
     ? "हमारे विश्वसनीय ग्राहक"
     : language === "kn"
     ? "ನಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಗ್ರಾಹಕರು"
-    : "Trusted by 500+ Businesses Across India"
+    : "Trusted by 2000+ Businesses Across India"
 
   const subheading = language === "mr"
     ? "महाराष्ट्र, कर्नाटक आणि संपूर्ण भारतातील आघाडीच्या dairy, gold आणि sugar factory कंपन्या Winsoft वर विश्वास ठेवतात."
@@ -54,7 +54,7 @@ export function ClientLogosSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E94A4]/10 text-[#1E94A4] text-xs font-sans font-bold mb-4 border border-[#1E94A4]/20">
-            🤝 {language === "mr" ? "500+ ग्राहक" : language === "hi" ? "500+ ग्राहक" : "500+ Clients"}
+            🤝 {language === "mr" ? "2000+ ग्राहक" : language === "hi" ? "2000+ ग्राहक" : "2000+ Clients"}
           </span>
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-4">
             {heading}
@@ -85,7 +85,7 @@ export function ClientLogosSection() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
           {[
-            { number: "500+", labelMr: "आनंदी ग्राहक", labelEn: "Happy Clients", emoji: "😊" },
+            { number: "2000+", labelMr: "आनंदी ग्राहक", labelEn: "Happy Clients", emoji: "😊" },
             { number: "25+", labelMr: "वर्षांचा अनुभव", labelEn: "Years Experience", emoji: "🏆" },
             { number: "15+", labelMr: "जिल्हे", labelEn: "Districts Covered", emoji: "📍" },
             { number: "3", labelMr: "उद्योग क्षेत्रे", labelEn: "Industry Sectors", emoji: "🏭" },

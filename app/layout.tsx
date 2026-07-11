@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Winsoft Software",
   },
   description:
-    "Winsoft provides professional ERP software solutions for dairy, sugar factory, and gold/jewellery industry. 25+ years of experience. Trusted by 500+ clients across India.",
+    "Winsoft provides professional ERP software solutions for dairy, sugar factory, and gold/jewellery industry. 25+ years of experience. Trusted by 2000+ clients across India.",
   keywords: [
     "dairy software",
     "dairy management software",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Winsoft Software",
     title: "Winsoft - Industry Software Solutions Since 1998",
     description:
-      "Professional ERP software for dairy, sugar factory, and gold industry. 25+ years of experience. 500+ happy clients across India.",
+      "Professional ERP software for dairy, sugar factory, and gold industry. 25+ years of experience. 2000+ happy clients across India.",
     images: [
       {
         url: "/winsoftlogo.jpg",

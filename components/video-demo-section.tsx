@@ -138,7 +138,7 @@ export function VideoDemoSection() {
               </div>
               <div>
                 <p className="text-xs font-bold text-gray-900 dark:text-zinc-100 font-sans">
-                  {language === "mr" ? "500+ संस्था वापरतात" : "500+ Societies Use This"}
+                  {language === "mr" ? "2000+ संस्था वापरतात" : "2000+ Societies Use This"}
                 </p>
                 <p className="text-xs text-gray-500 dark:text-zinc-400 font-serif">
                   {language === "mr" ? "महाराष्ट्र व कर्नाटक" : "Maharashtra & Karnataka"}

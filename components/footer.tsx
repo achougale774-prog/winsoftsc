@@ -170,19 +170,17 @@ export function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 dark:text-zinc-400 text-sm">© {new Date().getFullYear()} Winsoft. {t("footer.allRightsReserved")}</p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
             <Link href="/privacy-policy" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
               {t("footer.privacyPolicy")}
             </Link>
             <Link href="/terms-of-service" className="text-gray-500 dark:text-zinc-400 hover:text-gray-300 text-sm transition-colors">
               {t("footer.termsOfService")}
             </Link>
+            <span className="text-gray-500 dark:text-zinc-400 text-sm font-sans select-none">
+              Developed by Abhishek Chougale
+            </span>
           </div>
-        </div>
-        <div className="mt-6 pb-2 text-center">
-          <p className="text-[10px] text-white/35 dark:text-white/20 tracking-widest uppercase select-none font-sans">
-            Developed by Abhishek Chougale
-          </p>
         </div>
       </div>
     </footer>

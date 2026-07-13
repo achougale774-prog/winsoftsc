@@ -568,11 +568,18 @@ export default function SugarFactorySolutionsPage() {
                         {language === 'mr' ? "अधिक माहिती" : language === 'kn' ? "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ" : language === 'hi' ? "अधिक जानकारी" : "View Details"}
                       </Button>
                     </Link>
-                    <Link href="/contact?inquiryType=demo" className="block">
-                      <Button className="w-full bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-red-600/25">
-                        {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध करें" : "Request Demo"}
-                      </Button>
-                    </Link>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Link href="/contact?inquiryType=demo#contact-form" className="block">
+                        <Button className="w-full bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-bold py-5 rounded-2xl transition-all shadow-lg hover:shadow-red-600/25 text-xs sm:text-sm">
+                          {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध करें" : "Request Demo"}
+                        </Button>
+                      </Link>
+                      <a href="tel:+919423039902" className="block">
+                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
+                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -803,11 +810,18 @@ export default function SugarFactorySolutionsPage() {
                         {language === 'mr' ? "अधिक माहिती" : language === 'kn' ? "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ" : language === 'hi' ? "अधिक जानकारी" : "View Details"}
                       </Button>
                     </Link>
-                    <Link href="/contact" className="block">
-                      <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-4 rounded-xl text-xs transition-all shadow-sm hover:shadow-[#1E94A4]/25 font-sans">
-                        {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध" : "Request Demo"}
-                      </Button>
-                    </Link>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Link href="/contact?inquiryType=demo#contact-form" className="block">
+                        <Button className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#1E94A4]/25 font-sans">
+                          {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध" : "Request Demo"}
+                        </Button>
+                      </Link>
+                      <a href="tel:+919423039902" className="block">
+                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
+                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -826,16 +840,16 @@ export default function SugarFactorySolutionsPage() {
                 {t("sugar.modernizeSugarDesc")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
+                <Link href="/contact?inquiryType=demo#contact-form">
                   <Button size="lg" className="bg-white dark:bg-zinc-950 text-[#1E94A4] hover:bg-slate-100 font-sans font-bold px-10">
                     {t("sugar.freeERPDemo")}
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10">
-                    {t("sugar.connectWithUs")}
+                <a href="tel:+919423039902">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10 bg-transparent">
+                    📞 {language === 'mr' ? 'कॉल करा' : 'Call Expert'}
                   </Button>
-                </Link>
+                </a>
                 <WhatsAppButton productName={t("sugar.sugarSystemTitle")} />
               </div>
             </div>

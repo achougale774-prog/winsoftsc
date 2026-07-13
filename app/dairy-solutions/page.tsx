@@ -379,7 +379,7 @@ export default function DairySolutionsPage() {
                   {t("dairy5.overview")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/contact?inquiryType=demo">
+                  <Link href="/contact?inquiryType=demo#contact-form">
                     <Button
                       size="lg"
                       className="font-sans font-bold px-8 py-4 bg-[#1E94A4] hover:bg-[#0B7989] text-white rounded-xl shadow-lg dark:shadow-none shadow-[#1E94A4]/20"
@@ -387,15 +387,15 @@ export default function DairySolutionsPage() {
                       {t("hero.cta1")}
                     </Button>
                   </Link>
-                  <Link href="/contact">
+                  <a href="tel:+919423039902">
                     <Button
                       variant="outline"
                       size="lg"
-                      className="font-sans font-bold px-8 py-4 bg-transparent border-2 border-slate-200 dark:border-zinc-800 hover:border-[#1E94A4] hover:text-[#1E94A4] rounded-xl"
+                      className="font-sans font-bold px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white rounded-xl shadow-lg shadow-[#25D366]/20"
                     >
-                      {t("hero.cta2")}
+                      📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
                     </Button>
-                  </Link>
+                  </a>
                 </div>
                 <div className="mt-12 grid grid-cols-3 gap-8 border-t border-slate-100 dark:border-zinc-800 pt-8">
                   <div>
@@ -480,11 +480,18 @@ export default function DairySolutionsPage() {
                         {t("home.viewDetails")}
                       </Button>
                     </Link>
-                    <Link href="/contact?inquiryType=demo" className="block">
-                      <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
-                        {t("home.requestDemo")}
-                      </Button>
-                    </Link>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Link href="/contact?inquiryType=demo#contact-form" className="block">
+                        <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-5 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25 text-xs sm:text-sm">
+                          {t("home.requestDemo")}
+                        </Button>
+                      </Link>
+                      <a href="tel:+919423039902" className="block">
+                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
+                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -821,7 +828,7 @@ export default function DairySolutionsPage() {
               {t("dairy.ctaModernizeDesc")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/contact?inquiryType=demo#contact-form">
                 <Button
                   size="lg"
                   className="font-sans font-semibold px-8 py-3"
@@ -830,15 +837,15 @@ export default function DairySolutionsPage() {
                   {t("home.requestDemo")}
                 </Button>
               </Link>
-              <Link href="/contact">
+              <a href="tel:+919423039902">
                 <Button
                   size="lg"
                   variant="outline"
                   className="font-sans font-semibold px-8 py-3 bg-transparent border-white text-white hover:bg-white dark:bg-zinc-950/10"
                 >
-                  {t("product.contactSales")}
+                  📞 {language === 'mr' ? 'कॉल करा' : 'Call Sales'}
                 </Button>
-              </Link>
+              </a>
               <WhatsAppButton productName={t("dairy.dairyTitle")} />
             </div>
           </div>

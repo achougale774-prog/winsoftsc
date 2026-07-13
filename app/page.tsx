@@ -167,7 +167,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <div className="grid grid-cols-2 gap-3">
-                  <Link href="/contact?inquiryType=demo" className="block">
+                  <Link href="/contact?inquiryType=demo#contact-form" className="block">
                     <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-5 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25 text-xs sm:text-sm">
                       {t("home.requestDemo")}
                     </Button>

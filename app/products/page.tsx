@@ -805,16 +805,16 @@ export default function ProductsPage() {
                         {t("productsPage.notSureDesc")}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact">
+                        <Link href="/contact?inquiryType=demo#contact-form">
                             <Button size="lg" className="font-sans font-semibold text-lg px-8 py-3" style={{ backgroundColor: "var(--accent)", color: "white" }}>
                                 {t("features.requestFreeDemo")}
                             </Button>
                         </Link>
-                        <Link href="/contact">
+                        <a href="tel:+919423039902">
                             <Button size="lg" variant="outline" className="font-sans font-semibold text-lg px-8 py-3 bg-transparent border-white text-white hover:bg-white dark:bg-zinc-950/10">
-                                {t("productsPage.contactSales")}
+                                📞 {language === 'mr' ? 'कॉल करा' : 'Call Sales'}
                             </Button>
-                        </Link>
+                        </a>
                         <WhatsAppButton productName={t("productsPage.heroTitle")} />
                     </div>
                 </div>

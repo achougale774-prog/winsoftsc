@@ -798,7 +798,7 @@ export default function ProductDetailPage() {
             )}
             {/* Direct Page Action Buttons */}
             <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/contact?inquiryType=demo" className="block w-full">
+              <Link href="/contact?inquiryType=demo#contact-form" className="block w-full">
                 <Button size="lg" className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-6 rounded-2xl shadow-md transition-all">
                   📅 {t("home.requestDemo")}
                 </Button>
@@ -1000,7 +1000,7 @@ export default function ProductDetailPage() {
                       </Button>
                     </Link>
                     <div className="grid grid-cols-2 gap-2">
-                      <Link href="/contact?inquiryType=demo" className="block font-sans">
+                      <Link href="/contact?inquiryType=demo#contact-form" className="block font-sans">
                         <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-purple-600/25 font-sans">
                           {t("home.requestDemo")}
                         </Button>

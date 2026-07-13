@@ -327,7 +327,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.callTitle")}</h3>
-                      <p className="text-gray-700 dark:text-zinc-300 font-serif text-lg">+91 94230 39902</p>
+                      <div className="space-y-1 font-serif text-lg text-gray-700 dark:text-zinc-300">
+                        <a href="tel:+919423039902" className="block hover:underline">+91 94230 39902</a>
+                        <a href="tel:+919011064471" className="block hover:underline">+91 90110 64471</a>
+                      </div>
                     </div>
                   </div>
 
@@ -339,8 +342,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-sans font-semibold text-lg mb-2">{t("contactPage.emailTitle")}</h3>
                       <div className="space-y-1 font-serif text-gray-700 dark:text-zinc-300">
-                        <p>info@winsoft.in</p>
-                        <p>sales@winsoft.in</p>
+                        <a href="mailto:winsoft98@gmail.com" className="block hover:underline">winsoft98@gmail.com</a>
                       </div>
                     </div>
                   </div>
@@ -445,26 +447,31 @@ export default function ContactPage() {
                   {
                     emoji: "📞",
                     title: "Phone",
-                    lines: ["+91 94230 39902"],
-                    href: "tel:+919423039902",
+                    links: [
+                      { text: "+91 94230 39902", href: "tel:+919423039902" },
+                      { text: "+91 90110 64471", href: "tel:+919011064471" },
+                    ],
                   },
                   {
                     emoji: "✉️",
                     title: "Email",
-                    lines: ["info@winsoft.in"],
-                    href: "mailto:info@winsoft.in",
+                    links: [
+                      { text: "winsoft98@gmail.com", href: "mailto:winsoft98@gmail.com" },
+                    ],
                   },
                 ].map((item, i) => (
                   <div key={i} className="bg-white dark:bg-zinc-950 rounded-2xl border border-gray-100 dark:border-zinc-800 p-4 flex items-start gap-3 shadow-sm hover:shadow-md transition-shadow">
                     <span className="text-2xl flex-shrink-0">{item.emoji}</span>
                     <div>
                       <p className="text-xs font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-wider mb-1">{item.title}</p>
-                      {item.lines.map((line, j) =>
-                        item.href ? (
-                          <a key={j} href={item.href} className="block text-sm font-semibold text-[#1E94A4] hover:underline">{line}</a>
-                        ) : (
+                      {item.links ? (
+                        item.links.map((link, j) => (
+                          <a key={j} href={link.href} className="block text-sm font-semibold text-[#1E94A4] hover:underline">{link.text}</a>
+                        ))
+                      ) : (
+                        item.lines?.map((line, j) => (
                           <p key={j} className="text-sm text-gray-700 dark:text-zinc-300 font-serif">{line}</p>
-                        )
+                        ))
                       )}
                     </div>
                   </div>

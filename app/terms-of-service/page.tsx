@@ -148,14 +148,18 @@ export default function TermsOfServicePage() {
               <p>Kolhapur, Maharashtra 416010, India</p>
               <p className="mt-2">
                 Email:{" "}
-                <a href="mailto:info@winsoft.in" className="text-[#1E94A4] hover:underline">
-                  info@winsoft.in
+                <a href="mailto:winsoft98@gmail.com" className="text-[#1E94A4] hover:underline">
+                  winsoft98@gmail.com
                 </a>
               </p>
               <p>
                 Phone:{" "}
                 <a href="tel:+919423039902" className="text-[#1E94A4] hover:underline">
                   +91 94230 39902
+                </a>
+                {" / "}
+                <a href="tel:+919011064471" className="text-[#1E94A4] hover:underline">
+                  +91 90110 64471
                 </a>
               </p>
             </div>

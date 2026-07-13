@@ -202,8 +202,8 @@ ALL PLANS INCLUDE:
 ✅ 1 Year Free Support
 ✅ Regular Updates
 
-Contact: +91 94230 39902
-Email: info@winsoft.in
+Contact: +91 94230 39902 / +91 90110 64471
+Email: winsoft98@gmail.com
 Website: www.winsoftsc.com
 Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
 `
@@ -520,7 +520,7 @@ Address: Plot 448, Lane 14B, Hari Om Nagar, Kolhapur, MH 416010
                 : "Talk directly with our team. We'll suggest the best plan for your business."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/contact#contact-form">
                 <Button size="lg" className="bg-white text-[#1E94A4] hover:bg-gray-100 font-sans font-bold px-8">
                   <Zap className="w-4 h-4 mr-2" />
                   {language === "mr" ? "संपर्क करा" : "Contact Us"}

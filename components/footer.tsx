@@ -139,13 +139,14 @@ export function Footer() {
               {t("footer.contact")}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center text-sm">
-                <Phone className="h-4 w-4 mr-2 text-white/60 flex-shrink-0" />
-                <span>+91 94230 39902</span>
+              <li className="flex flex-col gap-1 text-sm pl-6 relative text-white/80">
+                <Phone className="h-4 w-4 absolute left-0 top-0.5 text-white/60 flex-shrink-0" />
+                <a href="tel:+919423039902" className="hover:text-white transition-colors">+91 94230 39902</a>
+                <a href="tel:+919011064471" className="hover:text-white transition-colors">+91 90110 64471</a>
               </li>
-              <li className="flex items-center text-sm">
+              <li className="flex items-center text-sm text-white/80">
                 <Mail className="h-4 w-4 mr-2 text-white/60 flex-shrink-0" />
-                <span>info@winsoft.in</span>
+                <a href="mailto:winsoft98@gmail.com" className="hover:text-white transition-colors">winsoft98@gmail.com</a>
               </li>
               <li className="flex items-start text-sm">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5 text-white/60 flex-shrink-0" />

@@ -159,7 +159,7 @@ export default function OurStoryPage() {
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-4 relative max-w-sm mx-auto lg:mx-0">
                 <Image
-                  src="/google map rating images/rajendra khot.jpeg"
+                  src="/google map rating images/rajendra khot .jpeg"
                   alt="Rajendra Khot, Founder"
                   width={320}
                   height={400}

@@ -154,23 +154,23 @@ export function GoogleReviews() {
   const displayed = showAll ? reviews : reviews.slice(0, 3)
 
   const heading = {
-    mr: "Google वर आमचे Reviews",
-    hi: "Google पर हमारे Reviews",
-    kn: "Google ನಲ್ಲಿ ನಮ್ಮ Reviews",
-    en: "What Our Clients Say on Google",
-  }[language] || "What Our Clients Say on Google"
+    mr: "कर्मचाऱ्यांचे अभिप्राय",
+    hi: "कर्मचारियों के अभिप्राय",
+    kn: "ಉದ್ಯೋಗಿಗಳ ಅಭಿಪ್ರಾಯಗಳು",
+    en: "Employee Reviews",
+  }[language] || "Employee Reviews"
 
   const subheading = {
-    mr: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
-    hi: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
-    kn: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
-    en: `${TOTAL_REVIEWS}+ verified Google reviews — Kolhapur, Maharashtra`,
-  }[language] || `${TOTAL_REVIEWS}+ verified Google reviews`
+    mr: "Winsoft मधील कामाचा अनुभव आणि कर्मचाऱ्यांचे अभिप्राय",
+    hi: "Winsoft में काम करने का अनुभव और कर्मचारियों के विचार",
+    kn: "Winsoft ನಲ್ಲಿ ಕೆಲಸದ अनुभव आणि ಉದ್ಯೋಗಿಗಳ ಅಭಿಪ್ರಾಯಗಳು",
+    en: "Work experience and feedback from our team members at Winsoft",
+  }[language] || "Work experience and feedback from our team members at Winsoft"
 
   const reviewLabel = { mr: "Review द्या", hi: "Review दें", en: "Write a Review", kn: "Review ಬರೆಯಿರಿ" }[language] || "Write a Review"
   const viewAllLabel = { mr: "Google वर सगळे Reviews बघा", hi: "Google पर सभी Reviews देखें", en: "View All Reviews on Google", kn: "Google ನಲ್ಲಿ ಎಲ್ಲಾ Reviews ನೋಡಿ" }[language] || "View All Reviews on Google"
   const showMoreLabel = { mr: "आणखी Reviews बघा", hi: "और Reviews देखें", en: "Show More Reviews", kn: "ಇನ್ನಷ್ಟು Reviews ನೋಡಿ" }[language] || "Show More"
-  const verifiedLabel = { mr: "Verified", hi: "Verified", en: "Verified", kn: "Verified" }[language] || "Verified"
+  const verifiedLabel = { mr: "कर्मचारी", hi: "कर्मचारी", en: "Team Member", kn: "ಉದ್ಯೋಗಿ" }[language] || "Team Member"
   const helpfulLabel = { mr: "उपयुक्त", hi: "उपयोगी", en: "Helpful", kn: "ಸಹಾಯಕಾರಿಯಾಗಿದೆ" }[language] || "Helpful"
 
   return (
@@ -179,56 +179,10 @@ export function GoogleReviews() {
 
         {/* ── Header ── */}
         <div className="text-center mb-12">
-          {/* Google badge */}
-          <div className="inline-flex items-center gap-2 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-2xl px-5 py-2.5 shadow-sm mb-6">
-            <GoogleLogo size={22} />
-            <span className="text-sm font-bold text-gray-700 dark:text-zinc-300">Google Reviews</span>
-            <span className="w-px h-4 bg-gray-200 dark:bg-zinc-700" />
-            <div className="flex items-center gap-1">
-              <StarRow rating={5} size={14} />
-              <span className="text-sm font-black text-gray-900 dark:text-zinc-100">{OVERALL_RATING}</span>
-            </div>
-            <span className="text-xs text-gray-400">({TOTAL_REVIEWS}+)</span>
-          </div>
-
           <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-zinc-100 mb-3">
             {heading}
           </h2>
           <p className="text-gray-500 dark:text-zinc-400 font-serif">{subheading}</p>
-        </div>
-
-        {/* ── Overall Rating Card ── */}
-        <div className="max-w-xs mx-auto mb-12 bg-gray-50 dark:bg-zinc-900 rounded-3xl border border-gray-100 dark:border-zinc-800 p-6 text-center shadow-sm">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <GoogleLogo size={18} />
-            <span className="text-xs font-bold text-gray-500 dark:text-zinc-400 uppercase tracking-wider">Winsoft Software Consultancy</span>
-          </div>
-          <div className="text-6xl font-black text-gray-900 dark:text-zinc-100 mb-2">{OVERALL_RATING}</div>
-          <StarRow rating={5} size={22} />
-          <p className="text-sm text-gray-500 dark:text-zinc-400 font-serif mt-2">{TOTAL_REVIEWS}+ Google Reviews</p>
-
-          {/* Rating bars */}
-          <div className="mt-4 space-y-1.5 text-left">
-            {[
-              { stars: 5, pct: 92 },
-              { stars: 4, pct: 6 },
-              { stars: 3, pct: 2 },
-              { stars: 2, pct: 0 },
-              { stars: 1, pct: 0 },
-            ].map(({ stars, pct }) => (
-              <div key={stars} className="flex items-center gap-2">
-                <span className="text-xs text-gray-500 w-3">{stars}</span>
-                <Star className="w-3 h-3 fill-[#FBBC05] text-[#FBBC05] flex-shrink-0" />
-                <div className="flex-1 h-1.5 bg-gray-200 dark:bg-zinc-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-[#FBBC05] rounded-full"
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-                <span className="text-xs text-gray-400 w-6 text-right">{pct}%</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* ── Reviews Grid ── */}
@@ -329,36 +283,6 @@ export function GoogleReviews() {
           </div>
         )}
 
-        {/* ── CTA Buttons ── */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* View all on Google */}
-          <a
-            href={GOOGLE_MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-6 py-3 bg-white dark:bg-zinc-900 border-2 border-gray-200 dark:border-zinc-700 hover:border-[#4285F4] rounded-2xl text-sm font-bold text-gray-700 dark:text-zinc-300 hover:text-[#4285F4] transition-all shadow-sm hover:shadow-md group"
-          >
-            <GoogleLogo size={18} />
-            {viewAllLabel}
-            <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </a>
-
-          {/* Write a review */}
-          <a
-            href={WRITE_REVIEW_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-6 py-3 bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold rounded-2xl text-sm shadow-lg shadow-[#1E94A4]/25 hover:shadow-[#1E94A4]/40 transition-all group"
-          >
-            <Star className="w-4 h-4 fill-white" />
-            {reviewLabel} ⭐
-          </a>
-        </div>
-
-        {/* Disclaimer */}
-        <p className="text-center text-xs text-gray-300 dark:text-zinc-700 mt-6 font-serif">
-          Reviews sourced from Google Maps · Winsoft Software Consultancy, Kolhapur
-        </p>
       </div>
     </section>
   )

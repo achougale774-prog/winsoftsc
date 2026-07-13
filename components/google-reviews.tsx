@@ -10,10 +10,10 @@ import { ExternalLink, Star, ThumbsUp, Instagram, Linkedin } from "lucide-react"
 // Coordinates: 16.6834701, 74.1989472
 
 // Direct Google Maps link to Winsoft location
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Winsoft+Software+Consultancy/@16.6834701,74.1989472,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc100109f06798b:0x5e56e4313f9872be!8m2!3d16.6834701!4d74.2015221!16s%2Fg%2F11c6_7g7q_"
+const GOOGLE_MAPS_URL = "https://www.google.com/search?q=winsoft+software+consultancy&oq=&gs_lcrp=EgZjaHJvbWUqCQgAEEUYOxjCAzIJCAAQRRg7GMIDMgkIARBFGDsYwgMyCQgCEEUYOxjCAzIJCAMQRRg7GMIDMgkIBBBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ0zNjkzMjY1NTNqMGo3qAIIsAIB8QXOf7gy-JaQWg&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x3bc1ab00de1c3cad:0xf9a65ff5798fc012,3,,,,"
 
 // Write a review — direct Google Maps review link for Winsoft
-const WRITE_REVIEW_URL = "https://www.google.com/maps/place/Winsoft+Software+Consultancy/@16.6834701,74.1989472,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc100109f06798b:0x5e56e4313f9872be!8m2!3d16.6834701!4d74.2015221!16s%2Fg%2F11c6_7g7q_#"
+const WRITE_REVIEW_URL = "https://www.google.com/search?q=winsoft+software+consultancy&oq=&gs_lcrp=EgZjaHJvbWUqCQgAEEUYOxjCAzIJCAAQRRg7GMIDMgkIARBFGDsYwgMyCQgCEEUYOxjCAzIJCAMQRRg7GMIDMgkIBBBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ0zNjkzMjY1NTNqMGo3qAIIsAIB8QXOf7gy-JaQWg&sourceid=chrome&source=chrome.ob&ie=UTF-8#lrd=0x3bc1ab00de1c3cad:0xf9a65ff5798fc012,3,,,,"
 
 const OVERALL_RATING = 4.9
 const TOTAL_REVIEWS = 47
@@ -283,6 +283,29 @@ export function GoogleReviews() {
             </button>
           </div>
         )}
+
+        {/* Google review action buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 border-t border-gray-100 dark:border-zinc-800 pt-8">
+          <a
+            href={WRITE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E94A4] hover:bg-[#0B7989] text-white font-sans font-bold text-sm rounded-xl shadow-lg shadow-[#1E94A4]/20 transition-all hover:-translate-y-0.5"
+          >
+            <GoogleLogo size={18} />
+            <span>{reviewLabel}</span>
+          </a>
+
+          <a
+            href={GOOGLE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 text-gray-700 dark:text-zinc-200 font-sans font-bold text-sm rounded-xl hover:bg-gray-50 dark:hover:bg-zinc-800 transition-all hover:-translate-y-0.5"
+          >
+            <ExternalLink className="w-4 h-4 text-[#FBBC05]" />
+            <span>{viewAllLabel}</span>
+          </a>
+        </div>
 
       </div>
     </section>

@@ -76,6 +76,7 @@ const reviews = [
     nameMr: "रितेश लिंबळे",
     avatar: "R",
     avatarColor: "#1E94A4",
+    image: "/google map rating images/Ritesh limble.jpeg",
     instagram: "https://www.instagram.com/",
     linkedin: "https://www.linkedin.com/",
     rating: 5,

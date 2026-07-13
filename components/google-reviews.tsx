@@ -175,7 +175,7 @@ export function GoogleReviews() {
   const helpfulLabel = { mr: "उपयुक्त", hi: "उपयोगी", en: "Helpful", kn: "ಸಹಾಯಕಾರಿಯಾಗಿದೆ" }[language] || "Helpful"
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-gray-100 dark:border-zinc-800">
+    <section id="employee-reviews" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-zinc-950 border-t border-gray-100 dark:border-zinc-800">
       <div className="max-w-7xl mx-auto">
 
         {/* ── Header ── */}

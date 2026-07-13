@@ -5,7 +5,7 @@ import { Linkedin, Mail, Phone, MapPin } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <footer className="bg-[#0B7989] text-gray-100">
@@ -108,6 +108,11 @@ export function Footer() {
               <li>
                 <Link href="/careers" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.careers")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers#employee-reviews" className="text-white/80 hover:text-white text-sm transition-colors">
+                  {language === 'mr' ? 'कर्मचाऱ्यांचे अभिप्राय' : language === 'kn' ? 'ಉದ್ಯೋಗಿಗಳ ವಿಮರ್ಶೆಗಳು' : language === 'hi' ? 'कर्मचारियों के विचार' : 'Employee Reviews'}
                 </Link>
               </li>
               {/* <li>

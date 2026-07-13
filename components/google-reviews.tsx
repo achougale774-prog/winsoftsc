@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useLanguage } from "@/components/language-provider"
-import { ExternalLink, Star, ThumbsUp } from "lucide-react"
+import { ExternalLink, Star, ThumbsUp, Instagram, Linkedin } from "lucide-react"
 
 // ─── Winsoft Google Reviews (Real reviews from Google Maps) ───────────────────
 // Winsoft Software Consultancy
@@ -26,6 +26,8 @@ const reviews = [
     avatar: "A",
     avatarColor: "#1E94A4",
     image: "/google map rating images/abhishek chougale 1.jpeg",
+    instagram: "https://www.instagram.com/abhishek_chougale_6448?igsh=MXB1OGVjZGI1ODluNw==",
+    linkedin: "https://www.linkedin.com/in/abhishek-chougale-573786268?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     rating: 5,
     time: "2 weeks ago",
     timeMr: "२ आठवड्यांपूर्वी",
@@ -41,6 +43,8 @@ const reviews = [
     avatar: "R",
     avatarColor: "#0B7989",
     image: "/google map rating images/rutuja patil 1.jpeg",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/",
     rating: 5,
     time: "1 month ago",
     timeMr: "१ महिन्यापूर्वी",
@@ -56,6 +60,8 @@ const reviews = [
     avatar: "A",
     avatarColor: "#22d3ee",
     image: "/google map rating images/ayush patil 2.jpeg",
+    instagram: "https://www.instagram.com/_ayush_jr_10?igsh=MWpsc3oyaG16YzFlaA==",
+    linkedin: "https://www.linkedin.com/in/ayush-patil-55097a248?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     rating: 5,
     time: "3 months ago",
     timeMr: "३ महिन्यांपूर्वी",
@@ -70,6 +76,8 @@ const reviews = [
     nameMr: "रितेश लिंबळे",
     avatar: "R",
     avatarColor: "#1E94A4",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/",
     rating: 5,
     time: "2 months ago",
     timeMr: "२ महिन्यांपूर्वी",
@@ -84,6 +92,8 @@ const reviews = [
     nameMr: "श्वेता आळवेकर",
     avatar: "S",
     avatarColor: "#0B7989",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/",
     rating: 5,
     time: "1 month ago",
     timeMr: "१ महिन्यापूर्वी",
@@ -98,6 +108,8 @@ const reviews = [
     nameMr: "राहुल पाटील",
     avatar: "R",
     avatarColor: "#22d3ee",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/",
     rating: 5,
     time: "3 weeks ago",
     timeMr: "३ आठवड्यांपूर्वी",
@@ -256,7 +268,31 @@ export function GoogleReviews() {
                     </div>
                   </div>
                 </div>
-                <GoogleLogo size={16} />
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  {review.instagram && (
+                    <a
+                      href={review.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-[#E1306C] dark:hover:text-[#F77737] transition-all hover:scale-110"
+                      title="Instagram"
+                    >
+                      <Instagram size={17} />
+                    </a>
+                  )}
+                  {review.linkedin && (
+                    <a
+                      href={review.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] transition-all hover:scale-110"
+                      title="LinkedIn"
+                    >
+                      <Linkedin size={17} />
+                    </a>
+                  )}
+                  <GoogleLogo size={17} />
+                </div>
               </div>
 
               {/* Stars + Time */}

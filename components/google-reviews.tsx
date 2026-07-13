@@ -274,7 +274,7 @@ export function GoogleReviews() {
                       href={review.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#E1306C] dark:hover:text-[#F77737] transition-all hover:scale-110"
+                      className="text-[#E1306C] hover:opacity-80 transition-all hover:scale-110"
                       title="Instagram"
                     >
                       <Instagram size={17} />
@@ -285,7 +285,7 @@ export function GoogleReviews() {
                       href={review.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#0A66C2] dark:hover:text-[#38bdf8] transition-all hover:scale-110"
+                      className="text-[#0A66C2] dark:text-[#38bdf8] hover:opacity-80 transition-all hover:scale-110"
                       title="LinkedIn"
                     >
                       <Linkedin size={17} />

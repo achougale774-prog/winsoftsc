@@ -16,18 +16,6 @@ export default function OurTeamPage() {
       bio: t("team.ceoBio"),
       image: "/indian-businessman-ceo.png",
     },
-    {
-      name: "Priya Sharma",
-      title: "Head of Development",
-      bio: t("team.devHeadBio"),
-      image: "/indian-woman-software-developer.png",
-    },
-    {
-      name: "Amit Kumar",
-      title: "Head of Client Success",
-      bio: t("team.successHeadBio"),
-      image: "/indian-man-client-success-headshot.png",
-    },
   ]
 
   const teamMembers = [

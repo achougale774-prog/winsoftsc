@@ -20,25 +20,6 @@ const TOTAL_REVIEWS = 47
 
 const reviews = [
   {
-    id: 0,
-    name: "Rajesh Patil",
-    nameMr: "राजेश पाटील",
-    avatar: "R",
-    avatarColor: "#0B7989",
-    image: "/google map rating images/rajesh patil.jpeg",
-    role: "Founder & CEO",
-    roleMr: "संस्थापक आणि सीईओ",
-    instagram: "https://www.instagram.com/",
-    linkedin: "https://www.linkedin.com/",
-    rating: 5,
-    time: "10 years ago",
-    timeMr: "१० वर्षांपूर्वी",
-    review: "When I founded Winsoft, the goal was to build a trustable tech partner for dairy, sugar, and jewellery industries. Today, seeing our team digitalizing rural cooperatives and growing with our clients is my greatest pride.",
-    reviewMr: "जेव्हा मी Winsoft ची स्थापना केली, तेव्हा डेअरी, शुगर आणि ज्वेलरी उद्योगांसाठी एक विश्वसनीय तंत्रज्ञान भागीदार तयार करणे हे आमचे ध्येय होते. आज, आपली टीम ग्रामीण सहकारी संस्थांचे संगणकीकरण करताना आणि ग्राहकांसोबत प्रगती करताना पाहणे हा माझा सर्वात मोठा अभिमान आहे.",
-    helpful: 45,
-    verified: true,
-  },
-  {
     id: 1,
     name: "Abhishek Chougale",
     nameMr: "अभिषेक चौगुले",

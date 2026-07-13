@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/components/language-provider"
 import { toast } from "sonner"
+import { GoogleReviews } from "@/components/google-reviews"
 
 export default function CareersPage() {
   const { language } = useLanguage()
@@ -130,6 +131,9 @@ export default function CareersPage() {
         ... (Current Openings)
       </section> 
       */}
+
+      {/* Employee Reviews */}
+      <GoogleReviews />
 
       {/* Form Section */}
       <section className="py-20 bg-gray-50 dark:bg-zinc-900/30">

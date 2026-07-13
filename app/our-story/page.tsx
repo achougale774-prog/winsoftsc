@@ -153,6 +153,43 @@ export default function OurStoryPage() {
           </div>
         </section>
 
+        {/* Founder Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-zinc-900/20 border-t border-b border-gray-100 dark:border-zinc-900">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-4 relative max-w-sm mx-auto lg:mx-0">
+                <Image
+                  src="/google map rating images/rajendra khot.jpeg"
+                  alt="Rajendra Khot, Founder"
+                  width={320}
+                  height={400}
+                  className="rounded-3xl shadow-xl object-cover aspect-[3/4]"
+                />
+              </div>
+              <div className="lg:col-span-8">
+                <span className="text-sm font-bold text-[#1E94A4] uppercase tracking-wider">Meet Our Founder</span>
+                <h2 className="text-3xl font-sans font-bold text-gray-900 dark:text-zinc-100 mt-2 mb-1">
+                  Rajendra Khot
+                </h2>
+                <p className="text-gray-500 dark:text-zinc-400 font-sans font-semibold mb-6 text-sm">Founder & CEO, Winsoft Software Consultancy</p>
+                
+                <div className="space-y-4">
+                  <div className="border-l-4 border-[#1E94A4] pl-4">
+                    <p className="text-gray-600 dark:text-zinc-400 leading-relaxed text-base italic font-serif">
+                      "When I founded Winsoft, the goal was to build a trustable tech partner for dairy, sugar, and jewellery industries. Today, seeing our team digitalizing rural cooperatives and growing with our clients is my greatest pride."
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-emerald-500 pl-4">
+                    <p className="text-gray-600 dark:text-zinc-400 leading-relaxed text-base italic font-serif">
+                      "जेव्हा मी Winsoft ची स्थापना केली, तेव्हा डेअरी, शुगर आणि ज्वेलरी उद्योगांसाठी एक विश्वसनीय तंत्रज्ञान भागीदार तयार करणे हे आमचे ध्येय होते. आज, आपली टीम ग्रामीण सहकारी संस्थांचे संगणकीकरण करताना आणि ग्राहकांसोबत प्रगती करताना पाहणे हा माझा सर्वात मोठा अभिमान आहे."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Guiding Principles Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-6xl mx-auto">

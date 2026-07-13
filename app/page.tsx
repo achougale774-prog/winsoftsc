@@ -185,7 +185,7 @@ export default function HomePage() {
 
       <AnimatedStats />
 
-      <GoogleReviews />
+      {/* <GoogleReviews /> */}
 
       <TestimonialsSection />
 

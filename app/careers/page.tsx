@@ -54,21 +54,21 @@ export default function CareersPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-sky-50 dark:from-zinc-900/50 dark:to-zinc-950 py-20 border-b dark:border-zinc-800">
+      <section className="bg-gradient-to-br from-blue-50 to-sky-50 dark:from-zinc-900/50 dark:to-zinc-950 py-8 border-b dark:border-zinc-800">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-zinc-100 mb-6 font-sans">
-            {language === 'mr' ? 'करिअर' : 'Careers'}
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-2 font-sans">
+            {language === 'mr' ? 'करिअर (Careers)' : 'Careers'}
           </h1>
-          <p className="text-xl text-gray-600 dark:text-zinc-400 max-w-3xl mx-auto">
+          <p className="text-sm text-gray-500 dark:text-zinc-400 max-w-3xl mx-auto">
             {language === 'mr' 
               ? 'आमच्यासोबत काम करा आणि नवीन तंत्रज्ञानाद्वारे उद्योगांना सक्षम बनवा.' 
               : 'Join our team and build the future of enterprise software solutions.'}
           </p>
         </div>
       </section>
-
+ 
       {/* Combined Tech Stack & Apply Form Section */}
-      <section className="py-16 bg-white dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-900">
+      <section className="py-10 bg-white dark:bg-zinc-950 border-b border-gray-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             

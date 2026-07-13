@@ -21,10 +21,11 @@ const TOTAL_REVIEWS = 47
 const reviews = [
   {
     id: 1,
-    name: "Ramesh Patil",
-    nameMr: "रमेश पाटील",
-    avatar: "R",
+    name: "Abhishek Chougale",
+    nameMr: "अभिषेक चौगुले",
+    avatar: "A",
     avatarColor: "#1E94A4",
+    image: "/google map rating images/abhishek chougale 1.jpeg",
     rating: 5,
     time: "2 weeks ago",
     timeMr: "२ आठवड्यांपूर्वी",
@@ -35,10 +36,11 @@ const reviews = [
   },
   {
     id: 2,
-    name: "Suresh Jadhav",
-    nameMr: "सुरेश जाधव",
-    avatar: "S",
+    name: "Rutuja Patil",
+    nameMr: "ऋतुजा पाटील",
+    avatar: "R",
     avatarColor: "#0B7989",
+    image: "/google map rating images/rutuja patil 1.jpeg",
     rating: 5,
     time: "1 month ago",
     timeMr: "१ महिन्यापूर्वी",
@@ -49,10 +51,11 @@ const reviews = [
   },
   {
     id: 3,
-    name: "Vijay Kulkarni",
-    nameMr: "विजय कुलकर्णी",
-    avatar: "V",
+    name: "Ayush Patil",
+    nameMr: "आयुष पाटील",
+    avatar: "A",
     avatarColor: "#22d3ee",
+    image: "/google map rating images/ayush patil 1.jpeg",
     rating: 5,
     time: "3 months ago",
     timeMr: "३ महिन्यांपूर्वी",
@@ -63,9 +66,9 @@ const reviews = [
   },
   {
     id: 4,
-    name: "Anil Deshmukh",
-    nameMr: "अनिल देशमुख",
-    avatar: "A",
+    name: "Ritesh Limble",
+    nameMr: "रितेश लिंबळे",
+    avatar: "R",
     avatarColor: "#1E94A4",
     rating: 5,
     time: "2 months ago",
@@ -77,9 +80,9 @@ const reviews = [
   },
   {
     id: 5,
-    name: "Priya Shinde",
-    nameMr: "प्रिया शिंदे",
-    avatar: "P",
+    name: "Shweta Alavekar",
+    nameMr: "श्वेता आळवेकर",
+    avatar: "S",
     avatarColor: "#0B7989",
     rating: 5,
     time: "1 month ago",
@@ -91,9 +94,9 @@ const reviews = [
   },
   {
     id: 6,
-    name: "Mahesh Gaikwad",
-    nameMr: "महेश गायकवाड",
-    avatar: "M",
+    name: "Rahul Patil",
+    nameMr: "राहुल पाटील",
+    avatar: "R",
     avatarColor: "#22d3ee",
     rating: 5,
     time: "3 weeks ago",
@@ -226,12 +229,20 @@ export function GoogleReviews() {
               {/* Top — Avatar + Name + Google logo */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-                    style={{ background: review.avatarColor }}
-                  >
-                    {review.avatar}
-                  </div>
+                  {review.image ? (
+                    <img
+                      src={review.image}
+                      alt={review.name}
+                      className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-100 dark:border-zinc-800"
+                    />
+                  ) : (
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
+                      style={{ background: review.avatarColor }}
+                    >
+                      {review.avatar}
+                    </div>
+                  )}
                   <div>
                     <p className="font-bold text-sm text-gray-900 dark:text-zinc-100">
                       {language === "mr" ? review.nameMr : review.name}

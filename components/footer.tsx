@@ -100,11 +100,11 @@ export function Footer() {
                    {t("footer.aboutUs")}
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link href="/our-team" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.ourTeam")}
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link href="/careers" className="text-white/80 hover:text-white text-sm transition-colors">
                   {t("footer.careers")}

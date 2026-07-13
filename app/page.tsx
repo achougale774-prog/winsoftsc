@@ -181,7 +181,7 @@ export default function HomePage() {
 
       <ClientLogosSection />
 
-      <ClientMap />
+      {/* <ClientMap /> */}
 
       <AnimatedStats />
 

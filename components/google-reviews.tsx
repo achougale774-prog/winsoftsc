@@ -55,7 +55,7 @@ const reviews = [
     nameMr: "आयुष पाटील",
     avatar: "A",
     avatarColor: "#22d3ee",
-    image: "/google map rating images/ayush patil 1.jpeg",
+    image: "/google map rating images/ayush patil 2.jpeg",
     rating: 5,
     time: "3 months ago",
     timeMr: "३ महिन्यांपूर्वी",

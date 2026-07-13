@@ -14,7 +14,7 @@ export default function OurTeamPage() {
       name: "Rajendra Khot",
       title: "Founder & CEO",
       bio: t("team.ceoBio"),
-      image: "/google map rating images/rajendra khot .jpeg",
+      image: "/indian-businessman-ceo.png",
     },
     {
       name: "Priya Sharma",
@@ -36,14 +36,29 @@ export default function OurTeamPage() {
       role: "Full Stack Developer",
       image: "/google map rating images/abhishek chougale 1.jpeg",
     },
-    { name: "Rohan", role: "Senior .NET Developer" },
-    { name: "Sneha", role: "Dairy Solutions Specialist" },
-    { name: "Vikram", role: "Database Administrator" },
-    { name: "Kavya", role: "UI/UX Designer" },
-    { name: "Arjun", role: "Quality Assurance Lead" },
-    { name: "Meera", role: "Business Analyst" },
-    { name: "Suresh", role: "Sugar Industry Expert" },
-    { name: "Anita", role: "Support Specialist" },
+    {
+      name: "Rutuja Patil",
+      role: "Frontend Developer",
+      image: "/google map rating images/rutuja patil 1.jpeg",
+    },
+    {
+      name: "Ayush Patil",
+      role: "Database Administrator",
+      image: "/google map rating images/ayush patil 2.jpeg",
+    },
+    {
+      name: "Ritesh Limble",
+      role: "Quality Assurance Lead",
+      image: "/google map rating images/Ritesh limble.jpeg",
+    },
+    {
+      name: "Shweta Alavekar",
+      role: "UI/UX Designer",
+    },
+    {
+      name: "Rahul Patil",
+      role: "Support Specialist",
+    },
   ]
 
   return (

@@ -11,10 +11,10 @@ export default function OurTeamPage() {
 
   const leadership = [
     {
-      name: "Rajesh Patil",
+      name: "Rajendra Khot",
       title: "Founder & CEO",
       bio: t("team.ceoBio"),
-      image: "/indian-businessman-ceo.png",
+      image: "/google map rating images/rajendra khot .jpeg",
     },
     {
       name: "Priya Sharma",
@@ -31,6 +31,11 @@ export default function OurTeamPage() {
   ]
 
   const teamMembers = [
+    {
+      name: "Abhishek Chougale",
+      role: "Full Stack Developer",
+      image: "/google map rating images/abhishek chougale 1.jpeg",
+    },
     { name: "Rohan", role: "Senior .NET Developer" },
     { name: "Sneha", role: "Dairy Solutions Specialist" },
     { name: "Vikram", role: "Database Administrator" },
@@ -95,7 +100,7 @@ export default function OurTeamPage() {
               <div key={index} className="text-center">
                 <div className="aspect-square relative mb-4 rounded-lg overflow-hidden">
                   <Image
-                    src={`/professional-indian.png?height=200&width=200&query=professional Indian ${member.role.toLowerCase()} headshot`}
+                    src={(member as any).image || `/professional-indian.png?height=200&width=200&query=professional Indian ${member.role.toLowerCase()} headshot`}
                     alt={member.name}
                     fill
                     className="object-cover"

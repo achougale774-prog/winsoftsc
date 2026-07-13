@@ -160,17 +160,24 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <Link href={product.link} className="block">
-                  <Button variant="outline" className="w-full border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 font-semibold py-6 rounded-2xl hover:bg-gray-50 dark:hover:bg-zinc-800 transition-all">
+                  <Button variant="outline" className="w-full border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 font-semibold py-5 rounded-2xl hover:bg-gray-50 dark:hover:bg-zinc-800 transition-all">
                     {t("home.viewDetails")}
                   </Button>
                 </Link>
-                <Link href="/contact" className="block">
-                  <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-6 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25">
-                    {t("home.requestDemo")}
-                  </Button>
-                </Link>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link href="/contact?inquiryType=demo" className="block">
+                    <Button className="w-full bg-gradient-to-r from-[#1E94A4] to-[#22d3ee] hover:from-[#0B7989] hover:to-[#1E94A4] text-white font-bold py-5 rounded-2xl transition-all shadow-lg hover:shadow-[#1E94A4]/25 text-xs sm:text-sm">
+                      {t("home.requestDemo")}
+                    </Button>
+                  </Link>
+                  <a href="tel:+919423039902" className="block">
+                    <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
+                      📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                    </Button>
+                  </a>
+                </div>
               </div>
             </Card>
           ))}

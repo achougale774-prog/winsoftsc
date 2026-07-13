@@ -796,6 +796,19 @@ export default function ProductDetailPage() {
                 </ul>
               </div>
             )}
+            {/* Direct Page Action Buttons */}
+            <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/contact?inquiryType=demo" className="block w-full">
+                <Button size="lg" className="w-full bg-[#1E94A4] hover:bg-[#0B7989] text-white font-bold py-6 rounded-2xl shadow-md transition-all">
+                  📅 {t("home.requestDemo")}
+                </Button>
+              </Link>
+              <a href="tel:+919423039902" className="block w-full">
+                <Button size="lg" variant="outline" className="w-full bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white font-bold py-6 rounded-2xl shadow-md shadow-[#25D366]/20 transition-all">
+                  📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                </Button>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -986,11 +999,18 @@ export default function ProductDetailPage() {
                         {t("home.viewDetails")}
                       </Button>
                     </Link>
-                    <Link href="/contact" className="block font-sans">
-                      <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-xl text-xs transition-all shadow-sm hover:shadow-purple-600/25 font-sans">
-                        {t("home.requestDemo")}
-                      </Button>
-                    </Link>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Link href="/contact?inquiryType=demo" className="block font-sans">
+                        <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-purple-600/25 font-sans">
+                          {t("home.requestDemo")}
+                        </Button>
+                      </Link>
+                      <a href="tel:+919423039902" className="block font-sans">
+                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
+                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -13,6 +13,7 @@ import { useLanguage } from "@/components/language-provider"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { AudioButton } from "@/components/audio-button"
 import { StarRatingSchema } from "@/components/star-rating-schema"
+import { CallNowButton } from "@/components/call-now-button"
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -803,11 +804,10 @@ export default function ProductDetailPage() {
                   📅 {t("home.requestDemo")}
                 </Button>
               </Link>
-              <a href="tel:+919423039902" className="block w-full">
-                <Button size="lg" variant="outline" className="w-full bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white font-bold py-6 rounded-2xl shadow-md shadow-[#25D366]/20 transition-all">
-                  📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                </Button>
-              </a>
+              <CallNowButton
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white font-bold py-6 rounded-2xl shadow-md shadow-[#25D366]/20 transition-all"
+              />
             </div>
           </div>
 
@@ -1005,11 +1005,9 @@ export default function ProductDetailPage() {
                           {t("home.requestDemo")}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block font-sans">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 border-none"
+                      />
                     </div>
                   </div>
                 </div>

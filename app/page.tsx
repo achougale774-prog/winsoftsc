@@ -16,6 +16,7 @@ import { AnimatedStats } from "@/components/animated-stats"
 
 import { GoogleReviews } from "@/components/google-reviews"
 import { ClientMap } from "@/components/client-map"
+import { CallNowButton } from "@/components/call-now-button"
 
 
 export default function HomePage() {
@@ -172,11 +173,9 @@ export default function HomePage() {
                       {t("home.requestDemo")}
                     </Button>
                   </Link>
-                  <a href="tel:+919423039902" className="block">
-                    <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
-                      📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                    </Button>
-                  </a>
+                  <CallNowButton
+                    className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm border-none"
+                  />
                 </div>
               </div>
             </Card>

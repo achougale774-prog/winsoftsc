@@ -51,6 +51,7 @@ import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { AudioButton } from "@/components/audio-button"
+import { CallNowButton } from "@/components/call-now-button"
 
 export default function ProductsPage() {
     const { t, language } = useLanguage()
@@ -810,11 +811,10 @@ export default function ProductsPage() {
                                 {t("features.requestFreeDemo")}
                             </Button>
                         </Link>
-                        <a href="tel:+919423039902">
-                            <Button size="lg" variant="outline" className="font-sans font-semibold text-lg px-8 py-3 bg-transparent border-white text-white hover:bg-white dark:bg-zinc-950/10">
-                                📞 {language === 'mr' ? 'कॉल करा' : 'Call Sales'}
-                            </Button>
-                        </a>
+                        <CallNowButton
+                            text={language === 'mr' ? 'कॉल करा' : 'Call Sales'}
+                            className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-semibold text-lg px-8 py-3 rounded-md border border-solid bg-transparent"
+                        />
                         <WhatsAppButton productName={t("productsPage.heroTitle")} />
                     </div>
                 </div>

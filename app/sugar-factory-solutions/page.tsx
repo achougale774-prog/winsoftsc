@@ -39,6 +39,7 @@ import { useMemo, useState } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import Link from "next/link"
 import Image from "next/image"
+import { CallNowButton } from "@/components/call-now-button"
 
 export default function SugarFactorySolutionsPage() {
   const { t, language } = useLanguage()
@@ -574,11 +575,9 @@ export default function SugarFactorySolutionsPage() {
                           {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध करें" : "Request Demo"}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm border-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -816,11 +815,9 @@ export default function SugarFactorySolutionsPage() {
                           {language === 'mr' ? "डेमो मागवा" : language === 'kn' ? "ಡೆಮೋ ವಿನಂತಿಸಿ" : language === 'hi' ? "डेमो अनुरोध" : "Request Demo"}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm shadow-[#25D366]/25 border-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -845,11 +842,10 @@ export default function SugarFactorySolutionsPage() {
                     {t("sugar.freeERPDemo")}
                   </Button>
                 </Link>
-                <a href="tel:+919423039902">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10 bg-transparent">
-                    📞 {language === 'mr' ? 'कॉल करा' : 'Call Expert'}
-                  </Button>
-                </a>
+                <CallNowButton
+                  text={language === 'mr' ? 'कॉल करा' : 'Call Expert'}
+                  className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10 py-6 rounded-xl border border-solid text-base bg-transparent"
+                />
                 <WhatsAppButton productName={t("sugar.sugarSystemTitle")} />
               </div>
             </div>

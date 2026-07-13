@@ -11,6 +11,7 @@ import { WhatsAppButton } from '@/components/whatsapp-button'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from "@/components/language-provider"
+import { CallNowButton } from "@/components/call-now-button"
 
 export default function MobileSoftwarePage() {
   const { t, language } = useLanguage()
@@ -402,13 +403,10 @@ export default function MobileSoftwarePage() {
                         Buy Now
                       </Button>
                     </Link>
-                    <a href="tel:+919423039902" className="block w-full">
-                      <Button
-                        className="w-full py-6 rounded-xl font-bold transition-all text-xs sm:text-sm bg-[#25D366] hover:bg-[#1EBE5D] text-white border-none"
-                      >
-                        📞 Call
-                      </Button>
-                    </a>
+                    <CallNowButton
+                      text="Call"
+                      className="w-full py-6 rounded-xl font-bold transition-all text-xs sm:text-sm bg-[#25D366] hover:bg-[#1EBE5D] text-white border-none"
+                    />
                   </div>
                 </div>
               ))}
@@ -682,11 +680,9 @@ export default function MobileSoftwarePage() {
                           {t("home.requestDemo")}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 border-none"
+                      />
                     </div>
                   </div>
                 </div>

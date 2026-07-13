@@ -30,6 +30,7 @@ import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { useMemo, useState } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { CallNowButton } from "@/components/call-now-button"
 
 export default function GoldIndustrySolutionsPage() {
   const { t, language } = useLanguage()
@@ -584,11 +585,10 @@ export default function GoldIndustrySolutionsPage() {
                       {t("hero.cta1")}
                     </Button>
                   </Link>
-                  <a href="tel:+919423039902">
-                    <Button variant="outline" size="lg" className="font-sans font-semibold px-8 py-3 bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white shadow-lg shadow-[#25D366]/20">
-                      📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                    </Button>
-                  </a>
+                  <CallNowButton
+                    size="lg"
+                    className="font-sans font-semibold px-8 py-3 bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white shadow-lg shadow-[#25D366]/20"
+                  />
                 </div>
               </div>
               <div className="space-y-6">
@@ -707,11 +707,10 @@ export default function GoldIndustrySolutionsPage() {
                           {t("gold.getDemo")}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-sans font-semibold text-xs sm:text-sm">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        text={language === 'mr' ? 'कॉल करा' : 'Call'}
+                        className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-sans font-semibold text-xs sm:text-sm border-none"
+                      />
                     </div>
                   </div>
                 </Card>
@@ -821,11 +820,9 @@ export default function GoldIndustrySolutionsPage() {
                           {t("home.requestDemo")}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block font-sans">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm hover:shadow-[#25D366]/25 font-sans">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl text-[10px] sm:text-xs transition-all shadow-sm shadow-[#25D366]/25 border-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -849,11 +846,10 @@ export default function GoldIndustrySolutionsPage() {
                   {t("gold.getStartedNow")}
                 </Button>
               </Link>
-              <a href="tel:+919423039902">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10 bg-transparent">
-                  📞 {language === 'mr' ? 'कॉल करा' : 'Call Expert'}
-                </Button>
-              </a>
+              <CallNowButton
+                text={language === 'mr' ? 'कॉल करा' : 'Call Expert'}
+                className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-10 py-6 rounded-xl border border-solid text-base bg-transparent"
+              />
               <WhatsAppButton productName={pageData.heroTitle} />
             </div>
           </div>

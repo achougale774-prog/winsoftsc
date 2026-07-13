@@ -36,6 +36,7 @@ import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { useState, useMemo } from "react"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { CallNowButton } from "@/components/call-now-button"
 import {
   ResponsiveContainer,
   BarChart,
@@ -387,15 +388,10 @@ export default function DairySolutionsPage() {
                       {t("hero.cta1")}
                     </Button>
                   </Link>
-                  <a href="tel:+919423039902">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="font-sans font-bold px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white rounded-xl shadow-lg shadow-[#25D366]/20"
-                    >
-                      📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                    </Button>
-                  </a>
+                  <CallNowButton
+                    size="lg"
+                    className="font-sans font-bold px-8 py-4 bg-[#25D366] hover:bg-[#1EBE5D] border-none text-white rounded-xl shadow-lg shadow-[#25D366]/20"
+                  />
                 </div>
                 <div className="mt-12 grid grid-cols-3 gap-8 border-t border-slate-100 dark:border-zinc-800 pt-8">
                   <div>
@@ -486,11 +482,9 @@ export default function DairySolutionsPage() {
                           {t("home.requestDemo")}
                         </Button>
                       </Link>
-                      <a href="tel:+919423039902" className="block">
-                        <Button className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm">
-                          📞 {language === 'mr' ? 'कॉल करा' : 'Call Now'}
-                        </Button>
-                      </a>
+                      <CallNowButton
+                        className="bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-5 rounded-2xl transition-all shadow-lg shadow-[#25D366]/20 text-xs sm:text-sm border-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -837,15 +831,10 @@ export default function DairySolutionsPage() {
                   {t("home.requestDemo")}
                 </Button>
               </Link>
-              <a href="tel:+919423039902">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="font-sans font-semibold px-8 py-3 bg-transparent border-white text-white hover:bg-white dark:bg-zinc-950/10"
-                >
-                  📞 {language === 'mr' ? 'कॉल करा' : 'Call Sales'}
-                </Button>
-              </a>
+              <CallNowButton
+                text={language === 'mr' ? 'कॉल करा' : 'Call Sales'}
+                className="border-white text-white hover:bg-white dark:bg-zinc-950/10 font-sans font-bold px-8 py-3 rounded-md border border-solid bg-transparent"
+              />
               <WhatsAppButton productName={t("dairy.dairyTitle")} />
             </div>
           </div>

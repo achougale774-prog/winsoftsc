@@ -179,6 +179,11 @@ export function Footer() {
             </Link>
           </div>
         </div>
+        <div className="mt-6 pb-2 text-center">
+          <p className="text-[9px] text-white/15 dark:text-zinc-600/30 tracking-widest uppercase select-none font-sans">
+            Developed by Abhishek Chougale
+          </p>
+        </div>
       </div>
     </footer>
   )
